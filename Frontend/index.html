@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
+    <link rel="stylesheet" href="/Frontend/css/index.css">
     <title>Acadevmia</title>
 </head>
 <body>
     <header class="principal">
+        <!-- barra de navegacion -->
         <nav class="principal__navbar">
-            <img class="principal__logo" src="/AppWeb_Acadevmia/publics/img/acadevmia.svg" alt="logo">
+            <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
             <ul class="principal__lista">
                 <li class="principal__elemento">Comunidad</li>
                 <li class="principal__elemento">Cursos</li>
@@ -18,19 +20,22 @@
             </ul>
             <div class="principal__botones">
                 <a href="#" class="principal__link">
-                    Registrarse
+                    Ingresar
                 </a>
                 <a href="#" class="button">
-                    ingresar
+                    Registrarse
                 </a>
             </div>
         </nav>
     </header>
     <main>
+        <!-- seccion inicial - principal -->
         <section class="hero">
             <div class="hero__presentacion">
-                <img src="/publics/img/logo.svg" alt="logo">
-                <img src="/publics/img/acadevmia.svg" alt="logo_completo">
+                <div class="hero__logos">
+                    <img class="hero__llama" src="/publics/img/logo.svg" alt="logo">
+                    <img src="/publics/img/acadevmia.svg" alt="logo_completo">
+                </div>
                 <h1 class="hero__subtitulo">El lugar ideal para enseñar y aprender</h1>
                 <p class="hero__texto">Si eres una mente curiosa interesada en aprender y compartir
                     conocimiento relacionado con el mundo de la programación,
