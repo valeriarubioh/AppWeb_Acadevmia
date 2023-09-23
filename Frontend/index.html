@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
     <link rel="stylesheet" href="/Frontend/css/index.css">
+    <script src="index.js"></script>
+    <script
+      src="https://kit.fontawesome.com/6dc7cbf907.js"
+      crossorigin="anonymous"></script>
     <title>Acadevmia</title>
 </head>
 <body>
@@ -36,11 +40,16 @@
                     <img class="hero__llama" src="/publics/img/logo.svg" alt="logo">
                     <img src="/publics/img/acadevmia.svg" alt="logo_completo">
                 </div>
-                <h1 class="hero__subtitulo">El lugar ideal para enseñar y aprender</h1>
-                <p class="hero__texto">Si eres una mente curiosa interesada en aprender y compartir
+                <div class="hero-contenedor">
+                    <h1 id="hero-titulo-animado"></h1>
+                </div>
+                <div class="hero-texto">
+                    <p class="text">Si eres una mente curiosa interesada en aprender y compartir
                     conocimiento relacionado con el mundo de la programación,
-                    Acadevmia es el lugar ideal para ti.</p>
-                    <a href="#" class="button">Conoce mas</a>
+                    <span class="text-acadevmia">Aca<span class="text-dev">dev</span>mia</span>
+                    es el lugar ideal para ti.</p>
+                    <a href="#" class="transparent-button">Conoce más</a>
+                </div>
             </div>
         </section>
         <section class="ser">
@@ -58,9 +67,8 @@
                         para resolver dudas relacionadas con el área de
                         desarrollo sin importar el lenguaje o complejidad.
                         Únete a nuestra comunidad y embarcate en un
-                        emocionante viaje de aprendizaje y crecimiento
-                        en el mundo de la tecnología. iJuntos, haremos
-                        que la tecnología sea accesible y emocionante
+                        emocionante viaje de aprendizaje y crecimiento. 
+                        iJuntos, haremos que la tecnología sea accesible y emocionante
                         para todos!
                     </p>
                     <a href="#" class="button">Ingresar</a>
@@ -80,54 +88,80 @@
                     <a href="#" class="button">Registrarse</a>
                 </div>
             </div>
-            <div class="banner">
-                <img src="#" alt="#">
-                <img src="#" alt="#">
-                <img src="#" alt="#">
-                <img src="#" alt="#">
-            </div>
         </section>
         <section class="cursos">
             <!-- seccion donde hablamos sobre lo cursos, damos la descripcion y los invitamos a inscribise -->
-            <h2 class="cursos__titulo">
-                Tenemos los cursos mas completos...y en español !
-            </h2>
+            <div class="banner">
+                <div class="banner-card">
+                    <img src="../publics/img/index/pregunta.png" alt="pregunta">
+                    <p>Pregunta</p>
+                </div>
+                <div class="banner-card">
+                    <img src="../publics/img/index/enseña.png" alt="enseña">
+                    <p>Enseña</p>
+                </div>
+                <div class="banner-card">
+                    <img src="../publics/img/index/aprende.png" alt="aprende">
+                    <p>Aprende</p>
+                </div>
+                <div class="banner-card">
+                    <img src="../publics/img/index/conecta.png" alt="conecta">
+                    <p>Conecta</p>
+                </div>
+    
+            </div>
+            <div class="cursos-mas">
+                <h3 class="curso__mas-txt">Tenemos los cursos mas completos...y en español !</h3>
+                <a href="#" class="button">Ver cursos</a>
+            </div>
             <div class="cursos__container">
                 <div class="curso">
-                    <img src="#" alt="imagen-curso">
-                    <h4 class="curso__nombre">
-                        nombre curso
-                    </h4>
-                    <p class="curso_descripcion">
+                    <img src="../publics/img/index/Group 5.png" alt="imagen-curso">
+                    <div class="curso-txt">
+                        <h4 class="curso__nombre">
+                        Js
+                        </h4>
+                        <p class="curso_descripcion">
                         ingrese descripcion
-                    </p>
+                        </p>
+                        <a href="#" class="transparent-button color1">Ver cursos</a>
+                    </div>
                 </div>
                 <div class="curso">
-                    <img src="#" alt="imagen-curso">
-                    <h4 class="curso__nombre">
-                        nombre curso
-                    </h4>
-                    <p class="curso_descripcion">
+                    <img src="../publics/img/index/Group 6.png" alt="imagen-curso">
+                    <div class="curso-txt">
+                        <h4 class="curso__nombre">
+                        Diseño Web
+                        </h4>
+                        <p class="curso_descripcion">
                         ingrese descripcion
-                    </p>
+                        </p>
+                        <a href="#" class="transparent-button ">Ver cursos</a>
+                    </div>
                 </div>
                 <div class="curso">
-                    <img src="#" alt="imagen-curso">
-                    <h4 class="curso__nombre">
+                    <img src="../publics/img/index/Group 7.png" alt="imagen-curso">
+                    <div class="curso-txt">
+                        <h4 class="curso__nombre">
                         nombre curso
-                    </h4>
-                    <p class="curso_descripcion">
+                        </h4>
+                        <p class="curso_descripcion">
                         ingrese descripcion
-                    </p>
+                        </p>
+                        <a href="#" class="transparent-button color3">Ver cursos</a>
+                    </div>
                 </div>
                 <div class="curso">
-                    <img src="#" alt="imagen-curso">
-                    <h4 class="curso__nombre">
+                    <img src="../publics/img/index/Group 8.png" alt="imagen-curso">
+                    <div class="curso-txt">
+                        <h4 class="curso__nombre">
                         nombre curso
-                    </h4>
-                    <p class="curso_descripcion">
+                        </h4>
+                        <p class="curso_descripcion">
                         ingrese descripcion
-                    </p>
+                        </p>
+                        <a href="#" class="transparent-button color4">Ver cursos</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -135,16 +169,16 @@
     <footer class="footer">
         <!-- pie de pagina -->
         <ul class="footer__redes">
-            <li class="footer__sociales">logoredessociales</li>
-            <li class="footer__sociales">logoredessociales</li>
-            <li class="footer__sociales">logoredessociales</li>
-            <li class="footer__sociales">logoredessociales</li>
-            <li class="footer__sociales">logoredessociales</li>
+            <li class="footer__sociales"><i class="fa-brands fa-facebook"></i>facebook</li>
+            <li class="footer__sociales"><i class="fa-brands fa-github"></i>Github</li>
+            <li class="footer__sociales"><i class="fa-brands fa-linkedin"></i>Linkedin</li>
+            <li class="footer__sociales"><i class="fa-solid fa-envelope"></i>Email</li>
+            <li class="footer__sociales"><i class="fa-brands fa-discord"></i>Discord</li>
         </ul>
         <div class="footer__final">
-            <img class="footer__logo" src="/publics/img/acadevmia.svg" alt="logo">
-            <h6 class="footer__copyright">copyright</h6>
+            <img class="footer__logo" src="/publics/img/logo.svg" alt="logo">
             <p class="footer__terminos">informacion legal | politica de privacidad</p>
+            <h6 class="footer__copyright">copyright</h6>
         </div>        
     </footer>
 </body>
