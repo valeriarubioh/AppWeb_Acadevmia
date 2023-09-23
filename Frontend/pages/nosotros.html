@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
     <title>Acadevmia  - Nosotros</title>
+    <link rel="stylesheet" href="/Frontend/css/nosotros.css">
+        <!--Enlace a la hoja de estilos externa de Boxicons-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
     <header class="principal">
@@ -12,7 +15,7 @@
         <nav class="principal__navbar">
             <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
             <ul class="principal__lista">
-                <li class="principal__elemento">Comunidad</li>
+                <li href="#comunidad" class="principal__elemento">Comunidad</li>
                 <li class="principal__elemento">Cursos</li>
                 <li class="principal__elemento">Blackboard</li>
                 <li class="principal__elemento">Nosotros</li>
@@ -22,7 +25,7 @@
                     Registrarse
                 </a>
                 <a href="#" class="button">
-                    ingresar
+                    Ingresar
                 </a>
             </div>
         </nav>
@@ -32,7 +35,7 @@
             <!-- section somos -->
             <!-- hablamos de nosotros, como nos creamos y que es lo queremos -->
             <div class="somos__texto">
-                <h1 class="somos__titulo">Quienes somos</h1>
+                <h1 class="somos__titulo">Quiénes somos</h1>
                 <p  class="somos__parrafo">Nos estamos convirtiendo en la plataforma líder en Latinoamérica en
                     la que personas entusiastas por la tecnología y programación
                     comparten conocimiento técnico y se educan en línea. En Acadevmia,
@@ -43,16 +46,16 @@
             </div>
             <div class="somos__container">
                 <div class="cards">
-                    <img src="insertelogo" alt="logo">
+                <i class='bx bx-user-check'></i>
                     + 150.000 Preguntas
                     Contestadas
                 </div>
                 <div class="cards">
-                    <img src="insertelogo" alt="logo">
+                <i class='bx bx-group'></i>
                     +50.000 Usuarios
                 </div>
                 <div class="cards">
-                    <img src="insertelogo" alt="logo">
+                <i class='bx bx-globe'></i>
                     13 Países
                 </div>
             </div>
@@ -62,14 +65,15 @@
                 <!-- decripcion de nuestras metas y nuestros sueños -->
                 <div class="descripcion">
                     <h2 class="descripcion__subtitulo">Mision</h2>
-                <p class="descripcion__texto">Proporcionar conocimiento y educación de
+                 <p class="descripcion__texto">Proporcionar conocimiento y educación de
                     calidad a mentes curiosas, incluyendo
                     espacios de discusión y análisis donde sea
                     premiada la participación y la enseñanza.</p>
-            </div>
-            <div class="descripcion">
-                <h2 class="descripcion__subtitulo">Vision</h2>
-                <p class="descripcion__texto">Aspiramos a convertirnos en eI punto de
+                </div>
+                <div class="descripcion">
+                  <h2 class="descripcion__subtitulo">Vision</h2>
+                   <p class="descripcion__texto">
+                    Aspiramos a convertirnos en eI punto de
                     encuentro donde la comunidad hispanohablante
                     de apasionados por la tecnología,
                     independientemente de su nivel de experiencia
@@ -80,9 +84,9 @@
                     personas a desarrollar sus habilidades técnicas
                     para crecer profesionalmente en el mundo de la
                     tecnología.</p>
-            </div>
+                    </div>
             <a href="#" class="button">Comunidad</a>
-            <img src="#" alt="#">
+            <img src="/publics/img/Comunidad.jpg" width="20%" alt="#">
         </section>
         <section class="valores">
             <!-- section valores -->
@@ -186,17 +190,20 @@
         <footer class="footer">
             <!-- pie de pagina -->
             <ul class="footer__redes">
-                <li class="footer__sociales">logoredessociales</li>
-                <li class="footer__sociales">logoredessociales</li>
-                <li class="footer__sociales">logoredessociales</li>
-                <li class="footer__sociales">logoredessociales</li>
-                <li class="footer__sociales">logoredessociales</li>
+                <li class="footer__sociales"><i class="fa-brands fa-facebook"></i>facebook</li>
+                <li class="footer__sociales"><i class="fa-brands fa-github"></i>Github</li>
+                <li class="footer__sociales"><i class="fa-brands fa-linkedin"></i>Linkedin</li>
+                <li class="footer__sociales"><i class="fa-solid fa-envelope"></i>Email</li>
+                <li class="footer__sociales"><i class="fa-brands fa-discord"></i>Discord</li>
             </ul>
             <div class="footer__final">
-                <img class="footer__logo" src="/publics/img/acadevmia.svg" alt="logo">
-                <h6 class="footer__copyright">copyright</h6>
+                <img class="footer__logo" src="/publics/img/logo.svg" alt="logo">
                 <p class="footer__terminos">informacion legal | politica de privacidad</p>
+                <h6 class="footer__copyright">copyright</h6>
             </div>        
         </footer>
+    <script
+      src="https://kit.fontawesome.com/6dc7cbf907.js" 
+      crossorigin="anonymous"></script>
 </body>
 </html>
