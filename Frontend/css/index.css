@@ -21,6 +21,11 @@
 /* posiblemente se cambie el color auxiliar y preguntar si dejaremos el boton ingreso como esta */
 
 .principal__navbar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
     height: 9vh;
     padding: 8px;
     background-color: var(--color-auxiliar);
@@ -37,6 +42,17 @@
 .principal__lista{
     list-style: none;
     display: flex;
+}
+.principal__lista li{
+    font-size: 1.2rem;
+    color:var(--color-secudario);
+    margin-left: 4rem;
+    transition: .3s;
+}
+
+.principal__lista li:hover,
+.principal__lista li.active {
+    color: var(--color-primario);
 }
 
 .principal__elemento{
@@ -55,12 +71,213 @@
 /* section inicio */
 
 .hero__logos{
-    padding: 30px;
+    padding: 30px 30px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 .hero__llama{
-    width: 20%;
+    margin-top: 60px;
+    width: 15%;
+}
+
+.hero_subtitulo{
+    text-align: center;
+}
+.hero-contenedor{
+    text-align: center;
+    position: relative;
+}
+
+#hero-titulo-animado{
+    color: var(--color-secudario);
+    display: inline-block;
+    font-size: 24px;
+    overflow: hidden; /* Oculta el exceso de texto */
+    white-space: nowrap; /* Evita que se desplace a una nueva línea */
+    border-right: 2px solid #333; /* Línea de escritura simulada */
+    animation: escribir 2s steps(40, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes escribir {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #333;
+    }
+}
+.hero-texto{
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.text{
+    width: 40%;
+    margin-bottom: 30px;
+    font-weight:300;
+}
+
+
+.text-dev{
+    color: var(--color-primario);
+}
+
+.transparent-button{
+    color: var(--color-primario);
+    border-radius: 20px;
+    border: 1px var(--color-primario) solid;
+    padding: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: large;
+    margin-bottom: 5%;
+}
+/*seccion comunidad*/
+.ser{
+    background-color: var(--color-secudario);
+}
+
+.ser_titulo{
+   text-align: center;
+   padding: 30px 0 40px;
+   color: var(--color-auxiliar);
+}
+
+.ser__container{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.ser__cards{
+    background-color: var(--color-terciario);
+    border-radius: 20px;
+    width: 40%;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+.ser__parrafo--modificador{
+    font-size: x-large;
+    color: var(--color-primario);
+}
+
+/* banner cursos*/
+.banner{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.banner-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 300px;
+}
+.banner-card img{
+    width: 310px;
+    height: 200px;
+}
+
+.banner-card p{
+    margin:40px 0 90px;
+    font-weight: 700;
+    font-size: large;
+}
+
+.cursos-mas{
+    display: flex;
+}
+.curso__mas-txt{
+    font-size: 40px;
+    width: 60%;
+    margin-left: 17%;
+}
+
+.cursos__container{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.curso-txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    bottom: 170px;
+}
+.curso__nombre{
+    margin-bottom: 30px;
+    font-size: x-large;
+}
+.curso_descripcion{
+  margin-bottom: 20px;  
+}
+.curso .color1{
+    border: 1px rgb(61, 61, 217) solid;
+    color: rgb(61, 61, 217) ;
+}
+
+.curso .color3{
+    border: 1px rgb(0, 158, 68) solid;
+    color: rgb(0, 158, 68) ;
+}
+
+.curso .color4{
+    border: 1px rgb(171, 52, 198) solid;
+    color: rgb(171, 52, 198);
+}
+
+/*footer*/
+.footer__redes{
+    background-color: var(--color-auxiliar);
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.footer__sociales{
+    margin: 0 10px;
+}
+
+.footer__final{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secudario);
+    color: var(--color-auxiliar);
+}
+
+.footer__logo{
+    width: 30px;
+}
+.footer__copyright{
+    position: absolute;
+    margin-top:50px;
 }
