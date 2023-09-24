@@ -39,6 +39,10 @@
     margin-top: -5px;
 }
 
+.menu_hamburguer{
+    display: none;
+}
+
 .principal__lista{
     list-style: none;
     display: flex;
@@ -161,6 +165,7 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    flex-wrap: wrap;
 }
 .ser__cards{
     background-color: var(--color-terciario);
@@ -262,7 +267,11 @@
     list-style: none;
 }
 .footer__sociales{
-    margin: 0 10px;
+    margin: 0 15px;
+    color: #1b055e;
+}
+.footer__sociales i {
+    margin-right: 5px;
 }
 
 .footer__final{
@@ -280,4 +289,46 @@
 .footer__copyright{
     position: absolute;
     margin-top:50px;
+}
+
+/*Responsive*/
+@media screen and (max-width:768px){
+    /*nav*/
+    .principal__navbar{
+        justify-content: space-between;
+    }
+    .hero__logo{
+        width: 100%;
+    }
+    .principal__logo{
+        margin-left: 25px;
+    }
+    .principal__lista{
+        display: none;
+    }
+    .principal__botones{
+        display: none;
+    }
+    .menu_hamburguer{
+        display: inline-block;
+        width: 6vw;
+        height: 6vw;
+        margin-right: 25px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    /*nav*/
+    .text{
+        font-size: medium;
+    }
+    .ser_titulo{
+        margin: 20px;
+    }
+    .ser__cards{
+        width: 80%;
+    }
+}
+.cursos-mas a{
+    display: none;
 }
