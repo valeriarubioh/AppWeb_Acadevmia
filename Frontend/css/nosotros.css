@@ -14,40 +14,49 @@
     --color-auxiliar:#D9D9D9;
 }
 
-
 /* barra de navegacion */
 
 /* pendiente agregar un hover en los principal__elemento */
 /* posiblemente se cambie el color auxiliar y preguntar si dejaremos el boton ingreso como esta */
 
-.principal__navbar{
+.principal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 100;
     height: 9vh;
-    padding: 8px;
+    padding: 2%;
     background-color: var(--color-auxiliar);
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.principal__navbar {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
 }
 
 .principal__logo{
-    width: 130px;
-    margin-top: -5px;
+    width: 13%;
+    margin-top: -1rem;
 }
 
 .principal__lista{
     list-style: none;
     display: flex;
+    align-items: center;
+
 }
+
 .principal__lista li{
     font-size: 1.2rem;
     color:var(--color-secudario);
     margin-left: 4rem;
     transition: .3s;
+    align-items: center;
 }
 
 .principal__lista li:hover,
@@ -55,18 +64,32 @@
     color: var(--color-primario);
 }
 
-.principal__elemento{
-    margin: 0 15px;
+.principal__botones {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.7rem;
+}
+
+.principal__link {
+    margin-left: 25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .button{
     background-color: var(--color-primario);
     color: var(--color-terciario);
     border-radius: 20px;
-    padding: 10px;
+    padding: 0.7rem;
     text-decoration: none;
-    margin-left: 10px;
+    margin-right: -38rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
+
 
 /* section inicio */
 
@@ -101,6 +124,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 2rem;
+    font-size: 1.4rem;
 }
 
 .somos__container .cards {
@@ -135,7 +159,7 @@
     padding: 3rem 10% 2rem 10%;
     text-align: center;
     transition: .5s ease;
-    margin:100px;
+    margin: 1px 2em 0 2em;
 }
 
 .descripcion__texto {
@@ -155,9 +179,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
     gap: 2rem;
     box-shadow:2px;
-    margin: 40px;
+    margin: 4% 2em 0 2em;
 }
 
 .valores__container .xvalor {
@@ -186,11 +211,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .equipo__container .equipo__cards {
-    flex: 1 1 30rem;
+    flex: auto;
     background: var(--color-terciario);
     padding: 3rem 2rem 6rem 5rem;
     border-radius: 2rem;
@@ -210,7 +236,6 @@
 
 .equipo__cards p {
     font-size: 1.2rem;
-    margin: 1rem 0 3rem;
 }
 
  /* section del pie de pagina */
