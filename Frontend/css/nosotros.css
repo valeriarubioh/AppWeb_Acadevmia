@@ -19,77 +19,60 @@
 /* pendiente agregar un hover en los principal__elemento */
 /* posiblemente se cambie el color auxiliar y preguntar si dejaremos el boton ingreso como esta */
 
-.principal {
+.principal__navbar{
     position: fixed;
-    top: 0;
-    left: 0;
+    z-index: 99;
     width: 100%;
-    z-index: 100;
-    height: 9vh;
-    padding: 2%;
+    height: 49px;
+    padding: 8px;
     background-color: var(--color-auxiliar);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.principal__navbar {
-    display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 
 .principal__logo{
-    width: 13%;
-    margin-top: -1rem;
+    width: 130px;
+    margin-top: -5px;
 }
+
+.menu_hamburguer {
+    display: none;
+}
+
 
 .principal__lista{
     list-style: none;
     display: flex;
-    align-items: center;
-
 }
-
-.principal__lista li{
+.principal__ref{
+    text-decoration: none;
     font-size: 1.2rem;
     color:var(--color-secudario);
-    margin-left: 4rem;
     transition: .3s;
-    align-items: center;
 }
 
-.principal__lista li:hover,
-.principal__lista li.active {
+.principal__ref:hover,
+.principal__ref.active {
     color: var(--color-primario);
 }
 
-.principal__botones {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.7rem;
-}
-
-.principal__link {
-    margin-left: 25rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.principal__elemento{
+    margin: 0 30px;
 }
 
 .button{
     background-color: var(--color-primario);
     color: var(--color-terciario);
     border-radius: 20px;
-    padding: 0.7rem;
+    padding: 10px;
     text-decoration: none;
-    margin-right: -38rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    margin-left: 10px;
 }
-
+.principal__link{
+    text-decoration: none;
+    color:#FD3C00;
+}
 
 /* section inicio */
 
@@ -267,4 +250,31 @@
 .footer__copyright{
      position: absolute;
      margin-top:50px;
+ }
+
+
+ /* Medida para tablet*/
+ @media screen and (max-width:900px){
+    /*nav*/
+    .principal__navbar{
+        justify-content: space-between;
+    }
+    .hero__logo{
+        width: 100%;
+    }
+    .principal__logo{
+        margin-left: 25px;
+    }
+    .principal__lista{
+        display: none;
+    }
+    .principal__botones{
+        display: none;
+    }
+    .menu_hamburguer{
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        margin-right: 25px;
+    }
  }
