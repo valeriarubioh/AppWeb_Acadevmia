@@ -23,7 +23,7 @@
     position: fixed;
     z-index: 99;
     width: 100%;
-    height: 49px;
+    height: 60px;
     padding: 8px;
     background-color: var(--color-auxiliar);
     display: flex;
@@ -44,6 +44,7 @@
 .principal__lista{
     list-style: none;
     display: flex;
+    margin: 6px 20px 0px 0px;
 }
 .principal__ref{
     text-decoration: none;
@@ -58,7 +59,7 @@
 }
 
 .principal__elemento{
-    margin: 0 30px;
+    margin: 10px 30px;
 }
 
 .button{
@@ -74,46 +75,45 @@
     color:#FD3C00;
 }
 
-/* section inicio */
+/* section Quienes somos */
 
-.hero__logos{
-    padding: 30px;
+.somos{
+    height: 107vh;
+    padding-top: 55px;
+}
+.somos__texto{
     display: flex;
     flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-}
+    height: 500px;
 
-.hero__llama{
-    width: 20%;
 }
-
-/* section Quienes somos */
 .somos__titulo {
     text-align: center;
     font-size: 4rem;
-    padding: 9rem 4rem 0rem 4rem;
 }
 
 .somos__parrafo {
     font-size: 1.4rem;
-    padding: 3rem 10% 2rem 10%;
     text-align: center;
     transition: .5s ease;
+    width: 60%;
 }
 
 .somos__container {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
     font-size: 1.4rem;
 }
 
-.somos__container .cards {
-    flex: 1 1 30rem;
+.cards {
+   flex: 1 1 20rem;
     background: var(--color-terciario);
-    padding: 3rem 2rem 4rem;
+    padding: 2rem;
     border-radius: 2rem;
     text-align: center;
     border: 1rem solid var(--color-terciario);
@@ -139,13 +139,40 @@
     flex-wrap: wrap;
     box-shadow: 7px 7px 12px 0 rgba(20, 20, 20, 0.3);
     gap: 2rem;
-    padding: 3rem 10% 2rem 10%;
-    text-align: center;
+    padding: 3rem 10% 11rem 10%;
     transition: .5s ease;
     margin: 1px 2em 0 2em;
 }
 
+.descripcion1{
+    margin-left: 35%;
+    text-align: right;
+    width: 60%;
+    justify-content: flex-end
+}
+.descripcion2{
+    text-align: left;
+    width: 60%;
+}
+
+.comunidadButton{
+    position: relative;
+    top:200px;
+    right:150px;
+}
+.transparent-button{
+    color: var(--color-primario);
+    border-radius: 20px;
+    border: 1px var(--color-primario) solid;
+    padding: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
 .descripcion__texto {
+    color:#667080;
     font-size: 1.2rem ;
     padding: 1rem 0rem 0rem 0rem  ;
 }
@@ -220,37 +247,88 @@
 .equipo__cards p {
     font-size: 1.2rem;
 }
+/*form*/
+.form-estilo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 60px 10%;
+    width: 80%;
+}
 
- /* section del pie de pagina */
+
+/*footer*/
+
 .footer__redes{
-     background-color: var(--color-auxiliar);
-     height: 170px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     list-style: none;
+    background-color: var(--color-auxiliar);
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.footer__sociales{
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
-.footer__sociales{
-     margin: 0 10px;
+.footer__sociales i{
+    font-size: 30px;
+    margin: 5px;
 }
- 
+
+.footer__sociales a{
+    text-decoration: none;
+    color: black;
+}
+
+.footer__sociales i:hover,
+.footer__sociales i .active {
+    transform: scale(1.2); 
+}
+
+#facebook:hover{
+    color:#0f4792;
+}
+
+#discord:hover{
+    color:#b6a6f2;
+}
+
+#linkedin:hover{
+    color: #0a336b;
+}
+
+#email:hover{
+    color:#ffffff;
+}
+
+
 .footer__final{
-     height: 100px;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-     background-color: var(--color-secudario);
-     color: var(--color-auxiliar);
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secudario);
+    color: var(--color-auxiliar);
 }
- 
+
 .footer__logo{
-     width: 30px;
+    width: 30px;
 }
+
+.footer__logo:hover,
+.footer__logo.active {
+    color: var(--color-primario);
+}
+
 .footer__copyright{
-     position: absolute;
-     margin-top:50px;
- }
+    position: absolute;
+    margin-top:50px;
+}
 
 
  /* Medida para tablet*/
