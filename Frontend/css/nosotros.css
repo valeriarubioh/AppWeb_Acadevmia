@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+:root{
+    --color-primario:#FD3C00;
+    --color-secudario:#2F2B3B;
+    --color-terciario: #FFFFFF;
+    --color-auxiliar:#D9D9D9;
+}
+
+/* barra de navegacion */
+
+/* pendiente agregar un hover en los principal__elemento */
+/* posiblemente se cambie el color auxiliar y preguntar si dejaremos el boton ingreso como esta */
+
+.principal__navbar{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 49px;
+    padding: 8px;
+    background-color: var(--color-auxiliar);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.principal__logo{
+    width: 130px;
+    margin-top: -5px;
+}
+
+.menu_hamburguer {
+    display: none;
+}
+
+
+.principal__lista{
+    list-style: none;
+    display: flex;
+}
+.principal__ref{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color:var(--color-secudario);
+    transition: .3s;
+}
+
+.principal__ref:hover,
+.principal__ref.active {
+    color: var(--color-primario);
+}
+
+.principal__elemento{
+    margin: 0 30px;
+}
+
+.button{
+    background-color: var(--color-primario);
+    color: var(--color-terciario);
+    border-radius: 20px;
+    padding: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.principal__link{
+    text-decoration: none;
+    color:#FD3C00;
+}
+
+/* section inicio */
+
+.hero__logos{
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero__llama{
+    width: 20%;
+}
+
+/* section Quienes somos */
+.somos__titulo {
+    text-align: center;
+    font-size: 4rem;
+    padding: 9rem 4rem 0rem 4rem;
+}
+
+.somos__parrafo {
+    font-size: 1.4rem;
+    padding: 3rem 10% 2rem 10%;
+    text-align: center;
+    transition: .5s ease;
+}
+
+.somos__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    font-size: 1.4rem;
+}
+
+.somos__container .cards {
+    flex: 1 1 30rem;
+    background: var(--color-terciario);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: 1rem solid var(--color-terciario);
+    transition: .5s ease;
+}
+
+
+.somos__container .cards:hover {
+    border-color: var(--color-terciario);
+    transform: scale(1.04);
+} 
+
+.cards i {
+    font-size: 5rem;
+    color: var(--color-primario);
+}
+
+ /* section mision y vision */
+.vision-mision {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    box-shadow: 7px 7px 12px 0 rgba(20, 20, 20, 0.3);
+    gap: 2rem;
+    padding: 3rem 10% 2rem 10%;
+    text-align: center;
+    transition: .5s ease;
+    margin: 1px 2em 0 2em;
+}
+
+.descripcion__texto {
+    font-size: 1.2rem ;
+    padding: 1rem 0rem 0rem 0rem  ;
+}
+
+ /* section nuestros valores */
+
+.valor__titulo {
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 4rem 4rem 0rem 4rem;
+}
+
+.valores__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    box-shadow:2px;
+    margin: 4% 2em 0 2em;
+}
+
+.valores__container .xvalor {
+    flex: 1 1 30rem;
+    background: var(--color-terciario);
+    box-shadow: 7px 7px 12px 0 rgba(20, 20, 20, 0.3);
+    padding: 3rem 2rem 4rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: 1rem solid var(--color-terciario);
+    transition: .5s ease;
+}
+
+.valores__sub {
+    font-size: 1.5rem ;
+}
+
+.valores__texto {
+    font-size: 1.2rem ;
+    padding: 1rem 0rem 0rem 0rem  ;
+}
+
+ /* section equipo */
+
+.equipo__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.equipo__container .equipo__cards {
+    flex: auto;
+    background: var(--color-terciario);
+    padding: 3rem 2rem 6rem 5rem;
+    border-radius: 2rem;
+    text-align: center;
+    border: 2rem solid var(--bg-color);
+    transition: .5s ease;
+}
+
+.equipo__container .equipo__cards:hover {
+    border-color: var(--color-secudario);
+    transform: scale(1.01);
+} 
+
+.equipo__cards h3 {
+    font-size: 1.5rem;
+}
+
+.equipo__cards p {
+    font-size: 1.2rem;
+}
+
+ /* section del pie de pagina */
+.footer__redes{
+     background-color: var(--color-auxiliar);
+     height: 170px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     list-style: none;
+}
+
+.footer__sociales{
+     margin: 0 10px;
+}
+ 
+.footer__final{
+     height: 100px;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     background-color: var(--color-secudario);
+     color: var(--color-auxiliar);
+}
+ 
+.footer__logo{
+     width: 30px;
+}
+.footer__copyright{
+     position: absolute;
+     margin-top:50px;
+ }
+
+
+ /* Medida para tablet*/
+ @media screen and (max-width:900px){
+    /*nav*/
+    .principal__navbar{
+        justify-content: space-between;
+    }
+    .hero__logo{
+        width: 100%;
+    }
+    .principal__logo{
+        margin-left: 25px;
+    }
+    .principal__lista{
+        display: none;
+    }
+    .principal__botones{
+        display: none;
+    }
+    .menu_hamburguer{
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        margin-right: 25px;
+    }
+ }
