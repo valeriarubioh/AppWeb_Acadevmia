@@ -382,3 +382,15 @@
         display: none;
     }
  }
+ @media screen and (max-width:500px){
+    .somos__titulo{
+        font-size: 3rem;
+    }
+    .somos__texto{
+        margin-top:70px;
+    }
+    .vision-mision{
+        margin-top: 80px;
+    }
+ }
+ 
