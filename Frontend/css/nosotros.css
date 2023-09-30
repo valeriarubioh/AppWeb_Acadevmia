@@ -86,7 +86,7 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    height: 500px;
+    margin-top: 70px;
 
 }
 .somos__titulo {
@@ -170,6 +170,7 @@
     font-size: large;
     margin-bottom: 10px;
 }
+
 
 .descripcion__texto {
     color:#667080;
@@ -266,6 +267,7 @@
     justify-content: center;
     align-items: center;
     list-style: none;
+    margin-bottom: 0;
 }
 .footer__sociales{
     margin: 0 10px;
@@ -354,5 +356,29 @@
         width: 25px;
         height: 25px;
         margin-right: 25px;
+    }
+    .somos{
+        height: 130vh;
+    }
+    .somos__parrafo{
+        width: 80%;
+        font-size: 1.2rem;
+    }
+
+    .transparent-button{
+        display: none;
+    }
+    .descripcion1{
+        margin-left: 0;
+        text-align: center;
+        width: 80%;
+    }
+    .descripcion2{
+        margin-left: 0;
+        text-align: center;
+        width: 80%;
+    }
+    .vision-mision img{
+        display: none;
     }
  }
