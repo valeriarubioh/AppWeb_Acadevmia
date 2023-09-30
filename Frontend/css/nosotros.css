@@ -267,7 +267,6 @@
     justify-content: center;
     align-items: center;
     list-style: none;
-    margin-bottom: 0;
 }
 .footer__sociales{
     margin: 0 10px;
@@ -356,41 +355,6 @@
         width: 25px;
         height: 25px;
         margin-right: 25px;
-    }
-    .somos{
-        height: 130vh;
-    }
-    .somos__parrafo{
-        width: 80%;
-        font-size: 1.2rem;
-    }
-
-    .transparent-button{
-        display: none;
-    }
-    .descripcion1{
-        margin-left: 0;
-        text-align: center;
-        width: 80%;
-    }
-    .descripcion2{
-        margin-left: 0;
-        text-align: center;
-        width: 80%;
-    }
-    .vision-mision img{
-        display: none;
-    }
- }
- @media screen and (max-width:500px){
-    .somos__titulo{
-        font-size: 3rem;
-    }
-    .somos__texto{
-        margin-top:70px;
-    }
-    .vision-mision{
-        margin-top: 80px;
     }
  }
  
