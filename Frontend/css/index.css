@@ -77,8 +77,8 @@
 /* section inicio */
 
 .hero{
-    height: 107vh;
-    padding-top: 55px;
+    height: 800px;
+    padding-top: 60px;
 }
 
 .hero__presentacion{
@@ -94,10 +94,11 @@
 .hero__llama{
     width: 10%;
     min-width: 63px;
+    margin-top: 40px;
 }
 
 .logo__completo{
-    width: 50vw;
+    width:600px;
     min-width: 300px;
     margin-top: -20px;
 }
@@ -368,20 +369,6 @@
     margin-top:50px;
 }
 
-@media (max-width: 500px) {
-
-    .ser__parrafo {
-        font-size: 16px;
-    }
-
-}
-
-@media (max-width: 500px) {
-
-    .hero-texto {
-        font-size: 15px;
-    }
-}
 
 @media screen and (max-width:900px){
     /*nav*/
@@ -405,5 +392,31 @@
         width: 25px;
         height: 25px;
         margin-right: 25px;
+    }
+    .hero{
+        padding-top: 120px;
+    }
+}
+
+@media (max-width: 700px) {
+    .hero{
+        height: 700px;
+    }
+    .logo__completo{
+        width: 400px;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .hero-texto {
+        font-size: 15px;
+    }
+    .ser__parrafo {
+        font-size: 16px;
+    }
+    .logo__completo{
+        width: 320px;
     }
 }
