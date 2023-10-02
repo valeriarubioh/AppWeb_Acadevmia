@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const frase = "El lugar ideal para enseñar y aprender!";
+  const frase = "El lugar ideal para aprender y enseñar!";
   const fraseAnimada = document.getElementById("hero-titulo-animado");
 
   // Función para animar la escritura
