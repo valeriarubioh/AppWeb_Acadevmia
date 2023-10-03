@@ -4,6 +4,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
+  <link rel="stylesheet" href="/Frontend/css/index.css">
+  <link rel="stylesheet" href="/Frontend/css/login.css">
   <title>Acadevmia - Ingreso</title>
 </head>
 
@@ -11,10 +14,14 @@
   <header class="principal">
     <!-- barra de navegacion -->
     <nav class="principal__navbar">
-        <a href="../index.html">
-          <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
-        </a>
-        <i><img class="menu_hamburguer" src="../publics/img/icon-hamburger.svg" alt="icon-hamburger"></i>
+        <a href="/Frontend/index.html">
+            <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
+        </a>            
+        <div class="menu_hamburguer">
+            <span class="line1__menu"></span>
+            <span class="line2__menu"></span>
+            <span class="line3__menu"></span>
+        </div>
         <ul class="principal__lista">
             <li class="principal__elemento">
                 <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
@@ -33,12 +40,12 @@
             <a href="#" class="principal__link">
                 Ingresar
             </a>
-            <a href="#" class="button">
+            <a href="/Frontend/pages/signup.html" class="button">
                 Registrarse
             </a>
         </div>
     </nav>
-</header>
+  </header>
   <main>
     <section class="ingreso">
       <div class="ingreso__container">
@@ -47,32 +54,33 @@
         <form action="" method="post" class="ingreso__formulario">  
             <p>
               <label for="user">Email o Usuario:</label>
-              <input type="text" id="user" name="user_or_email" required/>
+              <input type="text" id="user" name="user_or_email" required autofocus/>
             </p>
             <p>
-              <a href="#" class="link">Olvidó contraseña?</a>
+              <a href="#" class="link">¿Olvidó contraseña?</a>
             </p>
             <p>
               <label for="password">Contraseña:</label>
-              <input type="password" id="password" name="user_pass" required/>
+              <input type="password" id="password" name="user_pass" placeholder="****" required/>
             </p>
             <p>
               <button type="submit">Ingresar</button>
             </p>
         </form>
         <div class= ingreso__pregunta>
-          <p>¿No tienes una cuenta?<span>Regístrate</span></p>
+          <p>¿No tienes una cuenta?<span><a href="/Frontend/pages/signup.html" class="link">Regístrate</a></span></p>
         </div>
       </div>
-      <div class="ingreso__container">
+      <div class="ingreso__container container__titulo">
         <h1 class="ingreso__titulo">Bienvenido otra vez!</h1>
       </div>
+    </section>  
   </main>
   <footer class="footer">
     <div class="footer__final">
       <img class="footer__logo" src="/publics/img/acadevmia.svg" alt="logo">
-      <h6 class="footer__copyright">copyright</h6>
-      <p class="footer__terminos">informacion legal | politica de privacidad</p>
+      <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
+      <p class="footer__terminos">Informacion legal | Politica de privacidad</p>
     </div>
   </footer>
 </body>
