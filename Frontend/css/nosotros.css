@@ -78,8 +78,8 @@
 /* section Quienes somos */
 
 .somos{
-    height: 107vh;
-    padding-top: 55px;
+    height: 90vh;
+    padding-top: 150px;
 }
 .somos__texto{
     display: flex;
@@ -90,6 +90,7 @@
 
 }
 .somos__titulo {
+    margin-bottom: 40px;
     text-align: center;
     font-size: 4rem;
 }
@@ -107,6 +108,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
+    margin-top: 50px;
     font-size: 1.4rem;
 }
 
@@ -357,8 +359,9 @@
         height: 25px;
         margin-right: 25px;
     }
-         .somos{
-        height: 130vh;
+    .somos{
+    height: 160vh;
+
     }
     .somos__parrafo{
         width: 80%;
