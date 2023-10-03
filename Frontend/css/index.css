@@ -45,6 +45,7 @@
 .principal__lista{
     list-style: none;
     display: flex;
+    flex-direction: row;
 }
 .principal__ref{
     text-decoration: none;
