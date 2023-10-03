@@ -16,3 +16,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
   animarEscritura(); // Inicia la animación
 });
+
+document.querySelector(".menu_hamburguer").addEventListener("click", animationToggle);
+
+let line1 = document.querySelector(".line1__menu");
+let line2 = document.querySelector(".line2__menu");
+let line3 = document.querySelector(".line3__menu");
+
+function animationToggle(){
+  line1.classList.toggle("line1__menu-active");
+  line2.classList.toggle("line2__menu-active");
+  line3.classList.toggle("line3__menu-active");
+}
+

@@ -420,16 +420,16 @@
     }
 
     
-    .menu_hamburguer:active .line1__menu{
+    .line1__menu-active{
         transform: rotate(45deg) translate(-1px, 1px);
     }
 
-    .menu_hamburguer:active .line2__menu{
+    .line2__menu-active{
         opacity: 0;
         margin-left: 10px;
     }
 
-    .menu_hamburguer:active .line3__menu{
+    .line3__menu-active{
         transform: rotate(-45deg) translate(-1px, 1px);
     }
     
