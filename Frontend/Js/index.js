@@ -22,10 +22,23 @@ document.querySelector(".menu_hamburguer").addEventListener("click", animationTo
 let line1 = document.querySelector(".line1__menu");
 let line2 = document.querySelector(".line2__menu");
 let line3 = document.querySelector(".line3__menu");
+let menu = document.querySelector(".menu__toggle");
+
+let menuVisible = false;
 
 function animationToggle(){
   line1.classList.toggle("line1__menu-active");
   line2.classList.toggle("line2__menu-active");
   line3.classList.toggle("line3__menu-active");
+
+  // Cambiar el estado del menú directamente
+  if (menuVisible) {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "flex";
+  }
+  
+  // Actualizar el estado del menú
+  menuVisible = !menuVisible;
 }
 
