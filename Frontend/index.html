@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
     <link rel="stylesheet" href="/Frontend/css/index.css">
-    <script src="/Frontend/index.js"></script>
+    <script src="/Frontend/Js/index.js" defer></script>
     <script
     src="https://kit.fontawesome.com/6dc7cbf907.js"
     crossorigin="anonymous"></script>
@@ -15,8 +15,14 @@
     <header class="principal">
         <!-- barra de navegacion -->
         <nav class="principal__navbar">
-            <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
-            <i><img class="menu_hamburguer" src="../publics/img/icon-hamburger.svg" alt="icon-hamburger"></i>
+            <a href="index.html">
+                <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
+            </a>            
+            <div class="menu_hamburguer">
+                <span class="line1__menu"></span>
+                <span class="line2__menu"></span>
+                <span class="line3__menu"></span>
+            </div>
             <ul class="principal__lista">
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
@@ -25,7 +31,7 @@
                     <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
                 </li>
                 <li class="principal__elemento">
-                    <a href="#" class="principal__ref">Blackboard</a>
+                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
                 </li>
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
@@ -44,6 +50,28 @@
     <main>
         <!-- seccion inicial - principal -->
         <section class="hero">
+            <div class="menu__toggle">
+                <ul class="lista__toggle">
+                    <li class="principal__elemento">
+                        <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+                    </li>
+                    <li class="principal__elemento">
+                        <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+                    </li>
+                    <li class="principal__elemento">
+                        <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+                    </li>
+                    <li class="principal__elemento">
+                        <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+                    </li>
+                </ul>
+                <a href="#" class="toggle__link">
+                    Ingresar
+                </a>
+                <a href="#" class="button">
+                    Registrarse
+                </a>
+            </div>
             <div class="hero__presentacion">
                 <div class="hero__logos">
                     <img class="hero__llama" src="/publics/img/llama__logo.svg" alt="logo">
@@ -128,7 +156,7 @@
                     <img src="../publics/img/index/Group 5.png" alt="imagen-curso">
                     <div class="curso-txt">
                         <h4 class="curso__nombre">
-                        Js
+                        HTML5
                         </h4>
                         <p class="curso_descripcion">
                         ingrese descripcion
@@ -152,7 +180,7 @@
                     <img src="../publics/img/index/Group 7.png" alt="imagen-curso">
                     <div class="curso-txt">
                         <h4 class="curso__nombre">
-                        nombre curso
+                        JavaScript
                         </h4>
                         <p class="curso_descripcion">
                         ingrese descripcion
@@ -164,7 +192,7 @@
                     <img src="../publics/img/index/Group 8.png" alt="imagen-curso">
                     <div class="curso-txt">
                         <h4 class="curso__nombre">
-                        nombre curso
+                        CSS3
                         </h4>
                         <p class="curso_descripcion">
                         ingrese descripcion
