@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
+  <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
   <link rel="stylesheet" href="/Frontend/css/index.css">
   <link rel="stylesheet" href="/Frontend/css/login.css">
   <title>Acadevmia - Ingreso</title>
@@ -14,67 +14,68 @@
   <header class="principal">
     <!-- barra de navegacion -->
     <nav class="principal__navbar">
-        <a href="/Frontend/index.html">
-            <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
-        </a>            
-        <div class="menu_hamburguer">
-            <span class="line1__menu"></span>
-            <span class="line2__menu"></span>
-            <span class="line3__menu"></span>
-        </div>
-        <ul class="principal__lista">
-            <li class="principal__elemento">
-                <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
-            </li>
-            <li class="principal__elemento">
-                <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
-            </li>
-            <li class="principal__elemento">
-                <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
-            </li>
-            <li class="principal__elemento">
-                <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
-            </li>
-        </ul>
-        <div class="principal__botones">
-            <a href="#" class="principal__link">
-                Ingresar
-            </a>
-            <a href="/Frontend/pages/signup.html" class="button">
-                Registrarse
-            </a>
-        </div>
+      <a href="/Frontend/index.html">
+        <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
+      </a>
+      <div class="menu_hamburguer">
+        <span class="line1__menu"></span>
+        <span class="line2__menu"></span>
+        <span class="line3__menu"></span>
+      </div>
+      <ul class="principal__lista">
+        <li class="principal__elemento">
+          <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+        </li>
+        <li class="principal__elemento">
+          <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+        </li>
+        <li class="principal__elemento">
+          <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+        </li>
+        <li class="principal__elemento">
+          <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+        </li>
+      </ul>
+      <div class="principal__botones">
+        <a href="#" class="principal__link">
+          Ingresar
+        </a>
+        <a href="/Frontend/pages/signup.html" class="button">
+          Registrarse
+        </a>
+      </div>
     </nav>
   </header>
   <main>
     <section class="ingreso">
       <div class="ingreso__container">
-        <img class="ingreso-ingresar__llama" src="/publics/img/logo.svg" alt="logo">
-        
-        <form action="" method="post" class="ingreso__formulario">  
+        <div class="ingreso__content">
+          <img class="ingreso__img-llama" src="/publics/img/logo.svg" alt="logo">
+          <form action="" method="post" class="ingreso__formulario">
             <p>
               <label for="user">Email o Usuario:</label>
-              <input type="text" id="user" name="user_or_email" required autofocus/>
+              <input type="text" id="user" name="user_or_email" required autofocus />
             </p>
             <p>
-              <a href="#" class="link">¿Olvidó contraseña?</a>
+              <a href="#" class="link-olvido">¿Olvidó contraseña?</a>
             </p>
             <p>
               <label for="password">Contraseña:</label>
-              <input type="password" id="password" name="user_pass" placeholder="****" required/>
+              <input type="password" id="password" name="user_pass" placeholder="****" required />
             </p>
             <p>
               <button type="submit">Ingresar</button>
             </p>
-        </form>
-        <div class= ingreso__pregunta>
-          <p>¿No tienes una cuenta?<span><a href="/Frontend/pages/signup.html" class="link">Regístrate</a></span></p>
+          </form>
+          <div class=ingreso__pregunta>
+            <p>¿No tienes una cuenta?<span><a href="/Frontend/pages/signup.html" class="link">Regístrate</a></span></p>
+          </div>
+        </div>
+        <div class="ingreso__content ingreso__titulo">
+          <h1>Bienvenido otra vez!</h1>
         </div>
       </div>
-      <div class="ingreso__container container__titulo">
-        <h1 class="ingreso__titulo">Bienvenido otra vez!</h1>
-      </div>
-    </section>  
+    </section>
   </main>
   <footer class="footer">
     <div class="footer__final">
