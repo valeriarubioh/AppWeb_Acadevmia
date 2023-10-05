@@ -47,36 +47,35 @@
     </nav>
   </header>
   <main>
-    <section class="ingreso">
-      <div class="ingreso__container">
-        <div class="ingreso__content">
-          <img class="ingreso__img-llama" src="/publics/img/logo.svg" alt="logo">
-          <form action="" method="post" class="ingreso__formulario">
-            <p>
-              <label for="user">Email o Usuario:</label>
-              <input type="text" id="user" name="user_or_email" required autofocus />
-            </p>
-            <p>
-              <a href="#" class="link-olvido">¿Olvidó contraseña?</a>
-            </p>
-            <p>
-              <label for="password">Contraseña:</label>
-              <input type="password" id="password" name="user_pass" placeholder="****" required />
-            </p>
-            <p>
-              <button type="submit">Ingresar</button>
-            </p>
-          </form>
-          <div class=ingreso__pregunta>
-            <p>¿No tienes una cuenta?<span><a href="/Frontend/pages/signup.html" class="link">Regístrate</a></span></p>
-          </div>
-        </div>
-        <div class="ingreso__content ingreso__titulo">
-          <h1>Bienvenido otra vez!</h1>
+    <div class="ingreso">
+      <div class="ingreso__form">
+        <img class="ingreso__img-llama" src="/publics/img/logo.svg" alt="logo">
+        <form action="" method="post" class="ingreso__formulario">
+          <p>
+            <label for="user">Email o Usuario:</label>
+            <input type="text" id="user" name="user_or_email" required autofocus />
+          </p>
+          <p>
+            <a href="#" class="link-olvido">¿Olvidó contraseña?</a>
+          </p>
+          <p>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="user_pass" placeholder="****" required />
+          </p>
+          <p>
+            <button type="submit">Ingresar</button>
+          </p>
+        </form>
+        <div class=ingreso__pregunta>
+          <p>¿No tienes una cuenta?<span><a href="/Frontend/pages/signup.html" class="link">Regístrate</a></span></p>
         </div>
       </div>
-    </section>
+      <div class="ingreso__animacion">
+          <h1>Bienvenido otra vez!</h1>
+      </div>
+    </div>
   </main>
+
   <footer class="footer">
     <div class="footer__final">
       <img class="footer__logo" src="/publics/img/acadevmia.svg" alt="logo">
