@@ -294,14 +294,6 @@
     width: 280px;
 }
 
-.curso__fondo{
-    background-color: #FD3C00;
-    height: 56%;
-    overflow: hidden;
-    
-}
-
-
 .cursos-mas{
     display: flex;
     justify-content: space-around;

@@ -93,6 +93,34 @@
     font-size: 40px;
     color: var(--color-primario);
 }
+/* cursos */
+
+.curso{
+    width: 280px;
+    height: 420px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px 3px #0000007e;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.img__curso{
+    width: 280px;
+}
+
+.cursos-mas{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.curso__mas-txt{
+    font-size: 40px;
+    width: 60%;
+}
 
 .cursos__container{
     margin-top: 5%;
@@ -100,13 +128,13 @@
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    padding: 20px;
 }
 .curso-txt{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
     bottom: 170px;
 }
 .curso__nombre{
@@ -129,6 +157,17 @@
 .curso .color4{
     border: 1px rgb(171, 52, 198) solid;
     color: rgb(171, 52, 198);
+}
+
+.transparent-button{
+    color: var(--color-primario);
+    border-radius: 20px;
+    border: 1px var(--color-primario) solid;
+    padding: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: large;
+    margin-bottom: 10px;
 }
 
 /* Seccion ser titulos  */
