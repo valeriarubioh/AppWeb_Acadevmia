@@ -5,16 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
     <link rel="stylesheet" href="/Frontend/css/cursos.css">
+    <link rel="stylesheet" href="/Frontend/css/Header_Footer.css">
+    <script src="/Frontend/Js/menu.js" defer></script>
+    <script
+    src="https://kit.fontawesome.com/6dc7cbf907.js"
+    crossorigin="anonymous"></script>
     <title>Acadevmia  - Cursos</title>
 </head>
 <body>
     <header class="principal">
         <!-- barra de navegacion -->
         <nav class="principal__navbar">
-            <a href="../index.html">
+            <a href="index.html">
                 <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
-            </a>
-            <i><img class="menu_hamburguer" src="../publics/img/icon-hamburger.svg" alt="icon-hamburger"></i>
+            </a>            
+            <div class="menu_hamburguer">
+                <span class="line1__menu"></span>
+                <span class="line2__menu"></span>
+                <span class="line3__menu"></span>
+            </div>
             <ul class="principal__lista">
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
@@ -33,11 +42,33 @@
                 <a href="#" class="principal__link">
                     Ingresar
                 </a>
-                <a href="#" class="button">
+                <a href="#" class="button__header">
                     Registrarse
                 </a>
             </div>
         </nav>
+        <div class="menu__toggle">
+            <ul class="lista__toggle">
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+                </li>
+            </ul>
+            <a href="#" class="toggle__link">
+                Ingresar
+            </a>
+            <a href="#" class="button__header">
+                Registrarse
+            </a>
+        </div>
     </header>
     <main>
         <section class="eligenos">
@@ -73,7 +104,7 @@
                     </div>
                 </div>
                 <div class="curso">
-                    <img class="img__curso" src="/publics/img/carddd.svg" alt="">
+                    <img class="img__curso" src="/publics/img/cadrss.svg" alt="">
                     <div class="curso-txt">
                         <h4 class="curso__nombre">
                             HTML5
