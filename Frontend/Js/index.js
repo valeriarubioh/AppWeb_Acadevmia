@@ -45,7 +45,7 @@ function animationToggle() {
 //si la pantalla es menor a 950 quitamos las clases de la animacion
 function handleResize() {
   // Verificar el ancho de la pantalla
-  if (window.innerWidth < 950) {
+  if (window.innerWidth > 950) {
     menu.style.display = "none";
     line1.classList.remove("line1__menu-active");
     line2.classList.remove("line2__menu-active");
