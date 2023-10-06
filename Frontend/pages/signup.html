@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
   <title>Acadevmia  - Registro</title>
+  <link rel="stylesheet" href="/Frontend/css/registro.css">
+  <link rel="stylesheet" href="/Frontend/css/index.css">
 </head>
 <body>
   <header class="principal">
@@ -29,10 +31,10 @@
             </li>
         </ul>
         <div class="principal__botones">
-            <a href="#" class="principal__link">
+            <a href="/Frontend/pages/login.html" class="principal__link">
                 Ingresar
             </a>
-            <a href="#" class="button">
+            <a href="/Frontend/pages/signup.html" class="button">
                 Registrarse
             </a>
         </div>
@@ -40,11 +42,11 @@
   </header>
   <main>
     <section class="registro">
-      <div class="registro__container">
+      <div class="registro__animacion">
         <h1 class="registro__titulo">Se parte de nuestra comunidad</h1>
       </div>
-      <div class="registro__container">
-        <img class="registro-ingresar__llama" src="/publics/img/logo.svg" alt="logo">
+      <div class="registro__form">
+        <img class="registro__img-llama" src="/publics/img/logo.svg" alt="logo">
         
         <form action="" method="post" class="registro__formulario">  
             <p>
@@ -69,7 +71,7 @@
             </p>
         </form>
         <div class= registro__pregunta>
-          <p>¿Ya tienes cuenta?<span>Inicia Sesión</span></p>
+          <p>¿Ya tienes cuenta?<span><a href="/Frontend/pages/login.html" class="link">Inicia Sesión</a></span></p>
         </div>
       </div>
     </section>
