@@ -5,8 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
-  <link rel="stylesheet" href="/Frontend/css/index.css">
+  <link rel="stylesheet" href="/Frontend/css/Header_Footer.css">
   <link rel="stylesheet" href="/Frontend/css/login.css">
+  <script
+    src="https://kit.fontawesome.com/6dc7cbf907.js"
+    crossorigin="anonymous"></script>
   <title>Acadevmia - Ingreso</title>
 </head>
 
@@ -14,38 +17,60 @@
   <header class="principal">
     <!-- barra de navegacion -->
     <nav class="principal__navbar">
-      <a href="/Frontend/index.html">
-        <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
-      </a>
-      <div class="menu_hamburguer">
-        <span class="line1__menu"></span>
-        <span class="line2__menu"></span>
-        <span class="line3__menu"></span>
-      </div>
-      <ul class="principal__lista">
-        <li class="principal__elemento">
-          <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
-        </li>
-        <li class="principal__elemento">
-          <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
-        </li>
-        <li class="principal__elemento">
-          <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
-        </li>
-        <li class="principal__elemento">
-          <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
-        </li>
-      </ul>
-      <div class="principal__botones">
-        <a href="/Frontend/pages/login.html" class="principal__link">
-          Ingresar
-        </a>
-        <a href="/Frontend/pages/signup.html" class="button">
-          Registrarse
-        </a>
-      </div>
+        <a href="index.html">
+            <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
+        </a>            
+        <div class="menu_hamburguer">
+            <span class="line1__menu"></span>
+            <span class="line2__menu"></span>
+            <span class="line3__menu"></span>
+        </div>
+        <ul class="principal__lista">
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+            </li>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+            </li>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+            </li>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+            </li>
+        </ul>
+        <div class="principal__botones">
+            <a href="/Frontend/pages/login.html" class="principal__link">
+                Ingresar
+            </a>
+            <a href="/Frontend/pages/signup.html" class="button__header">
+                Registrarse
+            </a>
+        </div>
     </nav>
-  </header>
+    <div class="menu__toggle">
+        <ul class="lista__toggle">
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+            </li>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+            </li>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+            </li>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+            </li>
+        </ul>
+        <a href="/Frontend/pages/login.html" class="toggle__link">
+            Ingresar
+        </a>
+        <a href="/Frontend/pages/signup.html" class="button__header">
+            Registrarse
+        </a>
+    </div>
+</header>
   <main>
     <div class="ingreso">
       <div class="ingreso__form">
@@ -78,11 +103,11 @@
 
   <footer class="footer">
     <div class="footer__final">
-      <img class="footer__logo" src="/publics/img/acadevmia.svg" alt="logo">
-      <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
-      <p class="footer__terminos">Informacion legal | Politica de privacidad</p>
-    </div>
-  </footer>
+        <img class="footer__logo" src="/publics/img/logo.svg" alt="logo">
+        <p class="footer__terminos">Informacion legal | Politica de privacidad</p>
+        <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
+    </div>        
+</footer>
 </body>
 
 </html>
