@@ -27,7 +27,7 @@
   
   .registro__form {
     flex: 1;
-    margin-right: 0px; /* Espacio entre las columnas */
+    margin-right: 0px; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,8 +42,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
-    
+  }
+
+  h1{
+    font-size: 55px;
   }
 
   .registro__formulario p{
@@ -52,23 +54,23 @@
 }
 
 .registro__formulario {
-    width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
-    max-width: 400px; /* Ajusta el ancho máximo según tu diseño */
-    text-align: center; /* Alinea el texto en el centro */
+    width: 100%; 
+    max-width: 400px; 
+    text-align: center; /
   }
   
   .registro__formulario label {
-    display: block; /* Coloca cada etiqueta en una línea separada */
-    margin-bottom: 10px; /* Espacio entre etiquetas */
+    display: block;
+    margin-bottom: 10px; 
     text-align: left;
     font-size: 20px;
     color: var(--color-secudario);
   }
   
   .registro__formulario input {
-    width: 100%; /* Asegura que los inputs ocupen todo el ancho del formulario */
-    padding: 10px; /* Añade espacio entre los bordes del input y el texto */
-    margin-bottom: 10px; /* Espacio entre inputs */
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
     height: 55px;
     font-size: 20px;
     border: 1px solid var(--color-secudario);
@@ -77,14 +79,6 @@
     color: var(--color-secudario);
     
   }
-
-  /* .link-olvido{
-    display: flex;
-    justify-content: flex-end;
-    font-size: 17px;
-    text-decoration: none;
-    color: var(--color-secudario);
-  } */
 
   button{
     background-color: var(--color-primario);

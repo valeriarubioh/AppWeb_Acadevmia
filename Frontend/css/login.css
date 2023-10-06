@@ -42,8 +42,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-size: 30px;
-    
+  }
+
+  h1{
+    font-size: 55px;
   }
 
   .ingreso__formulario p{
@@ -52,23 +54,23 @@
 }
 
 .ingreso__formulario {
-    width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
-    max-width: 400px; /* Ajusta el ancho máximo según tu diseño */
-    text-align: center; /* Alinea el texto en el centro */
+    width: 100%; 
+    max-width: 400px; 
+    text-align: center; 
   }
   
   .ingreso__formulario label {
     display: block; /* Coloca cada etiqueta en una línea separada */
-    margin-bottom: 10px; /* Espacio entre etiquetas */
+    margin-bottom: 10px; 
     text-align: left;
     font-size: 20px;
     color: var(--color-secudario);
   }
   
   .ingreso__formulario input {
-    width: 100%; /* Asegura que los inputs ocupen todo el ancho del formulario */
-    padding: 10px; /* Añade espacio entre los bordes del input y el texto */
-    margin-bottom: 10px; /* Espacio entre inputs */
+    width: 100%; 
+    padding: 10px; 
+    margin-bottom: 10px; 
     height: 55px;
     font-size: 20px;
     border: 1px solid var(--color-secudario);
