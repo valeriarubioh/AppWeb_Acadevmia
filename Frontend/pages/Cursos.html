@@ -4,16 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
+    <link rel="stylesheet" href="/Frontend/css/cursos.css">
+    <link rel="stylesheet" href="/Frontend/css/Header_Footer.css">
+    <script src="/Frontend/Js/menu.js" defer></script>
+    <script
+    src="https://kit.fontawesome.com/6dc7cbf907.js"
+    crossorigin="anonymous"></script>
     <title>Acadevmia  - Cursos</title>
 </head>
 <body>
     <header class="principal">
         <!-- barra de navegacion -->
         <nav class="principal__navbar">
-            <a href="../index.html">
+            <a href="index.html">
                 <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
-            </a>
-            <i><img class="menu_hamburguer" src="../publics/img/icon-hamburger.svg" alt="icon-hamburger"></i>
+            </a>            
+            <div class="menu_hamburguer">
+                <span class="line1__menu"></span>
+                <span class="line2__menu"></span>
+                <span class="line3__menu"></span>
+            </div>
             <ul class="principal__lista">
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
@@ -32,82 +42,177 @@
                 <a href="#" class="principal__link">
                     Ingresar
                 </a>
-                <a href="#" class="button">
+                <a href="#" class="button__header">
                     Registrarse
                 </a>
             </div>
         </nav>
+        <div class="menu__toggle">
+            <ul class="lista__toggle">
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+                </li>
+            </ul>
+            <a href="#" class="toggle__link">
+                Ingresar
+            </a>
+            <a href="#" class="button__header">
+                Registrarse
+            </a>
+        </div>
     </header>
     <main>
         <section class="eligenos">
             <!-- seccion eligenos -->
                 <!--donde hablamos sobre nuestras ventajas frente a nuestros competidores -->
-            <div class="eligenos__presentacion">
-                <h1 class="eligenos__titulo">¿por que elegir nuestros cursos?</h1>
-                <p class="eligenos__texto">en acadevmia, creemos en la fuerza de la comunidad y en el aprendizaje colaborativo</p>
-                <a href="#" class="button">comenzar ahora</a>
-                <div class="eligenos__razones">
-                    <p class="eligenos__texto">Los cursos están diseñados
-                        por expertos y se actualizan
-                        constantemente para
-                        mantenerte al día con las
-                        últimas tendencias</p>
-                    <p class="eligenos__texto">te permitirá interactuar con
-                        personas en eI area, hacer
-                        preguntas de todos los niveles
-                        de complejidad y resolver
-                        problemas</p>
-                    <p class="eligenos__texto">Desarrolla las habilidades
-                        técnicas de codificación de
-                        todo programador necesita</p>
+            <div class="eligenos__banner">
+                <img src="/publics/img/llama__logo.svg" alt="logo" class="imgbanner">
+                <div class="eligenos__presentacion">
+                    <h1 class="eligenos__presentacion_titulo">¿Por qué elegir nuestros cursos?</h1>
+                    <p class="eligenos__presentacion__texto">En acadevmia, creemos en la fuerza de la comunidad y en el aprendizaje colaborativo</p>
+                    <a href="#" class="button">Comenzar ahora</a>
                 </div>
             </div>
-        </section>
-        <section class="cursos">
             <!-- seccion cursos -->
                 <!-- donde hablamos sobre lo cursos, damos la descripcion y los invitamos a inscribise -->
-            <h2 class="ser__titulo"> el conocimiento crece mejor cuando se comparte</h2>
             <div class="cursos__titulacion">
                 <h2 class="cursos__titulo">
                     <span class="cursos__subtitulo" >Empieza hoy</span><br>
                     Cursos Populares
                 </h2>
             </div>
-                <div class="cursos__container">
-                    <div class="curso">
-                        <img src="#" alt="imagen-curso">
+            <div class="cursos__container">
+                <div class="curso">
+                    <img class="img__curso" src="/publics/img/carddd.svg" alt="">
+                    <div class="curso-txt">
                         <h4 class="curso__nombre">
-                            nombre curso
+                            HTML5
                         </h4>
                         <p class="curso_descripcion">
                             ingrese descripcion
                         </p>
+                        <a href="#" class="transparent-button color1">Ver cursos</a>
                     </div>
-                    <div class="curso">
-                    <img src="#" alt="imagen-curso">
-                    <h4 class="curso__nombre">
-                        nombre curso
-                    </h4>
-                    <p class="curso_descripcion">
-                        ingrese descripcion
-                    </p>
                 </div>
                 <div class="curso">
-                    <img src="#" alt="imagen-curso">
-                    <h4 class="curso__nombre">
-                        nombre curso
-                    </h4>
-                    <p class="curso_descripcion">
-                        ingrese descripcion
-                    </p>
+                    <img class="img__curso" src="/publics/img/cadrss.svg" alt="">
+                    <div class="curso-txt">
+                        <h4 class="curso__nombre">
+                            HTML5
+                        </h4>
+                        <p class="curso_descripcion">
+                            ingrese descripcion
+                        </p>
+                        <a href="#" class="transparent-button color1">Ver cursos</a>
+                    </div>
                 </div>
                 <div class="curso">
-                    <img src="#" alt="imagen-curso">
-                    <h4 class="curso__nombre">
-                        nombre curso
+                    <img class="img__curso" src="/publics/img/cards.svg" alt="">
+                    <div class="curso-txt">
+                        <h4 class="curso__nombre">
+                            HTML5
+                        </h4>
+                        <p class="curso_descripcion">
+                            ingrese descripcion
+                        </p>
+                        <a href="#" class="transparent-button color1">Ver cursos</a>
+                    </div>
+                </div>
+                <div class="curso">
+                    <img class="img__curso" src="/publics/img/carsd.svg" alt="">
+                    <div class="curso-txt">
+                        <h4 class="curso__nombre">
+                            HTML5
+                        </h4>
+                        <p class="curso_descripcion">
+                            ingrese descripcion
+                        </p>
+                        <a href="#" class="transparent-button color1">Ver cursos</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+                <div class="titulo__banner">
+                    <h2 class="ser__titulo"> El conocimiento crece mejor cuando se comparte</h2>
+                    <img src="/publics/img/cursos/titulo.PNG" alt="imagen-titulo">
+                </div>
+        <!-- Seccion beneficios -->
+        <section class="beneficios">
+                <h2 class="beneficios__titulo">Beneficios de nuestros cursos</h2>
+            <div class="beneficios__container">
+                <div class="xbeneficio">
+                    <h3 class="beneficio__num">
+                        01
+                    </h3>
+                    <h4 class="beneficio__sub">
+                        Variedad de temas
                     </h4>
-                    <p class="curso_descripcion">
-                        ingrese descripcion
+                    <p class="beneficio__texto">
+                        Ofrecemos una amplia gama de cursos que cubren diferentes aspectos ,lo que permite a los estudiantes elegir cursos que se adapten a sus necesidades y objetivos específicos.
+                    </p>
+                </div>
+                <div class="xbeneficioo">
+                    <h3 class="beneficio__num">
+                        02
+                    </h3>
+                    <h4 class="beneficio__sub">
+                        Actualización constante
+                    </h4>
+                    <p class="beneficio__texto">
+                        Los cursos se mantienen actualizados con las últimas tendencias y herramientas, para que se puedan enfrentar a los desafíos actuales de la industria.
+                    </p>
+                </div>
+                <div class="xbeneficio">
+                    <h3 class="beneficio__num">
+                        03
+                    </h3>
+                    <h4 class="beneficio__sub">
+                        Certificaciones y credenciales
+                    </h4>
+                    <p class="beneficio__texto">
+                        Las certificaciones pueden ayudar a los estudiantes a destacarse en el mercado laboral y demostrar su competencia en áreas específicas del desarrollo de software.
+                    </p>
+                </div>
+                <div class="xbeneficioo">
+                    <h3 class="beneficio__num">
+                        04
+                    </h3>
+                    <h4 class="beneficio__sub">
+                        Flexibilidad de horario y modalidades de aprendizaje
+                    </h4>
+                    <p class="beneficio__texto">
+                        Ofrecemos opciones de horarios flexibles y modalidades de aprendizaje en línea para hacer los cursos accesibles para los estudiantes, incluyendo aquellos que trabajan a tiempo completo o tienen horarios ocupados.
+                    </p>
+                </div>
+                <div class="xbeneficio">
+                    <h3 class="beneficio__num">
+                        05
+                    </h3>
+                    <h4 class="beneficio__sub">
+                        Comunidad y networking
+                    </h4>
+                    <p class="beneficio__texto">
+                        Fomentamos la interacción entre estudiantes a través de grupos en línea o eventos presenciales puede ayudar a crear una comunidad de aprendices y fomentar oportunidades de networking.
+                    </p>
+                </div>
+                <div class="xbeneficioo">
+                    <h3 class="beneficio__num">
+                        06
+                    </h3>
+                    <h4 class="beneficio__sub">
+                        Retroalimentación y evaluación
+                    </h4>
+                    <p class="beneficio__texto">
+                        Proporcionamos retroalimentación constructiva y evaluaciones periódicas puede ayudar a los estudiantes a medir su progreso y realizar ajustes en su aprendizaje.
                     </p>
                 </div>
             </div>
