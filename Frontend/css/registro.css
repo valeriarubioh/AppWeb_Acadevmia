@@ -15,7 +15,7 @@
 }
 /*main*/
 
-.ingreso {
+.registro {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,7 +25,7 @@
     overflow: hidden; 
   }
   
-  .ingreso__form {
+  .registro__form {
     flex: 1;
     margin-right: 0px; /* Espacio entre las columnas */
     display: flex;
@@ -34,7 +34,7 @@
     justify-content: center;
   }
   
-  .ingreso__animacion {
+  .registro__animacion {
     background-color: var(--color-auxiliar);
     height: 100%;
     flex: 1;
@@ -46,18 +46,18 @@
     
   }
 
-  .ingreso__formulario p{
+  .registro__formulario p{
     margin: auto;
     padding: 2px;
 }
 
-.ingreso__formulario {
+.registro__formulario {
     width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
     max-width: 400px; /* Ajusta el ancho máximo según tu diseño */
     text-align: center; /* Alinea el texto en el centro */
   }
   
-  .ingreso__formulario label {
+  .registro__formulario label {
     display: block; /* Coloca cada etiqueta en una línea separada */
     margin-bottom: 10px; /* Espacio entre etiquetas */
     text-align: left;
@@ -65,7 +65,7 @@
     color: var(--color-secudario);
   }
   
-  .ingreso__formulario input {
+  .registro__formulario input {
     width: 100%; /* Asegura que los inputs ocupen todo el ancho del formulario */
     padding: 10px; /* Añade espacio entre los bordes del input y el texto */
     margin-bottom: 10px; /* Espacio entre inputs */
@@ -78,13 +78,13 @@
     
   }
 
-  .link-olvido{
+  /* .link-olvido{
     display: flex;
     justify-content: flex-end;
     font-size: 17px;
     text-decoration: none;
     color: var(--color-secudario);
-  }
+  } */
 
   button{
     background-color: var(--color-primario);
@@ -99,7 +99,7 @@
     height: 55px;
 }
 
-.ingreso__pregunta p{
+.registro__pregunta p{
   margin: 50px;
   font-size: 20px;
   color: var(--color-secudario);
@@ -112,7 +112,7 @@
   padding-left: 5px;
 }
 
-.ingreso__img-llama{
+.registro__img-llama{
   margin-bottom: 20px;
   width: 110px;
   
