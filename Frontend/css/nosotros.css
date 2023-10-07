@@ -14,67 +14,6 @@
     --color-auxiliar:#D9D9D9;
 }
 
-/* barra de navegacion */
-
-/* pendiente agregar un hover en los principal__elemento */
-/* posiblemente se cambie el color auxiliar y preguntar si dejaremos el boton ingreso como esta */
-
-.principal__navbar{
-    position: fixed;
-    z-index: 99;
-    width: 100%;
-    height: 60px;
-    padding: 8px;
-    background-color: var(--color-auxiliar);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.principal__logo{
-    width: 130px;
-    margin-top: -5px;
-}
-
-.menu_hamburguer {
-    display: none;
-}
-
-
-.principal__lista{
-    list-style: none;
-    display: flex;
-    margin: 6px 20px 0px 0px;
-}
-.principal__ref{
-    text-decoration: none;
-    font-size: 1.2rem;
-    color:var(--color-secudario);
-    transition: .3s;
-}
-
-.principal__ref:hover,
-.principal__ref.active {
-    color: var(--color-primario);
-}
-
-.principal__elemento{
-    margin: 10px 30px;
-}
-
-.button{
-    background-color: var(--color-primario);
-    color: var(--color-terciario);
-    border-radius: 20px;
-    padding: 10px;
-    text-decoration: none;
-    margin-left: 10px;
-}
-.principal__link{
-    text-decoration: none;
-    color:#FD3C00;
-}
-
 /* section Quienes somos */
 
 .somos{
@@ -185,7 +124,7 @@
 .valor__titulo {
     text-align: center;
     font-size: 2.5rem;
-    padding: 4rem 4rem 0rem 4rem;
+    padding: 4rem;
 }
 
 .valores__container {
@@ -220,37 +159,38 @@
 
  /* section equipo */
 
+.equipo__foto{
+    border-radius: 45%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+.equipo__experiencia{
+    width: 20%;
+}
+
 .equipo__container {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    gap: 1rem;
 }
 
-.equipo__container .equipo__cards {
-    flex: auto;
+.equipo__cards {
     background: var(--color-terciario);
-    padding: 3rem 2rem 6rem 5rem;
-    border-radius: 2rem;
     text-align: center;
-    border: 2rem solid var(--bg-color);
     transition: .5s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.equipo__container .equipo__cards:hover {
+.equipo__cards:hover {
     border-color: var(--color-secudario);
     transform: scale(1.01);
 } 
 
-.equipo__cards h3 {
-    font-size: 1.5rem;
-}
-
-.equipo__cards p {
-    font-size: 1.2rem;
-}
 /*form*/
+
 .form-estilo{
     display: flex;
     align-items: center;
@@ -259,30 +199,8 @@
     width: 80%;
 }
 
- /* Medida para tablet*/
- @media screen and (max-width:900px){
-    /*nav*/
-    .principal__navbar{
-        justify-content: space-between;
-    }
-    .hero__logo{
-        width: 100%;
-    }
-    .principal__logo{
-        margin-left: 25px;
-    }
-    .principal__lista{
-        display: none;
-    }
-    .principal__botones{
-        display: none;
-    }
-    .menu_hamburguer{
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        margin-right: 25px;
-    }
+/* Medida para tablet*/
+@media screen and (max-width:900px){
     .somos{
     height: 160vh;
 
@@ -308,8 +226,8 @@
     .vision-mision img{
         display: none;
     }
- }
- @media screen and (max-width:500px){
+}
+@media screen and (max-width:500px){
     .somos__titulo{
         font-size: 3rem;
     }
@@ -319,6 +237,4 @@
     .vision-mision{
         margin-top: 80px;
     }
- }
- 
- 
+}
