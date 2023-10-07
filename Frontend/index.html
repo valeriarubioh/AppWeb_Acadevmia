@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
-    
-    <link rel="stylesheet" href="/Frontend/css/index.css"><script src="/Frontend/Js/index.js" defer></script>
+    <link rel="stylesheet" href="/Frontend/css/index.css">
+    <link rel="stylesheet" href="/Frontend/css/Header_Footer.css">
+    <script src="/Frontend/Js/index.js" defer></script>
     <script
     src="https://kit.fontawesome.com/6dc7cbf907.js"
     crossorigin="anonymous"></script>
@@ -15,7 +16,7 @@
     <header class="principal">
         <!-- barra de navegacion -->
         <nav class="principal__navbar">
-            <a href="index.html">
+            <a href="/Frontend/index.html">
                 <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
             </a>            
             <div class="menu_hamburguer">
@@ -24,6 +25,8 @@
                 <span class="line3__menu"></span>
             </div>
             <ul class="principal__lista">
+                <li class="principal__elemento">
+                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
                 </li>
@@ -38,16 +41,18 @@
                 </li>
             </ul>
             <div class="principal__botones">
-                <a href="#" class="principal__link">
+                <a href="/Frontend/pages/login.html" class="principal__link">
                     Ingresar
                 </a>
-                <a href="#" class="button">
+                <a href="/Frontend/pages/signup.html" class="button__header">
                     Registrarse
                 </a>
             </div>
         </nav>
         <div class="menu__toggle">
             <ul class="lista__toggle">
+                <li class="principal__elemento">
+                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
                 </li>
@@ -61,10 +66,10 @@
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
             </ul>
-            <a href="#" class="toggle__link">
+            <a href="/Frontend/pages/login.html" class="toggle__link">
                 Ingresar
             </a>
-            <a href="#" class="button">
+            <a href="/Frontend/pages/signup.html" class="button__header">
                 Registrarse
             </a>
         </div>
@@ -85,7 +90,7 @@
                     conocimiento relacionado con el mundo de la programación,
                     <span class="text-acadevmia">Aca<span class="text-dev">dev</span>mia</span>
                     es el lugar ideal para ti.</p>
-                    <a href="#" class="transparent-button">Conoce más</a>
+                    <a href="/Frontend/pages/nosotros.html" class="transparent-button">Conoce más</a>
                 </div>
             </div>
         </section>
@@ -108,7 +113,7 @@
                         iJuntos, haremos que la tecnología sea accesible y emocionante
                         para todos!
                     </p>
-                    <a href="#" class="button--modificado">Ingresar</a>
+                    <a href="/Frontend/pages/comunidad.html" class="button--modificado">Ingresar</a>
                 </div>
                 <div class="ser__cards">
                     <h3 class="subtitulo">
@@ -122,7 +127,7 @@
                     <span class="ser__parrafo--modificador">
                         +10 PTS
                     </span>
-                    <a href="#" class="button">Registrarse</a>
+                    <a href="/Frontend/pages/signup.html" class="button">Registrarse</a>
                 </div>
             </div>
         </section>
@@ -149,7 +154,7 @@
                     <!-- seccion donde hablamos sobre lo cursos, damos la descripcion y los invitamos a inscribise -->
             <div class="cursos-mas">
                 <h3 class="curso__mas-txt">Tenemos los cursos mas completos...y en español !</h3>
-                <a href="#" class="button--modificado">Ver cursos</a>
+                <a href="/Frontend/pages/Cursos.html" class="button--modificado">Ver cursos</a>
             </div>
             <div class="cursos__container">
                 <div class="curso">
@@ -165,7 +170,7 @@
                     </div>
                 </div>
                 <div class="curso">
-                    <img class="img__curso" src="/publics/img/carddd.svg" alt="">
+                    <img class="img__curso" src="/publics/img/cadrss.svg" alt="">
                     <div class="curso-txt">
                         <h4 class="curso__nombre">
                             HTML5
@@ -173,7 +178,7 @@
                         <p class="curso_descripcion">
                             ingrese descripcion
                         </p>
-                        <a href="#" class="transparent-button color1">Ver cursos</a>
+                        <a href="#" class="transparent-button color3">Ver cursos</a>
                     </div>
                 </div>
                 <div class="curso">
@@ -185,7 +190,7 @@
                         <p class="curso_descripcion">
                             ingrese descripcion
                         </p>
-                        <a href="#" class="transparent-button color1">Ver cursos</a>
+                        <a href="#" class="transparent-button color4">Ver cursos</a>
                     </div>
                 </div>
                 <div class="curso">
@@ -197,7 +202,7 @@
                         <p class="curso_descripcion">
                             ingrese descripcion
                         </p>
-                        <a href="#" class="transparent-button color1">Ver cursos</a>
+                        <a href="#" class="transparent-button color">Ver cursos</a>
                     </div>
                 </div>
             </div>
@@ -244,8 +249,8 @@
         </ul>
         <div class="footer__final">
             <img class="footer__logo" src="/publics/img/logo.svg" alt="logo">
-            <p class="footer__terminos">informacion legal | politica de privacidad</p>
-            <h6 class="footer__copyright">copyright</h6>
+            <p class="footer__terminos">Informacion legal | Politica de privacidad</p>
+            <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
         </div>        
     </footer>
 </body>

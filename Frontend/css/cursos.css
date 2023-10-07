@@ -94,43 +94,6 @@
     color: var(--color-primario);
 }
 
-.cursos__container{
-    margin-top: 5%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-}
-.curso-txt{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    bottom: 170px;
-}
-.curso__nombre{
-    margin-bottom: 30px;
-    font-size: x-large;
-}
-.curso_descripcion{
-  margin-bottom: 20px;  
-}
-.curso .color1{
-    border: 1px rgb(61, 61, 217) solid;
-    color: rgb(61, 61, 217) ;
-}
-
-.curso .color3{
-    border: 1px rgb(0, 158, 68) solid;
-    color: rgb(0, 158, 68) ;
-}
-
-.curso .color4{
-    border: 1px rgb(171, 52, 198) solid;
-    color: rgb(171, 52, 198);
-}
-
 /* Seccion ser titulos  */
 .titulo__banner {
     width: 100%;
