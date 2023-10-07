@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
   <link rel="stylesheet" href="/Frontend/css/index.css">
+  <link rel="stylesheet" href="/Frontend/css/comunidad.css">
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
   <title>Acadevmia - Comunidad</title>
 </head>
@@ -72,84 +73,107 @@
     </div>
 </header>
   <main>
-    <div class="foro">
-      <div class="foro__panel">
-        <a href="#" class="foro__link">
-          Comunidad
-        </a>
-        <a href="#" class="principal__link">
-          Cursos
-        </a>
-        <a href="#" class="principal__link">
-          Blackboard
-        </a>
-        <a href="#" class="principal__link">
-          Nosotros
-        </a>
-      </div>
-      <div class="foro__preguntar">
-        <div class="principal__botones">
-          <a href="#" class="button">
-            Pregunta
-          </a>
-        </div>
-        <!-- función js para añadir evento de preguntas  -->
-        <div class="foro__foro">
-          <div class="foro__pregunta">
-            <img src="../../publics/img/user.png">
-            <h3>¿Como puedo crear un array en js?</h3>
-          </div>
-          <div class="foro__respuesta">
-            <img src="../../publics/img/user.png">
-            <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
-            <div class=" foro__reaccion">
-              <button><box-icon name='like' ></box-icon></button>
-              <button><box-icon name='dislike' ></box-icon></button>
-            </div>
-          </div>
-          <div class="foro__respuesta">
-            <img src="../../publics/img/user.png">
-            <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
-            <div class=" foro__reaccion">
-              <button><box-icon name='like' ></box-icon></button>
-              <button><box-icon name='dislike' ></box-icon></button>
-            </div>
-          </div>
-          <div class="principal__botones">
-            <a href="#" class="button">
-              Responder
+    <div class="hero__foro">
+      <section class="foro__dashboard">
+        <div class="redireccion__link">
+          <box-icon name='home-alt-2' ></box-icon>
+            <a href="#" class="texto__link">
+              Principal
             </a>
-          </div>
         </div>
-        <!-- fin función -->
-        <div class="foro__foro">
-          <div class="foro__pregunta">
-            <img src="../../publics/img/user.png">
-            <h3>¿Como puedo crear un array en js?</h3>
-          </div>
-          <div class="foro__respuesta">
-            <img src="../../publics/img/user.png">
-            <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
-            <div class=" foro__reaccion">
-              <button><box-icon name='like' ></box-icon></button>
-              <button><box-icon name='dislike' ></box-icon></button>
-            </div>
-          </div>
-          <div class="foro__respuesta">
-            <img src="../../publics/img/user.png">
-            <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
-            <div class=" foro__reaccion">
-              <button><box-icon name='like' ></box-icon></button>
-              <button><box-icon name='dislike' ></box-icon></button>
-            </div>
-          </div>
-          <div class="principal__botones">
-            <a href="#" class="button">
-              Responder
+        <div class="redireccion__link">
+          <box-icon name='user' ></box-icon>
+            <a href="#" class="texto__link">
+              Mi perfil
             </a>
-          </div>
         </div>
-      </div>
+        <div class="redireccion__link">
+          <box-icon name='basket'></box-icon>
+            <a href="#" class="texto__link">
+              Cursos
+            </a>
+        </div>
+        <div class="redireccion__link">
+          <box-icon name='edit-alt'></box-icon>
+            <a href="#" class="texto__link">
+              Backboard
+            </a>
+        </div>
+      </section>
+
+      <!-- seeccion de preguntar y responder preguntas  -->
+      <section class="principal__preguntar">
+
+        <section class="hacer__pregunta">
+            <div class="principal__botones">
+              <textarea name="" id="input__texto" cols="70" rows="3" placeholder ="Haz una pregunta.."></textarea>
+              <a href="#" class="button">
+                  Pregunta
+              </a>
+            </div>
+        </section>
+
+          <!-- función js para añadir evento de preguntas  -->
+        <section class="body__preguntas">
+
+            <div class="foro__publicadas">
+              <div class="foro__pregunta">
+                <img src="../../publics/img/user.png">
+                <h3>¿Como puedo crear un array en js?</h3>
+              </div>
+              <div class="foro__respuesta">
+                <img src="../../publics/img/user.png">
+                <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
+                <div class=" foro__reaccion">
+                  <button><box-icon name='like' ></box-icon></button>
+                  <button><box-icon name='dislike' ></box-icon></button>
+                </div>
+              </div>
+              <div class="foro__respuesta">
+                <img src="../../publics/img/user.png">
+                <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
+                <div class=" foro__reaccion">
+                  <button><box-icon name='like' ></box-icon></button>
+                  <button><box-icon name='dislike' ></box-icon></button>
+                </div>
+              </div>
+              <div class="principal__botones">
+                <a href="#" class="button">
+                  Responder
+                </a>
+              </div>
+            </div>
+
+            <div class="foro__publicadas">
+              <div class="foro__pregunta">
+                <img src="../../publics/img/user.png">
+                <h3>¿Como puedo crear un array en js?</h3>
+              </div>
+              <div class="foro__respuesta">
+                <img src="../../publics/img/user.png">
+                <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
+                <div class=" foro__reaccion">
+                  <button><box-icon name='like' ></box-icon></button>
+                  <button><box-icon name='dislike' ></box-icon></button>
+                </div>
+              </div>
+              <div class="foro__respuesta">
+                <img src="../../publics/img/user.png">
+                <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
+                <div class=" foro__reaccion">
+                  <button><box-icon name='like' ></box-icon></button>
+                  <button><box-icon name='dislike' ></box-icon></button>
+                </div>
+              </div>
+              <div class="principal__botones">
+                <a href="#" class="button">
+                  Responder
+                </a>
+              </div>
+            </div>
+          <!-- fin función -->
+        </section>
+      </section>
     </div>
 
   </main>
