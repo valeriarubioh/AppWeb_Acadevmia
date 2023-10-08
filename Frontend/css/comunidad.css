@@ -12,6 +12,7 @@
     --color-secudario:#2F2B3B;
     --color-terciario: #FFFFFF;
     --color-auxiliar:#D9D9D9;
+    --color-hover:#fd2200;
 }
 
 #input_buscar{
@@ -36,17 +37,20 @@ background-color: #f7f7f7;
 
 /*dashboard*/
 .foro__dashboard{
-    background-color: aliceblue;
+    background-color: var(--color-terciario);
     width: 15%;    
     text-decoration: none;
     display: flex;
     flex-direction: column;
-    margin-top: 100px;
+    margin-top: 120px;
     padding: 50px;
 }
 
 .redireccion__link{
     height: 7%;
+    z-index: 3;
+    padding-top: 20px;
+    display: inline-block;
 }
 
 .texto__link{
@@ -54,18 +58,35 @@ background-color: #f7f7f7;
     color: var(--color-secudario);
     margin-top: 20px;
     font-size: large;
+    padding-left: 3px;
 }
 
 /*Hacer preguntas*/
 .hacer__pregunta{
-    padding: 5% 0 10%;
-    height: 20%;
-
+    padding: 6% 0 4%;
+    height: 12%;
 }
-#input__texto{
-    padding: 20px;
+
+.button--modificado{
+    background-color: var(--color-primario);
+    color: var(--color-terciario);
     border-radius: 20px;
-    border-color: #D9D9D9;
+    border: 0px;
+    font-size: larger;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    padding: 7px;
+}
+
+.button--modificado:hover,
+.button--modificado.active {
+    background-color: var(--color-hover);
+}
+.foro__ref{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color:var(--color-secudario);
 }
 
 /*preguntas publicadas*/
@@ -94,15 +115,24 @@ background-color: #f7f7f7;
     margin: 3% 5%;
 }
 .foro__reaccion button{
-background-color: transparent;
-border: 0px;
-margin: 0 15px;
-
+    background-color: transparent;
+    border: 0px;
+    margin: 0 15px;
 }
 .foro__reaccion{
     display: flex;
     position: relative;
     top: 40px;
     right: 50px;
+}
+
+.button{
+    background-color: var(--color-primario);
+    color: var(--color-terciario);
+    border-radius: 20px;
+    padding: 7px;
+    text-decoration: none;
+    margin-left: 10px;
+    border: 0px;
 }
 
