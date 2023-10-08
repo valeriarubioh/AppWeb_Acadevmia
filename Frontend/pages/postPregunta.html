@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
+    <title>Formulario Pregunta</title>
+    <link rel="stylesheet" href="/Frontend/css/postPregunta.css">
     <link rel="stylesheet" href="/Frontend/css/header_footer.css">
-    <link rel="stylesheet" href="/Frontend/css/blackboard.css">
+    <link rel="stylesheet" href="/Frontend/css/comunidad.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="/Frontend/Js/menu.js" defer></script>
-    <script src="/Frontend/Js/blackboard.js" defer></script>
-    <title>Acadevmia - Blackboard</title>
+    <script src="/Frontend/Js/post.js" defer></script>
 </head>
 <body>
     <header class="principal">
@@ -72,103 +75,71 @@
         </div>
     </header>
     <main>
-        <section class="blackboard">
-            <div class="panel__control">
-                <div class="panel__perfil">
-                    <img class="foto__perfil" src="/publics/img/IMG-20190510-WA0036.jpg" alt="foto de perfil">
-                <div class="perfil__descripcion">
-                    <p class="perfil__nombre">@nombreusuario</p>
+        <div>
+            <section class="foro__dashboard">
+                <div class="redireccion__link">
+                  <box-icon name='home-alt-2' ></box-icon>
+                    <a href="#" class="texto__link">
+                      Principal
+                    </a>
                 </div>
-            </div>
-            <div class="panel__elemento">
-                <div class="panel__icono">
-                    <a href="#"><img src="#" alt="icono-horario"></a>
+                <div class="redireccion__link">
+                  <box-icon name='user' ></box-icon>
+                    <a href="#" class="texto__link">
+                      Mi perfil
+                    </a>
                 </div>
-                <div class="panel__descripcion">
-                    <a href="#"><p class="principal__ref">Horario</p></a>
+                <div class="redireccion__link">
+                  <box-icon name='basket'></box-icon>
+                    <a href="#" class="texto__link">
+                      Cursos
+                    </a>
                 </div>
-            </div>
-            <div class="panel__elemento">
-                <div class="panel__icono">
-                    <a href="#"><img src="#" alt="icono-calificaciones"></a>
+                <div class="redireccion__link">
+                  <box-icon name='edit-alt'></box-icon>
+                    <a href="#" class="texto__link">
+                      Backboard
+                    </a>
                 </div>
-                <div class="panel__descripcion">
-                    <a href="#"><p class="principal__ref">Calificaciones</p></a>
-                </div>
-            </div>
-            <div class="panel__elemento">
-                <div class="panel__icono">
-                    <a href="#"><img src="#" alt="icono-tareas"></a>
-                </div>
-                <div class="panel__descripcion">
-                    <a href="#"><p class="principal__ref">Trabajos</p></a>
-                </div>
-            </div>
-            <div class="panel__elemento">
-                <div class="panel__icono">
-                    <a href="#"><img src="#" alt="icono-tutores"></a>
-                </div>
-                <div class="panel__descripcion">
-                    <a href="#"><p class="principal__ref">Tutores</p></a>
-                </div>
-            </div>
-            <div class="panel__perfil">
-                <div class="panel__salir">
-                    <button class="salir__descripcion" id="btn__salir">Cerrar sesión</button>                
-                </div>
-            </div>
+              </section>
+              <section class="principal__preguntar">
+                <section class="hacer__pregunta">
+                    <div class="principal__informacion">
+                        <div class="principal__titulo">
+                            <h1>Haz una pregunta</h1>
+                        </div>
+                        <div class="principal__instrucciones">
+                            <div class="instrucciones__contenido">
+                                <h2>¿Cómo escribir una pregunta?</h2>
+                                <p>Estas a punto de escribir una pregunta de programación. Toma este paso a paso como una guía del proceso.</p>
+                                <h3>Pasos:</h3>
+                                <ul class="instrucciones__lista">
+                                    <li>Escribe un título de una sola línea que resuma todo tu problema</li>
+                                    <li>Describe tu problema con mayor detalle, incluye lo que haz intentado y lo que esperas de resultado</li>
+                                    <li>Añade tags para resaltar tu pregunta en una o varias categorías según aplique</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="principal__formulario" method="post">
+                        <div class="formulario__titulo">
+                            <input type="text" id="input__titulo" name="titulo" placeholder="titulo" required>
+                        </div>
+                        <div class="formulario__descripcion">
+                            <textarea name="descripcion" id="input__texto" cols="100" rows="20" placeholder ="Haz una pregunta.." required></textarea>
+                        </div>
+                        <div class="formulario__tags">
+                            <input type="text" id="input__tags" name="tags" placeholder="Añade hasta 3 tags que describan tu pregunta">
+                        </div>
+                        <div class="formulario__boton">
+                            <button type="submit" name="boton" id="submit__button">
+                                Publica tu pregunta
+                            </button>
+                        </div>
+                    </form>
+                </section>
+            </section>
         </div>
-        <div class="cursos__container">
-            <div class="curso">
-                <img class="img__curso" src="/publics/img/carddd.svg" alt="">
-                <div class="curso-txt">
-                    <h4 class="curso__nombre">
-                        HTML5
-                    </h4>
-                    <p class="curso_descripcion">
-                        En este curso de 80 horas aprenderas todos los criterios basicos sobre HTML5
-                    </p>
-                    <a href="#" class="transparent-button color1">Ver cursos</a>
-                </div>
-            </div>
-            <div class="curso">
-                <img class="img__curso" src="/publics/img/cadrss.svg" alt="">
-                <div class="curso-txt">
-                    <h4 class="curso__nombre">
-                        Javascript
-                    </h4>
-                    <p class="curso_descripcion">
-                        En este curso de 80 horas aprenderas todos los criterios basicos sobre javascript
-                    </p>
-                    <a href="#" class="transparent-button color3">Ver cursos</a>
-                </div>
-            </div>
-            <div class="curso">
-                <img class="img__curso" src="/publics/img/cards.svg" alt="">
-                <div class="curso-txt">
-                    <h4 class="curso__nombre">
-                        CSS3
-                    </h4>
-                    <p class="curso_descripcion">
-                        En este curso de 80 horas aprenderas todos los criterios basicos sobre CSS3
-                    </p>
-                    <a href="#" class="transparent-button color4">Ver cursos</a>
-                </div>
-            </div>
-            <div class="curso">
-                <img class="img__curso" src="/publics/img/carsd.svg" alt="">
-                <div class="curso-txt">
-                    <h4 class="curso__nombre">
-                        ECMA6
-                    </h4>
-                    <p class="curso_descripcion">
-                        En este curso de 80 horas aprenderas todos los criterios basicos sobre ECMA6
-                    </p>
-                    <a href="#" class="transparent-button color">Ver cursos</a>
-                </div>
-            </div>
-        </div> 
-    </section>
     </main>
     <footer class="footer">
         <!-- pie de pagina -->
