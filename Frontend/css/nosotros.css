@@ -25,6 +25,7 @@
 }
 
 .nosotros__texto {
+    height: 100%;
     background-color:var(--color-secudario);
     color: var(--color-terciario);
     padding: 5% 2%;
