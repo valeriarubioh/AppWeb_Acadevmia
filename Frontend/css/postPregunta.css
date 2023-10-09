@@ -14,7 +14,7 @@
     --color-auxiliar:#D9D9D9;
 }
 
-/* secccion .blackboard */
+/* secccion perfil */
 .blackboard{
     display: flex;
     position: relative;
@@ -80,4 +80,100 @@
 .foro{
     display: flex;
     padding-top: 11vh;
+}
+
+/* seccion de pergunta */
+.pregunta{
+    padding: 35px;
+}
+
+.instrucciones__contenido{
+    line-height: 30px;
+
+    & ol{
+        margin-left: 20px;
+    }
+}
+
+.principal__formulario{
+    background-color: #2F2B3B;
+    border:2px solid chocolate;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+
+    & #input__titulo{
+        margin: 10px;
+        width: 70%;
+        height: 30px;
+        border-radius: 20px;
+        border: 2px solid chocolate;
+        text-align: center;
+    }
+}
+
+#input__texto{
+    height: 40vh;
+    border-radius: 20px;
+    border:2px solid chocolate;
+    width: 90%;
+    padding: 15px;
+}
+
+#input__tags{
+    border-radius: 10px;
+    height: 30px;
+    padding: 5px;
+    margin: 10px;
+    border: none;
+}
+
+#submit__button{
+    padding: 10px;
+    background-color: #FD3C00;
+    color: #FFFFFF;
+    font-weight: 700;
+    font-size: 15px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+@media screen and (max-width:550px){
+    .perfil__nombre{
+        font-size: 0.7rem;
+    }
+
+    .instrucciones__contenido{
+        font-size: 16px;
+        line-height: 25px;
+        
+    }
+}
+
+@media screen and (max-width:690px){
+
+    .principal__enl{
+        display: none;
+    }
+
+    .panel__elemento{
+        justify-content: center;
+    }
+
+    .formulario__tags{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .pregunta{
+        padding: 20px;
+    }
 }

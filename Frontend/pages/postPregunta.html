@@ -77,13 +77,13 @@
         </div>
     </header>
     <main>
-            <section class="foro">
-                <div class="panel__control">
-                    <div class="panel__perfil">
-                        <img class="foto__perfil" src="/publics/img/IMG-20190510-WA0036.jpg" alt="foto de perfil">
-                    <div class="perfil__descripcion">
-                        <p class="perfil__nombre">@nombreusuario</p>
-                    </div>
+        <section class="foro">
+            <div class="panel__control">
+                <div class="panel__perfil">
+                    <img class="foto__perfil" src="/publics/img/IMG-20190510-WA0036.jpg" alt="foto de perfil">
+                <div class="perfil__descripcion">
+                    <p class="perfil__nombre">@nombreusuario</p>
+                </div>
                 </div>
                 <div class="panel__elemento">
                     <div class="panel__icono">
@@ -119,51 +119,37 @@
                 </div>
                 <div class="panel__perfil">
                     <div class="panel__salir">
-                        <a href="#" class="salir__icono">
+                        <a href="/Frontend/pages/signup.html" class="salir__icono">
                             <i class='bx bx-log-out'></i>
                             <p class="principal__enl">Salir</p>
                         </a>                    
                     </div>
                 </div>
             </div>
-            <section class="principal__preguntar">
-                <section class="hacer__pregunta">
-                    <div class="principal__informacion">
-                        <div class="principal__titulo">
-                            <h1>Haz una pregunta</h1>
-                        </div>
-                        <div class="principal__instrucciones">
+            <section class="pregunta">
                             <div class="instrucciones__contenido">
                                 <h2>¿Cómo escribir una pregunta?</h2>
-                                <p>Estas a punto de escribir una pregunta de programación. Toma este paso a paso como una guía del proceso.</p>
+                                <p>Estas a punto de escribir una pregunta de programación.<br>
+                                Toma este paso a paso como una guía del proceso.</p>
                                 <h3>Pasos:</h3>
-                                <ul class="instrucciones__lista">
+                                <ol class="instrucciones">
                                     <li>Escribe un título de una sola línea que resuma todo tu problema</li>
                                     <li>Describe tu problema con mayor detalle, incluye lo que haz intentado y lo que esperas de resultado</li>
                                     <li>Añade tags para resaltar tu pregunta en una o varias categorías según aplique</li>
-                                </ul>
+                                </ol>
                             </div>
-                        </div>
-                    </div>
-                    <form class="principal__formulario" method="post">
-                        <div class="formulario__titulo">
-                            <input type="text" id="input__titulo" name="titulo" placeholder="titulo" required>
-                        </div>
-                        <div class="formulario__descripcion">
-                            <textarea name="descripcion" id="input__texto" cols="100" rows="20" placeholder ="Haz una pregunta.." required></textarea>
-                        </div>
+                <form class="principal__formulario" method="post">
+                    <input type="text" id="input__titulo" name="titulo" placeholder="Titulo" required>
+                    <textarea name="descripcion" id="input__texto" cols="100" rows="20" placeholder ="Brindanos una mejor descripcion de tu problema  o duda" required></textarea>
                         <div class="formulario__tags">
                             <input type="text" id="input__tags" name="tags" placeholder="Añade hasta 3 tags que describan tu pregunta">
-                        </div>
-                        <div class="formulario__boton">
-                            <button type="submit" name="boton" id="submit__button">
-                                Publica tu pregunta
-                            </button>
+                                <button type="submit" name="boton" id="submit__button">
+                                    Publica tu pregunta
+                                </button>
                         </div>
                     </form>
                 </section>
             </section>
-        </section>
     </main>
     <footer class="footer">
         <!-- pie de pagina -->
