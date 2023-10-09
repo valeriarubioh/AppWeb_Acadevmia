@@ -17,11 +17,8 @@
 /*  section nosotros */
 .nosotros {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    flex: 1;
-    height: 62rem;
 }
 
 .nosotros__texto {
