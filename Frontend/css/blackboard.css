@@ -47,8 +47,34 @@
 
 
 .panel__elemento{
-    background-color: #FD3C00;
     margin: 20px;
+    display: flex;
+    align-items: center;
+
+    & a{
+        text-decoration: none;
+        color: var(--color-primario);
+        margin: 4px;
+        
+        & i {
+            font-size: 40px;
+        }
+    }
+}
+
+.salir__icono{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    & i{
+        font-size: 40px;
+        color: var(--color-primario);
+    }
+}
+
+.principal__enl{
+    color: var(--color-auxiliar);
 }
 
 .cursos__container{
@@ -58,5 +84,16 @@
 @media screen and (max-width:550px){
     .perfil__nombre{
         font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width:690px){
+
+    .principal__enl{
+        display: none;
+    }
+
+    .panel__elemento{
+        justify-content: center;
     }
 }
