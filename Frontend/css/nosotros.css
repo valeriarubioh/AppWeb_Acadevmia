@@ -83,7 +83,7 @@
 }
 
  /* section mision y vision */
- .vision-mision{
+.vision-mision{
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -103,7 +103,7 @@
     flex: 1;
     text-align: left;
     margin-top: 4.5%;
- }
+}
 
 .vision-mision__texto {
     flex: 1;
@@ -219,8 +219,8 @@
     width: 80%;
 }
 
- /* Medida para tablet*/
- @media screen and (max-width:900px){
+/* Medida para tablet*/
+@media screen and (max-width:900px){
     
     .transparent-button{
         display: none;
@@ -238,7 +238,4 @@
     .vision-mision img{
         display: none;
     }
- }
- @media screen and (max-width:500px){
-  
- }
+}
