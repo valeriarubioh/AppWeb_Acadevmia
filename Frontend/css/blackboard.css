@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+:root{
+    --color-primario:#FD3C00;
+    --color-secudario:#2F2B3B;
+    --color-terciario: #FFFFFF;
+    --color-auxiliar:#D9D9D9;
+}
+
+/* secccion .blackboard */
+.blackboard{
+    display: flex;
+    position: relative;
+    padding-top: 11vh;
+}
+
+.panel__control{
+    background-color:var(--color-secudario);
+    width: 25%;
+}
+
+.panel__perfil{
+    background-color: var(--color-secudario);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    & .foto__perfil{
+        height: 90px;
+        width: 90px;
+        border-radius: 50%;
+        margin-bottom: 10px;
+    }
+}
+
+.perfil__descripcion{
+    color: var(--color-auxiliar);
+}
+
+
+.panel__elemento{
+    margin: 20px;
+    display: flex;
+    align-items: center;
+
+    & a{
+        text-decoration: none;
+        color: var(--color-primario);
+        margin: 4px;
+        
+        & i {
+            font-size: 40px;
+        }
+    }
+}
+
+.salir__icono{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+
+    & i{
+        font-size: 40px;
+        color: var(--color-primario);
+    }
+}
+
+.principal__enl{
+    color: var(--color-auxiliar);
+}
+
+.cursos__container{
+    margin-top: -20px;
+}
+
+@media screen and (max-width:550px){
+    .perfil__nombre{
+        font-size: 0.7rem;
+    }
+}
+
+@media screen and (max-width:690px){
+
+    .principal__enl{
+        display: none;
+    }
+
+    .panel__elemento{
+        justify-content: center;
+    }
+}

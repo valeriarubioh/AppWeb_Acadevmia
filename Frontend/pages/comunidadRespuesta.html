@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
+  <link rel="stylesheet" href="/Frontend/css/header_footer.css">
+  <link rel="stylesheet" href="/Frontend/css/comunidad.css">
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+  <script src="https://kit.fontawesome.com/c0f9324e8d.js" crossorigin="anonymous"></script>
+  <script src="/Frontend/Js/menu.js" defer></script>
+  <script src="/Frontend/Js/comunidad.js" defer></script>
+  <script src="/Frontend/Js/post.js" defer></script>
+  <title>Acadevmia - Comunidad</title>
+</head>
+
+<body>
+  <header class="principal">
+    <!-- barra de navegacion -->
+    <nav class="principal__navbar">
+        <a href="/Frontend/index.html">
+            <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
+        </a>            
+        <div class="menu_hamburguer">
+            <span class="line1__menu"></span>
+            <span class="line2__menu"></span>
+            <span class="line3__menu"></span>
+        </div>
+        <ul class="principal__lista">
+            <li class="principal__elemento">
+                <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+            </li>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+            </li>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+            </li>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+            </li>
+        </ul>
+        <div class="principal__botones">
+            <a href="/Frontend/pages/login.html" class="principal__link">
+                Ingresar
+            </a>
+            <a href="/Frontend/pages/signup.html" class="button__header">
+                Registrarse
+            </a>
+        </div>
+    </nav>
+    <div class="menu__toggle">
+        <ul class="lista__toggle">
+            <li class="principal__elemento">
+                <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+            </li>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+            </li>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+            </li>
+            <li class="principal__elemento">
+                <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+            </li>
+        </ul>
+        <a href="/Frontend/pages/login.html" class="toggle__link">
+            Ingresar
+        </a>
+        <a href="/Frontend/pages/signup.html" class="button__header">
+            Registrarse
+        </a>
+    </div>
+</header>
+  <main>
+    <div class="hero__foro">
+      <section class="foro__dashboard">
+        <div class="redireccion__link">
+          <box-icon name='user' ></box-icon>
+            <a href="#" class="texto__link">
+              Mi perfil
+            </a>
+        </div>
+        <div class="redireccion__link">
+          <i class="fa-regular fa-envelope-open fa-lg"></i>
+            <a href="#" class="texto__link">
+              Notificaciones
+            </a>
+        </div>
+        <div class="redireccion__link">
+          <box-icon name='basket'></box-icon>
+            <a href="#" class="texto__link">
+              Contribuciones
+            </a>
+        </div>
+        <div class="redireccion__link">
+          <box-icon name='edit-alt'></box-icon>
+            <a href="/Frontend/pages/blackboard.html" class="texto__link">
+              Backboard
+            </a>
+        </div>
+      </section>
+
+      <!-- Insertar seccion de ver pregunta y responder pregunta  -->
+      
+    </div>
+
+  </main>
+  <footer class="footer">
+    <!-- pie de pagina -->
+    <ul class="footer__redes">
+        <li class="footer__sociales">
+            <a id="facebook" href="https://www.facebook.com/?locale=es_LA">
+            <i class="fa-brands fa-facebook">
+            </i>
+            facebook
+            </a>
+        </li>
+        <li class="footer__sociales">
+            <a id="github" href="https://github.com/">
+            <i class="fa-brands fa-square-github">
+            </i>
+            Github
+            </a>
+        </li>
+        <li class="footer__sociales">
+            <a id="linkedin" href="https://www.linkedin.com/">
+            <i class="fa-brands fa-linkedin">
+            </i>
+            Linkedin
+            </a>
+        </li>
+        <li class="footer__sociales">
+            <a id="email" href="">
+            <i class="fa-solid fa-envelope">
+            </i>
+            Email
+            </a>
+        </li>
+        <li class="footer__sociales">
+            <a id="discord" href="https://discord.com/">
+            <i class="fa-brands fa-discord">
+            </i>
+            Discord
+            </a>
+        </li>
+    </ul>
+    <div class="footer__final">
+        <img class="footer__logo" src="/publics/img/logo.svg" alt="logo">
+        <p class="footer__terminos">Informacion legal | Politica de privacidad</p>
+        <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
+    </div>        
+</footer>
+</body>
+
+</html>

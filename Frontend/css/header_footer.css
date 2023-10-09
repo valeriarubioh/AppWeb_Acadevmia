@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+:root{
+    --color-primario:#FD3C00;
+    --color-secudario:#2F2B3B;
+    --color-terciario: #FFFFFF;
+    --color-auxiliar:#D9D9D9;
+}
+
+
+/* barra de navegacion */
+
+/* pendiente agregar un hover en los principal__elemento */
+/* posiblemente se cambie el color auxiliar y preguntar si dejaremos el boton ingreso como esta */
+
+.principal__navbar{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 11%;
+    padding: 8px;
+    background-color: var(--color-auxiliar);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.principal__logo{
+    width: 130px;
+    margin-top: -5px;
+}
+
+
+.principal__lista{
+    list-style: none;
+    display: flex;
+}
+
+.principal__ref{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color:var(--color-secudario);
+    transition: .3s;
+}
+
+.principal__ref:hover,
+.principal__ref.active {
+    color: var(--color-primario);
+}
+
+.principal__elemento{
+    margin: 0 30px;
+}
+
+.button__header{
+    background-color: var(--color-primario);
+    color: var(--color-terciario);
+    border-radius: 20px;
+    padding: 7px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+.principal__link{
+    text-decoration: none;
+    color:#FD3C00;
+}
+
+/* menu toggle */
+
+.menu__toggle{
+    width: 25%;
+    background-color:var(--color-auxiliar);
+    position:fixed;
+    top:11vh;
+    left: 75%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    z-index: 70;
+    height: 280px;
+}
+
+.lista__toggle{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lista__toggle > *{
+    margin:5px 0;
+}
+
+.toggle__link{
+    text-decoration: none;
+    margin-bottom: 8px;
+    color: var(--color-primario);
+}
+
+
+/* Seccion cursos */
+
+.cursos__titulacion {
+    text-align: center;
+    padding: 4px;
+}
+
+.cursos__titulo {
+    font-size: 70px;
+    color: var(--color-secudario);
+}
+
+.cursos__subtitulo {
+    font-size: 40px;
+    color: var(--color-primario);
+}
+
+/* cursos */
+
+.curso{
+    width: 280px;
+    height: 440px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px 3px #0000007e;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.img__curso{
+    width: 280px;
+}
+
+.cursos-mas{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.curso__mas-txt{
+    font-size: 40px;
+    width: 60%;
+}
+
+.cursos__container{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.curso-txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 170px;
+}
+.curso__nombre{
+    margin-bottom: 5px;
+    font-size: x-large;
+}
+.curso_descripcion{
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1rem;
+    width: 250px;
+}
+.curso .color1{
+    border: 1px rgb(61, 61, 217) solid;
+    color: rgb(61, 61, 217) ;
+}
+
+.curso .color3{
+    border: 1px rgb(0, 158, 68) solid;
+    color: rgb(0, 158, 68) ;
+}
+
+.curso .color4{
+    border: 1px rgb(171, 52, 198) solid;
+    color: rgb(171, 52, 198);
+}
+
+.transparent-button{
+    color: var(--color-primario);
+    border-radius: 20px;
+    border: 1px var(--color-primario) solid;
+    padding: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+/*footer*/
+
+.footer__redes{
+    background-color: var(--color-auxiliar);
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.footer__sociales{
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer__sociales i{
+    font-size: 30px;
+    margin: 5px;
+}
+
+.footer__sociales a{
+    text-decoration: none;
+    color: black;
+}
+
+.footer__sociales i:hover,
+.footer__sociales i .active {
+    transform: scale(1.2); 
+}
+
+#facebook:hover{
+    color:#0f4792;
+}
+
+#discord:hover{
+    color:#b6a6f2;
+}
+
+#linkedin:hover{
+    color: #0a336b;
+}
+
+#email:hover{
+    color:#ffffff;
+}
+
+
+.footer__final{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secudario);
+    color: var(--color-auxiliar);
+}
+
+.footer__logo{
+    width: 30px;
+}
+
+.footer__logo:hover,
+.footer__logo.active {
+    color: var(--color-primario);
+}
+
+.footer__copyright{
+    position: absolute;
+    margin-top:50px;
+}
+
+
+@media screen and (max-width:950px){
+    /*nav*/
+    .principal__navbar{
+        justify-content: space-between;
+    }
+    .hero__logo{
+        width: 100%;
+    }
+    .principal__logo{
+        margin-left: 25px;
+    }
+    .principal__lista{
+        display: none;
+    }
+    .principal__botones{
+        display: none;
+    }
+    
+    .menu_hamburguer{
+        display: inline-block;
+        width: 25px;
+        height: 25px;
+        margin-right: 25px;
+    }
+
+    .menu_hamburguer > *{
+        display: block;
+        width: 100%;
+        height: 3px;
+        background-color: #333;
+        margin-bottom: 5px;
+        border-radius: 20px;
+        transform-origin: 0 100%;
+        transition: all 400ms;
+    }
+
+    .line1__menu-active{
+        transform: rotate(45deg);
+    }
+
+    .line2__menu-active{
+        opacity: 0;
+        margin-left: 10px;
+    }
+
+    .line3__menu-active{
+        transform: rotate(-45deg) translate(0px, 2px);
+    }
+
+}
+
+@media screen and (max-width:550px){
+    .curso{
+        width: 200px;
+        height: 360px;
+        border: none;
+        border-radius: 25px;
+        box-shadow: 2px 2px 10px 3px #0000007e;
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .img__curso{
+        width: 200px;
+    }
+
+    .curso_descripcion{
+        width: 200px;
+        font-size: 0.8rem;
+    }
+    
+}
