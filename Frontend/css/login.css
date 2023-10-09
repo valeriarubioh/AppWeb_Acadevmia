@@ -35,17 +35,31 @@
   }
   
   .ingreso__animacion {
-    background-color: var(--color-auxiliar);
+    
     height: 100%;
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    animation: banner 10s ease-in-out 0s infinite alternate-reverse none;
+    z-index: 2;
+    background-size: 100% 100%;
+  }
+  @keyframes banner{
+    0%, 50%{
+        background-image: url("/publics/img/login_registro/efe-kurnaz-RnCPiXixooY-unsplash.jpg");
+        opacity: 0.9;
+    }
+    50%,100%{
+        background-image: url("/publics/img/login_registro/luke-chesser-3POMgLjfYv0-unsplash.jpg");
+    }
   }
 
   h1{
-    font-size: 55px;
+    font-size: 60px;
+    z-index: 1;
+    color: black;
   }
 
   .ingreso__formulario p{
