@@ -14,208 +14,161 @@
     --color-auxiliar:#D9D9D9;
 }
 
-/* barra de navegacion */
-
-/* pendiente agregar un hover en los principal__elemento */
-/* posiblemente se cambie el color auxiliar y preguntar si dejaremos el boton ingreso como esta */
-
-.principal__navbar{
-    position: fixed;
-    z-index: 99;
-    width: 100%;
-    height: 60px;
-    padding: 8px;
-    background-color: var(--color-auxiliar);
+/*  section nosotros */
+.nosotros {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex: 1;
+    height: 62rem;
 }
 
-.principal__logo{
-    width: 130px;
-    margin-top: -5px;
-}
-
-.menu_hamburguer {
-    display: none;
-}
-
-
-.principal__lista{
-    list-style: none;
-    display: flex;
-    margin: 6px 20px 0px 0px;
-}
-.principal__ref{
-    text-decoration: none;
-    font-size: 1.2rem;
-    color:var(--color-secudario);
-    transition: .3s;
-}
-
-.principal__ref:hover,
-.principal__ref.active {
-    color: var(--color-primario);
-}
-
-.principal__elemento{
-    margin: 10px 30px;
-}
-
-.button{
-    background-color: var(--color-primario);
+.nosotros__texto {
+    background-color:var(--color-secudario);
     color: var(--color-terciario);
-    border-radius: 20px;
-    padding: 10px;
-    text-decoration: none;
-    margin-left: 10px;
-}
-.principal__link{
-    text-decoration: none;
-    color:#FD3C00;
+    padding: 5% 2%;
+    flex: 1;
+    text-align: left;
+    margin-top: 5%;
 }
 
-/* section Quienes somos */
-
-.somos{
-    height: 90vh;
-    padding-top: 150px;
-}
-.somos__texto{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    margin-top: 70px;
-
-}
-.somos__titulo {
-    margin-bottom: 40px;
-    text-align: center;
-    font-size: 4rem;
+.nosotros__titulo {
+    font-size: 6.9rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-.somos__parrafo {
-    font-size: 1.4rem;
-    text-align: center;
-    transition: .5s ease;
-    width: 60%;
+.nosotros__parrafo {
+    font-size:1.6em;
+    padding-top: 3%;
 }
 
 .somos__container {
     display: flex;
+    padding-top: 5%;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
-    margin-top: 50px;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
 }
 
 .cards {
-   flex: 1 1 20rem;
-    background: var(--color-terciario);
-    padding: 2rem;
+    flex: 1 1 20rem;
     border-radius: 2rem;
     text-align: center;
-    border: 1rem solid var(--color-terciario);
-    transition: .5s ease;
+    transition: .6s ease;
 }
 
-
 .somos__container .cards:hover {
-    border-color: var(--color-terciario);
-    transform: scale(1.04);
+    transform: scale(1.09);
 } 
 
 .cards i {
-    font-size: 5rem;
+    font-size: 5.3rem;
     color: var(--color-primario);
+}
+.nosotros_imagenes {
+    background-color: var(--color-secudario);
+    text-align: center;
+    padding-top: 5.4%;
+    position: relative;
+    max-width: 40%;
+}
+
+.imagenes {
+    max-width: 100%; /* Hace que la imagen se ajuste al ancho máximo del contenedor */
+    height: 100%; /* Mantiene la proporción de aspecto de la imagen */
+    display: block; 
 }
 
  /* section mision y vision */
-.vision-mision {
+ .vision-mision{
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
-    box-shadow: 7px 7px 12px 0 rgba(20, 20, 20, 0.3);
+    text-align: center;
+}
+
+.vision-mision__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 2rem;
-    padding: 3rem 10% 11rem 10%;
-    transition: .5s ease;
-    margin: 1px 2em 0 2em;
+    padding-bottom: 5%;
 }
 
-.descripcion1{
-    margin-left: 35%;
-    text-align: right;
-    width: 60%;
-    justify-content: flex-end
-}
-.descripcion2{
+.vision-mision__img {
+    padding-left: 10% ;
+    flex: 1;
     text-align: left;
-    width: 60%;
+    margin-top: 4.5%;
+ }
+
+.vision-mision__texto {
+    flex: 1;
+    text-align: right;
+    padding-right: 3%;
 }
 
-.comunidadButton{
-    position: relative;
-    top:200px;
-    right:150px;
-}
-.transparent-button{
+.descripcion__subtitulo {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 4em;
     color: var(--color-primario);
-    border-radius: 20px;
-    border: 1px var(--color-primario) solid;
-    padding: 10px;
-    text-decoration: none;
-    margin-left: 10px;
-    font-size: large;
-    margin-bottom: 10px;
+    padding-top: 7% ;
 }
 
-
-.descripcion__texto {
-    color:#667080;
-    font-size: 1.2rem ;
-    padding: 1rem 0rem 0rem 0rem  ;
+.descripcion .descripcion__texto{
+    font-size: 1.5em;
+    color: var(--color-secudario);
 }
+
 
  /* section nuestros valores */
+.valores {
+    background-color: var(--color-secudario);
+}
 
-.valor__titulo {
+.valores .valor__titulo {
     text-align: center;
-    font-size: 2.5rem;
-    padding: 4rem 4rem 0rem 4rem;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 5em;
+    padding: 2% ;
+    padding-top: 4%;
+    color: var(--color-terciario);
 }
 
 .valores__container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
-    gap: 2rem;
-    box-shadow:2px;
-    margin: 4% 2em 0 2em;
 }
 
 .valores__container .xvalor {
-    flex: 1 1 30rem;
-    background: var(--color-terciario);
-    box-shadow: 7px 7px 12px 0 rgba(20, 20, 20, 0.3);
-    padding: 3rem 2rem 4rem;
-    border-radius: 2rem;
+    background-color: var(--color-terciario);
+    border-radius: 4px;
+    width: 20%;
+    min-width: 350px;
+    height: 27rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 20px;
+    margin-bottom: 90px;
     text-align: center;
-    border: 1rem solid var(--color-terciario);
-    transition: .5s ease;
+    margin-right: 0.2%;
 }
 
 .valores__sub {
-    font-size: 1.5rem ;
+    font-size: 2.1rem ;
+    color: var(--color-primario);
 }
 
 .valores__texto {
-    font-size: 1.2rem ;
-    padding: 1rem 0rem 0rem 0rem  ;
+    font-size: 1.7rem ;
+    padding: 1% ;
 }
 
  /* section equipo */
@@ -227,7 +180,14 @@
     flex-wrap: wrap;
     gap: 1rem;
 }
-
+.equipo .valor__titulo {
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 5em;
+    padding: 2% ;
+    padding-top: 4%;
+    color: var(--color-primario);
+}
 .equipo__container .equipo__cards {
     flex: auto;
     background: var(--color-terciario);
@@ -261,37 +221,7 @@
 
  /* Medida para tablet*/
  @media screen and (max-width:900px){
-    /*nav*/
-    .principal__navbar{
-        justify-content: space-between;
-    }
-    .hero__logo{
-        width: 100%;
-    }
-    .principal__logo{
-        margin-left: 25px;
-    }
-    .principal__lista{
-        display: none;
-    }
-    .principal__botones{
-        display: none;
-    }
-    .menu_hamburguer{
-        display: inline-block;
-        width: 25px;
-        height: 25px;
-        margin-right: 25px;
-    }
-    .somos{
-    height: 160vh;
-
-    }
-    .somos__parrafo{
-        width: 80%;
-        font-size: 1.2rem;
-    }
-
+    
     .transparent-button{
         display: none;
     }
@@ -310,15 +240,7 @@
     }
  }
  @media screen and (max-width:500px){
-    .somos__titulo{
-        font-size: 3rem;
-    }
-    .somos__texto{
-        margin-top:70px;
-    }
-    .vision-mision{
-        margin-top: 80px;
-    }
+  
  }
  
  
