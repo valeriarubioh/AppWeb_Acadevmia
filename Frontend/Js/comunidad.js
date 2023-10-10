@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     preguntasHtml += `<div class="foro__publicadas">
     <div class="foro__pregunta">
         <img src="../../publics/img/user.png">
-        <a href="/Frontend/pages/comunidadRespuesta.html" class="foro__ref">
+        <a href="/Frontend/pages/comunidadRespuesta.html?id=${index}" class="foro__ref">
         <h3>${obj.pregunta}</h3>
         <p>${obj.tags}</p>
         </a>

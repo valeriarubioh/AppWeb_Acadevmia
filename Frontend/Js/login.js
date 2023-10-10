@@ -8,7 +8,7 @@ loginForm.addEventListener('submit',(e) =>{
     // inicializamos una variable que nos permita ingresar al sistema
     const Users = JSON.parse(localStorage.getItem('users'))||false
     // validamos si los datos son iguales a los que se registraron
-    const validUser = Users.find(user => (user.email === userId || user.username === userId) && user.password === password)
+    const validUser = Users && Users.find(user => (user.email === userId || user.username === userId) && user.password === password)
     //
     if(!validUser){
         return alert('Usuario y/o contraseña son incorrectos')

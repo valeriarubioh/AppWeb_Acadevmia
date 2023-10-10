@@ -8,7 +8,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const contenido = document.getElementById("input__texto").value;
     const tags = document.getElementById("input__tags").value;
     const Preguntas = JSON.parse(localStorage.getItem("preguntas")) || [];
-    Preguntas.push({ pregunta: titulo, descripcion: contenido, tags: tags });
+    Preguntas.push({
+      pregunta: titulo,
+      descripcion: contenido,
+      tags: tags,
+      respuestas: [],
+    });
     localStorage.setItem("preguntas", JSON.stringify(Preguntas));
     window.location.href = "comunidad.html";
   });
