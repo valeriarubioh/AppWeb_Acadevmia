@@ -15,6 +15,9 @@
 }
 
 /* Seccion eligenos */
+.eligenos {
+    padding-top: 5%;
+}
 .eligenos__banner {
     width: 100%;
     height: 800px;
@@ -226,7 +229,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(224, 90, 0, 0.808),var(--color-secudario));
+    background: linear-gradient(rgba(0, 0, 0, 0.89),var(--color-secudario));
     display: flex;
     justify-content: center;
     align-items: center;
