@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
-    <link rel="stylesheet" href="/Frontend/css/compraCarrito.css">
+    <link rel="stylesheet" href="/Frontend/css/compraCurso.css">
     <link rel="stylesheet" href="/Frontend/css/header_footer.css">
     <script src="/Frontend/Js/menu.js" defer></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
@@ -76,7 +76,7 @@
     </header>
     <div class="wrapper">
         <aside class="dashboard">
-            <img src="/publics/img/llama__logo.svg" alt="">
+            <img src="/publics/img/llama__logo.svg" alt="" class="logo__dashboard">
             <nav>
                 <ul class="dashboard__menu">
                     <li class="dashboard__link">
@@ -87,8 +87,8 @@
                         <box-icon name='user' ></box-icon>
                         <a href="#">Mi perfil</a>
                     </li>
-                    <li class="dashboard__link">
-                        <box-icon name='basket active'></box-icon>
+                    <li class="dashboard__link active">
+                        <box-icon name='book-open'></box-icon>
                         <a href="/Frontend/pages/Cursos.html">Cursos</a>
                     </li>
                     <li class="dashboard__link">
@@ -106,56 +106,113 @@
             <h2 class="titulo__productos"> Todos los cursos </h2>
             <div class="contendor__cursos">
                     <div class="curso__comprar">
-                        <img src="" alt="curso" class="imagen__cursocomprar">
+                        <img src="/publics/img/stockCursos/imagen_curso.jpeg" alt="curso" class="imagen__cursocomprar">
                         <div class="info__curso">
                             <h3>Curso completo de JS</h3>
                             <p class="precio__curso">45.000</p>
-                            <P class="descripcion__cuso">Descripcion del curso</P>
-                            <button class="agregar__carrito">agregar al carrito</button>
+                            <p class="descripcion__cuso">Aprende a programar desde cero y desarrollo web con JavaScript, jQuery, JSON, TypeScript, Angular, Node, MEAN, +30 horas</p>
+                            <div class="estrellas__boton">
+                                <div class="estrellas">
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon name='star-half' type='solid' ></box-icon>
+                                </div>
+                                <button class="agregar__carrito">agregar al carrito</button>
+                            </div>
                         </div>
                     </div>
                     <div class="curso__comprar">
-                        <img src="" alt="curso" class="imagen__cursocomprar">
+                        <img src="/publics/img/stockCursos/imagen_curso.jpeg" alt="curso" class="imagen__cursocomprar">
                         <div class="info__curso">
                             <h3>Curso completo de JS</h3>
                             <p class="precio__curso">45.000</p>
-                            <P class="descripcion__cuso">Descripcion del curso</P>
-                            <button class="agregar__carrito">agregar al carrito</button>
+                            <p class="descripcion__cuso">Aprende a programar desde cero y desarrollo web con JavaScript, jQuery, JSON, TypeScript, Angular, Node, MEAN, +30 horas</p>
+                            <div class="estrellas__boton">
+                                <div class="estrellas">
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon name='star-half' type='solid' ></box-icon>
+                                </div>
+                                <button class="agregar__carrito">agregar al carrito</button>
+                            </div>
                         </div>
+                    </div>   
                     <div class="curso__comprar">
-                        <img src="" alt="curso" class="imagen__cursocomprar">
+                        <img src="/publics/img/stockCursos/imagen_curso.jpeg" alt="curso" class="imagen__cursocomprar">
                         <div class="info__curso">
-                        <h3>Curso completo de JS</h3>
-                        <p class="precio__curso">45.000</p>
-                        <P class="descripcion__cuso">Descripcion del curso</P>
-                        <button class="agregar__carrito">agregar al carrito</button>
+                            <h3>Curso completo de JS</h3>
+                            <p class="precio__curso">45.000</p>
+                            <p class="descripcion__cuso">Aprende a programar desde cero y desarrollo web con JavaScript, jQuery, JSON, TypeScript, Angular, Node, MEAN, +30 horas</p>
+                            <div class="estrellas__boton">
+                                <div class="estrellas">
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon name='star-half' type='solid' ></box-icon>
+                                </div>
+                                <button class="agregar__carrito">agregar al carrito</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="curso__comprar">
-                        <img src="" alt="curso" class="imagen__cursocomprar">
+                        <img src="/publics/img/stockCursos/imagen_curso.jpeg" alt="curso" class="imagen__cursocomprar">
                         <div class="info__curso">
-                        <h3>Curso completo de JS</h3>
-                        <p class="precio__curso">45.000</p>
-                        <P class="descripcion__cuso">Descripcion del curso</P>
-                        <button class="agregar__carrito">agregar al carrito</button>
+                            <h3>Curso completo de JS</h3>
+                            <p class="precio__curso">45.000</p>
+                            <p class="descripcion__cuso">Aprende a programar desde cero y desarrollo web con JavaScript, jQuery, JSON, TypeScript, Angular, Node, MEAN, +30 horas</p>
+                            <div class="estrellas__boton">
+                                <div class="estrellas">
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon name='star-half' type='solid' ></box-icon>
+                                </div>
+                                <button class="agregar__carrito">agregar al carrito</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="curso__comprar">
-                        <img src="" alt="curso" class="imagen__cursocomprar">
+                        <img src="/publics/img/stockCursos/imagen_curso.jpeg" alt="curso" class="imagen__cursocomprar">
                         <div class="info__curso">
-                        <h3>Curso completo de JS</h3>
-                        <p class="precio__curso">45.000</p>
-                        <P class="descripcion__cuso">Descripcion del curso</P>
-                        <button class="agregar__carrito">agregar al carrito</button>
+                            <h3>Curso completo de JS</h3>
+                            <p class="precio__curso">45.000</p>
+                            <p class="descripcion__cuso">Aprende a programar desde cero y desarrollo web con JavaScript, jQuery, JSON, TypeScript, Angular, Node, MEAN, +30 horas</p>
+                            <div class="estrellas__boton">
+                                <div class="estrellas">
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon name='star-half' type='solid' ></box-icon>
+                                </div>
+                                <button class="agregar__carrito">agregar al carrito</button>
+                            </div>
+                        </div>
                     </div>
                     <div class="curso__comprar">
-                        <img src="" alt="curso" class="imagen__cursocomprar">
+                        <img src="/publics/img/stockCursos/imagen_curso.jpeg" alt="curso" class="imagen__cursocomprar">
                         <div class="info__curso">
-                        <h3>Curso completo de JS</h3>
-                        <p class="precio__curso">45.000</p>
-                        <P class="descripcion__cuso">Descripcion del curso</P>
-                        <button class="agregar__carrito">agregar al carrito</button>
-                    </div>
-                    
-                </div>
+                            <h3>Curso completo de JS</h3>
+                            <p class="precio__curso">45.000</p>
+                            <p class="descripcion__cuso">Aprende a programar desde cero y desarrollo web con JavaScript, jQuery, JSON, TypeScript, Angular, Node, MEAN, +30 horas</p>
+                            <div class="estrellas__boton">
+                                <div class="estrellas">
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon type='solid' name='star'></box-icon>
+                                    <box-icon name='star-half' type='solid' ></box-icon>
+                                </div>
+                                <button class="agregar__carrito">agregar al carrito</button>
+                            </div>
+                        </div>
+                    </div> 
             </div>
         </main>
     </div>
