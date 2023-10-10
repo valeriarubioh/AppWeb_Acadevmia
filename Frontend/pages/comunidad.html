@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="/Frontend/css/header_footer.css">
   <link rel="stylesheet" href="/Frontend/css/comunidad.css">
   <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-  <script src="https://kit.fontawesome.com/c0f9324e8d.js" crossorigin="anonymous"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <script src="/Frontend/Js/menu.js" defer></script>
   <script src="/Frontend/Js/comunidad.js" defer></script>
   <title>Acadevmia - Comunidad</title>
@@ -78,35 +78,57 @@
     </div>
 </header>
   <main>
-    <div class="hero__foro">
-      <section class="foro__dashboard">
-        <div class="redireccion__link">
-          <box-icon name='user' ></box-icon>
-            <a href="#" class="texto__link">
-              Mi perfil
-            </a>
-        </div>
-        <div class="redireccion__link">
-          <i class="fa-regular fa-envelope-open fa-lg"></i>
-            <a href="#" class="texto__link">
-              Notificaciones
-            </a>
-        </div>
-        <div class="redireccion__link">
-          <box-icon name='basket'></box-icon>
-            <a href="#" class="texto__link">
-              Contribuciones
-            </a>
-        </div>
-        <div class="redireccion__link">
-          <box-icon name='edit-alt'></box-icon>
-            <a href="/Frontend/pages/blackboard.html" class="texto__link">
-              Backboard
-            </a>
-        </div>
-      </section>
-
-      <!-- seeccion de preguntar y responder preguntas  -->
+      <section class="foro">
+        <div class="panel__control">
+          <div class="panel__perfil">
+              <img class="foto__perfil" src="/publics/img/IMG-20190510-WA0036.jpg" alt="foto de perfil">
+          <div class="perfil__descripcion">
+              <p class="perfil__nombre">@nombreusuario</p>
+          </div>
+      </div>
+      <div class="panel__elemento">
+          <div class="panel__icono">
+              <a href="#"><i class='bx bx-calendar'></i></a>
+          </div>
+          <div class="panel__descripcion">
+              <a href="#"><p class="principal__enl">Horario</p></a>
+          </div>
+      </div>
+      <div class="panel__elemento">
+          <div class="panel__icono">
+              <a href="#"><i class='bx bxs-check-square'></i></a>
+          </div>
+          <div class="panel__descripcion">
+              <a href="#"><p class="principal__enl">Calificaciones</p></a>
+          </div>
+      </div>
+      <div class="panel__elemento">
+          <div class="panel__icono">
+              <a href="#"><i class='bx bx-briefcase-alt'></i></a>
+          </div>
+          <div class="panel__descripcion">
+              <a href="#"><p class="principal__enl">Trabajos</p></a>
+          </div>
+      </div>
+      <div class="panel__elemento">
+          <div class="panel__icono">
+              <a href="#"><i class='bx bxs-user-detail'></i></a>
+          </div>
+          <div class="panel__descripcion">
+              <a href="#"><p class="principal__enl">Tutores</p></a>
+          </div>
+      </div>
+      <div class="panel__perfil">
+          <div class="panel__salir">
+              <a href="#" class="salir__icono">
+                  <i class='bx bx-log-out'></i>
+                  <p class="principal__enl">Salir</p>
+              </a>                    
+          </div>
+      </div>
+  </div>
+  
+  <!-- seeccion de preguntar y responder preguntas  -->
       <section class="principal__preguntar">
 
         <div class="hacer__pregunta">
@@ -114,59 +136,60 @@
               <button class="button--modificado" id="btn__pregunta">Pregunta</button>
             </div>
         </div>
-
-          <!-- función js para añadir evento de preguntas  -->
+        
+        <!-- función js para añadir evento de preguntas  -->
         <section class="body__preguntas">
-
-            <!-- <div class="foro__publicadas">
-              <div class="foro__pregunta">
-                <img src="../../publics/img/user.png">
-                <a href="/Frontend/pages/comunidadRespuesta.html" class="foro__ref">
-                  <h3>¿Como puedo crear un array en js?</h3>
-                  <p>Javascript</p>
-                </a>                
-              </div>
-              <div class="foro__respuesta">
-                <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
-                <div class=" foro__reaccion">
-                </div>
+          
+          <!-- <div class="foro__publicadas">
+            <div class="foro__pregunta">
+              <img src="../../publics/img/user.png">
+              <a href="/Frontend/pages/comunidadRespuesta.html" class="foro__ref">
+                <h3>¿Como puedo crear un array en js?</h3>
+                <p>Javascript</p>
+              </a>                
+            </div>
+            <div class="foro__respuesta">
+              <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
+              <div class=" foro__reaccion">
               </div>
             </div>
+          </div>
 
-            <div class="foro__publicadas">
-              <div class="foro__pregunta">
-                <img src="../../publics/img/user.png">
-                <a href="/Frontend/pages/comunidadRespuesta.html" class="foro__ref">
-                  <h3>¿Como puedo crear un array en js?</h3>
-                </a> 
+          <div class="foro__publicadas">
+            <div class="foro__pregunta">
+              <img src="../../publics/img/user.png">
+              <a href="/Frontend/pages/comunidadRespuesta.html" class="foro__ref">
+                <h3>¿Como puedo crear un array en js?</h3>
+              </a> 
+            </div>
+            <div class="foro__respuesta">
+              <img src="../../publics/img/user.png">
+              <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
+              <div class=" foro__reaccion">
+                <button><box-icon name='like' ></box-icon></button>
+                <button><box-icon name='dislike' ></box-icon></button>
               </div>
-              <div class="foro__respuesta">
-                <img src="../../publics/img/user.png">
-                <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
-                <div class=" foro__reaccion">
-                  <button><box-icon name='like' ></box-icon></button>
-                  <button><box-icon name='dislike' ></box-icon></button>
-                </div>
+            </div>
+            <div class="foro__respuesta">
+              <img src="../../publics/img/user.png">
+              <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
+              <div class=" foro__reaccion">
+                <button><box-icon name='like' ></box-icon></button>
+                <button><box-icon name='dislike' ></box-icon></button>
               </div>
-              <div class="foro__respuesta">
-                <img src="../../publics/img/user.png">
-                <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
-                <div class=" foro__reaccion">
-                  <button><box-icon name='like' ></box-icon></button>
-                  <button><box-icon name='dislike' ></box-icon></button>
-                </div>
-              </div>
-              <div class="principal__botones">
-                <a href="/Frontend/pages/comunidadRespuesta.html" class="button">
-                  Responder
-                </a>
-              </div>
-            </div> -->
+            </div>
+            <div class="principal__botones">
+              <a href="/Frontend/pages/comunidadRespuesta.html" class="button">
+                Responder
+              </a>
+            </div>
+          </div> -->
           <!-- fin función -->
         </section>
       </section>
     </div>
-
+    
+  </section>
   </main>
   <footer class="footer">
     <!-- pie de pagina -->
