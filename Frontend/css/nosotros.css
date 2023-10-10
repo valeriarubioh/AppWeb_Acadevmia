@@ -17,14 +17,12 @@
 /*  section nosotros */
 .nosotros {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    flex: 1;
-    height: 62rem;
 }
 
 .nosotros__texto {
+    height: 100%;
     background-color:var(--color-secudario);
     color: var(--color-terciario);
     padding: 5% 2%;
@@ -172,6 +170,26 @@
 }
 
  /* section equipo */
+
+.equipo__foto{
+    height: 150px;
+    width: 150px;
+    border-radius: 45%;
+}
+
+.equipo__experiencia{
+    width: 250px;
+}
+
+.equipo__cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.equipo__nombre{
+    margin: 10px;
+}
 
 .equipo__container {
     display: flex;
