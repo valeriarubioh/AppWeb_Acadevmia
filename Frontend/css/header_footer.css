@@ -74,37 +74,67 @@
 
 /* menu toggle */
 
-.menu__toggle{
-    width: 25%;
-    background-color:var(--color-auxiliar);
-    position:fixed;
-    top:11vh;
-    left: 75%;
+.menu__toggle {
+    width: 80vh ;
+    background-color: var(--color-auxiliar);
+    position: fixed;
+    top: 11vh;
+    left: 63%;
     display: none;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    align-items: right; /* Cambiado de rigth a right */
     z-index: 70;
-    height: 280px;
 }
 
-.lista__toggle{
+.menu__toggle .button__header {
+    background-color: var(--color-auxiliar); 
+    color: var(--color-primario);
+    text-align: left;
+    margin:2% 5.9%;
+    margin-bottom: 9%;
+    padding: 0%;
+    font-size: 120%;
+}
+
+.lista__toggle {
     list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: right;
 }
 
-.lista__toggle > *{
-    margin:5px 0;
+/* Estilo base de los elementos del menú */
+.principal__elemento a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 3%;
+    padding: 10px;
 }
 
-.toggle__link{
+.toggle__link {
     text-decoration: none;
-    margin-bottom: 8px;
+    color: var(--color-primario);
+    margin:4% 5.9%;
+    font-size: 120%;
+}
+.principal__ref{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color:var(--color-secudario);
+    transition: .3s;
+}
+
+/* Decoraciones que queria aplicar pero solo se activan a dar click  */
+.principal__ref:hover,
+.principal__ref.active {
     color: var(--color-primario);
 }
-
+.lista__toggle li a:hover,
+.lista__toggle li a:active,
+.lista__toggle li a:focus {
+    background-color: #fd3b002b; /* Reemplaza var(--color-destacado) con el color deseado */
+}
 
 /* Seccion cursos */
 
@@ -296,34 +326,34 @@
     }
     
     .menu_hamburguer{
-        display: inline-block;
-        width: 25px;
-        height: 25px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 30px;
+        height: 24px;
         margin-right: 25px;
+        cursor: pointer;
     }
 
     .menu_hamburguer > *{
-        display: block;
         width: 100%;
         height: 3px;
         background-color: #333;
         margin-bottom: 5px;
         border-radius: 20px;
-        transform-origin: 0 100%;
-        transition: all 400ms;
+        transition: transform 0.4s, opacity 0.4s, margin 0.4s;
     }
 
     .line1__menu-active{
-        transform: rotate(45deg);
+        transform: rotate(45deg) translate(5px, 5px);
     }
 
     .line2__menu-active{
         opacity: 0;
-        margin-left: 10px;
     }
 
     .line3__menu-active{
-        transform: rotate(-45deg) translate(0px, 2px);
+        transform: rotate(-45deg) translate(5px, -5px);
     }
 
 }
