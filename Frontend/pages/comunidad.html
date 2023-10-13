@@ -12,6 +12,7 @@
     <script src="/Frontend/Js/menu.js" defer></script>
     <script src="/Frontend/Js/comunidad.js" defer></script>
     <script src="/Frontend/Js/post.js" defer></script>
+    <script src="/Frontend/Js/display.js"defer></script>
     <title>Acadevmia - Comunidad</title>
 </head>
 
@@ -140,80 +141,34 @@
 
             <!-- seeccion de preguntar y responder preguntas  -->
             <section class="principal__preguntar">
-
                 <div class="hacer__pregunta">
-                    <div class="principal__botones">
-                        <button class="button--modificado" id="btn__pregunta">Pregunta</button>
-                    </div>
+                    <button class="button--modificado" id="btn__pregunta">Pregunta</button>
                 </div>
                 <!-- Este es el cambio -->
-                <section class="pregunta">
-                    <div class="instrucciones__contenido">
-                        <h2>Estas a punto de escribir una pregunta de programación.
-                        </h2>
-                        <p>Escribe un título de una sola línea que resuma todo tu problema</p>
-
-                    </div>
-                    <form class="principal__formulario" method="post">
-                        <input type="text" id="input__titulo" name="titulo" placeholder="Titulo" required>
-                        <textarea name="descripcion" id="input__texto" cols="100" rows="20" placeholder="Describe tu problema o duda con mayor detalle, incluye lo que haz intentado y lo que esperas de resultado" required></textarea>
-                        <div class="formulario__tags">
-                            <input type="text" id="input__tags" name="tags"
-                                placeholder="Añade hasta 3 tags que describan tu pregunta" >
-                            <button type="submit" name="boton" id="submit__button">
-                                Publica tu pregunta
-                            </button>
+                <section class="pregunta" id="pregunta__seccion">                   
+                    <div class="modal-content animate">
+                        <div class="instrucciones__contenido">
+                            <span onclick="document.getElementById('pregunta__seccion').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <br>
+                            <h2>Estas a punto de escribir una pregunta de programación.</h2>
+                            <p>Escribe un título de una sola línea que resuma todo tu problema</p>
                         </div>
-                    </form>
+                        <form class="principal__formulario" method="post">
+                            <input type="text" id="input__titulo" name="titulo" placeholder="Titulo" required>
+                            <textarea name="descripcion" id="input__texto" cols="100" rows="20" placeholder="Describe tu problema o duda con mayor detalle, incluye lo que haz intentado y lo que esperas de resultado" required></textarea>
+                            <input type="text" id="input__tags" name="tags" placeholder="Añade hasta 3 tags que describan tu pregunta" required>
+                            <div class="formulario__envio">
+                                <button type="submit" name="boton" id="submit__button">
+                                    Publica tu pregunta
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </section>
                 <!-- Fin del cambio -->
                 <!-- función js para añadir evento de preguntas  -->
                 <section class="body__preguntas">
 
-                    <!-- <div class="foro__publicadas">
-            <div class="foro__pregunta">
-              <img src="../../publics/img/user.png">
-              <a href="/Frontend/pages/comunidadRespuesta.html" class="foro__ref">
-                <h3>¿Como puedo crear un array en js?</h3>
-                <p>Javascript</p>
-              </a>                
-            </div>
-            <div class="foro__respuesta">
-              <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
-              <div class=" foro__reaccion">
-              </div>
-            </div>
-          </div>
-
-          <div class="foro__publicadas">
-            <div class="foro__pregunta">
-              <img src="../../publics/img/user.png">
-              <a href="/Frontend/pages/comunidadRespuesta.html" class="foro__ref">
-                <h3>¿Como puedo crear un array en js?</h3>
-              </a> 
-            </div>
-            <div class="foro__respuesta">
-              <img src="../../publics/img/user.png">
-              <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
-              <div class=" foro__reaccion">
-                <button><box-icon name='like' ></box-icon></button>
-                <button><box-icon name='dislike' ></box-icon></button>
-              </div>
-            </div>
-            <div class="foro__respuesta">
-              <img src="../../publics/img/user.png">
-              <p>Para obtener la profundidad del array he pensado que puedo utilizar el método flat() de esta forma: function getArrayDepth(ry){} // number of levels: how deep is the array let levels </p>
-              <div class=" foro__reaccion">
-                <button><box-icon name='like' ></box-icon></button>
-                <button><box-icon name='dislike' ></box-icon></button>
-              </div>
-            </div>
-            <div class="principal__botones">
-              <a href="/Frontend/pages/comunidadRespuesta.html" class="button">
-                Responder
-              </a>
-            </div>
-          </div> -->
                     <!-- fin función -->
                 </section>
             </section>
