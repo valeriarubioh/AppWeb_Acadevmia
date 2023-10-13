@@ -1,146 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
-  <link rel="stylesheet" href="/Frontend/css/header_footer.css">
-  <link rel="stylesheet" href="/Frontend/css/comunidad.css">
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script src="/Frontend/Js/menu.js" defer></script>
-  <script src="/Frontend/Js/comunidad.js" defer></script>
-  <title>Acadevmia - Comunidad</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
+    <link rel="stylesheet" href="/Frontend/css/header_footer.css">
+    <link rel="stylesheet" href="/Frontend/css/comunidad.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="/Frontend/Js/menu.js" defer></script>
+    <script src="/Frontend/Js/comunidad.js" defer></script>
+    <script src="/Frontend/Js/post.js" defer></script>
+    <title>Acadevmia - Comunidad</title>
 </head>
 
 <body>
-  <header class="principal">
-    <!-- barra de navegacion -->
-    <nav class="principal__navbar">
-        <a href="/Frontend/index.html">
-            <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
-        </a>            
-        <div class="menu_hamburguer">
-            <span class="line1__menu"></span>
-            <span class="line2__menu"></span>
-            <span class="line3__menu"></span>
-        </div>
-        <ul class="principal__lista">
-            <li class="principal__elemento">
-                <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
-            </li>
-            <li class="principal__elemento">
-                <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
-            </li>
-            <li class="principal__elemento">
-                <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
-            </li>
-            <li class="principal__elemento">
-                <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
-            </li>
-            <li class="principal__elemento">
-                <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
-            </li>
-        </ul>
-        <div class="principal__botones">
-            <a href="/Frontend/pages/login.html" class="principal__link">
+    <header class="principal">
+        <!-- barra de navegacion -->
+        <nav class="principal__navbar">
+            <a href="/Frontend/index.html">
+                <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
+            </a>
+            <div class="menu_hamburguer">
+                <span class="line1__menu"></span>
+                <span class="line2__menu"></span>
+                <span class="line3__menu"></span>
+            </div>
+            <ul class="principal__lista">
+                <li class="principal__elemento">
+                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+                </li>
+            </ul>
+            <div class="principal__botones">
+                <a href="/Frontend/pages/login.html" class="principal__link">
+                    Ingresar
+                </a>
+                <a href="/Frontend/pages/signup.html" class="button__header">
+                    Registrarse
+                </a>
+            </div>
+        </nav>
+        <div class="menu__toggle">
+            <ul class="lista__toggle">
+                <li class="principal__elemento">
+                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+                </li>
+            </ul>
+            <a href="/Frontend/pages/login.html" class="toggle__link">
                 Ingresar
             </a>
             <a href="/Frontend/pages/signup.html" class="button__header">
                 Registrarse
             </a>
         </div>
-    </nav>
-    <div class="menu__toggle">
-        <ul class="lista__toggle">
-            <li class="principal__elemento">
-                <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
-            </li>
-            <li class="principal__elemento">
-                <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
-            </li>
-            <li class="principal__elemento">
-                <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
-            </li>
-            <li class="principal__elemento">
-                <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
-            </li>
-            <li class="principal__elemento">
-                <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
-            </li>
-        </ul>
-        <a href="/Frontend/pages/login.html" class="toggle__link">
-            Ingresar
-        </a>
-        <a href="/Frontend/pages/signup.html" class="button__header">
-            Registrarse
-        </a>
-    </div>
-</header>
-  <main>
-      <section class="foro">
-        <div class="panel__control">
-          <div class="panel__perfil">
-              <img class="foto__perfil" src="/publics/img/IMG-20190510-WA0036.jpg" alt="foto de perfil">
-          <div class="perfil__descripcion">
-              <p class="perfil__nombre">@nombreusuario</p>
-          </div>
-      </div>
-      <div class="panel__elemento">
-          <div class="panel__icono">
-              <a href="#"><i class='bx bx-calendar'></i></a>
-          </div>
-          <div class="panel__descripcion">
-              <a href="#"><p class="principal__enl">Horario</p></a>
-          </div>
-      </div>
-      <div class="panel__elemento">
-          <div class="panel__icono">
-              <a href="#"><i class='bx bxs-check-square'></i></a>
-          </div>
-          <div class="panel__descripcion">
-              <a href="#"><p class="principal__enl">Calificaciones</p></a>
-          </div>
-      </div>
-      <div class="panel__elemento">
-          <div class="panel__icono">
-              <a href="#"><i class='bx bx-briefcase-alt'></i></a>
-          </div>
-          <div class="panel__descripcion">
-              <a href="/Frontend/pages/compraCurso.html"><p class="principal__enl">Cursos</p></a>
-          </div>
-      </div>
-      <div class="panel__elemento">
-          <div class="panel__icono">
-              <a href="#"><i class='bx bxs-user-detail'></i></a>
-          </div>
-          <div class="panel__descripcion">
-              <a href="#"><p class="principal__enl">Tutores</p></a>
-          </div>
-      </div>
-      <div class="panel__perfil">
-          <div class="panel__salir">
-              <a href="#" class="salir__icono">
-                  <i class='bx bx-log-out'></i>
-                  <p class="principal__enl">Salir</p>
-              </a>                    
-          </div>
-      </div>
-  </div>
-  
-  <!-- seeccion de preguntar y responder preguntas  -->
-      <section class="principal__preguntar">
-        
-        <div class="hacer__pregunta">
-            <div class="principal__botones">
-              <button class="button--modificado" id="btn__pregunta">Pregunta</button>
+    </header>
+    <main>
+        <section class="foro">
+            <div class="panel__control">
+                <div class="panel__perfil">
+                    <img class="foto__perfil" src="/publics/img/IMG-20190510-WA0036.jpg" alt="foto de perfil">
+                    <div class="perfil__descripcion">
+                        <p class="perfil__nombre">@nombreusuario</p>
+                    </div>
+                </div>
+                <div class="panel__elemento">
+                    <div class="panel__icono">
+                        <a href="#"><i class='bx bx-calendar'></i></a>
+                    </div>
+                    <div class="panel__descripcion">
+                        <a href="#">
+                            <p class="principal__enl">Horario</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel__elemento">
+                    <div class="panel__icono">
+                        <a href="#"><i class='bx bxs-check-square'></i></a>
+                    </div>
+                    <div class="panel__descripcion">
+                        <a href="#">
+                            <p class="principal__enl">Calificaciones</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel__elemento">
+                    <div class="panel__icono">
+                        <a href="#"><i class='bx bx-briefcase-alt'></i></a>
+                    </div>
+                    <div class="panel__descripcion">
+                        <a href="/Frontend/pages/compraCurso.html">
+                            <p class="principal__enl">Cursos</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel__elemento">
+                    <div class="panel__icono">
+                        <a href="#"><i class='bx bxs-user-detail'></i></a>
+                    </div>
+                    <div class="panel__descripcion">
+                        <a href="#">
+                            <p class="principal__enl">Tutores</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="panel__perfil">
+                    <div class="panel__salir">
+                        <a href="#" class="salir__icono">
+                            <i class='bx bx-log-out'></i>
+                            <p class="principal__enl">Salir</p>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
-        
-        <!-- función js para añadir evento de preguntas  -->
-        <section class="body__preguntas">
-          
-          <!-- <div class="foro__publicadas">
+
+            <!-- seeccion de preguntar y responder preguntas  -->
+            <section class="principal__preguntar">
+
+                <div class="hacer__pregunta">
+                    <div class="principal__botones">
+                        <button class="button--modificado" id="btn__pregunta">Pregunta</button>
+                    </div>
+                </div>
+                <!-- Este es el cambio -->
+                <section class="pregunta">
+                    <div class="instrucciones__contenido">
+                        <h2>Estas a punto de escribir una pregunta de programación.
+                        </h2>
+                        <p>Escribe un título de una sola línea que resuma todo tu problema</p>
+
+                    </div>
+                    <form class="principal__formulario" method="post">
+                        <input type="text" id="input__titulo" name="titulo" placeholder="Titulo" required>
+                        <textarea name="descripcion" id="input__texto" cols="100" rows="20" placeholder="Describe tu problema o duda con mayor detalle, incluye lo que haz intentado y lo que esperas de resultado" required></textarea>
+                        <div class="formulario__tags">
+                            <input type="text" id="input__tags" name="tags"
+                                placeholder="Añade hasta 3 tags que describan tu pregunta" >
+                            <button type="submit" name="boton" id="submit__button">
+                                Publica tu pregunta
+                            </button>
+                        </div>
+                    </form>
+                </section>
+                <!-- Fin del cambio -->
+                <!-- función js para añadir evento de preguntas  -->
+                <section class="body__preguntas">
+
+                    <!-- <div class="foro__publicadas">
             <div class="foro__pregunta">
               <img src="../../publics/img/user.png">
               <a href="/Frontend/pages/comunidadRespuesta.html" class="foro__ref">
@@ -184,58 +214,58 @@
               </a>
             </div>
           </div> -->
-          <!-- fin función -->
+                    <!-- fin función -->
+                </section>
+            </section>
+            </div>
+
         </section>
-      </section>
-    </div>
-    
-  </section>
-  </main>
-  <footer class="footer">
-    <!-- pie de pagina -->
-    <ul class="footer__redes">
-        <li class="footer__sociales">
-            <a id="facebook" href="https://www.facebook.com/?locale=es_LA">
-            <i class="fa-brands fa-facebook">
-            </i>
-            facebook
-            </a>
-        </li>
-        <li class="footer__sociales">
-            <a id="github" href="https://github.com/">
-            <i class="fa-brands fa-square-github">
-            </i>
-            Github
-            </a>
-        </li>
-        <li class="footer__sociales">
-            <a id="linkedin" href="https://www.linkedin.com/">
-            <i class="fa-brands fa-linkedin">
-            </i>
-            Linkedin
-            </a>
-        </li>
-        <li class="footer__sociales">
-            <a id="email" href="">
-            <i class="fa-solid fa-envelope">
-            </i>
-            Email
-            </a>
-        </li>
-        <li class="footer__sociales">
-            <a id="discord" href="https://discord.com/">
-            <i class="fa-brands fa-discord">
-            </i>
-            Discord
-            </a>
-        </li>
-    </ul>
-    <div class="footer__final">
-        <img class="footer__logo" src="/publics/img/logo.svg" alt="logo">
-        <p class="footer__terminos">Informacion legal | Politica de privacidad</p>
-        <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
-    </div>        
-</footer>
+    </main>
+    <footer class="footer">
+        <!-- pie de pagina -->
+        <ul class="footer__redes">
+            <li class="footer__sociales">
+                <a id="facebook" href="https://www.facebook.com/?locale=es_LA">
+                    <i class="fa-brands fa-facebook">
+                    </i>
+                    facebook
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="github" href="https://github.com/">
+                    <i class="fa-brands fa-square-github">
+                    </i>
+                    Github
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="linkedin" href="https://www.linkedin.com/">
+                    <i class="fa-brands fa-linkedin">
+                    </i>
+                    Linkedin
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="email" href="">
+                    <i class="fa-solid fa-envelope">
+                    </i>
+                    Email
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="discord" href="https://discord.com/">
+                    <i class="fa-brands fa-discord">
+                    </i>
+                    Discord
+                </a>
+            </li>
+        </ul>
+        <div class="footer__final">
+            <img class="footer__logo" src="/publics/img/logo.svg" alt="logo">
+            <p class="footer__terminos">Informacion legal | Politica de privacidad</p>
+            <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
+        </div>
+    </footer>
 </body>
 
 </html>
