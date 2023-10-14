@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", function () {
       renderRespuestas();
     } else if(queryParams.id && !user){
       //abrir popup
-      borrador.push({texto: texto, codigo: codigo})
+      borrador.push({pregunta: queryParams.id , texto: texto, codigo: codigo})
       localStorage.setItem('respuestaTemporal', JSON.stringify(borrador))
       window.location.href = 'login.html'
     }
