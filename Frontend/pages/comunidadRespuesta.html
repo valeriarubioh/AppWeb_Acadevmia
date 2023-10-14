@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
     <link rel="stylesheet" href="/Frontend/css/header_footer.css">
-
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="https://kit.fontawesome.com/c0f9324e8d.js" crossorigin="anonymous"></script>
     <script src="/Frontend/Js/menu.js" defer></script>
     <script src = "/Frontend/Js/respuesta.js" defer></script>
+    <script src="/Frontend/Js/logout.js" defer></script>
     <title>Acadevmia - Comunidad</title>
 </head>
 
@@ -51,6 +52,9 @@
                     Registrarse
                 </a>
             </div>
+            <div class="panel__salir">
+                <button class="button__salir" id="btn__salir" onclick="document.getElementById('btn__salir').style.display='none'"><i class='bx bx-log-out'></i>Salir</button>                                          
+            </div>  
         </nav>
         <div class="menu__toggle">
             <ul class="lista__toggle">

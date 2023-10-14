@@ -51,12 +51,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const texto = document.getElementById("input__texto").value;
     const codigo = document.getElementById("input__codigo").value;
+    const user = JSON.parse(localStorage.getItem('login_success'))||false 
+    // Especificamos que si el user no existe que nos redirija al login
+    // if(!user){
+    //     window.location.href = 'login.html'
+    // }
+    const borrador = JSON.parse(localStorage.getItem('respuestaTemporal')) || []
 
-    if (queryParams.id) {
+    if (queryParams.id && user) {
       const selectedPregunta = Preguntas[queryParams.id];
       selectedPregunta.respuestas.push({ texto: texto, codigo: codigo });
       localStorage.setItem("preguntas", JSON.stringify(Preguntas));
       renderRespuestas();
+    } else if(queryParams.id && !user){
+      //abrir popup
+      borrador.push({texto: texto, codigo: codigo})
+      localStorage.setItem('respuestaTemporal', JSON.stringify(borrador))
+      window.location.href = 'login.html'
     }
   });
 });

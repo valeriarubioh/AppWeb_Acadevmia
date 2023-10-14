@@ -62,16 +62,6 @@
     }
 }
 
-.salir__icono{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-
-    & i{
-        font-size: 40px;
-        color: var(--color-primario);
-    }
-}
 
 .principal__enl{
     color: var(--color-auxiliar);

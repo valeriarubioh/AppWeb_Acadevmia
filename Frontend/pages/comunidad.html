@@ -12,7 +12,7 @@
     <script src="/Frontend/Js/menu.js" defer></script>
     <script src="/Frontend/Js/comunidad.js" defer></script>
     <script src="/Frontend/Js/post.js" defer></script>
-    <script src="/Frontend/Js/display.js"defer></script>
+    <script src="/Frontend/Js/logout.js" defer></script>
     <title>Acadevmia - Comunidad</title>
 </head>
 
@@ -53,6 +53,9 @@
                     Registrarse
                 </a>
             </div>
+            <div class="panel__salir">
+                <button class="button__salir" id="btn__salir" onclick="document.getElementById('btn__salir').style.display='none'"><i class='bx bx-log-out'></i>Salir</button>                                          
+            </div>      
         </nav>
         <div class="menu__toggle">
             <ul class="lista__toggle">
@@ -129,20 +132,12 @@
                         </a>
                     </div>
                 </div>
-                <div class="panel__perfil">
-                    <div class="panel__salir">
-                        <a href="#" class="salir__icono">
-                            <i class='bx bx-log-out'></i>
-                            <p class="principal__enl">Salir</p>
-                        </a>
-                    </div>
-                </div>
             </div>
 
             <!-- seeccion de preguntar y responder preguntas  -->
             <section class="principal__preguntar">
                 <div class="hacer__pregunta">
-                    <button class="button--modificado" id="btn__pregunta">Pregunta</button>
+                    <button class="button--modificado" id="btn__pregunta" onclick="document.getElementById('pregunta__seccion').style.display='block'">Pregunta</button>
                 </div>
                 <!-- Este es el cambio -->
                 <section class="pregunta" id="pregunta__seccion">                   
