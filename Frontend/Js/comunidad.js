@@ -19,19 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
   let preguntasHtml = "";
 
   Preguntas.forEach(function (obj, index) {
-    preguntasHtml += `<div class="foro__publicadas">
-    <div class="foro__pregunta">
-        <img src="../../publics/img/user.png">
-        <a href="/Frontend/pages/comunidadRespuesta.html?id=${index}" class="foro__ref">
-        <h3>${obj.pregunta}</h3>
-        <p>${obj.tags}</p>
-        </a>
-    </div>
-    <div class="foro__respuesta">
-        <p>${obj.descripcion}</p>
-        <div class=" foro__reaccion">
-        </div>
-    </div>
+    preguntasHtml += `
+    <div class="foro__publicadas">
+      <div class="foro__pregunta">
+          <img src="../../publics/img/user.png">
+          <a href="/Frontend/pages/comunidadRespuesta.html?id=${index}" class="foro__ref">
+          <h3>${obj.pregunta}</h3>
+          <p>${obj.tags}</p>
+          </a>
+      </div>
     </div>`;
   });
   document.querySelector(".body__preguntas").innerHTML = preguntasHtml;
@@ -40,11 +36,9 @@ document.addEventListener("DOMContentLoaded", function () {
   btnPregunta.addEventListener("click", function () {
     // Verificar si el usuario ha iniciado sesión (aquí debes implementar tu lógica de autenticación)
     const user = JSON.parse(localStorage.getItem("login_success")) || false;
-
-    if (user) {
-      window.location.href = "postPregunta.html"; // Redirigir a post.html si el usuario ha iniciado sesión
-    } else {
+    if (!user) {
       window.location.href = "login.html"; // Redirigir a login.html si el usuario no ha iniciado sesión
-    }
+    }      
+    
   });
 });

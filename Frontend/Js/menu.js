@@ -42,4 +42,13 @@ window.addEventListener("resize", handleResize);
 
 // Llamar a handleResize inicialmente para configurar el estado del menú en la carga de la página
 handleResize();
+document.addEventListener("DOMContentLoaded", function () {
+  const user = JSON.parse(localStorage.getItem("login_success")) || false;
+  const salida = document.getElementById("btn__salir")
+  const pendienteIngreso = document.querySelector(".principal__botones")
+  if (user) {
+    salida.style.display = "block"
+    pendienteIngreso.style.display = "none"
+  }
 
+});

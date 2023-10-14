@@ -1,8 +1,11 @@
 const loginForm = document.querySelector(".ingreso__formulario")
 
+const queryString = window.location.search;
+
+const queryParams = parseQueryString(queryString);
+
 loginForm.addEventListener('submit',(e) =>{
     e.preventDefault()
-
     const userId = document.querySelector('#user').value
     const password = document.querySelector('#password').value
     // inicializamos una variable que nos permita ingresar al sistema
@@ -17,6 +20,11 @@ loginForm.addEventListener('submit',(e) =>{
     alert(`Bienvenido ${validUser.name}`)
     // aquí almacenamos los datos String a JSON para que se guarden en la lista de objetos
     localStorage.setItem('login_success', JSON.stringify(validUser))
-    // Si el registro fue exitoso, nos redigirá al index
-    window.location.href = 'comunidad.html'
+    // TOCA REDIRIGIR A LA PREGUNTA Y SOBREESCRIBIR EL FORMULARIO 
+    if(queryParams.redirect === "comunidadRespuesta"){
+        window.location.href = `comunidadRespuesta.html?id=${queryParams.id}`
+    } else {
+        // Si el registro fue exitoso, nos redigirá al index
+        window.location.href = 'comunidad.html'
+    }
 })

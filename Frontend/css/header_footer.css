@@ -66,12 +66,33 @@
     padding: 7px;
     text-decoration: none;
     margin-left: 10px;
+    width: 95px;
 }
 .principal__link{
     text-decoration: none;
     color:#FD3C00;
 }
+/* boton salir */
+.button__salir{
+    background-color: var(--color-primario);
+    color: var(--color-terciario);
+    border-radius: 20px;
+    padding: 7px;
+    width: 95px;
+    text-decoration: none;
+    margin-left: 10px;
+    border: none;
+    font-size: 1rem;
 
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    & i{
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
+}
 /* menu toggle */
 
 .menu__toggle {
