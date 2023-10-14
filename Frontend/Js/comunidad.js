@@ -19,19 +19,15 @@ document.addEventListener("DOMContentLoaded", function () {
   let preguntasHtml = "";
 
   Preguntas.forEach(function (obj, index) {
-    preguntasHtml += `<div class="foro__publicadas">
-    <div class="foro__pregunta">
-        <img src="../../publics/img/user.png">
-        <a href="/Frontend/pages/comunidadRespuesta.html?id=${index}" class="foro__ref">
-        <h3>${obj.pregunta}</h3>
-        <p>${obj.tags}</p>
-        </a>
-    </div>
-    <div class="foro__respuesta">
-        <p>${obj.descripcion}</p>
-        <div class=" foro__reaccion">
-        </div>
-    </div>
+    preguntasHtml += `
+    <div class="foro__publicadas">
+      <div class="foro__pregunta">
+          <img src="../../publics/img/user.png">
+          <a href="/Frontend/pages/comunidadRespuesta.html?id=${index}" class="foro__ref">
+          <h3>${obj.pregunta}</h3>
+          <p>${obj.tags}</p>
+          </a>
+      </div>
     </div>`;
   });
   document.querySelector(".body__preguntas").innerHTML = preguntasHtml;
