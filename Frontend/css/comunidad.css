@@ -25,6 +25,9 @@
 .panel__control{
     background-color:var(--color-secudario);
     width: 25%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .panel__perfil{
@@ -80,11 +83,26 @@ background-color: #f7f7f7;
 
 }
 .principal__preguntar{
-    margin-left: 10%;
     width: 80%;
-    padding-top: 100px;
     display: flex;
     flex-direction: column;
+    margin: 0.3%;
+
+    & .buscador__pregunta {
+        width: 100%;
+        
+        & .principal__input { 
+            border-radius: 10px;
+            width: 98%;
+            border: 2px solid var(--color-auxiliar);
+        }
+    }
+
+    & .hacer__pregunta {
+        text-align: center; /* Centra el contenido horizontalmente dentro del contenedor */
+        display: block; /* Convierte el botón en un bloque para que ocupe todo el ancho del contenedor */
+        margin: 0 auto;
+    }
 }
 
 /*dashboard*/

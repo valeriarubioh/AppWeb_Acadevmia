@@ -103,7 +103,7 @@
     left: 63%;
     display: none;
     flex-direction: column;
-    align-items: right; /* Cambiado de rigth a right */
+    align-items: right; 
     z-index: 70;
 }
 
@@ -129,8 +129,7 @@
     display: block;
     width: 100%;
     height: 100%;
-    margin: 3%;
-    padding: 10px;
+    padding: 3%;
 }
 
 .toggle__link {
@@ -288,19 +287,23 @@
 }
 
 #facebook:hover{
-    color:#0f4792;
+    color:#0f1692;
+}
+
+#github:hover{
+    color:#9000ff;
 }
 
 #discord:hover{
-    color:#b6a6f2;
+    color:#2900bf;
 }
 
 #linkedin:hover{
-    color: #0a336b;
+    color: #4492ff;
 }
 
 #email:hover{
-    color:#ffffff;
+    color:#f00000;
 }
 
 
@@ -352,8 +355,9 @@
         align-items: flex-start;
         width: 30px;
         height: 24px;
-        margin-right: 25px;
         cursor: pointer;
+        position: fixed;
+        right: 10%;
     }
 
     .menu_hamburguer > *{
