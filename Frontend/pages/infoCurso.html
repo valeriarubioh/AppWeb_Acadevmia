@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
+    <link rel="stylesheet" href="/Frontend/css/infoCurso.css" />
+    <link rel="stylesheet" href="/Frontend/css/header_footer.css" />
+    <link rel="stylesheet" href="/Frontend/css/dashboard.css" />
+    <script src="/Frontend/Js/menu.js" defer></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <title>Acadevmia - Curso de Js</title>
+  </head>
+  <body>
+    <header class="principal">
+      <div class="principal">
+        <!-- barra de navegacion -->
+        <nav class="principal__navbar">
+          <a href="/Frontend/index.html">
+            <img
+              class="principal__logo"
+              src="/publics/img/acadevmia.svg"
+              alt="logo" />
+          </a>
+          <div class="menu_hamburguer">
+            <span class="line1__menu"></span>
+            <span class="line2__menu"></span>
+            <span class="line3__menu"></span>
+          </div>
+          <ul class="principal__lista">
+            <li class="principal__elemento">
+              <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+            </li>
+
+            <li class="principal__elemento">
+              <a href="/Frontend/pages/comunidad.html" class="principal__ref"
+                >Comunidad</a
+              >
+            </li>
+            <li class="principal__elemento">
+              <a href="/Frontend/pages/Cursos.html" class="principal__ref"
+                >Cursos</a
+              >
+            </li>
+            <li class="principal__elemento">
+              <a href="/Frontend/pages/blackboard.html" class="principal__ref"
+                >Blackboard</a
+              >
+            </li>
+            <li class="principal__elemento">
+              <a href="/Frontend/pages/nosotros.html" class="principal__ref"
+                >Nosotros</a
+              >
+            </li>
+          </ul>
+          <div class="principal__botones">
+            <a href="/Frontend/pages/login.html" class="principal__link">
+              Ingresar
+            </a>
+            <a href="/Frontend/pages/signup.html" class="button__header">
+              Registrarse
+            </a>
+          </div>
+        </nav>
+        <div class="menu__toggle">
+          <ul class="lista__toggle">
+            <li class="principal__elemento">
+              <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+            </li>
+
+            <li class="principal__elemento">
+              <a href="/Frontend/pages/comunidad.html" class="principal__ref"
+                >Comunidad</a
+              >
+            </li>
+            <li class="principal__elemento">
+              <a href="/Frontend/pages/Cursos.html" class="principal__ref"
+                >Cursos</a
+              >
+            </li>
+            <li class="principal__elemento">
+              <a href="/Frontend/pages/blackboard.html" class="principal__ref"
+                >Blackboard</a
+              >
+            </li>
+            <li class="principal__elemento">
+              <a href="/Frontend/pages/nosotros.html" class="principal__ref"
+                >Nosotros</a
+              >
+            </li>
+          </ul>
+          <a href="/Frontend/pages/login.html" class="toggle__link">
+            Ingresar
+          </a>
+          <a href="/Frontend/pages/signup.html" class="button__header">
+            Registrarse
+          </a>
+        </div>
+      </div>
+    </header>
+    <div class="wrapper">
+      <aside class="dashboard">
+        <img
+          src="/publics/img/llama__logo.svg"
+          alt=""
+          class="logo__dashboard" />
+        <nav>
+          <ul class="dashboard__menu">
+            <li class="dashboard__link">
+              <box-icon name="home-alt-2"></box-icon>
+              <a href="/Frontend/pages/comunidad.html">Principal</a>
+            </li>
+            <li class="dashboard__link">
+              <box-icon name="user"></box-icon>
+              <a href="#">Mi perfil</a>
+            </li>
+            <li class="dashboard__link active">
+              <box-icon name="book-open"></box-icon>
+              <a href="/Frontend/pages/compraCurso.html">Comprar cursos</a>
+            </li>
+            <li class="dashboard__link">
+              <box-icon name="edit-alt"></box-icon>
+              <a href="/Frontend/pages/blackboard.html">Blackboard</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <main class="infoCurso__contenedor">
+        <section class="primer__section">
+          <div class="principal__info">
+            <h2 class="titulo__curso">Curso de programacion</h2>
+            <p class="texto__titulo">
+              Programa desde cero, domina Javascript, entiende HTML y aprende de
+              algoritmos. Sí, desde cero. Entenderás la lógica del código, cómo
+              piensan las programadoras expertas y cómo programar un videojuego
+              web de principio a fin. Aprender a programar no es fácil, pero
+              Acadevmia lo hace efectivo.
+            </p>
+            <a href="/Frontend/pages/compra.html">Comprar ahora</a>
+          </div>
+          <img
+            class="principal__img"
+            src="/publics/img/infoCurso/principal.svg"
+            alt="JavaScript" />
+        </section>
+        <section class="segundo__section">
+          <h2 class="titulo__curso">Temario y recursos del Curso</h2>
+          <div class="contenedor__temario">
+            <aside class="detalles__temario">
+              <div class="aside__temario">
+                <box-icon class="icon" name="check-square"></box-icon>
+                <p>BASICO</p>
+              </div>
+              <div class="aside__temario">
+                <box-icon class="icon" name="stopwatch" type="solid"></box-icon>
+                <p>15 HORAS DE CONTENIDO</p>
+              </div>
+              <div class="aside__temario">
+                <box-icon class="icon" name="highlight"></box-icon>
+                <p>14 HORAS PRACTICAS</p>
+              </div>
+            </aside>
+            <section class="temario__contenidos">
+              <article class="modulo__temario">
+                <h3 class="titulo__temario">MODULO 1</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                  corporis quis in minima rerum incidunt labore, nobis quos
+                  voluptate cumque. Eaque distinctio magnam fugiat nihil soluta
+                  omnis nostrum dolore cupiditate.
+                </p>
+              </article>
+              <article class="modulo__temario">
+                <h3 class="titulo__temario">MODULO 2</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                  corporis quis in minima rerum incidunt labore, nobis quos
+                  voluptate cumque. Eaque distinctio magnam fugiat nihil soluta
+                  omnis nostrum dolore cupiditate.
+                </p>
+              </article>
+              <article class="modulo__temario">
+                <h3 class="titulo__temario">MODULO 3</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
+                  corporis quis in minima rerum incidunt labore, nobis quos
+                  voluptate cumque. Eaque distinctio magnam fugiat nihil soluta
+                  omnis nostrum dolore cupiditate.
+                </p>
+              </article>
+            </section>
+          </div>
+        </section>
+        <section class="tercer__section">
+          <h2 class="titulo__curso">Nuestros alumnos nos recomiendan</h2>
+          <div class="recomendaciones">
+            <div class="recomendacion">
+              <img src="/publics/img/infoCurso/per2.webp" alt="" />
+              <div class="texto__recomendacion">
+                <h4 class="titulo__recomendacion">Juan Alejandro</h4>
+                <span class="puesto__recomendacion"
+                    >Software Developer Mercado Libre</span>
+                <p class="experiencia__recomendacion">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sit
+                    velit error corrupti voluptatum labore, impedit eos veritatis
+                    cum consectetur quidem ipsum asperiores tempora voluptas
+                    nesciunt a illum vel nisi.
+                </p>
+              </div>
+            </div>
+            <div class="recomendacion">
+              <img src="/publics/img/infoCurso/per3.jpeg" alt="" />
+              <div class="texto__recomendacion">
+                <h4 class="titulo__recomendacion">Juan Alejandro</h4>
+                <span class="puesto__recomendacion"
+                    >Software Developer Mercado Libre</span>
+                <p class="experiencia__recomendacion">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sit
+                    velit error corrupti voluptatum labore, impedit eos veritatis
+                    cum consectetur quidem ipsum asperiores tempora voluptas
+                    nesciunt a illum vel nisi.
+                </p>
+              </div>
+            </div>
+            <div class="recomendacion">
+              <img src="/publics/img/infoCurso/per4.jpeg" alt="" />
+              <div class="texto__recomendacion">
+                <h4 class="titulo__recomendacion">Juan Alejandro</h4>
+                <span class="puesto__recomendacion"
+                    >Software Developer Mercado Libre</span>
+                <p class="experiencia__recomendacion">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sit
+                    velit error corrupti voluptatum labore, impedit eos veritatis
+                    cum consectetur quidem ipsum asperiores tempora voluptas
+                    nesciunt a illum vel nisi.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="footer">
+      <!-- pie de pagina -->
+      <ul class="footer__redes">
+        <li class="footer__sociales">
+          <a id="facebook" href="https://www.facebook.com/?locale=es_LA">
+            <i class="fa-brands fa-facebook"> </i>
+            facebook
+          </a>
+        </li>
+        <li class="footer__sociales">
+          <a id="github" href="https://github.com/">
+            <i class="fa-brands fa-square-github"> </i>
+            Github
+          </a>
+        </li>
+        <li class="footer__sociales">
+          <a id="linkedin" href="https://www.linkedin.com/">
+            <i class="fa-brands fa-linkedin"> </i>
+            Linkedin
+          </a>
+        </li>
+        <li class="footer__sociales">
+          <a id="email" href="">
+            <i class="fa-solid fa-envelope"> </i>
+            Email
+          </a>
+        </li>
+        <li class="footer__sociales">
+          <a id="discord" href="https://discord.com/">
+            <i class="fa-brands fa-discord"> </i>
+            Discord
+          </a>
+        </li>
+      </ul>
+      <div class="footer__final">
+        <img class="footer__logo" src="/publics/img/logo.svg" alt="logo" />
+        <p class="footer__terminos">
+          Informacion legal | Politica de privacidad
+        </p>
+        <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
+      </div>
+    </footer>
+  </body>
+</html>
