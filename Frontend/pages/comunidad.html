@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
     <link rel="stylesheet" href="/Frontend/css/header_footer.css">
+    <link rel="stylesheet" href="/Frontend/css/dashboard.css">
     <link rel="stylesheet" href="/Frontend/css/comunidad.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -83,97 +84,73 @@
             </a>
         </div>
     </header>
-    <main>
-        <section class="foro">
-            <div class="panel__control">
-                <div class="panel__perfil">
-                    <img class="foto__perfil" src="/publics/img/IMG-20190510-WA0036.jpg" alt="foto de perfil">
-                    <div class="perfil__descripcion">
-                        <p class="perfil__nombre">@nombreusuario</p>
+    <div class="wrapper">
+        <aside class="dashboard">
+                <img src="/publics/img/llama__logo.svg" alt="" class="logo__dashboard">
+                <nav>
+                    <ul class="dashboard__menu active" >
+                        <li class="dashboard__link active">
+                            <box-icon name='home-alt-2' ></box-icon>
+                            <a href="/Frontend/pages/comunidad.html">Principal</a>
+                        </li>
+                        <li class="dashboard__link">
+                            <box-icon name='user' ></box-icon>
+                            <a href="#">Mi perfil</a>
+                        </li>
+                        <li class="dashboard__link ">
+                            <box-icon name='book-open'></box-icon>
+                            <a href="/Frontend/pages/compraCurso.html">Comprar cursos</a>
+                        </li>
+                        <li class="dashboard__link">
+                            <box-icon name='edit-alt'></box-icon>
+                            <a href="/Frontend/pages/blackboard.html">Blackboard</a>
+                        </li>
+                    </ul>
+                </nav>
+        </aside>
+        <main class="foro__container">
+            <section class="foro">
+                <!-- seeccion de preguntar y responder preguntas  -->
+                <section class="principal__preguntar">
+                    <div class="buscador__pregunta">
+                        <input type="text" id="buscador" placeholder= " Buscar" class="principal__input">
                     </div>
-                </div>
-                <div class="panel__elemento">
-                    <div class="panel__icono">
-                        <a href="#"><i class='bx bx-calendar'></i></a>
-                    </div>
-                    <div class="panel__descripcion">
-                        <a href="#">
-                            <p class="principal__enl">Horario</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="panel__elemento">
-                    <div class="panel__icono">
-                        <a href="#"><i class='bx bxs-check-square'></i></a>
-                    </div>
-                    <div class="panel__descripcion">
-                        <a href="#">
-                            <p class="principal__enl">Calificaciones</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="panel__elemento">
-                    <div class="panel__icono">
-                        <a href="#"><i class='bx bx-briefcase-alt'></i></a>
-                    </div>
-                    <div class="panel__descripcion">
-                        <a href="/Frontend/pages/compraCurso.html">
-                            <p class="principal__enl">Cursos</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="panel__elemento">
-                    <div class="panel__icono">
-                        <a href="#"><i class='bx bxs-user-detail'></i></a>
-                    </div>
-                    <div class="panel__descripcion">
-                        <a href="#">
-                            <p class="principal__enl">Tutores</p>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- seeccion de preguntar y responder preguntas  -->
-            <section class="principal__preguntar">
-                <div class="buscador__pregunta">
-                    <input type="text" id="buscador" placeholder="Buscar" class="principal__input">
-                </div>
-                <!-- Este es el cambio -->
-                <section class="pregunta" id="pregunta__seccion">                   
-                    <div class="modal-content animate">
-                        <div class="instrucciones__contenido">
-                            <span onclick="document.getElementById('pregunta__seccion').style.display='none'" class="close" title="Close Modal">&times;</span>
-                            <br>
-                            <h2>Estas a punto de escribir una pregunta de programación.</h2>
-                            <p>Escribe un título de una sola línea que resuma todo tu problema</p>
-                        </div>
-                        <form class="principal__formulario" method="post">
-                            <input type="text" id="input__titulo" name="titulo" placeholder="Titulo" required>
-                            <textarea name="descripcion" id="input__texto" cols="100" rows="20" placeholder="Describe tu problema o duda con mayor detalle, incluye lo que haz intentado y lo que esperas de resultado" required></textarea>
-                            <input type="text" id="input__tags" name="tags" placeholder="Añade hasta 3 tags que describan tu pregunta" required>
-                            <div class="formulario__envio">
-                                <button type="submit" name="boton" id="submit__button">
-                                    Publica tu pregunta
-                                </button>
+                    <!-- Este es el cambio -->
+                    <section class="pregunta" id="pregunta__seccion">                   
+                        <div class="modal-content animate">
+                            <div class="instrucciones__contenido">
+                                <span onclick="document.getElementById('pregunta__seccion').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                <br>
+                                <h2>Estas a punto de escribir una pregunta de programación.</h2>
+                                <p>Escribe un título de una sola línea que resuma todo tu problema</p>
                             </div>
-                        </form>
+                            <form class="principal__formulario" method="post">
+                                <input type="text" id="input__titulo" name="titulo" placeholder="Titulo" required>
+                                <textarea name="descripcion" id="input__texto" cols="100" rows="20" placeholder="Describe tu problema o duda con mayor detalle, incluye lo que haz intentado y lo que esperas de resultado" required></textarea>
+                                <input type="text" id="input__tags" name="tags" placeholder="Añade hasta 3 tags que describan tu pregunta" required>
+                                <div class="formulario__envio">
+                                    <button type="submit" name="boton" id="submit__button">
+                                        Publica tu pregunta
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                    
+                    <!-- Fin del cambio -->
+                    <!-- función js para añadir evento de preguntas  -->
+                    <section class="body__preguntas">
+                        <!-- fin función -->
+                    </section>
+                    <div class="hacer__pregunta">
+                        <button class="button--modificado" id="btn__pregunta" onclick="document.getElementById('pregunta__seccion').style.display='block'">Pregunta</button>
                     </div>
                 </section>
-                
-                <!-- Fin del cambio -->
-                <!-- función js para añadir evento de preguntas  -->
-                <section class="body__preguntas">
-                    <!-- fin función -->
-                </section>
-                <div class="hacer__pregunta">
-                    <button class="button--modificado" id="btn__pregunta" onclick="document.getElementById('pregunta__seccion').style.display='block'">Pregunta</button>
                 </div>
-            </section>
-            </div>
 
-        </section>
-    </main>
+            </section>
+        </main>
+    </div>
     <footer class="footer">
         <!-- pie de pagina -->
         <ul class="footer__redes">
