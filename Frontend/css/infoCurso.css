@@ -1,0 +1,102 @@
+:root{
+    --color-primario:#FD3C00;
+    --color-secudario:#2F2B3B;
+    --color-terciario: #FFFFFF;
+    --color-auxiliar:#D9D9D9;
+    --color-auxiliar2:#f2eded;
+}
+/*Primera seccion curso*/
+.infoCurso__contenedor{
+    background-color: #ffffff;
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    
+}
+.primer__section{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 3rem;
+}
+.principal__info{
+    width: 30rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.principal__img{
+   width: 40rem;
+}
+/*Segunda seccion curso*/
+.segundo__section{
+    margin-top: 4rem;
+    width: 100%;
+}
+
+.segundo__section > .titulo__curso{
+    margin-bottom: 3rem;
+    text-align: center;
+}
+.contenedor__temario{
+    display: flex;
+
+}
+
+.aside__temario{
+    padding: 3rem;
+    width: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.aside__temario > p{
+    margin-top: 1rem;
+}
+.icon{
+    width: 2rem;
+    height: 2rem;
+}
+/*modulos*/
+.temario__contenidos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    max-width: 60%;
+}
+
+/*Recomendaciones*/
+.tercer__section > .titulo__curso{
+    text-align: center;
+    margin: 7rem
+}
+.recomendaciones{
+    display: flex;
+    justify-content: space-evenly;margin-bottom: 10rem;
+}
+.recomendacion{
+    padding: 1rem;
+    box-shadow: 5px 5px 15px #c4c1c1;
+    width: 25%;
+    display: flex;
+    justify-content: space-between;
+}
+.recomendacion>img{
+    margin-right: 2rem;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+}
+.puesto__recomendacion{
+    color: #ca3608;
+    font-weight: 600;
+    font-size: small;
+}
+
+
+
+
