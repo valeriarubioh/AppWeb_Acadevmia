@@ -177,7 +177,7 @@
             flex: auto;
             background: var(--color-terciario);
             padding: 3rem 1rem 6rem 1rem;
-            border-radius: 2rem;
+            border-radius: 50%;
             text-align: center;
             border: 2rem solid var(--bg-color);
             transition: .5s ease;
