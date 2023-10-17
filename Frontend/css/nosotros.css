@@ -130,7 +130,7 @@
             background-color: var(--color-terciario);
             border-radius: 4px;
             width: 20%;
-            min-width: 350px;
+            min-width: 310px;
             height: 27rem;
             display: flex;
             flex-direction: column;
@@ -176,7 +176,7 @@
         & .equipo__cards {
             flex: auto;
             background: var(--color-terciario);
-            padding: 3rem 2rem 6rem 5rem;
+            padding: 3rem 1rem 6rem 1rem;
             border-radius: 2rem;
             text-align: center;
             border: 2rem solid var(--bg-color);
@@ -331,7 +331,7 @@
     }
 }
 
-@media screen and (max-width:700px) {
+@media screen and (max-width:760px) {
     
     .contactanos {
         background-image: url('/publics/img/nosotros/formulario1.PNG');
@@ -342,8 +342,77 @@
     .contactanos .contactanos__informacion:nth-child(even){
         width:48%;
     }
-
     .contactanos button{
         width:100%;
     }
-} 
+    .nosotros {
+        & .nosotros__texto {
+            & .nosotros__titulo {
+                font-size: 3rem;
+                padding-top: 60px;
+            }
+    
+            & .nosotros__parrafo {
+                font-size:1.3em;
+                padding-top: 3%;
+            }
+    
+            & .nosotros__container {    
+                & .nosotros__cards {
+                    font-size: 12px;
+                    & i {
+                        font-size: 3.6rem;
+                        color: var(--color-primario);
+                    }
+                }
+            }
+        }
+    } 
+    .somos {
+        & .somos__container {
+            & .somos__titulo {
+                font-size: 3em;
+            }
+            
+            & .somos__parrafo{
+                font-size: 1.2em;
+            }
+        }
+    }
+    .valores {    
+        & .valores__titulo {
+            font-size: 3em;
+        }
+        
+        & .valores__container {
+            & .valores__lista {
+                width: 10%;
+                min-width: 300px;
+                height: 25rem;
+                padding: 5px;
+                margin-bottom: 50px;
+                text-align: center;
+                margin-right: 0.2%;
+    
+                & .valores__sub {
+                    font-size: 2rem ;
+                    color: var(--color-primario);
+                }
+                
+                & .valores__texto {
+                    font-size: 1.5rem ;
+                    padding: 1% ;
+                }
+            }
+        }
+    }
+    
+     /* section equipo */
+    .equipo {
+    
+        & .equipo__titulo {
+            font-size: 3em;
+        }
+    
+    }
+}
