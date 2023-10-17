@@ -41,7 +41,7 @@
     display: flex;
     flex-direction: column;
     width: 25%;
-    height: 150vh;
+    height: auto;
     background-color: var(--color-secudario); 
     padding: 10px;  
       & .redireccion__link {
@@ -65,32 +65,34 @@
 .principal__responder {
   width: 100%;
   margin: 1%;
-  & .foro__publicadas{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin: 1%;
-    height: auto;
-    padding: 2%;
-    border: 2px solid var(--color-auxiliar);
-    border-radius: 16px;
-    & .foro__pregunta {
+  & .body__pregunta {
+    & .foro__publicadas{
       display: flex;
-      & img {
-        width: 5%;
-        height: 10%;
-        margin: 0%;
-      }
-      & h3 {
-        margin: 14px;
-      }
-      & p {
-        margin: 16px;
-      }
-    }
-    & .foro__respuesta {
+      flex-direction: column;
+      justify-content: space-between;
       margin: 1%;
-      font-size: 20px;
+      height: auto;
+      padding: 2%;
+      border: 2px solid var(--color-auxiliar);
+      border-radius: 16px;
+        & .foro__pregunta {
+          display: flex;
+          & img {
+            width: 5%;
+            height: 10%;
+            margin: 0%;
+          }
+          & h3 {
+            margin: 14px;
+          }
+          & p {
+            margin: 16px;
+          }
+        }
+        & .foro__respuesta {
+          margin: 1%;
+          font-size: 20px;
+        }
     }
   }
   & .hacer__respuesta{
@@ -116,7 +118,7 @@
             width: 100%;
             margin-bottom: 1.5%;
             padding: 1%;
-            font-size: 18px;
+            font-size: 16px;
           }
       }
       & .formulario__codigo {
@@ -128,11 +130,40 @@
             border:2px solid var(--color-auxiliar);
             width: 100%;
             padding: 1%;
-            font-size: 18px;
+            font-size: 15px;
           }
       }
     }
   }
+}
+
+.body__respuestas {
+  width: 100%;
+  & .foro__publicacion {
+    margin: 3%;
+    padding: 1%;
+    width: 80%;
+    & .foro__perfil {
+      & p {
+        width: 4%;
+      }
+    }
+    & .foro__reaccion {
+
+    }
+  }
+  & .foro__respuesta {
+    margin-left: 4%;
+    & p {
+      
+    }
+  }
+}
+
+
+.foro__publicadas {
+  width: 100%;
+  margin: 1%;
 }
 
 #btn__respuesta{
@@ -151,7 +182,11 @@
   background-color: var(--color-hover);
 }
 
-.foro__respuesta {
-  margin-left: 4%;
-}
 
+
+@media screen and (max-width:800px){
+
+  .texto__link{
+      display: none;
+  }
+}

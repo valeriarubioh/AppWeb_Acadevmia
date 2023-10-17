@@ -215,18 +215,6 @@
 }
 
 /* Media-queris */
-@media (max-width: 480px) {
-    .banner .banner__titulo {
-        font-size: 2em;
-    }
-}
-
-@media (max-width: 768px) {
-    .banner .banner__titulo {
-        font-size: 3em;
-    }
-}
-
 @media screen and (max-width:950px){
     .eligenos {
         & .eligenos__banner {
@@ -244,3 +232,53 @@
         }
     }
 }
+@media (max-width: 832px) {
+    .banner .banner__titulo {
+        font-size: 2.5em;
+    }
+    .eligenos {
+    & .cursos {
+        text-align: center;
+        padding-top: 60px;
+
+        & .cursos__titulo {
+            font-size: 40px;
+            color: var(--color-secudario);
+        }
+    
+        & .cursos__subtitulo {
+            font-size: 30px;
+            color: var(--color-primario);
+        }
+    }
+    }
+    .beneficios {
+        & .beneficios__titulo {
+            font-size: 45px;
+        }
+    }
+}
+    
+
+@media (max-width: 419px) {
+    .banner .banner__titulo {
+        font-size: 2.3em;
+    }
+    .eligenos {
+        & .eligenos__banner {
+            & .eligenos__titulo {
+                font-size: 10vw; /* Usar vw (viewport width) para que el tamaño se adapte a la pantalla */
+            } 
+            & .eligenos__parrafo {
+                font-size:5vw;
+            }
+        }
+    }
+    .beneficios .beneficios__titulo {
+        font-size: 35px;
+    }
+    .beneficios .beneficios__container .beneficio__texto {
+        font-size: 20px;
+    }
+}
+

@@ -22,14 +22,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let respuestasHtml = "";
     selectedPregunta.respuestas.forEach(function (obj) {
       respuestasHtml += `<div class="foro__publicacion">
-        <div class="foro__respuesta">
+      <div class="foro__perfil">
+          <img src="../../publics/img/user.png">
+          <div class=" foro__reaccion"></div>
+        </div>  
+      <div class="foro__respuesta">
             <p>${obj.texto}</p>
             <p>${obj.codigo}</p>
             <br>
-        </div>
-        <div class="foro__perfil">
-          <img src="../../publics/img/user.png">
-          <div class=" foro__reaccion"></div>
         </div>
         </div>`;
     });
