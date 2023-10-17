@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/Frontend/css/header_footer.css">
     <script src="/Frontend/Js/menu.js" defer></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <script src="/Frontend/Js/compra.js" type="module"></script>
     <title> Acadevmia - Cursos</title>
 </head>
 <body>
@@ -74,68 +76,8 @@
             </div>
         </div>
     </header>
-    <aside class="dashboard">
-        <nav>
-            <ul class="dashboard__menu">
-                <li class="dashboard__link">
-                    <box-icon name='home-alt-2' ></box-icon>
-                    <a href="/Frontend/pages/comunidad.html">Principal</a>
-                </li>
-                <li class="dashboard__link">
-                    <box-icon name='user' ></box-icon>
-                    <a href="#"></a>Mi perfil
-                </li>
-                <li class="dashboard__link">
-                    <box-icon name='basket active'></box-icon>
-                    <a href="/Frontend/pages/Cursos.html"></a>Cursos
-                </li>
-                <li class="dashboard__link">
-                    <box-icon name='edit-alt'></box-icon>
-                    <a href="/Frontend/pages/blackboard.html">Blackboard</a>
-                </li>
-                <li class="dashboard__link">
-                    <box-icon name='cart-add'></box-icon>
-                    <a href="/Frontend/pages/carrito.html" class="carrito">Carrito <span class="numero__carrito">0</span></a>
-                </li>
-            </ul>
-        </nav>
-    </aside>
-    <main class="carrito__cursos">
-        <h2 class="titulo__principal">Carrito </h2>
-        <div class="contenedor__carrito">
-            <p class="carrito__vacio">
-                Tu carrito esta vacio 
-                <box-icon name='sad'></box-icon>
-            </p>
-            <div class="carrito__con__productos">
-                <div class="carrito__con__producto">
-                    <img src="" alt="" class="imagen__carrito">
-                    <div class="nombre__producto__titulo">
-                        <small>Nombre</small>
-                        <h3>curso JS</h3>
-                    </div>
-                    <div class="carrito__producto__titulo">
-                        <small>precio</small>
-                        <p>$15000</p>
-                    </div>
-                    <a href="#">Ver curso</a>
-                    <button class="eliminar__producto"><box-icon name='trash'></box-icon></button>
-                </div>
-            </div>
-            <div class="carrito__acciones">
-                <div class="carritos__acciones_izq">
-                    <button class="carrito__acciones__vaciar">Vaciar Carrito</button>
-                </div>
-                <div class="carritos__acciones__der">
-                    <div class="carrito__acciones__total">
-                        <p>Total</p>
-                        <p id="Total">$15000</p>
-                    </div>
-                    <button class="carrito__acciones__comprar">Comprar ahora</button>
-                </div>
-            </div>
-        </div>
-
+    <main class="compra__cursos">
+        
     </main>
     <footer class="footer">
     <!-- pie de pagina -->

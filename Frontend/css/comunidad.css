@@ -15,57 +15,22 @@
     --color-hover:#fd2200;
 }
 
-
-.panel__control{
-    background-color:var(--color-secudario);
-    width: 25%;
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    & .panel__perfil{
-        background-color: var(--color-secudario);
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    
-        & .foto__perfil{
-            height: 90px;
-            width: 90px;
-            border-radius: 50%;
-            margin-bottom: 10px;
-        }
-
-        & .perfil__descripcion{
-            color: var(--color-auxiliar);
-        }
-    }
-
-    & .panel__elemento{
-    margin: 20px;
-    display: flex;
-    align-items: center;
-
-        & a{
-            text-decoration: none;
-            color: var(--color-primario);
-            margin: 4px;
-            
-            & i {
-                font-size: 40px;
-            }
-
-            & .principal__enl{
-                color: var(--color-auxiliar);
-            }
-        }
-    }
+.foro__container{
+    background-color: #FFFFFF;  
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 3rem;
 }
 
 .principal__preguntar{
-    width: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     & .buscador__pregunta {
-        width: 100%;
+        width: 60%;
+        margin-bottom: 5%;
         
         & .principal__input { 
             border-radius: 10px;
@@ -158,7 +123,7 @@
 
 .foro{
     display: flex;
-    padding-top: 11vh;
+    padding-top: 5vh;
 }
 /* Modal de formulario */
 .pregunta{
@@ -256,6 +221,7 @@ input[type=text]{
     color: var(--color-primario);
     cursor: pointer;
 }
+
 
 /* Add Zoom Animation */
 .animate {

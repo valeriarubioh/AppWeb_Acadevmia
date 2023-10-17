@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/Frontend/css/header_footer.css">
     <link rel="stylesheet" href="/Frontend/css/blackboard.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/Frontend/css/dashboard.css">
     <script src="/Frontend/Js/menu.js" defer></script>
     <script src="/Frontend/Js/blackboard.js" defer></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script src="/Frontend/Js/logout.js" defer></script>
     <title>Acadevmia - Blackboard</title>
 </head>
@@ -78,108 +79,85 @@
             </a>
         </div>
     </header>
-    <main>
-        <section class="blackboard">
-            <div class="panel__control">
-                <div class="panel__perfil">
-                    <img class="foto__perfil" src="/publics/img/IMG-20190510-WA0036.jpg" alt="foto de perfil">
-                <div class="perfil__descripcion">
-                    <p class="perfil__nombre">@nombreusuario</p>
+    <div class="wrapper">
+        <aside class="dashboard">
+                <img src="/publics/img/llama__logo.svg" alt="" class="logo__dashboard">
+                <nav>
+                    <ul class="dashboard__menu" >
+                        <li class="dashboard__link">
+                            <box-icon name='home-alt-2' ></box-icon>
+                            <a href="/Frontend/pages/comunidad.html">Principal</a>
+                        </li>
+                        <li class="dashboard__link">
+                            <box-icon name='user' ></box-icon>
+                            <a href="#">Mi perfil</a>
+                        </li>
+                        <li class="dashboard__link ">
+                            <box-icon name='book-open'></box-icon>
+                            <a href="/Frontend/pages/compraCurso.html">Comprar cursos</a>
+                        </li>
+                        <li class="dashboard__link active">
+                            <box-icon name='edit-alt'></box-icon>
+                            <a href="/Frontend/pages/blackboard.html">Blackboard</a>
+                        </li>
+                    </ul>
+                </nav>
+        </aside>
+        <main class="blackboard__container">
+            <section class="blackboard">
+                <div class="cursos__container">
+                    <div class="curso">
+                    <img class="img__curso" src="/publics/img/carddd.svg" alt="">
+                    <div class="curso-txt">
+                        <h4 class="curso__nombre">
+                            HTML5
+                        </h4>
+                        <p class="curso_descripcion">
+                            En este curso de 80 horas aprenderas todos los criterios basicos sobre HTML5
+                        </p>
+                        <a href="#" class="transparent-button color1">Ver cursos</a>
+                    </div>
                 </div>
-            </div>
-            <div class="panel__elemento">
-                <div class="panel__icono">
-                    <a href="#"><i class='bx bx-calendar'></i></a>
+                <div class="curso">
+                    <img class="img__curso" src="/publics/img/cadrss.svg" alt="">
+                    <div class="curso-txt">
+                        <h4 class="curso__nombre">
+                            Javascript
+                        </h4>
+                        <p class="curso_descripcion">
+                            En este curso de 80 horas aprenderas todos los criterios basicos sobre javascript
+                        </p>
+                        <a href="#" class="transparent-button color3">Ver cursos</a>
+                    </div>
                 </div>
-                <div class="panel__descripcion">
-                    <a href="#"><p class="principal__enl">Horario</p></a>
+                <div class="curso">
+                    <img class="img__curso" src="/publics/img/cards.svg" alt="">
+                    <div class="curso-txt">
+                        <h4 class="curso__nombre">
+                            CSS3
+                        </h4>
+                        <p class="curso_descripcion">
+                            En este curso de 80 horas aprenderas todos los criterios basicos sobre CSS3
+                        </p>
+                        <a href="#" class="transparent-button color4">Ver cursos</a>
+                    </div>
                 </div>
-            </div>
-            <div class="panel__elemento">
-                <div class="panel__icono">
-                    <a href="#"><i class='bx bxs-check-square'></i></a>
+                <div class="curso">
+                    <img class="img__curso" src="/publics/img/carsd.svg" alt="">
+                    <div class="curso-txt">
+                        <h4 class="curso__nombre">
+                            ECMA6
+                        </h4>
+                        <p class="curso_descripcion">
+                            En este curso de 80 horas aprenderas todos los criterios basicos sobre ECMA6
+                        </p>
+                        <a href="#" class="transparent-button color">Ver cursos</a>
+                    </div>
                 </div>
-                <div class="panel__descripcion">
-                    <a href="#"><p class="principal__enl">Calificaciones</p></a>
-                </div>
-            </div>
-            <div class="panel__elemento">
-                <div class="panel__icono">
-                    <a href="#"><i class='bx bx-briefcase-alt'></i></a>
-                </div>
-                <div class="panel__descripcion">
-                    <a href="#"><p class="principal__enl">Trabajos</p></a>
-                </div>
-            </div>
-            <div class="panel__elemento">
-                <div class="panel__icono">
-                    <a href="#"><i class='bx bxs-user-detail'></i></a>
-                </div>
-                <div class="panel__descripcion">
-                    <a href="#"><p class="principal__enl">Tutores</p></a>
-                </div>
-            </div>
-            <div class="panel__perfil">
-                <div class="panel__salir">
-                    <a href="#" class="salir__icono">
-                        <i class='bx bx-log-out'></i>
-                        <p class="principal__enl">Salir</p>
-                    </a>                    
-                </div>
-            </div>
-        </div>
-        <div class="cursos__container">
-            <div class="curso">
-                <img class="img__curso" src="/publics/img/carddd.svg" alt="">
-                <div class="curso-txt">
-                    <h4 class="curso__nombre">
-                        HTML5
-                    </h4>
-                    <p class="curso_descripcion">
-                        En este curso de 80 horas aprenderas todos los criterios basicos sobre HTML5
-                    </p>
-                    <a href="#" class="transparent-button color1">Ver cursos</a>
-                </div>
-            </div>
-            <div class="curso">
-                <img class="img__curso" src="/publics/img/cadrss.svg" alt="">
-                <div class="curso-txt">
-                    <h4 class="curso__nombre">
-                        Javascript
-                    </h4>
-                    <p class="curso_descripcion">
-                        En este curso de 80 horas aprenderas todos los criterios basicos sobre javascript
-                    </p>
-                    <a href="#" class="transparent-button color3">Ver cursos</a>
-                </div>
-            </div>
-            <div class="curso">
-                <img class="img__curso" src="/publics/img/cards.svg" alt="">
-                <div class="curso-txt">
-                    <h4 class="curso__nombre">
-                        CSS3
-                    </h4>
-                    <p class="curso_descripcion">
-                        En este curso de 80 horas aprenderas todos los criterios basicos sobre CSS3
-                    </p>
-                    <a href="#" class="transparent-button color4">Ver cursos</a>
-                </div>
-            </div>
-            <div class="curso">
-                <img class="img__curso" src="/publics/img/carsd.svg" alt="">
-                <div class="curso-txt">
-                    <h4 class="curso__nombre">
-                        ECMA6
-                    </h4>
-                    <p class="curso_descripcion">
-                        En este curso de 80 horas aprenderas todos los criterios basicos sobre ECMA6
-                    </p>
-                    <a href="#" class="transparent-button color">Ver cursos</a>
-                </div>
-            </div>
-        </div> 
-    </section>
-    </main>
+            </div> 
+        </section>
+        </main>
+    </div>
     <footer class="footer">
         <!-- pie de pagina -->
         <ul class="footer__redes">
