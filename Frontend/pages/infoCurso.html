@@ -7,8 +7,13 @@
     <link rel="stylesheet" href="/Frontend/css/infoCurso.css" />
     <link rel="stylesheet" href="/Frontend/css/header_footer.css" />
     <link rel="stylesheet" href="/Frontend/css/dashboard.css" />
+    <link rel="stylesheet" href="/Frontend/css/pago.css" />
+    <script src="/Frontend/Js/"></script>
     <script src="/Frontend/Js/menu.js" defer></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script
+      src="https://kit.fontawesome.com/6dc7cbf907.js"
+      crossorigin="anonymous"></script>
     <title>Acadevmia - Curso de Js</title>
   </head>
   <body>
@@ -128,7 +133,9 @@
       <main class="infoCurso__contenedor">
         <section class="primer__section">
           <div class="principal__info">
-            <h2 class="titulo__curso">Curso de programacion</h2>
+            <h2 class="titulo__curso">
+              Curso completo de programacion con JavaScript
+            </h2>
             <p class="texto__titulo">
               Programa desde cero, domina Javascript, entiende HTML y aprende de
               algoritmos. Sí, desde cero. Entenderás la lógica del código, cómo
@@ -136,27 +143,55 @@
               web de principio a fin. Aprender a programar no es fácil, pero
               Acadevmia lo hace efectivo.
             </p>
-            <a href="/Frontend/pages/compra.html">Comprar ahora</a>
+            <button id="mostrar-formulario" class="comprar">
+              Comprar ahora
+            </button>
+
+            <!-- Formulario oculto inicialmente -->
+            <div
+              class="payment-form"
+              id="formulario-pago"
+              style="display: none">
+              <form>
+                <div class="form-group">
+                  <label for="card-number">Número de Tarjeta:</label>
+                  <input
+                    type="text"
+                    id="card-number"
+                    placeholder="1234 5678 9012 3456" />
+                </div>
+                <div class="form-group">
+                  <label for="expiry-date">Fecha de Caducidad:</label>
+                  <input type="text" id="expiry-date" placeholder="MM/YY" />
+                </div>
+                <div class="form-group">
+                  <label for="cvv">CVV:</label>
+                  <input type="text" id="cvv" placeholder="123" />
+                </div>
+                <button type="submit" class="comprar">Pagar</button>
+              </form>
+            </div>
           </div>
           <img
             class="principal__img"
             src="/publics/img/infoCurso/principal.svg"
             alt="JavaScript" />
         </section>
-        <section class="segundo__section">
+
+        <section class="segundo__section" id="contenido-adicional">
           <h2 class="titulo__curso">Temario y recursos del Curso</h2>
           <div class="contenedor__temario">
             <aside class="detalles__temario">
               <div class="aside__temario">
-                <box-icon class="icon" name="check-square"></box-icon>
+                <i class="fa-solid fa-egg"></i>
                 <p>BASICO</p>
               </div>
               <div class="aside__temario">
-                <box-icon class="icon" name="stopwatch" type="solid"></box-icon>
+                <i class="fa-solid fa-stopwatch"></i>
                 <p>15 HORAS DE CONTENIDO</p>
               </div>
               <div class="aside__temario">
-                <box-icon class="icon" name="highlight"></box-icon>
+                <i class="fa-solid fa-pen-to-square"></i>
                 <p>14 HORAS PRACTICAS</p>
               </div>
             </aside>
@@ -164,28 +199,39 @@
               <article class="modulo__temario">
                 <h3 class="titulo__temario">MODULO 1</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-                  corporis quis in minima rerum incidunt labore, nobis quos
-                  voluptate cumque. Eaque distinctio magnam fugiat nihil soluta
-                  omnis nostrum dolore cupiditate.
+                  Se comienza con una visión general de qué es JavaScript, su
+                  historia y su propósito en el desarrollo web. Luego,
+                  aprenderían a configurar su entorno de desarrollo, incluyendo
+                  la elección de un editor de texto y cómo utilizar la consola
+                  del navegador para ejecutar código JavaScript. Se abordarían
+                  conceptos básicos de sintaxis, como variables, tipos de datos,
+                  operadores y declaraciones, junto con la comprensión de las
+                  estructuras de control de flujo, como condicionales (if, else)
+                  y bucles (for, while).
                 </p>
               </article>
               <article class="modulo__temario">
                 <h3 class="titulo__temario">MODULO 2</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-                  corporis quis in minima rerum incidunt labore, nobis quos
-                  voluptate cumque. Eaque distinctio magnam fugiat nihil soluta
-                  omnis nostrum dolore cupiditate.
+                  Los estudiantes se adentrarían en la manipulación del DOM
+                  (Modelo de Objetos de Documento). Comprenderían la relación
+                  entre el DOM y JavaScript, aprendiendo a seleccionar elementos
+                  HTML en una página web utilizando JavaScript. Se enseñaría
+                  cómo manipular el contenido de estos elementos, como cambiar
+                  texto, modificar atributos y estilos, y cómo responder a
+                  eventos del usuario mediante la adición de "event listeners".
                 </p>
               </article>
               <article class="modulo__temario">
                 <h3 class="titulo__temario">MODULO 3</h3>
                 <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum
-                  corporis quis in minima rerum incidunt labore, nobis quos
-                  voluptate cumque. Eaque distinctio magnam fugiat nihil soluta
-                  omnis nostrum dolore cupiditate.
+                  Comenzarían con los fundamentos de la POO y cómo se aplican en
+                  JavaScript. Se enseñaría la creación de objetos y propiedades,
+                  así como el uso de constructores y prototipos para definir
+                  clases y métodos. Los estudiantes explorarían conceptos
+                  avanzados como la herencia y la encapsulación en JavaScript, y
+                  cómo utilizarlos para organizar y extender el código de manera
+                  efectiva.
                 </p>
               </article>
             </section>
@@ -197,28 +243,24 @@
             <div class="recomendacion">
               <img src="/publics/img/infoCurso/per2.webp" alt="" />
               <div class="texto__recomendacion">
-                <h4 class="titulo__recomendacion">Juan Alejandro</h4>
-                <span class="puesto__recomendacion"
-                    >Software Developer Mercado Libre</span>
+                <h4 class="titulo__recomendacion">Alejandra Perez</h4>
+                <span class="puesto__recomendacion">Front End Developer </span>
                 <p class="experiencia__recomendacion">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sit
-                    velit error corrupti voluptatum labore, impedit eos veritatis
-                    cum consectetur quidem ipsum asperiores tempora voluptas
-                    nesciunt a illum vel nisi.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+                  sit velit error corrupti voluptatum labore, impedit eos verit
                 </p>
               </div>
             </div>
             <div class="recomendacion">
               <img src="/publics/img/infoCurso/per3.jpeg" alt="" />
               <div class="texto__recomendacion">
-                <h4 class="titulo__recomendacion">Juan Alejandro</h4>
+                <h4 class="titulo__recomendacion">Maria Gabriela</h4>
                 <span class="puesto__recomendacion"
-                    >Software Developer Mercado Libre</span>
+                  >Software Developer Globant</span
+                >
                 <p class="experiencia__recomendacion">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sit
-                    velit error corrupti voluptatum labore, impedit eos veritatis
-                    cum consectetur quidem ipsum asperiores tempora voluptas
-                    nesciunt a illum vel nisi.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+                  sit velit error corrupti
                 </p>
               </div>
             </div>
@@ -227,12 +269,12 @@
               <div class="texto__recomendacion">
                 <h4 class="titulo__recomendacion">Juan Alejandro</h4>
                 <span class="puesto__recomendacion"
-                    >Software Developer Mercado Libre</span>
+                  >Software Developer Mercado Libre</span
+                >
                 <p class="experiencia__recomendacion">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex sit
-                    velit error corrupti voluptatum labore, impedit eos veritatis
-                    cum consectetur quidem ipsum asperiores tempora voluptas
-                    nesciunt a illum vel nisi.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
+                  sit velit error corrupti voluptatum labore, impedit eos
+                  veritatis cum consectetur.
                 </p>
               </div>
             </div>
@@ -282,5 +324,32 @@
         <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
       </div>
     </footer>
+    <script>
+      document
+        .getElementById("mostrar-formulario")
+        .addEventListener("click", function () {
+          var formulario = document.getElementById("formulario-pago");
+          var contenidoAdicional = document.getElementById(
+            "contenido-adicional"
+          );
+
+          if (
+            formulario.style.display === "none" ||
+            formulario.style.display === ""
+          ) {
+            formulario.style.display = "block";
+            // Añade margen alrededor del formulario
+            formulario.style.margin = "2rem 0 4rem"; // Puedes ajustar el valor del margen aquí
+            // Desplaza el contenido adicional hacia abajo
+            contenidoAdicional.style.marginTop =
+              formulario.clientHeight + 40 + "px"; // Ajusta el margen superior
+          } else {
+            formulario.style.display = "none";
+            // Restablece la posición y margen del formulario
+            formulario.style.margin = "0";
+            contenidoAdicional.style.marginTop = "0";
+          }
+        });
+    </script>
   </body>
 </html>

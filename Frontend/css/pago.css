@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+:root{
+    --color-primario:#FD3C00;
+    --color-secudario:#2F2B3B;
+    --color-terciario: #FFFFFF;
+    --color-auxiliar:#D9D9D9;
+    --color-auxiliar2:#f2eded;
+}
+.titulo__pago{
+    text-align: center;
+    color: var(--color-secudario);
+}
+.container {
+    max-width: 40rem;
+    margin: 10rem auto;
+}
+.payment-form {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+.form-group {
+    margin-bottom: 10px;
+}
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.form-group button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.comprar{
+    border:0;
+    background-color: var(--color-primario);
+    color: #FFFFFF;
+    padding: .5rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    border: 2px solid var(--color-primario);
+    transition: background-color .2s, color .2s;
+    position: relative;
+    width: 30%;
+    text-align: center;
+}
+.comprar:hover{
+    background-color: var(--color-auxiliar2) ;
+    color: var(--color-primario);
+}
