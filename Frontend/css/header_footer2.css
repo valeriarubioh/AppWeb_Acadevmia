@@ -1,0 +1,433 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,400&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+
+:root{
+    --color-primario:#FD3C00;
+    --color-secudario:#2F2B3B;
+    --color-terciario: #FFFFFF;
+    --color-auxiliar:#D9D9D9;
+}
+
+
+/* barra de navegacion */
+
+/* pendiente agregar un hover en los principal__elemento */
+/* posiblemente se cambie el color auxiliar y preguntar si dejaremos el boton ingreso como esta */
+/* Mejorar Emily, es solo una prueba */
+.buscador__pregunta {
+    display: flex;
+    align-items: center;
+    width: 300px; /* Ajusta el ancho según tus necesidades */
+    border: 1px solid #ced4da; /* Añade un borde para resaltar el área de búsqueda */
+    border-radius: 5px; /* Ajusta el radio de los bordes para hacerlo más atractivo */
+    padding: 5px;
+}
+
+.principal__input {
+    flex: 1; /* Permite que el input ocupe todo el espacio disponible */
+    border: none; /* Elimina el borde del input para una apariencia más limpia */
+    padding: 5px; /* Añade un espacio interno para separar el texto del borde */
+}
+
+.buscador__boton {
+    background-color: #007bff; /* Cambia el color de fondo según tus preferencias */
+    color: white; /* Ajusta el color del texto para contrastar con el fondo */
+    border: none; /* Elimina el borde del botón para una apariencia más limpia */
+    padding: 5px 10px; /* Añade un espacio interno para separar el texto del borde */
+    border-top-right-radius: 5px; /* Ajusta el radio de los bordes superiores derechos para que coincida con el contenedor */
+    border-bottom-right-radius: 5px; /* Ajusta el radio de los bordes inferiores derechos para que coincida con el contenedor */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón para indicar que es interactivo */
+}
+/* fin del cambio */
+.principal__navbar{
+    position: fixed;
+    z-index: 99;
+    width: 100%;
+    height: 11%;
+    padding: 8px;
+    background-color: var(--color-auxiliar);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.principal__logo{
+    width: 130px;
+    margin-top: -5px;
+}
+
+
+.principal__lista{
+    list-style: none;
+    display: flex;
+}
+
+.principal__ref{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color:var(--color-secudario);
+    transition: .3s;
+}
+
+.principal__ref:hover,
+.principal__ref.active {
+    color: var(--color-primario);
+}
+
+.principal__elemento{
+    margin: 0 20px;
+}
+
+.button__header{
+    background-color: var(--color-primario);
+    color: var(--color-terciario);
+    border-radius: 20px;
+    padding: 7px;
+    text-decoration: none;
+    margin-left: 10px;
+    width: 95px;
+}
+.principal__link{
+    text-decoration: none;
+    color:#FD3C00;
+}
+/* boton salir */
+.button__salir{
+    background-color: var(--color-primario);
+    color: var(--color-terciario);
+    border-radius: 20px;
+    padding: 7px;
+    width: 95px;
+    text-decoration: none;
+    margin-left: 10px;
+    border: none;
+    font-size: 1rem;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    & i{
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
+}
+/* menu toggle */
+
+.menu__toggle {
+    width: 80vh ;
+    background-color: var(--color-auxiliar);
+    position: fixed;
+    top: 11vh;
+    left: 63%;
+    display: none;
+    flex-direction: column;
+    align-items: right; 
+    z-index: 70;
+}
+
+.menu__toggle .button__header {
+    background-color: var(--color-auxiliar); 
+    color: var(--color-primario);
+    text-align: left;
+    margin:2% 5.9%;
+    margin-bottom: 9%;
+    padding: 0%;
+    font-size: 120%;
+}
+
+.lista__toggle {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+}
+
+/* Estilo base de los elementos del menú */
+.principal__elemento a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 3%;
+}
+
+.toggle__link {
+    text-decoration: none;
+    color: var(--color-primario);
+    margin:4% 5.9%;
+    font-size: 120%;
+}
+.principal__ref{
+    text-decoration: none;
+    font-size: 1.2rem;
+    color:var(--color-secudario);
+    transition: .3s;
+}
+
+/* Decoraciones que queria aplicar pero solo se activan a dar click  */
+.principal__ref:hover,
+.principal__ref.active {
+    color: var(--color-primario);
+}
+.lista__toggle li a:hover,
+.lista__toggle li a:active,
+.lista__toggle li a:focus {
+    background-color: #fd3b002b; /* Reemplaza var(--color-destacado) con el color deseado */
+}
+
+/* Seccion cursos */
+
+.cursos__titulacion {
+    text-align: center;
+    padding: 4px;
+}
+
+.cursos__titulo {
+    font-size: 70px;
+    color: var(--color-secudario);
+}
+
+.cursos__subtitulo {
+    font-size: 40px;
+    color: var(--color-primario);
+}
+
+/* cursos */
+
+.curso{
+    width: 280px;
+    height: 440px;
+    border: none;
+    border-radius: 25px;
+    box-shadow: 2px 2px 10px 3px #0000007e;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.img__curso{
+    width: 280px;
+}
+
+.cursos-mas{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.curso__mas-txt{
+    font-size: 40px;
+    width: 60%;
+}
+
+.cursos__container{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.curso-txt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 170px;
+}
+.curso__nombre{
+    margin-bottom: 5px;
+    font-size: x-large;
+}
+.curso_descripcion{
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1rem;
+    width: 250px;
+}
+.curso .color1{
+    border: 1px rgb(61, 61, 217) solid;
+    color: rgb(61, 61, 217) ;
+}
+
+.curso .color3{
+    border: 1px rgb(0, 158, 68) solid;
+    color: rgb(0, 158, 68) ;
+}
+
+.curso .color4{
+    border: 1px rgb(171, 52, 198) solid;
+    color: rgb(171, 52, 198);
+}
+
+.transparent-button{
+    color: var(--color-primario);
+    border-radius: 20px;
+    border: 1px var(--color-primario) solid;
+    padding: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: large;
+    margin-bottom: 10px;
+}
+
+/*footer*/
+
+.footer__redes{
+    background-color: var(--color-auxiliar);
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.footer__sociales{
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer__sociales i{
+    font-size: 30px;
+    margin: 5px;
+}
+
+.footer__sociales a{
+    text-decoration: none;
+    color: black;
+}
+
+.footer__sociales i:hover,
+.footer__sociales i .active {
+    transform: scale(1.2); 
+}
+
+#facebook:hover{
+    color:#0f1692;
+}
+
+#github:hover{
+    color:#9000ff;
+}
+
+#discord:hover{
+    color:#2900bf;
+}
+
+#linkedin:hover{
+    color: #4492ff;
+}
+
+#email:hover{
+    color:#f00000;
+}
+
+
+.footer__final{
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secudario);
+    color: var(--color-auxiliar);
+}
+
+.footer__logo{
+    width: 30px;
+}
+
+.footer__logo:hover,
+.footer__logo.active {
+    color: var(--color-primario);
+}
+
+.footer__copyright{
+    position: absolute;
+    margin-top:50px;
+}
+
+
+@media screen and (max-width:950px){
+    /*nav*/
+    .principal__navbar{
+        justify-content: space-between;
+    }
+    .hero__logo{
+        width: 100%;
+    }
+    .principal__logo{
+        margin-left: 25px;
+    }
+    .principal__lista{
+        display: none;
+    }
+    .principal__botones{
+        display: none;
+    }
+    
+    .menu_hamburguer{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 30px;
+        height: 24px;
+        cursor: pointer;
+        position: fixed;
+        right: 10%;
+    }
+
+    .menu_hamburguer > *{
+        width: 100%;
+        height: 3px;
+        background-color: #333;
+        margin-bottom: 5px;
+        border-radius: 20px;
+        transition: transform 0.4s, opacity 0.4s, margin 0.4s;
+    }
+
+    .line1__menu-active{
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .line2__menu-active{
+        opacity: 0;
+    }
+
+    .line3__menu-active{
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+}
+
+@media screen and (max-width:550px){
+    .curso{
+        width: 200px;
+        height: 360px;
+        border: none;
+        border-radius: 25px;
+        box-shadow: 2px 2px 10px 3px #0000007e;
+        margin: 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    
+    .img__curso{
+        width: 200px;
+    }
+
+    .curso_descripcion{
+        width: 200px;
+        font-size: 0.8rem;
+    }
+    
+}
