@@ -14,8 +14,8 @@ document.addEventListener("DOMContentLoaded", function () {
       descripcion: contenido,
       tags: tags,
       respuestas: [],
-      user: user.username, 
-      reaccion:[],
+      username: user.username,
+      reaccion: [],
     });
     localStorage.setItem("preguntas", JSON.stringify(Preguntas));
     window.location.href = "comunidad.html";

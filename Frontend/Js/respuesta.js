@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-
-  const Preguntas = JSON.parse(localStorage.getItem("preguntas"));  
+  const Preguntas = JSON.parse(localStorage.getItem("preguntas"));
   const queryString = window.location.search;
   const queryParams = parseQueryString(queryString);
   const selectedPregunta = Preguntas[queryParams.id];
@@ -24,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
       respuestasHtml += `<div class="foro__publicacion">
       <div class="foro__perfil">
           <img src="../../publics/img/user.png">
-          <p>${obj.user}</p>
+          <p>${obj.username}</p>
           <div class=" foro__reaccion"></div>
       </div>  
       <div class="foro__respuesta">
@@ -42,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <div class="foro__publicadas">
         <div class="foro__pregunta">
             <img src="../../publics/img/user.png">
-            <p>${selectedPregunta.user}</p>
+            <p>${selectedPregunta.username}</p>
             <h3>${selectedPregunta.pregunta}</h3>
             <p>${selectedPregunta.tags}</p>
             </a>
@@ -63,7 +62,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const texto = document.getElementById("input__texto").value;
     const codigo = document.getElementById("input__codigo").value;
     const user = JSON.parse(localStorage.getItem("login_success")) || false;
-    const respuesta = { texto: texto, codigo: codigo, user: user.username};
+    const respuesta = { texto: texto, codigo: codigo, username: user.username };
     if (queryParams.id && user) {
       selectedPregunta.respuestas.push(respuesta);
       localStorage.setItem("preguntas", JSON.stringify(Preguntas));
