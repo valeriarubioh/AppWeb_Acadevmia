@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", function () {
     <div class="foro__publicadas">
       <div class="foro__pregunta">
           <img src="../../publics/img/user.png">
+          <p>${obj.user}</p>
+          <button class="foro__reaccion" id="btn__like" onclick="contadorLike(${index})"><i class='bx bx-like'></i></button>
+          <button class="foro__reaccion" id="btn__dislike" onclick="contadorDislike(${index})"><i class='bx bx-dislike' ></i></button>
           <a href="/Frontend/pages/comunidadRespuesta.html?id=${index}" class="foro__ref">
           <h3>${obj.pregunta}</h3>
           <p>${obj.tags}</p>
@@ -58,4 +61,38 @@ document.addEventListener("DOMContentLoaded", function () {
       renderPreguntas(resultadoFiltro);
     }
   });
+
+  let likes = [];
+  let dislikes = [];
+  // const reaccionLike = document.getElementById("btn__like");
+  // reaccionLike.addEventListener("click",function(index){
+  //     if (likes[index]) {
+  //       likes[index] += 1;
+  //   } else {
+  //       likes[index] = 1;
+  //   }
+  // })
+  // const reaccionDislike = document.getElementById("btn__dislike");
+  // reaccionDislike.addEventListener("click",function(index){
+  //   if (dislikes[index]) {
+  //     dislikes[index] += 1;
+  //   } else {
+  //     dislikes[index] = 1;
+  //   }
+  // })
+
+  function contadorLike(index) {
+    if (likes[index]) {
+      likes[index] += 1;
+    } else {
+      likes[index] = 1;
+    }
+  }
+  function contadorDislike(index) {
+    if (dislikes[index]) {
+      dislikes[index] += 1;
+    } else {
+      dislikes[index] = 1;
+    }
+  }
 });
