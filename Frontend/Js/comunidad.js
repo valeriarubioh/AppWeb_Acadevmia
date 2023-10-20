@@ -40,18 +40,31 @@ function agregarReaccion(index, accion) {
   const reaccion = pregunta.reaccion;
   let isLike = accion === "like" ? 1 : 0;
 
-  const isNotFound =
-    reaccion.findIndex((reaccion) => reaccion.username === user.username) === -1
-      ? true
-      : false;
-  if (isNotFound) {
+  // const isNotFound =
+  //   reaccion.findIndex((reaccion) => reaccion.username === user.username) === -1
+  //     ? true
+  //     : false;
+  // if (isNotFound) {
+  //   reaccion.push({
+  //     username: user.username,
+  //     isLike: isLike,
+  //   });
+  const foundIndex = reaccion.findIndex(
+    (reaccion) => reaccion.username === user.username
+  );
+  if (foundIndex === -1) {
     reaccion.push({
       username: user.username,
       isLike: isLike,
     });
     localStorage.setItem("preguntas", JSON.stringify(preguntas));
     renderPreguntas();
-  } else {
+  }else if(reaccion[foundIndex].isLike === isLike){
+    reaccion.splice(foundIndex,1);
+    localStorage.setItem("preguntas", JSON.stringify(preguntas));
+    renderPreguntas();
+  } 
+  else {
     alert("User has already given the reaction");
   }
 }
