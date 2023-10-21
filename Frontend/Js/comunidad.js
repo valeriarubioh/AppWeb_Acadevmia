@@ -89,7 +89,7 @@ function renderPreguntas() {
           <h3>${obj.pregunta}</h3>
           <p>${obj.tags}</p>
           </a>
-          ${user && obj.username === user.username ? `<button class="eliminar__pregunta" onclick="eliminarPregunta(${index})">Eliminar</button>` : ''}
+          ${user && obj.username === user.username ? `<button class="eliminar__post" onclick="eliminarPregunta(${index})">Eliminar</button>` : ''}
       </div>
     </div>`;
   });

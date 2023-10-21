@@ -67,7 +67,33 @@ function agregarReaccion(index,accion) {
     alert("Usuario ya ha dado su reacción");
   } 
 }
-
+function hacerFavorito(index){
+  const respuesta=selectedPregunta.respuestas[index];
+  const reaccion = respuesta.reaccion;
+  const foundIndex = reaccion.findIndex(
+    (reaccion) => reaccion.favorito === user.username
+  );
+  if (foundIndex === -1) {
+    // Desmarcar cualquier otro objeto favorito previamente marcado
+    selectedPregunta.respuestas.forEach((resp) => {
+      const respReaccion = resp.reaccion;
+      const respFoundIndex = respReaccion.findIndex((reaccion) => reaccion.favorito === user.username);
+      if (respFoundIndex !== -1) {
+        respReaccion.splice(respFoundIndex, 1);
+      }
+    });
+    reaccion.push({
+      favorito: user.username,
+    });
+    localStorage.setItem("preguntas", JSON.stringify(Preguntas));
+    renderRespuestas();
+  }else{
+    reaccion.splice(foundIndex,1);
+    localStorage.setItem("preguntas", JSON.stringify(Preguntas));
+    renderRespuestas();
+  } 
+}
+//FALTA IMPRIMIR un P o un button si hay una respuesta favorita para todos los users o no users.
 function renderRespuestas() {
   let respuestasHtml = "";
   selectedPregunta.respuestas.forEach(function (obj, index) {
@@ -77,7 +103,9 @@ function renderRespuestas() {
           <img src="../../publics/img/user.png">
           <p>${obj.username}</p>
           <button class="foro__reaccion" id="btn__like" onclick="agregarReaccion('${index}', 'like')">${reacciones.likes}<i class='bx bx-like'></i></button>
-          <button class="foro__reaccion" id="btn__like" onclick="agregarReaccion('${index}', 'dislike')">${reacciones.dislikes}<i class='bx bx-like'></i></button>
+          <button class="foro__reaccion" id="btn__like" onclick="agregarReaccion('${index}', 'dislike')">${reacciones.dislikes}<i class='bx bx-dislike' ></i></button>
+          ${user && selectedPregunta.username === user.username ? `<button class="foro__reaccion" onclick="hacerFavorito(${index})"><i class='bx bx-star'></i>Favorito</button>` : ''}
+          ${obj.reaccion.favorito ? `<button>es fav</button>`:''}
       </div>  
       <div class="foro__respuesta">
             <p>${obj.texto}</p>
