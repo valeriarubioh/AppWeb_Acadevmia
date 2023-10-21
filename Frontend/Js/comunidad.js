@@ -34,21 +34,21 @@ function agregarReaccion(index, accion) {
   }
   const pregunta = preguntas[index];
   if (pregunta.username === user.username) {
-    alert("Same user cannot give like to his post");
+    alert("El mismo usuario no puede reaccionar a su propia publicación");
     return;
   }
   const reaccion = pregunta.reaccion;
   let isLike = accion === "like" ? 1 : 0;
 
-  // const isNotFound =
-  //   reaccion.findIndex((reaccion) => reaccion.username === user.username) === -1
-  //     ? true
-  //     : false;
-  // if (isNotFound) {
-  //   reaccion.push({
-  //     username: user.username,
-  //     isLike: isLike,
-  //   });
+  /*const isNotFound =
+    reaccion.findIndex((reaccion) => reaccion.username === user.username) === -1
+      ? true
+      : false;
+  if (isNotFound) {
+    reaccion.push({
+      username: user.username,
+      isLike: isLike,
+    });*/
   const foundIndex = reaccion.findIndex(
     (reaccion) => reaccion.username === user.username
   );
@@ -65,14 +65,18 @@ function agregarReaccion(index, accion) {
     renderPreguntas();
   } 
   else {
-    alert("User has already given the reaction");
+    alert("Usuario ya ha dado su reacción");
   }
 }
-
+function eliminarPregunta(index) {
+  preguntas.splice(index, 1);
+  localStorage.setItem("preguntas", JSON.stringify(preguntas));
+  renderPreguntas();
+}
 function renderPreguntas() {
   let preguntasHtml = "";
 
-  preguntas.forEach(function (obj, index) {
+  preguntas.reverse().forEach(function (obj, index) {
     let reacciones = contarReaccion(obj.reaccion);
     preguntasHtml += `
     <div class="foro__publicadas">
@@ -85,10 +89,13 @@ function renderPreguntas() {
           <h3>${obj.pregunta}</h3>
           <p>${obj.tags}</p>
           </a>
+          ${user && obj.username === user.username ? `<button class="eliminar__pregunta" onclick="eliminarPregunta(${index})">Eliminar</button>` : ''}
       </div>
     </div>`;
   });
   document.querySelector(".body__preguntas").innerHTML = preguntasHtml;
+  preguntas.reverse(); //porque se desorganiza al eliminar publicaciones, PROBLEMA: reacciones funciona con index y se imprime mal...
+  //al entrar a la pregunta me imprime orden original... 
 }
 renderPreguntas();
 
