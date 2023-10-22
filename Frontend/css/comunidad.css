@@ -59,7 +59,7 @@
     }
 
     & .hacer__pregunta{
-        & .button--modificado{
+        .button--modificado{
             background-color: var(--color-primario);
             color: var(--color-terciario);
             border-radius: 20px;
@@ -75,6 +75,22 @@
             background-color: var(--color-hover);
             }
         }
+    }
+}
+.button--modificado{
+    background-color: var(--color-primario);
+    color: var(--color-terciario);
+    border-radius: 20px;
+    border: 0px;
+    font-size: larger;
+    width: 100px;
+    margin: 5%;
+    height: 40px;
+    text-align: center;
+    padding: 7px;
+
+    &:hover,active{
+    background-color: var(--color-hover);
     }
 }
 
@@ -124,6 +140,7 @@
 .foro{
     display: flex;
     padding-top: 5vh;
+    overflow: auto;
 }
 /* Modal de formulario */
 .pregunta{

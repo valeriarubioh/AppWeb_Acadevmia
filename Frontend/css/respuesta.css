@@ -36,7 +36,8 @@
 
 .foro {
     display: flex;
-    padding-top: 11vh;    
+    padding-top: 11vh;  
+      
   & .foro__dashboard {
     display: flex;
     flex-direction: column;
