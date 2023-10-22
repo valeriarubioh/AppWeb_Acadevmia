@@ -76,7 +76,7 @@ function eliminarPregunta(index) {
 function renderPreguntas() {
   let preguntasHtml = "";
 
-  preguntas.reverse().forEach(function (obj, index) {
+  preguntas.forEach(function (obj, index) {
     let reacciones = contarReaccion(obj.reaccion);
     preguntasHtml += `
     <div class="foro__publicadas">
@@ -94,8 +94,7 @@ function renderPreguntas() {
     </div>`;
   });
   document.querySelector(".body__preguntas").innerHTML = preguntasHtml;
-  preguntas.reverse(); //porque se desorganiza al eliminar publicaciones, PROBLEMA: reacciones funciona con index y se imprime mal...
-  //al entrar a la pregunta me imprime orden original... 
+
 }
 renderPreguntas();
 

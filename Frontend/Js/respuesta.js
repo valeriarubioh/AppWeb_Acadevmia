@@ -35,13 +35,13 @@ if (queryParams.id) {
 //   },
 // ];
 
-//agregar reaccion es dif para selected pregunta, lanza error 
-function agregarReaccion(index,accion) {
+//agregar reaccion es dif para selected pregunta, lanza error
+function agregarReaccionRespuesta(index, accion) {
   if (!user) {
     window.location.href = "login.html";
     return;
   }
-  const respuesta=selectedPregunta.respuestas[index];
+  const respuesta = selectedPregunta.respuestas[index];
   if (respuesta.username === user.username) {
     alert("El mismo usuario no puede reaccionar a su propia publicación");
     return;
@@ -58,41 +58,56 @@ function agregarReaccion(index,accion) {
     });
     localStorage.setItem("preguntas", JSON.stringify(Preguntas));
     renderRespuestas();
-  }else if(reaccion[foundIndex].isLike === isLike){
-    reaccion.splice(foundIndex,1);
+  } else if (reaccion[foundIndex].isLike === isLike) {
+    reaccion.splice(foundIndex, 1);
     localStorage.setItem("preguntas", JSON.stringify(Preguntas));
     renderRespuestas();
-  } 
-  else {
+  } else {
     alert("Usuario ya ha dado su reacción");
-  } 
+  }
 }
-function hacerFavorito(index){
-  const respuesta=selectedPregunta.respuestas[index];
-  const reaccion = respuesta.reaccion;
+
+function agregarReaccionSelectedPregunta(accion) {
+  if (!user) {
+    window.location.href = "login.html";
+    return;
+  }
+  if (selectedPregunta.username === user.username) {
+    alert("El mismo usuario no puede reaccionar a su propia publicación");
+    return;
+  }
+  const reaccion = selectedPregunta.reaccion;
+  let isLike = accion === "like" ? 1 : 0;
   const foundIndex = reaccion.findIndex(
-    (reaccion) => reaccion.favorito === user.username
+    (reaccion) => reaccion.username === user.username
   );
   if (foundIndex === -1) {
-    // Desmarcar cualquier otro objeto favorito previamente marcado
-    selectedPregunta.respuestas.forEach((resp) => {
-      const respReaccion = resp.reaccion;
-      const respFoundIndex = respReaccion.findIndex((reaccion) => reaccion.favorito === user.username);
-      if (respFoundIndex !== -1) {
-        respReaccion.splice(respFoundIndex, 1);
-      }
-    });
     reaccion.push({
-      favorito: user.username,
+      username: user.username,
+      isLike: isLike,
     });
     localStorage.setItem("preguntas", JSON.stringify(Preguntas));
-    renderRespuestas();
-  }else{
-    reaccion.splice(foundIndex,1);
+    renderSelectedPregunta();
+  } else if (reaccion[foundIndex].isLike === isLike) {
+    reaccion.splice(foundIndex, 1);
+    localStorage.setItem("preguntas", JSON.stringify(Preguntas));
+    renderSelectedPregunta();
+  } else {
+    alert("Usuario ya ha dado su reacción");
+  }
+}
+
+function hacerFavorito(index) {
+  const respuesta = selectedPregunta.respuestas[index];
+  const foundIndex = selectedPregunta.respuestas.findIndex(
+    (respuesta) => respuesta.favorito === true
+  );
+    selectedPregunta.respuestas[foundIndex].favorito = false
+    respuesta.favorito=true,
     localStorage.setItem("preguntas", JSON.stringify(Preguntas));
     renderRespuestas();
-  } 
-}
+  }
+
 //FALTA IMPRIMIR un P o un button si hay una respuesta favorita para todos los users o no users.
 function renderRespuestas() {
   let respuestasHtml = "";
@@ -102,10 +117,18 @@ function renderRespuestas() {
       <div class="foro__perfil">
           <img src="../../publics/img/user.png">
           <p>${obj.username}</p>
-          <button class="foro__reaccion" id="btn__like" onclick="agregarReaccion('${index}', 'like')">${reacciones.likes}<i class='bx bx-like'></i></button>
-          <button class="foro__reaccion" id="btn__like" onclick="agregarReaccion('${index}', 'dislike')">${reacciones.dislikes}<i class='bx bx-dislike' ></i></button>
-          ${user && selectedPregunta.username === user.username ? `<button class="foro__reaccion" onclick="hacerFavorito(${index})"><i class='bx bx-star'></i>Favorito</button>` : ''}
-          ${obj.reaccion.favorito ? `<button>es fav</button>`:''}
+          <button class="foro__reaccion" id="btn__like" onclick="agregarReaccionRespuesta('${index}', 'like')">${
+      reacciones.likes
+    }<i class='bx bx-like'></i></button>
+          <button class="foro__reaccion" id="btn__like" onclick="agregarReaccionRespuesta('${index}', 'dislike')">${
+      reacciones.dislikes
+    }<i class='bx bx-dislike' ></i></button>
+          ${
+            user && selectedPregunta.username === user.username
+              ? `<button class="foro__reaccion" onclick="hacerFavorito(${index})"><i class='bx bx-star'></i>Favorito</button>`
+              : ""
+          }
+          ${obj.favorito===true ? `<p><i class='bx bx-star'></i>Respuesta Favorita</p>`:""}
       </div>  
       <div class="foro__respuesta">
             <p>${obj.texto}</p>
@@ -134,8 +157,8 @@ function renderSelectedPregunta() {
             <p>${selectedPregunta.username}</p>
             <h3>${selectedPregunta.pregunta}</h3>
             <p>${selectedPregunta.tags}</p>
-            <button class="foro__reaccion" id="btn__like" onclick="agregarReaccion('${selectedPregunta.index}', 'like')">${reacciones.likes}<i class='bx bx-like'></i></button>
-            <button class="foro__reaccion" id="btn__dislike" onclick="agregarReaccion(${selectedPregunta.index}, 'dislike')">${reacciones.dislikes}<i class='bx bx-dislike' ></i></button>
+            <button class="foro__reaccion" id="btn__like" onclick="agregarReaccionSelectedPregunta('like')">${reacciones.likes}<i class='bx bx-like'></i></button>
+            <button class="foro__reaccion" id="btn__dislike" onclick="agregarReaccionSelectedPregunta('dislike')">${reacciones.dislikes}<i class='bx bx-dislike' ></i></button>
         </div>
         <div class="foro__respuesta">
             <p>${selectedPregunta.descripcion}</p>
@@ -157,6 +180,7 @@ postForm.addEventListener("submit", (e) => {
     codigo: codigo,
     username: user.username,
     reaccion: [],
+    favorito:false,
   };
   if (queryParams.id && user) {
     selectedPregunta.respuestas.push(respuesta);
