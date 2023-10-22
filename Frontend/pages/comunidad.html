@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
-    <link rel="stylesheet" href="/Frontend/css/header_footer.css">
+    <link rel="stylesheet" href="/Frontend/css/header_footer2.css">
     <link rel="stylesheet" href="/Frontend/css/dashboard.css">
     <link rel="stylesheet" href="/Frontend/css/comunidad.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
@@ -34,18 +34,16 @@
                     <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
                 </li>
                 <li class="principal__elemento">
-                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
-                </li>
-                <li class="principal__elemento">
                     <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
                 </li>
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
             </ul>
+            <div class="buscador__pregunta">
+                <input type="text" id="buscador" placeholder= " Buscar" class="principal__input">
+                <button class="buscador__boton" id="btn__buscador"><i class='bx bx-search-alt-2'></i></button>
+            </div>
             <div class="principal__botones">
                 <a href="/Frontend/pages/login.html" class="principal__link">
                     Ingresar
@@ -55,8 +53,8 @@
                 </a>
             </div>
             <div class="panel__salir">
-                <button class="button__salir" id="btn__salir" onclick="document.getElementById('btn__salir').style.display='none'"><i class='bx bx-log-out'></i>Salir</button>                                          
-            </div>      
+                <button class="button__salir" id="btn__salir" onclick="document.getElementById('btn__salir').style.display='none'"><i class='bx bx-log-out'></i>Salir</button>
+            </div>
         </nav>
         <div class="menu__toggle">
             <ul class="lista__toggle">
@@ -75,6 +73,9 @@
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
+                <!-- <li class="principal__elemento">
+                    <input type="text" id="buscador" placeholder= " Buscar" class="principal__input">
+                </li> -->
             </ul>
             <a href="/Frontend/pages/login.html" class="toggle__link">
                 Ingresar
@@ -112,11 +113,7 @@
             <section class="foro">
                 <!-- seeccion de preguntar y responder preguntas  -->
                 <section class="principal__preguntar">
-                    <div class="buscador__pregunta">
-                        <input type="text" id="buscador" placeholder= " Buscar" class="principal__input">
-                    </div>
-                    <!-- Este es el cambio -->
-                    <section class="pregunta" id="pregunta__seccion">                   
+                    <section class="pregunta" id="pregunta__seccion">
                         <div class="modal-content animate">
                             <div class="instrucciones__contenido">
                                 <span onclick="document.getElementById('pregunta__seccion').style.display='none'" class="close" title="Close Modal">&times;</span>
