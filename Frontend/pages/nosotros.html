@@ -7,10 +7,13 @@
     <title>Acadevmia  - Nosotros</title>
     <link rel="stylesheet" href="/Frontend/css/nosotros.css">
     <link rel="stylesheet" href="/Frontend/css/Header_Footer.css">
+    <link rel="stylesheet" href="/utils/toastr.min.css">
     <script src="/Frontend/Js/menu.js" defer></script>
     <!--Enlace a la hoja de estilos externa de Boxicons-->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/Frontend/Js/nosotros.js" defer></script>
+    <script src="/utils/toastr.min.js"></script>
     <script src="/Frontend/Js/logout.js" defer></script>
 </head>
 <body>
@@ -19,7 +22,7 @@
         <nav class="principal__navbar">
             <a href="/Frontend/index.html">
                 <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
-            </a>            
+            </a>
             <div class="menu_hamburguer">
                 <span class="line1__menu"></span>
                 <span class="line2__menu"></span>
@@ -42,6 +45,9 @@
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
             </ul>
+            <div class="panel__salir">
+                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
+            </div>      
             <div class="principal__botones">
                 <a href="/Frontend/pages/login.html" class="principal__link">
                     Ingresar
@@ -50,9 +56,6 @@
                     Registrarse
                 </a>
             </div>
-            <div class="panel__salir">
-                <button class="button__salir" id="btn__salir" onclick="document.getElementById('btn__salir').style.display='none'"><i class='bx bx-log-out'></i>Salir</button>                                          
-            </div>  
         </nav>
         <div class="menu__toggle">
             <ul class="lista__toggle">
@@ -71,13 +74,16 @@
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
+                <li class="principal__elemento">
+                    <a class="principal__ref" id="btn__logout"><i class='bx bx-log-out'></i>Salir</a>
+                </li>
             </ul>
-            <a href="/Frontend/pages/login.html" class="toggle__link">
-                Ingresar
-            </a>
-            <a href="/Frontend/pages/signup.html" class="button__header">
-                Registrarse
-            </a>
+                <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
+                    Ingresar
+                </a>
+                <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
+                    Registrarse
+                </a>                                        
         </div>
     </header>
     <main>
