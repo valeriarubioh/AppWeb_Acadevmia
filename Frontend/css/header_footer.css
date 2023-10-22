@@ -93,6 +93,10 @@
         letter-spacing: 3px;
     }
 }
+
+#btn__logout{
+    cursor: pointer;
+}
 /* menu toggle */
 
 .menu__toggle {
@@ -253,6 +257,12 @@
     margin-bottom: 10px;
 }
 
+
+/* alerts toastr */
+.custom-toast {
+    background-color: #333; /* Reemplaza #333 con el color de fondo que desees */
+}
+
 /*footer*/
 
 .footer__redes{
@@ -346,6 +356,10 @@
         display: none;
     }
     .principal__botones{
+        display: none;
+    }
+
+    .panel__salir{
         display: none;
     }
     

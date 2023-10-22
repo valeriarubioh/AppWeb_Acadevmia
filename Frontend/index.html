@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
     <link rel="stylesheet" href="/Frontend/css/index.css">
+    <link rel="stylesheet" href="/Frontend/css/comunidad.css">
     <link rel="stylesheet" href="/Frontend/css/header_footer.css">
     <script src="/Frontend/Js/index.js" defer></script>
-    <script src="/Frontend/Js/menu.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script
     src="https://kit.fontawesome.com/6dc7cbf907.js"
     crossorigin="anonymous"></script>
+    <script src="/utils/toastr.min.js"></script>
     <script src="/Frontend/Js/logout.js" defer></script>
     <title>Acadevmia</title>
 </head>
@@ -43,6 +45,9 @@
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
             </ul>
+            <div class="panel__salir">
+                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
+            </div>      
             <div class="principal__botones">
                 <a href="/Frontend/pages/login.html" class="principal__link">
                     Ingresar
@@ -50,9 +55,6 @@
                 <a href="/Frontend/pages/signup.html" class="button__header">
                     Registrarse
                 </a>
-            </div>
-            <div class="panel__salir">
-                <button class="button__salir" id="btn__salir" onclick="document.getElementById('btn__salir').style.display='none'"><i class='bx bx-log-out'></i>Salir</button>
             </div>
         </nav>
         <div class="menu__toggle">
@@ -72,13 +74,16 @@
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
+                <li class="principal__elemento">
+                    <a class="principal__ref" id="btn__logout"><i class='bx bx-log-out'></i>Salir</a>
+                </li>
             </ul>
-            <a href="/Frontend/pages/login.html" class="toggle__link">
-                Ingresar
-            </a>
-            <a href="/Frontend/pages/signup.html" class="button__header">
-                Registrarse
-            </a>
+                <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
+                    Ingresar
+                </a>
+                <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
+                    Registrarse
+                </a>                                        
         </div>
     </header>
     <main>
