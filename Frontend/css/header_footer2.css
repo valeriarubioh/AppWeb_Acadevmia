@@ -17,33 +17,58 @@
 
 /* barra de navegacion */
 
-/* pendiente agregar un hover en los principal__elemento */
-/* posiblemente se cambie el color auxiliar y preguntar si dejaremos el boton ingreso como esta */
-/* Mejorar Emily, es solo una prueba */
-.buscador__pregunta {
+
+.principal__navbar-buscador {
     display: flex;
     align-items: center;
-    width: 300px; /* Ajusta el ancho según tus necesidades */
     border: 1px solid #ced4da; /* Añade un borde para resaltar el área de búsqueda */
     border-radius: 5px; /* Ajusta el radio de los bordes para hacerlo más atractivo */
     padding: 5px;
 }
 
-.principal__input {
-    flex: 1; /* Permite que el input ocupe todo el espacio disponible */
-    border: none; /* Elimina el borde del input para una apariencia más limpia */
-    padding: 5px; /* Añade un espacio interno para separar el texto del borde */
+.principal__input{
+    outline: none;
+    height: 50px;
+    width: 0;
+    padding: 0 20px;
+    color: #000;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 1px solid var(--color-auxiliar);
+    transition: all .7s ease;
+}
+::placeholder{
+    padding-left: 3rem;
+    color: var(--color-auxiliar);
+}
+.principal__btn-input{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #f00000;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+}
+.principal__btn-input i {
+    font-size: 25px;
+    color: #FFFFFF;
+    transition: all .7s ease;
+    padding-bottom: 20px;
+}
+.principal__navbar-buscador:hover input{
+    width: 350px;
+}
+.principal__navbar-buscador:hover i{
+    transform: rotate(360deg);
+}
+.principal__btn-input:hover{
+    background-color: #f00000;
 }
 
-.buscador__boton {
-    background-color: #007bff; /* Cambia el color de fondo según tus preferencias */
-    color: white; /* Ajusta el color del texto para contrastar con el fondo */
-    border: none; /* Elimina el borde del botón para una apariencia más limpia */
-    padding: 5px 10px; /* Añade un espacio interno para separar el texto del borde */
-    border-top-right-radius: 5px; /* Ajusta el radio de los bordes superiores derechos para que coincida con el contenedor */
-    border-bottom-right-radius: 5px; /* Ajusta el radio de los bordes inferiores derechos para que coincida con el contenedor */
-    cursor: pointer; /* Cambia el cursor al pasar sobre el botón para indicar que es interactivo */
-}
+
 /* fin del cambio */
 .principal__navbar{
     position: fixed;
@@ -431,3 +456,4 @@
     }
     
 }
+

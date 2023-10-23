@@ -182,7 +182,7 @@
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
 }
-
+/*
 input[type=text]{
     width: 100%;
     padding: 10px;
@@ -195,7 +195,7 @@ input[type=text]{
 }
 
 #input__texto{
-    width: 100%;
+   width: 100%;
     padding: 10px;
     margin: 10px;
     display: inline-block;
@@ -238,7 +238,7 @@ input[type=text]{
     color: var(--color-primario);
     cursor: pointer;
 }
-
+*/
 
 /* Add Zoom Animation */
 .animate {

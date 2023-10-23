@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/Frontend/css/header_footer2.css">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
     <link rel="stylesheet" href="/Frontend/css/infoCurso.css" />
     <link rel="stylesheet" href="/Frontend/css/header_footer.css" />
@@ -18,90 +19,74 @@
   </head>
   <body>
     <header class="principal">
-      <div class="principal">
         <!-- barra de navegacion -->
         <nav class="principal__navbar">
-          <a href="/Frontend/index.html">
-            <img
-              class="principal__logo"
-              src="/publics/img/acadevmia.svg"
-              alt="logo" />
-          </a>
-          <div class="menu_hamburguer">
-            <span class="line1__menu"></span>
-            <span class="line2__menu"></span>
-            <span class="line3__menu"></span>
-          </div>
-          <ul class="principal__lista">
-            <li class="principal__elemento">
-              <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
-            </li>
-
-            <li class="principal__elemento">
-              <a href="/Frontend/pages/comunidad.html" class="principal__ref"
-                >Comunidad</a
-              >
-            </li>
-            <li class="principal__elemento">
-              <a href="/Frontend/pages/Cursos.html" class="principal__ref"
-                >Cursos</a
-              >
-            </li>
-            <li class="principal__elemento">
-              <a href="/Frontend/pages/blackboard.html" class="principal__ref"
-                >Blackboard</a
-              >
-            </li>
-            <li class="principal__elemento">
-              <a href="/Frontend/pages/nosotros.html" class="principal__ref"
-                >Nosotros</a
-              >
-            </li>
-          </ul>
-          <div class="principal__botones">
-            <a href="/Frontend/pages/login.html" class="principal__link">
-              Ingresar
+            <a href="/Frontend/index.html">
+                <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
             </a>
-            <a href="/Frontend/pages/signup.html" class="button__header">
-              Registrarse
-            </a>
-          </div>
+            <div class="menu_hamburguer">
+                <span class="line1__menu"></span>
+                <span class="line2__menu"></span>
+                <span class="line3__menu"></span>
+            </div>
+            <ul class="principal__lista">
+                <li class="principal__elemento">
+                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+                </li>
+            </ul>
+             <!--Se agrega buscador animado-->
+            <div class="principal__navbar-buscador">
+                <input placeholder="Buscar" type="text" class="principal__input">
+                <div class="principal__btn-input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="panel__salir">
+                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
+            </div>      
+            <div class="principal__botones">
+                <a href="/Frontend/pages/login.html" class="principal__link">
+                    Ingresar
+                </a>
+                <a href="/Frontend/pages/signup.html" class="button__header">
+                    Registrarse
+                </a>
+            </div>
         </nav>
         <div class="menu__toggle">
-          <ul class="lista__toggle">
-            <li class="principal__elemento">
-              <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
-            </li>
-
-            <li class="principal__elemento">
-              <a href="/Frontend/pages/comunidad.html" class="principal__ref"
-                >Comunidad</a
-              >
-            </li>
-            <li class="principal__elemento">
-              <a href="/Frontend/pages/Cursos.html" class="principal__ref"
-                >Cursos</a
-              >
-            </li>
-            <li class="principal__elemento">
-              <a href="/Frontend/pages/blackboard.html" class="principal__ref"
-                >Blackboard</a
-              >
-            </li>
-            <li class="principal__elemento">
-              <a href="/Frontend/pages/nosotros.html" class="principal__ref"
-                >Nosotros</a
-              >
-            </li>
-          </ul>
-          <a href="/Frontend/pages/login.html" class="toggle__link">
-            Ingresar
-          </a>
-          <a href="/Frontend/pages/signup.html" class="button__header">
-            Registrarse
-          </a>
+            <ul class="lista__toggle">
+                <li class="principal__elemento">
+                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+                </li>
+                <li class="principal__elemento">
+                    <a class="principal__ref" id="btn__logout"><i class='bx bx-log-out'></i>Salir</a>
+                </li>
+            </ul>
+                <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
+                    Ingresar
+                </a>
+                <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
+                    Registrarse
+                </a>                                        
         </div>
-      </div>
     </header>
     <div class="wrapper">
       <aside class="dashboard">

@@ -83,13 +83,21 @@ function renderPreguntas() {
       <div class="foro__pregunta">
           <img src="../../publics/img/user.png">
           <p>${obj.username}</p>
-          <button class="foro__reaccion" id="btn__like" onclick="agregarReaccion('${index}', 'like')">${reacciones.likes}<i class='bx bx-like'></i></button>
-          <button class="foro__reaccion" id="btn__dislike" onclick="agregarReaccion(${index}, 'dislike')">${reacciones.dislikes}<i class='bx bx-dislike' ></i></button>
+          <button class="foro__reaccion" id="btn__like" onclick="agregarReaccion('${index}', 'like')">${
+      reacciones.likes
+    }<i class='bx bx-like'></i></button>
+          <button class="foro__reaccion" id="btn__dislike" onclick="agregarReaccion(${index}, 'dislike')">${
+      reacciones.dislikes
+    }<i class='bx bx-dislike' ></i></button>
           <a href="/Frontend/pages/comunidadRespuesta.html?id=${index}" class="foro__ref">
           <h3>${obj.pregunta}</h3>
           <p>${obj.tags}</p>
           </a>
-          ${user && obj.username === user.username ? `<button class="eliminar__post" onclick="eliminarPregunta(${index})">Eliminar</button>` : ''}
+          ${
+            user && obj.username === user.username
+              ? `<button class="eliminar__post" onclick="eliminarPregunta(${index})"><i class="fa-solid fa-trash"></i></button>`
+              : ""
+          }
       </div>
     </div>`;
   });

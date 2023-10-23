@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Frontend/css/dashboard.css">
+    <link rel="stylesheet" href="/Frontend/css/header_footer2.css">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
-    <link rel="stylesheet" href="/Frontend/css/header_footer.css">
     <link rel="stylesheet" href="/utils/toastr.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
@@ -21,7 +21,7 @@
 </head>
 
 <body>
-    <header class="principal">
+   <header class="principal">
         <!-- barra de navegacion -->
         <nav class="principal__navbar">
             <a href="/Frontend/index.html">
@@ -37,18 +37,19 @@
                     <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
                 </li>
                 <li class="principal__elemento">
-                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
-                </li>
-                <li class="principal__elemento">
                     <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
                 </li>
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
             </ul>
+             <!--Se agrega buscador animado-->
+            <div class="principal__navbar-buscador">
+                <input placeholder="Buscar" type="text" class="principal__input">
+                <div class="principal__btn-input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
             <div class="panel__salir">
                 <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
             </div>      
@@ -90,62 +91,59 @@
                 </a>                                        
         </div>
     </header>
-    <main>
+    <div class="wrapper">
+        <aside class="dashboard">
+                    <img src="/publics/img/llama__logo.svg" alt="" class="logo__dashboard">
+                    <nav>
+                        <ul class="dashboard__menu active" >
+                            <li class="dashboard__link active">
+                                <box-icon name='home-alt-2' ></box-icon>
+                                <a href="/Frontend/pages/comunidad.html">Principal</a>
+                            </li>
+                            <li class="dashboard__link">
+                                <box-icon name='user' ></box-icon>
+                                <a href="#">Mi perfil</a>
+                            </li>
+                            <li class="dashboard__link ">
+                                <box-icon name='book-open'></box-icon>
+                                <a href="/Frontend/pages/compraCurso.html">Comprar cursos</a>
+                            </li>
+                            <li class="dashboard__link">
+                                <box-icon name='edit-alt'></box-icon>
+                                <a href="/Frontend/pages/blackboard.html">Blackboard</a>
+                            </li>
+                        </ul>
+                    </nav>
+        </aside>
+        <main class="foro__container">
+            <section class="foro">
+                <!-- panel foro en comunidad.html, revisar cual dejar -->
 
-        
-        <section class="foro">
-            <!-- panel foro en comunidad.html, revisar cual dejar -->
-            <section class="foro__dashboard">
-                <div class="redireccion__link">
-                    <i class='bx bxs-user' ></i>
-                    <a href="#" class="texto__link">
-                        Mi perfil
-                    </a>
-                </div>
-                <div class="redireccion__link">
-                    <i class="fa-regular fa-envelope-open fa-lg"></i>
-                    <a href="#" class="texto__link">
-                        Notificaciones
-                    </a>
-                </div>
-                <div class="redireccion__link">
-                    <i class='bx bx-basket'></i>
-                    <a href="#" class="texto__link">
-                        Contribuciones
-                    </a>
-                </div>
-                <div class="redireccion__link">
-                    <i class='bx bx-edit-alt' ></i>
-                    <a href="/Frontend/pages/blackboard.html" class="texto__link">
-                        Backboard
-                    </a>
-                </div>
-            </section>
-
-            <!-- Insertar seccion de ver pregunta y responder pregunta  -->
-            <section class="principal__responder">
-                <section class="body__pregunta">
+                <!-- Insertar seccion de ver pregunta y responder pregunta  -->
+                <section class="principal__responder">
+                    <section class="body__pregunta">
+                    </section>
+                    <section class="body__respuestas">
+                    </section>
+                    <div class="hacer__respuesta">
+                        <form class="principal__formulario" method="post">
+                            <div class="formulario__titulo">
+                                <textarea name="formulario__texto" id="input__texto" cols="100" rows="3" placeholder ="Brinda una respuesta clara, breve y precisa a esta pregunta" required></textarea>
+                            </div>
+                            <div class="formulario__codigo">
+                                <textarea name="codigo" id="input__codigo" cols="100" rows="12" placeholder ="Usa este espacio si necesitas insertar código"></textarea>
+                            </div>
+                            <div class="formulario__boton">
+                                <button type="submit" name="boton" id="btn__respuesta">
+                                    Publica tu respuesta
+                                </button>
+                            </div>
+                        </form>
+                    </div>
                 </section>
-                <section class="body__respuestas">
-                </section>
-                <div class="hacer__respuesta">
-                    <form class="principal__formulario" method="post">
-                        <div class="formulario__titulo">
-                            <textarea name="formulario__texto" id="input__texto" cols="100" rows="3" placeholder ="Brinda una respuesta clara, breve y precisa a esta pregunta" required></textarea>
-                        </div>
-                        <div class="formulario__codigo">
-                            <textarea name="codigo" id="input__codigo" cols="100" rows="12" placeholder ="Usa este espacio si necesitas insertar código"></textarea>
-                        </div>
-                        <div class="formulario__boton">
-                            <button type="submit" name="boton" id="btn__respuesta">
-                                Publica tu respuesta
-                            </button>
-                        </div>
-                    </form>
-                </div>
             </section>
-        </section>
-    </main>
+        </main>
+    </div>
     <footer class="footer">
         <!-- pie de pagina -->
         <ul class="footer__redes">
