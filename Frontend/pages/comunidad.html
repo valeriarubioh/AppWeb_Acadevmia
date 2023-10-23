@@ -5,15 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
-    <link rel="stylesheet" href="/Frontend/css/header_footer.css">
+    <link rel="stylesheet" href="/Frontend/css/header_footer2.css">
     <link rel="stylesheet" href="/Frontend/css/dashboard.css">
     <link rel="stylesheet" href="/Frontend/css/comunidad.css">
+    <link rel="stylesheet" href="/utils/toastr.min.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script
+    src="https://kit.fontawesome.com/6dc7cbf907.js"
+    crossorigin="anonymous"></script>
+    <script src="/utils/toastr.min.js"></script>
     <script src="/Frontend/Js/menu.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/utils/toastr.min.js"></script>
     <script src="/Frontend/Js/comunidad.js" defer></script>
-    <script src="/Frontend/Js/post.js" defer></script>
     <script src="/Frontend/Js/logout.js" defer></script>
+    <script src="/Frontend/Js/post.js" defer></script>
     <title>Acadevmia - Comunidad</title>
 </head>
 
@@ -34,18 +41,22 @@
                     <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
                 </li>
                 <li class="principal__elemento">
-                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
-                </li>
-                <li class="principal__elemento">
                     <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
                 </li>
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
             </ul>
+             <!--Se agrega buscador animado-->
+            <div class="principal__navbar-buscador">
+                <input placeholder="Buscar" type="text" class="principal__input">
+                <div class="principal__btn-input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="panel__salir">
+                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
+            </div>      
             <div class="principal__botones">
                 <a href="/Frontend/pages/login.html" class="principal__link">
                     Ingresar
@@ -54,9 +65,6 @@
                     Registrarse
                 </a>
             </div>
-            <div class="panel__salir">
-                <button class="button__salir" id="btn__salir" onclick="document.getElementById('btn__salir').style.display='none'"><i class='bx bx-log-out'></i>Salir</button>                                          
-            </div>      
         </nav>
         <div class="menu__toggle">
             <ul class="lista__toggle">
@@ -75,13 +83,16 @@
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
+                <li class="principal__elemento">
+                    <a class="principal__ref" id="btn__logout"><i class='bx bx-log-out'></i>Salir</a>
+                </li>
             </ul>
-            <a href="/Frontend/pages/login.html" class="toggle__link">
-                Ingresar
-            </a>
-            <a href="/Frontend/pages/signup.html" class="button__header">
-                Registrarse
-            </a>
+                <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
+                    Ingresar
+                </a>
+                <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
+                    Registrarse
+                </a>                                        
         </div>
     </header>
     <div class="wrapper">
@@ -109,14 +120,13 @@
                 </nav>
         </aside>
         <main class="foro__container">
+            <div class="hacer__pregunta">
+                <button class="button--modificado" id="btn__pregunta" onclick="document.getElementById('pregunta__seccion').style.display='block'">Pregunta</button>
+            </div>
             <section class="foro">
                 <!-- seeccion de preguntar y responder preguntas  -->
                 <section class="principal__preguntar">
-                    <div class="buscador__pregunta">
-                        <input type="text" id="buscador" placeholder= " Buscar" class="principal__input">
-                    </div>
-                    <!-- Este es el cambio -->
-                    <section class="pregunta" id="pregunta__seccion">                   
+                    <section class="pregunta" id="pregunta__seccion">
                         <div class="modal-content animate">
                             <div class="instrucciones__contenido">
                                 <span onclick="document.getElementById('pregunta__seccion').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -142,14 +152,11 @@
                     <section class="body__preguntas">
                         <!-- fin función -->
                     </section>
-                    <div class="hacer__pregunta">
-                        <button class="button--modificado" id="btn__pregunta" onclick="document.getElementById('pregunta__seccion').style.display='block'">Pregunta</button>
-                    </div>
                 </section>
-                </div>
-
             </section>
         </main>
+        </div>
+
     </div>
     <footer class="footer">
         <!-- pie de pagina -->

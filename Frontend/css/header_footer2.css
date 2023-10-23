@@ -17,9 +17,59 @@
 
 /* barra de navegacion */
 
-/* pendiente agregar un hover en los principal__elemento */
-/* posiblemente se cambie el color auxiliar y preguntar si dejaremos el boton ingreso como esta */
 
+.principal__navbar-buscador {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ced4da; /* Añade un borde para resaltar el área de búsqueda */
+    border-radius: 5px; /* Ajusta el radio de los bordes para hacerlo más atractivo */
+    padding: 5px;
+}
+
+.principal__input{
+    outline: none;
+    height: 50px;
+    width: 0;
+    padding: 0 20px;
+    color: #000;
+    border-radius: 50px;
+    font-size: 20px;
+    border: 1px solid var(--color-auxiliar);
+    transition: all .7s ease;
+}
+::placeholder{
+    padding-left: 3rem;
+    color: var(--color-auxiliar);
+}
+.principal__btn-input{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #f00000;
+    line-height: 60px;
+    border-radius: 50%;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s;
+}
+.principal__btn-input i {
+    font-size: 25px;
+    color: #FFFFFF;
+    transition: all .7s ease;
+    padding-bottom: 20px;
+}
+.principal__navbar-buscador:hover input{
+    width: 350px;
+}
+.principal__navbar-buscador:hover i{
+    transform: rotate(360deg);
+}
+.principal__btn-input:hover{
+    background-color: #f00000;
+}
+
+
+/* fin del cambio */
 .principal__navbar{
     position: fixed;
     z-index: 99;
@@ -92,10 +142,6 @@
         font-size: 1.2rem;
         letter-spacing: 3px;
     }
-}
-
-#btn__logout{
-    cursor: pointer;
 }
 /* menu toggle */
 
@@ -257,12 +303,6 @@
     margin-bottom: 10px;
 }
 
-
-/* alerts toastr */
-.custom-toast {
-    background-color: #333; /* Reemplaza #333 con el color de fondo que desees */
-}
-
 /*footer*/
 
 .footer__redes{
@@ -358,10 +398,6 @@
     .principal__botones{
         display: none;
     }
-
-    .panel__salir{
-        display: none;
-    }
     
     .menu_hamburguer{
         display: flex;
@@ -420,3 +456,4 @@
     }
     
 }
+
