@@ -18,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 //declaramos las variables
 let menu_principal = document.querySelector(".menu_hamburguer");
 let line1 = document.querySelector(".line1__menu");
@@ -63,4 +62,20 @@ window.addEventListener("resize", handleResize);
 
 // Llamar a handleResize inicialmente para configurar el estado del menú en la carga de la página
 handleResize();
+document.addEventListener("DOMContentLoaded", function () {
+  const user = JSON.parse(localStorage.getItem("login_success")) || false;
+  const salida = document.getElementById("btn__salir")
+  const pendienteIngreso = document.querySelector(".principal__botones")
+  const ingresoListo = document.getElementById("ingreso")
+  const ingresado = document.getElementById("ingresado")
+  const logout = document.getElementById("btn__logout")
+  if (user) {
+    salida.style.display = "block"
+    pendienteIngreso.style.display = "none"
+    ingresoListo.style.display = "none"
+    ingresado.style.display = "none"
+  } else {
+    logout.style.display = "none"
+  }
 
+});
