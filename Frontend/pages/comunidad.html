@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="/utils/toastr.min.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script
+    src="https://kit.fontawesome.com/6dc7cbf907.js"
+    crossorigin="anonymous"></script>
+    <script src="/utils/toastr.min.js"></script>
     <script src="/Frontend/Js/menu.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/utils/toastr.min.js"></script>
@@ -43,6 +47,13 @@
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
             </ul>
+             <!--Se agrega buscador animado-->
+            <div class="principal__navbar-buscador">
+                <input placeholder="Buscar" type="text" class="principal__input">
+                <div class="principal__btn-input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
             <div class="panel__salir">
                 <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
             </div>      
@@ -109,6 +120,9 @@
                 </nav>
         </aside>
         <main class="foro__container">
+            <div class="hacer__pregunta">
+                <button class="button--modificado" id="btn__pregunta" onclick="document.getElementById('pregunta__seccion').style.display='block'">Pregunta</button>
+            </div>
             <section class="foro">
                 <!-- seeccion de preguntar y responder preguntas  -->
                 <section class="principal__preguntar">
@@ -140,9 +154,6 @@
                     </section>
                 </section>
             </section>
-            <div class="hacer__pregunta">
-                <button class="button--modificado" id="btn__pregunta" onclick="document.getElementById('pregunta__seccion').style.display='block'">Pregunta</button>
-            </div>
         </main>
         </div>
 

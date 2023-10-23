@@ -35,8 +35,7 @@
 /* secccion .blackboard */
 
 .foro {
-    display: flex;
-    padding-top: 11vh;  
+    display: flex; 
       
   & .foro__dashboard {
     display: flex;
@@ -65,7 +64,8 @@
 
 .principal__responder {
   width: 100%;
-  margin: 1%;
+padding: 3rem;
+  background: #FFFFFF;
   & .body__pregunta {
     & .foro__publicadas{
       display: flex;
