@@ -1,0 +1,186 @@
+:root{
+    --color-primario:#FD3C00;
+    --color-secudario:#2F2B3B;
+    --color-terciario: #FFFFFF;
+    --color-auxiliar:#D9D9D9;
+}
+
+/* Estilo para el contenedor principal */
+.container {
+    background-color: var(--color-terciario);
+    margin: 1rem;
+    margin-left: 0;
+    border-radius: 2rem;
+    padding: 3rem;
+}
+/* Estilo para los botones */
+.buttons {
+    text-align: center; 
+    & button {
+        background-color: var(--color-primario);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        margin: auto;
+        border-radius: 5px;
+        cursor: pointer;
+        min-width: 120px; 
+        text-align: center; 
+    }
+}
+
+/* Estilo para la sección de perfil */
+.profile {
+    text-align: center; 
+    margin: 0 auto; 
+    background-color: var(--color-auxiliar);
+    border-radius: 2rem;
+
+    & .profile-picture img {
+        display: block; 
+        margin: 0 auto; 
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    & input, select, textarea {
+        text-align: center;
+    }
+}
+
+/* Estilo para la sección "Acerca de Mí" */
+.about-me {
+    margin-top: 35px;
+    position: relative; 
+    width: 100%; 
+    box-sizing: border-box; 
+    border: 2px solid var(--color-auxiliar); 
+    border-radius: 3%;
+    padding: 25px;
+    margin-bottom: 15px;
+
+    & .form-field {
+        display: block; 
+        border-bottom: 1px solid var(--color-auxiliar); 
+        padding: 10px 0px;
+        display: inline-block;
+        width: 100%;
+        }
+
+        & .info--sobremi {
+            width: 100%;
+            border: none;
+            height: auto;
+            color: black  ; 
+            background-color: var(--color-terciario);
+
+        }
+        & .info {
+            width: 69.4%;
+            border: none;
+            color: black  ; 
+            background-color: var(--color-terciario);
+        }
+
+        & .selected-skills {
+            margin-left: 31%;
+        }
+
+}
+
+/* Estilos para el listado de opciones */
+.skills-dropdown {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    list-style: none;
+    padding: 0;
+    border: 1px solid #ccc;
+    margin: 0;
+
+    & li {
+        padding: 8px;
+        cursor: pointer;
+    }
+}
+
+
+/* Estilos para el listado de habilidades seleccionadas */
+.selected-skills {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+/* Estilos para cada habilidad seleccionada */
+.selected-skill-container {
+    background-color: var(--color-auxiliar);
+    color: var(--color-secudario);
+    border-radius: 4px;
+    display: inline-block;
+    padding: 2px 8px;
+    margin: 2px;
+    cursor: pointer;
+}
+
+
+& label {
+    width: 30%;
+    display: inline-block;
+}
+
+& input, select, textarea {
+    width: 250px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+& textarea {
+    height: 150px;
+}
+
+/* Estilo para el campo de selección de la foto */
+input[type="file"] {
+    display: none;
+    color: var(--color-primario);
+    margin: auto;
+}
+
+/* Estilo para el botón de guardar cambios */
+#save-profile-button {
+    background-color: var(--color-secudario);
+    margin: auto;
+}
+
+/* Estilo para el checkbox de perfil público */
+#privacy {
+    vertical-align: middle;
+}
+
+/* Estilo para subtítulos y encabezados */
+h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+/* Estilos para el select personalizado */
+.custom-select {
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilos para el valor seleccionado del select */
+.select-value , #add-social-website-button {
+    color: #0048ff;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    background-color: var(--color-terciario);
+    text-align: center;
+    border: none;
+}

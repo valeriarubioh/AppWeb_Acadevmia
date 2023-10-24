@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
+    <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
+    <link rel="stylesheet" href="/Frontend/css/perfil.css">
+    <link rel="stylesheet" href="/Frontend/css/header_footer.css">
+    <link rel="stylesheet" href="/Frontend/css/dashboard.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link rel="stylesheet" href="/Frontend/css/respuesta.css">
+    <script src="https://kit.fontawesome.com/c0f9324e8d.js" crossorigin="anonymous"></script>
+    <script src="/Frontend/Js/menu.js" defer></script>
+    <script src = "/Frontend/Js/utils.js" defer></script>
+    <script src = "/Frontend/Js/respuesta.js" defer></script>
+    <script src="/Frontend/Js/logout.js" defer></script>
+    <script src="/Frontend/Js/perfil.js" defer></script>
+    <title>Acadevmia - Perfil</title>
+</head>
+
+<body>
+    <header class="principal">
+        <!-- barra de navegacion -->
+        <nav class="principal__navbar">
+            <a href="/Frontend/index.html">
+                <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
+                
+            </a>
+            <div class="menu_hamburguer">
+                <span class="line1__menu"></span>
+                <span class="line2__menu"></span>
+                <span class="line3__menu"></span>
+            </div>
+            <ul class="principal__lista">
+                <li class="principal__elemento">
+                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+                </li>
+            </ul>
+            <div class="principal__botones">
+                <a href="/Frontend/pages/login.html" class="principal__link">
+                    Ingresar
+                </a>
+                <a href="/Frontend/pages/signup.html" class="button__header">
+                    Registrarse
+                </a>
+            </div>
+            <div class="panel__salir">
+                <button class="button__salir" id="btn__salir" onclick="document.getElementById('btn__salir').style.display='none'"><i class='bx bx-log-out'></i>Salir</button>                                          
+            </div>  
+        </nav>
+        <div class="menu__toggle">
+            <ul class="lista__toggle">
+                <li class="principal__elemento">
+                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+                </li>
+            </ul>
+            <a href="/Frontend/pages/login.html" class="toggle__link">
+                Ingresar
+            </a>
+            <a href="/Frontend/pages/signup.html" class="button__header">
+                Registrarse
+            </a>
+        </div>
+    </header>
+    <div class="wrapper">
+        <aside class="dashboard">
+            <img src="/publics/img/llama__logo.svg" alt="" class="logo__dashboard">
+            <nav>
+                <ul class="dashboard__menu">
+                    <li class="dashboard__link">
+                        <box-icon name='home-alt-2' ></box-icon>
+                        <a href="/Frontend/pages/comunidad.html">Principal</a>
+                    </li>
+                    <li class="dashboard__link">
+                        <box-icon name='user' ></box-icon>
+                        <a href="#">Mi perfil</a>
+                    </li>
+                    <li class="dashboard__link active">
+                        <box-icon name='book-open'></box-icon>
+                        <a href="/Frontend/pages/compraCurso.html">Comprar cursos</a>
+                    </li>
+                    <li class="dashboard__link">
+                        <box-icon name='edit-alt'></box-icon>
+                        <a href="/Frontend/pages/blackboard.html">Blackboard</a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main>
+            <div class="container">
+                <div class="profile">
+                    <div class="profile-picture">
+                        <img src="default-profile-image.png" alt="">
+                    </div>
+                    <input type="file" id="profile-picture-input" accept="image/*" onchange="loadProfilePicture()">
+                    <div class="profile-info">
+                        <input type="text" id="name" placeholder="Nombre" disabled> <br>
+                        <input type="text" id="position" placeholder="Jerarquía" disabled>
+                    </div>
+                    <div class="buttons">
+                        <button id="edit-profile-button">Editar Perfil</button>
+                        <button id="save-profile-button" style="display: none;">Guardar Cambios</button>
+                    </div>
+                </div>               
+                <div class="about-me">
+                    <h2>Acerca de Mí</h2>
+                    <div class="form-field">
+                        <textarea id="about-me" class="info--sobremi" placeholder="Háblanos sobre ti, cuéntanos qué haces, cuáles son tus intereses y qué esperas obtener de estos cursos." disabled></textarea>
+                    </div>
+                    <div class="form-field">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id "email" class="info" placeholder="Correo electrónico" disabled>
+                    </div>
+                    <div class="form-field">
+                        <label for="phone">Número de teléfono</label>
+                        <input type="tel" id="phone"class="info" placeholder="Número de teléfono" disabled>
+                    </div>
+                    <div class="form-field">
+                        <label for="birthdate">Fecha de nacimiento</label>
+                        <input type="date" id="birthdate"class="info" placeholder="Fecha de nacimiento" disabled>
+                    </div>
+                    <div class="form-field">
+                        <label for="pais">País</label>
+                        <select id="pais" class="info">
+                            <option  value="selecciona">Selecciona un país</option>
+                            <option class="info" value="usa">Estados Unidos</option>
+                            <option class="info" value="canada">Canadá</option>
+                            <option class="info" value="mexico">México</option>
+                            <option class="info" value="colombia">Colombia</option>
+                            <option class="info" value="rusia">Rusia</option>
+                            <option class="info" value="japon">Japón</option>
+                            <!-- Agrega más países según sea necesario -->
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="gender">Género</label>
+                        <select id="gender"class="info" disabled>
+                            <option value="masculino">Masculino</option>
+                            <option value="femenino">Femenino</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="form-field">
+                        <label for="skills">Habilidades </label>
+                        <div class="selected-skills" >
+                            <!-- Las habilidades seleccionadas aparecerán aquí -->
+                        </div>
+                        <div class="custom-select" id="custom-select">
+                            <div class="select-value">Selecciona tus habilidades</div>
+                            <ul class="skills-dropdown" id="skills-dropdown" >
+                                <!-- Lista de opciones de habilidades -->
+                                <li data-skill="Programación">Programación</li>
+                                <li data-skill="Diseño gráfico">Diseño gráfico</li>
+                                <li data-skill="Marketing digital">Marketing digital</li>
+                                <li data-skill="Administración de redes">Administración de redes</li>
+                                <li data-skill="Escritura creativa">Escritura creativa</li>
+                                <li data-skill="Idiomas extranjeros">Idiomas extranjeros</li>
+                                <li data-skill="Otras">Otras</li>
+                            </ul>
+                        </div>
+                    </div>                                    
+                    <div class="form-field" id="social-container">
+                        <label for="original-social-network">Redes sociales</label>
+                        <select id="social-network">
+                            <option value="selecciona">Selecciona una red social</option>
+                            <option value="facebook">Facebook</option>
+                            <option value="twitter">Twitter</option>
+                            <option value="instagram">Instagram</option>
+                            <option value="linkedin">LinkedIn</option>
+                            <option value="discord">Discord</option>
+                            <option value="github">Github</option>
+                            <option value="otra">Otra</option>
+                            <!-- Agrega más redes sociales según sea necesario -->
+                        </select>
+                        <input type="text" id="social-link" placeholder="Enlace de la red social">
+                    </div>
+                    <button id="add-social-website-button">Agregar sitio web</button>                                               
+                    <div class="form-field">
+                        <label for="privacy">Perfil público</label>
+                        <input type="checkbox" id="privacy" disabled>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <footer class="footer">
+        <!-- pie de pagina -->
+        <ul class="footer__redes">
+            <li class="footer__sociales">
+                <a id="facebook" href="https://www.facebook.com/?locale=es_LA">
+                    <i class="fa-brands fa-facebook">
+                    </i>
+                    facebook
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="github" href="https://github.com/">
+                    <i class="fa-brands fa-square-github">
+                    </i>
+                    Github
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="linkedin" href="https://www.linkedin.com/">
+                    <i class="fa-brands fa-linkedin">
+                    </i>
+                    Linkedin
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="email" href="">
+                    <i class="fa-solid fa-envelope">
+                    </i>
+                    Email
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="discord" href="https://discord.com/">
+                    <i class="fa-brands fa-discord">
+                    </i>
+                    Discord
+                </a>
+            </li>
+        </ul>
+        <div class="footer__final">
+            <img class="footer__logo" src="/publics/img/logo.svg" alt="logo">
+            <p class="footer__terminos">Informacion legal | Politica de privacidad</p>
+            <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
+        </div>
+    </footer>
+</body>
+
+</html>
