@@ -36,6 +36,7 @@
     background-color: var(--color-auxiliar);
     border-radius: 2rem;
 
+    
     & .profile-picture img {
         display: block; 
         margin: 0 auto; 
@@ -47,6 +48,11 @@
 
     & input, select, textarea {
         text-align: center;
+    }
+
+    & ::placeholder {
+        text-align: center;
+        padding: 0%;
     }
 }
 
@@ -67,35 +73,43 @@
         padding: 10px 0px;
         display: inline-block;
         width: 100%;
-        }
+        
 
         & .info--sobremi {
             width: 100%;
             border: none;
             height: auto;
-            color: black  ; 
+            color: rgba(0, 0, 0, 0.699)  ; 
             background-color: var(--color-terciario);
 
         }
         & .info {
             width: 69.4%;
             border: none;
-            color: black  ; 
+            color: rgba(0, 0, 0, 0.699)  ; 
             background-color: var(--color-terciario);
+
+            
         }
 
         & .selected-skills {
             margin-left: 31%;
         }
-
+    }
+    & ::placeholder {
+        text-align: left;
+        padding: 0%;
+        color: #2f2b3bd6;
+    }
 }
+
 
 /* Estilos para el listado de opciones */
 .skills-dropdown {
     display: none;
     position: absolute;
     z-index: 1;
-    background-color: #fff;
+    background-color: var(--color-terciario);
     list-style: none;
     padding: 0;
     border: 1px solid #ccc;

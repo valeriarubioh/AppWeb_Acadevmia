@@ -7,7 +7,7 @@
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
     <link rel="stylesheet" href="/Frontend/css/perfil.css">
-    <link rel="stylesheet" href="/Frontend/css/header_footer.css">
+    <link rel="stylesheet" href="/Frontend/css/header_footer2.css">
     <link rel="stylesheet" href="/Frontend/css/dashboard.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="/Frontend/css/respuesta.css">
@@ -26,7 +26,6 @@
         <nav class="principal__navbar">
             <a href="/Frontend/index.html">
                 <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
-                
             </a>
             <div class="menu_hamburguer">
                 <span class="line1__menu"></span>
@@ -36,19 +35,24 @@
             <ul class="principal__lista">
                 <li class="principal__elemento">
                     <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
                 </li>
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
                 </li>
                 <li class="principal__elemento">
-                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
-                </li>
-                <li class="principal__elemento">
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
             </ul>
+            <!--Se agrega buscador animado-->
+            <div class="principal__navbar-buscador">
+                <input placeholder="Buscar" type="text" class="principal__input">
+                <div class="principal__btn-input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="panel__salir">
+                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
+            </div>      
             <div class="principal__botones">
                 <a href="/Frontend/pages/login.html" class="principal__link">
                     Ingresar
@@ -57,9 +61,6 @@
                     Registrarse
                 </a>
             </div>
-            <div class="panel__salir">
-                <button class="button__salir" id="btn__salir" onclick="document.getElementById('btn__salir').style.display='none'"><i class='bx bx-log-out'></i>Salir</button>                                          
-            </div>  
         </nav>
         <div class="menu__toggle">
             <ul class="lista__toggle">
@@ -95,11 +96,11 @@
                         <box-icon name='home-alt-2' ></box-icon>
                         <a href="/Frontend/pages/comunidad.html">Principal</a>
                     </li>
-                    <li class="dashboard__link">
+                    <li class="dashboard__link active" >
                         <box-icon name='user' ></box-icon>
                         <a href="#">Mi perfil</a>
                     </li>
-                    <li class="dashboard__link active">
+                    <li class="dashboard__link ">
                         <box-icon name='book-open'></box-icon>
                         <a href="/Frontend/pages/compraCurso.html">Comprar cursos</a>
                     </li>
@@ -119,7 +120,7 @@
                     <input type="file" id="profile-picture-input" accept="image/*" onchange="loadProfilePicture()">
                     <div class="profile-info">
                         <input type="text" id="name" placeholder="Nombre" disabled> <br>
-                        <input type="text" id="position" placeholder="Jerarquía" disabled>
+                        <input type="text" id="position" placeholder="Puntos" disabled>
                     </div>
                     <div class="buttons">
                         <button id="edit-profile-button">Editar Perfil</button>
