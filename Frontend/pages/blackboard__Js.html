@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Frontend/css/header_footer.css">
+    <link rel="stylesheet" href="/Frontend/css/blackboard__Js.css">
+    <link rel="stylesheet" href="/Frontend/css/dashboard.css">
+    <link rel="stylesheet" href="/utils/toastr.min.css">
+    <link rel="stylesheet" href="/Frontend/css/header_footer2.css">
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="/Frontend/Js/menu.js" defer></script>
+    <script src="/Frontend/Js/blackboard__Js.js" defer></script>
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+    <script src="/utils/toastr.min.js"></script>
+    <script
+    src="https://kit.fontawesome.com/6dc7cbf907.js"
+    crossorigin="anonymous"></script>
+    <script src="/Frontend/Js/logout.js" defer></script>
+    <title>Acadevmia - Blackboard</title>
+</head>
+<body>
+    <header class="principal">
+        <!-- barra de navegacion -->
+        <nav class="principal__navbar">
+            <a href="/Frontend/index.html">
+                <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
+            </a>
+            <div class="menu_hamburguer">
+                <span class="line1__menu"></span>
+                <span class="line2__menu"></span>
+                <span class="line3__menu"></span>
+            </div>
+            <ul class="principal__lista">
+                <li class="principal__elemento">
+                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+                </li>
+            </ul>
+            <!--Se agrega buscador animado-->
+            <div class="principal__navbar-buscador">
+                <input placeholder="Buscar" type="text" class="principal__input">
+                <div class="principal__btn-input">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+            </div>
+            <div class="panel__salir">
+                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
+            </div>      
+            <div class="principal__botones">
+                <a href="/Frontend/pages/login.html" class="principal__link">
+                    Ingresar
+                </a>
+                <a href="/Frontend/pages/signup.html" class="button__header">
+                    Registrarse
+                </a>
+            </div>
+        </nav>
+        <div class="menu__toggle">
+            <ul class="lista__toggle">
+                <li class="principal__elemento">
+                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
+                </li>
+                <li class="principal__elemento">
+                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
+                </li>
+                <li class="principal__elemento">
+                    <a class="principal__ref" id="btn__logout"><i class='bx bx-log-out'></i>Salir</a>
+                </li>
+            </ul>
+                <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
+                    Ingresar
+                </a>
+                <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
+                    Registrarse
+                </a>                                        
+        </div>
+    </header>
+    <div class="wrapper">
+        <aside class="dashboard">
+                <img src="/publics/img/llama__logo.svg" alt="" class="logo__dashboard">
+                <nav>
+                    <ul class="dashboard__menu" >
+                        <li class="dashboard__link">
+                            <box-icon name='home-alt-2' ></box-icon>
+                            <a href="/Frontend/pages/comunidad.html">Principal</a>
+                        </li>
+                        <li class="dashboard__link">
+                            <box-icon name='user' ></box-icon>
+                            <a href="#">Mi perfil</a>
+                        </li>
+                        <li class="dashboard__link ">
+                            <box-icon name='book-open'></box-icon>
+                            <a href="/Frontend/pages/compraCurso.html">Comprar cursos</a>
+                        </li>
+                        <li class="dashboard__link active">
+                            <box-icon name='edit-alt'></box-icon>
+                            <a href="/Frontend/pages/blackboard.html">Blackboard</a>
+                        </li>
+                    </ul>
+                </nav>
+        </aside>
+        <main class="blackboard__container">
+            <section class="blackboardJs">
+                <div class="header">
+                    <img src="/publics/img/blackboard/logoJavaScript.png" alt="Descripción de la imagen">
+                    <div>
+                        <h1>Programación con JavaScript</h1>
+                    <h2>Practica con +130 ejercicios. Completa 18 PROYECTOS. Aprende HTML, CSS, Node.js, Angular, JSON y más. Todo super claro.</h2>
+                    <p>Conoce los conceptos clave del lenguaje de programación que se está comiendo al mundo. Aprende qué es una variable, una función, un objeto y dónde se guardan esos valores. Descubre qué es Scope y cómo se utilizan los loops. Obtén las herramientas para saber cómo tomar decisiones y validar acciones. En este curso, darás el primer paso para empezar tu carrera como desarrollador.</p>
+                    </div>
+                    
+                </div>
+                <div class="contenedor">
+                    <div class="section" onclick="toggleContent('content1')"><b>BIENVENIDOS(AS)</b>
+                        <div id="content1" class="hidden">
+                            <ul>
+                                <li>Este es un programa enfocado en la Programación con JavaScript.En este curso desarrollarás las habilidades técnicas y profesionales necesarias para asegurar tu éxito.</li>
+                                <li>Tus clases están diseñadas entre lunes y viernes de 9:30am a 6:00pm. Estas sesiones son una mezcla de sesiones en zoom lideradas por tus instructores, y sesiones de trabajo independiente  y en plataformas externas.</li>
+                                <li>Mientras trabajas independientemente en estos sitios externos, estarás viendo videos, leyendo artículos, practicando código, respondiendo encuestas, participando en foros de discusión, y/o realizando otras actividades.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section" onclick="toggleContent('content2')"><b>LO QUE APRENDERÁS</b> 
+                        <div id="content2" class="hidden">
+                            <ul>
+                                <li>Creación de códigos JavaScript sencillos</li>
+                                <li>Escribir pruebas unitarias con Jest </li>
+                                <li>Creación y manipulación de objetos y matrices.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="section" onclick="toggleContent('content3')"><b>COMO APRENDERÁS</b>
+                        <div id="content3" class="hidden">
+                            <ul>
+                                <li>Sesiones técnicas</li>
+                                <li>Sesiones de aplicación de habilidades</li>
+                                <li>Sesiones de comunidad</li>
+                                <li>Apoyo social y mentoría</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenedor">
+                    <h1><i class='bx bx-book-bookmark'></i><b>HAY 5 MÓDULOS EN ESTE CURSO</b></h1>
+                    <br>
+                    <p>JavaScript es el lenguaje de programación que impulsa la web moderna. En este curso, aprenderá los conceptos básicos del desarrollo web con JavaScript. Trabajará con funciones, objetos, matrices, variables, tipos de datos, el DOM (Document Object Model, Modelo de objetos del documento) de HTML y mucho más. Aprenderá a utilizar JavaScript y descubrirá las posibilidades interactivas con las modernas tecnologías de JavaScript. Por último, aprenderá sobre la práctica de probar el código y cómo escribir una prueba unitaria utilizando Jest.</p>
+                    <div class="section" onclick="toggleContent('content4')"><b>INTRODUCCIÓN A JAVASCRIPT</b>
+                        <div id="content4" class="hidden">
+                            <ol>
+                                <li>Aprenderá por qué JavaScript es tan importante para el desarrollo de software.</li>
+                                <li>Obtendrá una visión general de cómo escribir código JavaScript dentro del navegador</li>
+                                <li>Conocerá los operadores más comunes, así como las declaraciones condicionales y los bucles.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="section" onclick="toggleContent('content5')"><b>COMPONENTES FUNDAMENTALES DE UN PROGRAMA</b>
+                        <div id="content5" class="hidden">
+                            <ol>
+                                <li>Aprenderá a utilizar objetos, matrices y funciones.</li>
+                                <li>Aprenderá sobre los métodos incorporados más comunes, y la diferencia entre cadenas indefinidas, nulas y vacías</li>
+                                <li>Explorará la gestión de errores y la programación defensiva.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="section" onclick="toggleContent('content6')"><b>PARADIGMAS DE PROGRAMACIÓN</b> 
+                        <div id="content6" class="hidden">
+                            <ol>
+                                <li>Aborda la programación funcional y el paradigma de la programación orientada</li>
+                                <li>Aprenderá qué es el alcance en JavaScript</li>
+                                <li>Explorará las diferencias entre var, let y const.</li>
+                                <li>Aprenderá a utilizar las clases y la herencia en la programación orientada a objetos.</li> 
+                                <li>Explorará cómo utilizar la escritura de JavaScript usando características modernas como spread y rest.</li>
+                                <li>Construirá un código que pueda gestionar el DOM y los eventos.</li>
+                                <li>Utilizará JSON en JavaScript.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="section" onclick="toggleContent('content7')"><b>PRUEBAS</b>
+                        <div id="content7" class="hidden">
+                            <ol>
+                                <li>Aprenderá sobre Node.js y Node Package Manager (npm).</li>
+                                <li>Explorará cómo instalar paquetes npm y cómo trabajar con package.json.</li>
+                                <li>Aprenderá sobre las pruebas en JavaScript y codificará una prueba unitaria sencilla en Jest.</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="section" onclick="toggleContent('content8')"><b>EVALUACIÓN CALIFICADA DE FINAL DE CURSO</b> 
+                        <div id="content8" class="hidden">
+                            <ol>
+                                <li>Sintetizará los conocimientos adquiridos en el curso para crear un código para el “generador de recibos Little lemon”.</li>
+                                <li>Una vez que haya completado las unidades individuales de este módulo, podrá realizar la evaluación calificada. También tendrá la oportunidad de reflexionar sobre el contenido del curso y el camino de aprendizaje que tiene por delante.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contenedor">
+                    <div class="contenedor--posicion">
+                    <h1><i class='bx bx-calendar'></i><b>TU HORARIO DE CLASES</b></h1>
+                    <p>Verifica el horario de tu cohorte usando el siguiente link.</p>
+                    <div id="button" onclick="changeColor()">TU HORARIO DE CLASES</div>
+                    </div>
+                </div>
+                
+                <div class="contenedor">
+                        <h1><i class='bx bx-universal-access' ></i>APOYO AL PARTICIPANTE</h1>
+                        <h2>Conoce tus instructores</h2>
+                        <div class="container">
+                            <div class="sub-container">
+                                <div class="image-container">
+                                    <img src="/publics/img/blackboard/instructor.jpg" alt="Imagen 1">
+                                </div>
+                                <h4>Víctor Robles</h4>
+                                <p>Soy desarrollador web en una empresa y llevo inmerso en el mundo de la programación y la informática desde los 15 años.
+
+                                Me encanta programar y todo lo relacionado con Internet y las nuevas tecnologías, crear cosas y enseñar a los demás.</p>
+                            </div>
+                            <div class="sub-container">
+                                <div class="image-container">
+                                    <img src="/publics/img/blackboard/instructor_2.jpg" alt="Imagen 2">
+                                </div>
+                                <h4>Federico Garay</h4>
+                                <p>Soy ingeniero de sistemas y desarrollador web full stack.
+
+                                    Tengo años de experiencia en el desarrollo web en general creando desde sitios web hasta sistemas web completos administrables.</p>
+                            </div>
+                        </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <footer class="footer">
+        <!-- pie de pagina -->
+        <ul class="footer__redes">
+            <li class="footer__sociales">
+                <a id="facebook" href="https://www.facebook.com/?locale=es_LA">
+                <i class="fa-brands fa-facebook">
+                </i>
+                facebook
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="github" href="https://github.com/">
+                <i class="fa-brands fa-square-github">
+                </i>
+                Github
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="linkedin" href="https://www.linkedin.com/">
+                <i class="fa-brands fa-linkedin">
+                </i>
+                Linkedin
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="email" href="">
+                <i class="fa-solid fa-envelope">
+                </i>
+                Email
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="discord" href="https://discord.com/">
+                <i class="fa-brands fa-discord">
+                </i>
+                Discord
+                </a>
+            </li>
+        </ul>
+        <div class="footer__final">
+            <img class="footer__logo" src="/publics/img/logo.svg" alt="logo">
+            <p class="footer__terminos">Informacion legal | Politica de privacidad</p>
+            <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
+        </div>        
+    </footer>
+</body>
+</html>
