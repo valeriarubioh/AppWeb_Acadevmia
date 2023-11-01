@@ -73,10 +73,11 @@ function eliminarPregunta(index) {
   localStorage.setItem("preguntas", JSON.stringify(preguntas));
   renderPreguntas();
 }
-function renderPreguntas() {
+function renderPreguntas(filterPregunta) {
   let preguntasHtml = "";
+  let preguntasRendered = filterPregunta !== undefined ? filterPregunta : preguntas;
 
-  preguntas.forEach(function (obj, index) {
+  preguntasRendered.forEach(function (obj, index) {
     let reacciones = contarReaccion(obj.reaccion);
     preguntasHtml += `
     <div class="foro__publicadas">
@@ -122,7 +123,7 @@ btnPregunta.addEventListener("click", function () {
   }
 });
 function filtro(consulta) {
-  return Preguntas.filter((pregunta) =>
+  return preguntas.filter((pregunta) =>
     pregunta.pregunta.toLowerCase().includes(consulta.toLowerCase())
   );
 }
