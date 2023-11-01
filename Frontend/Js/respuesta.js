@@ -35,7 +35,6 @@ if (queryParams.id) {
 //   },
 // ];
 
-//agregar reaccion es dif para selected pregunta, lanza error
 function agregarReaccionRespuesta(index, accion) {
   if (!user) {
     window.location.href = "login.html";
@@ -102,13 +101,16 @@ function hacerFavorito(index) {
   const foundIndex = selectedPregunta.respuestas.findIndex(
     (respuesta) => respuesta.favorito === true
   );
-    selectedPregunta.respuestas[foundIndex].favorito = false
-    respuesta.favorito=true,
+  if (foundIndex >= 0) {
+    selectedPregunta.respuestas[foundIndex].favorito = false;
+  }
+  if (respuesta) {
+    (respuesta.favorito = true),
     localStorage.setItem("preguntas", JSON.stringify(Preguntas));
     renderRespuestas();
   }
+}
 
-//FALTA IMPRIMIR un P o un button si hay una respuesta favorita para todos los users o no users.
 function renderRespuestas() {
   let respuestasHtml = "";
   selectedPregunta.respuestas.forEach(function (obj, index) {
@@ -128,7 +130,11 @@ function renderRespuestas() {
               ? `<button class="foro__reaccion" onclick="hacerFavorito(${index})"><i class='bx bx-star'></i>Favorito</button>`
               : ""
           }
-          ${obj.favorito===true ? `<p><i class='bx bx-star'></i>Respuesta Favorita</p>`:""}
+          ${
+            obj.favorito === true
+              ? `<p><i class='bx bx-star'></i>Respuesta Favorita</p>`
+              : ""
+          }
       </div>  
       <div class="foro__respuesta">
             <p>${obj.texto}</p>
@@ -180,7 +186,7 @@ postForm.addEventListener("submit", (e) => {
     codigo: codigo,
     username: user.username,
     reaccion: [],
-    favorito:false,
+    favorito: false,
   };
   if (queryParams.id && user) {
     selectedPregunta.respuestas.push(respuesta);
