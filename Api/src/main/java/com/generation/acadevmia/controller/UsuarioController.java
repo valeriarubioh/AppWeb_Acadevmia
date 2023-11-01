@@ -1,6 +1,6 @@
 package com.generation.acadevmia.controller;
 
-import com.generation.acadevmia.model.Usuario;
+import com.generation.acadevmia.model.User;
 import com.generation.acadevmia.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +16,7 @@ public class UsuarioController {
     UsuarioService usuarioService;
 
     @PostMapping
-    public Usuario crearUsuario(@RequestBody Usuario usuario) {
-        return usuarioService.crearUsuario(usuario);
+    public User crearUsuario(@RequestBody User user) {
+        return usuarioService.crearUsuario(user);
     }
 }

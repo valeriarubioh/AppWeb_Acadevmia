@@ -16,5 +16,5 @@ public class Reaccion {
     @Id
     private String id;
     private int isLike;
-    private Usuario usuario;
+    private User user;
 }

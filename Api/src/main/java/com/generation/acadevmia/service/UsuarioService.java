@@ -1,16 +1,16 @@
 package com.generation.acadevmia.service;
 
-import com.generation.acadevmia.model.Usuario;
-import com.generation.acadevmia.repository.UsuarioRepository;
+import com.generation.acadevmia.model.User;
+import com.generation.acadevmia.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UsuarioService {
     @Autowired
-    UsuarioRepository usuarioRepository;
+    UserRepository usuarioRepository;
 
-    public Usuario crearUsuario(Usuario usuario) {
-        return usuarioRepository.save(usuario);
+    public User crearUsuario(User user) {
+        return usuarioRepository.save(user);
     }
 }

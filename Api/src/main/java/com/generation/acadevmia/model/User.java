@@ -2,15 +2,17 @@ package com.generation.acadevmia.model;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+
+import java.util.Set;
 
 @EqualsAndHashCode
 @Getter
 @Setter
 @Builder
 @Document("usuarios")
-public class Usuario {
+public class User {
 
     @Id
     private String id;
@@ -18,4 +20,6 @@ public class Usuario {
     private String email;
     private String name;
     private String password;
+    @DBRef
+    private Set<Role> roles;
 }

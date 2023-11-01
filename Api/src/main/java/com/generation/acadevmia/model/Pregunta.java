@@ -5,6 +5,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @EqualsAndHashCode
@@ -19,7 +20,9 @@ public class Pregunta {
     private String titulo;
     private String descripcion;
     private String tag;
-    private Usuario usuario;
-//    private List<Respuesta> respuestas;
-//    private List<Reaccion> reacciones;
+    private User user;
+    @DBRef
+    private ArrayList<Respuesta> respuestas;
+    @DBRef
+    private ArrayList<Reaccion> reacciones;
 }

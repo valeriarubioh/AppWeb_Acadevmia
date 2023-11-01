@@ -20,6 +20,6 @@ public class Respuesta {
     private String texto;
     private String codigo;
     private Boolean favorito;
-    private Usuario usuario;
+    private User user;
     private List<Reaccion> reacciones;
 }
