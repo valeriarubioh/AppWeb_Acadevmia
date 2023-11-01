@@ -107,11 +107,11 @@
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
-    margin: 2%;
-    background-color: #ffffff;
-    height: 40%;
+    margin: 5% 0;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    height: 30%;
     padding: 2%;
-    border-radius: 3%;
+    border-radius: 1rem;
 }
 .foro__publicadas img{
     width: 30px;
@@ -120,6 +120,12 @@
 }
 .foro__pregunta{
     display: flex;
+    & h3{
+        padding:2rem 2rem 0;
+    }
+    & a > p {
+        color: #bab9b9;
+    }
 }
 .foro__respuesta{
     display: flex;
@@ -131,15 +137,24 @@
     margin: 0 15px;
 }
 .foro__reaccion{
+    background-color: transparent;
+    border: none;
     display: flex;
+    flex-direction: column-reverse;
     position: relative;
-    top: 40px;
+    font-size: x-large;
+    top: 80px;
     right: 50px;
+}
+.eliminar__post{
+    background-color: transparent;
+    border: none;
+    margin: 0 2% 10%;
+
 }
 
 .foro{
     display: flex;
-    padding-top: 5vh;
     overflow: auto;
 }
 /* Modal de formulario */
@@ -161,85 +176,66 @@
 }
 
 .principal__formulario{
-    background-color: var(--color-auxiliar);
-    border:2px solid var(--color-secudario);
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-direction: column;
-    padding: 20px;
-    margin: 2%;
+    padding: 0px 20px 20px;
+    margin:  0rem 2rem 2rem;
 
     & #input__titulo{
         text-align: center;
         font-weight: 700;
     }
+    & textarea{
+        margin: 20px 0px;
+    }
+    & textarea,
+    input{
+        padding: 0.5rem;
+        border: var(--color-auxiliar);
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    }
+    & button{
+
+        margin: 1rem 25%;
+        align-items: center;
+        background-color: var(--color-primario);
+        color: var(--color-terciario);
+        border-radius: 20px;
+        padding: 7px;
+        width: 95px;
+        text-decoration: none;
+        margin-left: 10px;
+        border: none;
+        font-size: 1rem;
+    }
 }
 
 /* Modal Content/Box */
 .modal-content {
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
 }
-/*
-input[type=text]{
-    width: 100%;
-    padding: 10px;
-    margin: 10px;
-    display: inline-block;
-    border: 2px solid var(--color-secudario);
-    box-sizing: border-box;
-    height: 40px;
-    font-size: larger;
-}
-
-#input__texto{
-   width: 100%;
-    padding: 10px;
-    margin: 10px;
-    display: inline-block;
-    border: 2px solid var(--color-secudario);
-    box-sizing: border-box;
+.instrucciones__contenido{
+    padding: 1rem 1.5rem 1rem;
     font-size: medium;
-}
 
-#submit__button{
-    padding: 14px 20px;
-    margin: 10px 0;
-    background-color: var(--color-primario);
-    color: #FFFFFF;
-    font-weight: 700;
-    font-size: larger;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+    & span{
+        margin: 0 95%;
+        display: block;
+        
+        font-size: larger;
+    }
+    & h2{
+        margin-bottom: 0.5rem;
+    }
+    & p{
+        color: #565656;
+        font-weight: 300;
+        margin-bottom: 1rem;
+    }
 }
-#submit__button:hover{
-    background-color: var(--color-hover);
-}
-
-.instrucciones__contenido { 
-    margin: 24px 2% 12px 2%;
-    position: relative;
-}
-
-.close {
-    padding: 0px;
-    position: absolute;
-    right: 0;
-    top: 0;
-    font-size: xx-large;
-    font-weight: 900;
-}
-
-.close:hover,
-.close:focus {
-    color: var(--color-primario);
-    cursor: pointer;
-}
-*/
-
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;

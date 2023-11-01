@@ -18,103 +18,44 @@
 </head>
 
 <body>
-    <header class="principal">
-        <!-- barra de navegacion -->
-        <nav class="principal__navbar">
-            <a href="/Frontend/index.html">
-                <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
-            </a>
-            <div class="menu_hamburguer">
-                <span class="line1__menu"></span>
-                <span class="line2__menu"></span>
-                <span class="line3__menu"></span>
-            </div>
-            <ul class="principal__lista">
-                <li class="principal__elemento">
-                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
-                </li>
-            </ul>
-            <div class="panel__salir">
-                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
-            </div>      
-            <div class="principal__botones">
-                <a href="/Frontend/pages/login.html" class="principal__link">
-                    Ingresar
-                </a>
-                <a href="/Frontend/pages/signup.html" class="button__header">
-                    Registrarse
-                </a>
-            </div>
-        </nav>
-        <div class="menu__toggle">
-            <ul class="lista__toggle">
-                <li class="principal__elemento">
-                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
-                </li>
-                <li class="principal__elemento">
-                    <a class="principal__ref" id="btn__logout"><i class='bx bx-log-out'></i>Salir</a>
-                </li>
-            </ul>
-                <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
-                    Ingresar
-                </a>
-                <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
-                    Registrarse
-                </a>                                        
-        </div>
-    </header>
     <main>
-    <div class="ingreso">
-        <div class="ingreso__form">
-            <img class="ingreso__img-llama" src="/publics/img/logo.svg" alt="logo">
-            <form action="" method="post" class="ingreso__formulario">
-                <p>
-                <label for="user">Email o Usuario:</label>
-                <input type="text" id="user" name="user_or_email" required autofocus />
-                </p>
-                <p>
-                <a href="#" class="link-olvido">¿Olvidó contraseña?</a>
-                </p>
-                <p>
-                <label for="password">Contraseña:</label>
-                <input type="password" id="password" name="user_pass" placeholder="****" required />
-                </p>
-                <p>
-                <button type="submit">Ingresar</button>
-                </p>
-            </form>
-            <div class=ingreso__pregunta>
-                <p>¿No tienes una cuenta?<span><a href="/Frontend/pages/signup.html" class="link">Regístrate</a></span></p>
+        <div class="ingreso">
+            <div class="ingreso__animacion">
+                <div class="ingreso__form">
+                    <h2 class="titulo">Iniciar sesion</h2>
+                    <!--formulario de inicio sesion -->
+                    <form action="" method="post" class="ingreso__formulario">
+                        <div class="form">
+                            <p class="grupo">
+                                <input type="text" id="user" name="user_or_email" required autofocus />
+                                <label for="user">Email o Usuario</label>
+                            </p>
+                            <p>
+                                <a href="#" class="link-olvido">¿Olvidaste la contraseña?</a>
+                            </p>
+                            <p class="grupo">
+                                <input type="password" id="password" name="user_pass" required />
+                                <label for="password">Contraseña</label>
+                            </p>
+                        </div>
+                        <button type="submit">Ingresar</button>
+                    </form>
+                    <!--redirreccion a registro -->
+                    <div class=ingreso__pregunta>
+                        <a href="/Frontend/pages/comunidad.html">
+                            <img class="ingreso__img-llama" src="/publics/img/acadevmia.svg" alt="logo">
+                        </a>
+                        <p>¿No tienes una cuenta?<span><a href="/Frontend/pages/signup.html" class="link">Regístrate</a></span></p>
+                    </div>
+                </div>
+                <div class="textoDash">
+                    <h1>¡Te damos la bienvenida!</h1>
+                    <a href="/Frontend/pages/comunidad.html">
+                        <img class="ingreso__img" src="/publics/img/llama__logo.svg" alt="logo">
+                    </a>
+                </div>
             </div>
         </div>
-        <div class="ingreso__animacion">
-            <h1>¡Bienvenido otra vez!</h1>
-        </div>
-    </div>
     </main>
     <footer class="footer">
     <!-- pie de pagina -->
