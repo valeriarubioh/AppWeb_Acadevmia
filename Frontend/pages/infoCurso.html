@@ -309,32 +309,5 @@
         <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
       </div>
     </footer>
-    <script>
-      document
-        .getElementById("mostrar-formulario")
-        .addEventListener("click", function () {
-          var formulario = document.getElementById("formulario-pago");
-          var contenidoAdicional = document.getElementById(
-            "contenido-adicional"
-          );
-
-          if (
-            formulario.style.display === "none" ||
-            formulario.style.display === ""
-          ) {
-            formulario.style.display = "block";
-            // Añade margen alrededor del formulario
-            formulario.style.margin = "2rem 0 4rem"; // Puedes ajustar el valor del margen aquí
-            // Desplaza el contenido adicional hacia abajo
-            contenidoAdicional.style.marginTop =
-              formulario.clientHeight + 40 + "px"; // Ajusta el margen superior
-          } else {
-            formulario.style.display = "none";
-            // Restablece la posición y margen del formulario
-            formulario.style.margin = "0";
-            contenidoAdicional.style.marginTop = "0";
-          }
-        });
-    </script>
   </body>
 </html>
