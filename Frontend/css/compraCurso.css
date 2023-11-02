@@ -31,10 +31,10 @@
     border-top-left-radius:1rem ;
 }
 .info__curso{
-    background-color: var(--color-auxiliar2);
+    background-color: #ffff;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     color: #2F2B3B;
     padding: 2rem;
-    border-bottom-left-radius: 1rem;
     border-bottom-right-radius:1rem ;
     display: flex;
     flex-direction: column;

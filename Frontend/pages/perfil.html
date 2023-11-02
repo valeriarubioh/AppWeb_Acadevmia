@@ -119,14 +119,77 @@
                     </div>
                     <input type="file" id="profile-picture-input" accept="image/*" onchange="loadProfilePicture()">
                     <div class="profile-info">
-                        <input type="text" id="name" placeholder="Nombre" disabled> <br>
-                        <input type="text" id="position" placeholder="Puntos" disabled>
+                        <input type="text" id="name" placeholder="Nombre" disabled>
                     </div>
                     <div class="buttons">
-                        <button id="edit-profile-button">Editar Perfil</button>
+                        <button id="edit-profile-button"><i class="fa-solid fa-pen"></i></button>
                         <button id="save-profile-button" style="display: none;">Guardar Cambios</button>
                     </div>
-                </div>               
+                </div> 
+
+                <!--contenedor usuario -->
+                <section class="container__skill-interracion">
+                    <!--Skills usuario -->
+                    <div class="container__Skills">
+                        <h3>Skills</h3>
+                        <div class="skill-box">
+                            <span class="title">HTML</span>
+
+                            <div class="skill-bar">
+                                <span class="skill-per html">
+                                    <span class="tooltip">50%</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="skill-box">
+                            <span class="title">CSS</span>
+
+                            <div class="skill-bar">
+                                <span class="skill-per css">
+                                    <span class="tooltip">70%</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="skill-box">
+                            <span class="title">JavaScript</span>
+
+                            <div class="skill-bar">
+                                <span class="skill-per javascript">
+                                    <span class="tooltip">50%</span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="skill-box">
+                            <span class="title">NodeJS</span>
+
+                            <div class="skill-bar">
+                                <span class="skill-per nodejs">
+                                    <span class="tooltip">30%</span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Interracciones del usuario-->
+                    <div class="containerInterraciones">
+                        <h3>Interacciones</h3>
+                        <div class="usuarioInteracciones">
+                            <div class="likeInteracciones">
+                                <i class="fa-solid fa-heart"></i>
+                                <span>20</span>
+                                <p>Likes recibidos</p>
+                            </div>
+                            <div class="preguntaInteracciones">
+                                <i class="fa-solid fa-comment"></i>
+                                <span>4</span>
+                                <p>Preguntas realizadas</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                
                 <div class="about-me">
                     <h2>Acerca de Mí</h2>
                     <div class="form-field">
@@ -134,7 +197,7 @@
                     </div>
                     <div class="form-field">
                         <label for="email">Correo electrónico</label>
-                        <input type="email" id "email" class="info" placeholder="Correo electrónico" disabled>
+                        <input type="email" id ="email" class="info" placeholder="Correo electrónico" disabled>
                     </div>
                     <div class="form-field">
                         <label for="phone">Número de teléfono</label>
