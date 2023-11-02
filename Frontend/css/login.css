@@ -183,14 +183,7 @@ button {
 }
 
 
-/* Media queris */
-@media screen and (max-width:900px){
-  .ingreso__animacion {
-    display: none;
-  }
-}
-
-@media screen and (min-width:900px){
+@media screen and (min-width:500px){
   .ingreso__animacion {
     text-align: center;
   }
