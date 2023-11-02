@@ -1,8 +1,10 @@
 package com.generation.acadevmia.controller;
 
 import com.generation.acadevmia.model.Pregunta;
+import com.generation.acadevmia.payload.response.PreguntaResponse;
 import com.generation.acadevmia.service.PreguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,7 +24,8 @@ public class PreguntaController {
     }
 
     @GetMapping
-    public List<Pregunta> obtenerPreguntas() {
-        return preguntaService.obtenerPreguntas();
+    public ResponseEntity<List<PreguntaResponse>> obtenerPreguntas() {
+        List<PreguntaResponse> preguntaResponses = preguntaService.obtenerPreguntas();
+        return ResponseEntity.ok(preguntaResponses);
     }
 }
