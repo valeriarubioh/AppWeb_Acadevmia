@@ -400,6 +400,15 @@
     .principal__botones{
         display: none;
     }
+
+    .panel__salir{
+        display: none;
+    }
+
+
+    .principal__navbar-buscador{
+        margin-right: 140px;
+    }
     
     .menu_hamburguer{
         display: flex;

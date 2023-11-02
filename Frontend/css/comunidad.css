@@ -15,19 +15,21 @@
     --color-hover:#fd2200;
 }
 
+
 .foro__container{
     background-color: #FFFFFF;  
     margin: 1rem;
     margin-left: 0;
     border-radius: 2rem;
-    padding: 3rem;
+    padding: 0.5rem;
+    overflow: hidden;
 }
 
 .principal__preguntar{
     width: 100%;
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: center;
+
     & .buscador__pregunta {
         width: 60%;
         margin-bottom: 5%;
@@ -51,9 +53,6 @@
         & .foro__publicadas {
             width: 100%;
 
-            & .foro__pregunta {
-                width: 100%;
-
             }
         }
     }
@@ -76,7 +75,7 @@
             }
         }
     }
-}
+
 .button--modificado{
     background-color: var(--color-primario);
     color: var(--color-terciario);
@@ -110,7 +109,7 @@
     margin: 5% 0;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     height: 30%;
-    padding: 2%;
+    padding: 15px;
     border-radius: 1rem;
 }
 .foro__publicadas img{
@@ -120,9 +119,8 @@
 }
 .foro__pregunta{
     display: flex;
-    & h3{
-        padding:2rem 2rem 0;
-    }
+    flex-wrap: wrap;
+
     & a > p {
         color: #bab9b9;
     }
@@ -140,7 +138,6 @@
     background-color: transparent;
     border: none;
     display: flex;
-    flex-direction: column-reverse;
     position: relative;
     font-size: x-large;
     top: 80px;
@@ -149,13 +146,15 @@
 .eliminar__post{
     background-color: transparent;
     border: none;
-    margin: 0 2% 10%;
+    margin-left: 50px;
+    margin-top: -15px;
 
 }
 
 .foro{
     display: flex;
     overflow: auto;
+    height: 100%;
 }
 /* Modal de formulario */
 .pregunta{
