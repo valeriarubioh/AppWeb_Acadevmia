@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/Frontend/css/pago.css" />
     <script src="/Frontend/Js/"></script>
     <script src="/Frontend/Js/menu.js" defer></script>
+    <script src="/Frontend/Js/blackboard__Js.js" defer></script>
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <script
       src="https://kit.fontawesome.com/6dc7cbf907.js"
@@ -164,7 +165,8 @@
         </section>
 
         <section class="segundo__section" id="contenido-adicional">
-          <h2 class="titulo__curso">Temario y recursos del Curso</h2>
+          <h2 class="titulo__curso">TEMARIO Y RECURSOS DEL CURSO
+          </h2>
           <div class="contenedor__temario">
             <aside class="detalles__temario">
               <div class="aside__temario">
@@ -181,44 +183,64 @@
               </div>
             </aside>
             <section class="temario__contenidos">
-              <article class="modulo__temario">
-                <h3 class="titulo__temario">MODULO 1</h3>
-                <p>
-                  Se comienza con una visión general de qué es JavaScript, su
-                  historia y su propósito en el desarrollo web. Luego,
-                  aprenderían a configurar su entorno de desarrollo, incluyendo
-                  la elección de un editor de texto y cómo utilizar la consola
-                  del navegador para ejecutar código JavaScript. Se abordarían
-                  conceptos básicos de sintaxis, como variables, tipos de datos,
-                  operadores y declaraciones, junto con la comprensión de las
-                  estructuras de control de flujo, como condicionales (if, else)
-                  y bucles (for, while).
-                </p>
-              </article>
-              <article class="modulo__temario">
-                <h3 class="titulo__temario">MODULO 2</h3>
-                <p>
-                  Los estudiantes se adentrarían en la manipulación del DOM
-                  (Modelo de Objetos de Documento). Comprenderían la relación
-                  entre el DOM y JavaScript, aprendiendo a seleccionar elementos
-                  HTML en una página web utilizando JavaScript. Se enseñaría
-                  cómo manipular el contenido de estos elementos, como cambiar
-                  texto, modificar atributos y estilos, y cómo responder a
-                  eventos del usuario mediante la adición de "event listeners".
-                </p>
-              </article>
-              <article class="modulo__temario">
-                <h3 class="titulo__temario">MODULO 3</h3>
-                <p>
-                  Comenzarían con los fundamentos de la POO y cómo se aplican en
-                  JavaScript. Se enseñaría la creación de objetos y propiedades,
-                  así como el uso de constructores y prototipos para definir
-                  clases y métodos. Los estudiantes explorarían conceptos
-                  avanzados como la herencia y la encapsulación en JavaScript, y
-                  cómo utilizarlos para organizar y extender el código de manera
-                  efectiva.
-                </p>
-              </article>
+              <div class="contenedor">
+                <h1><i class='bx bx-book-bookmark'></i><b>Hay 5 Módulos En Este Curso</b></h1>
+                <br>
+                <div class="section" onclick="toggleContent('content4')"><b>1. Introducción a javascript
+                </b>
+                    <div id="content4" class="hidden">
+                        <ol>
+                            <li>Aprenderá por qué JavaScript es tan importante para el desarrollo de software.</li>
+                            <li>Obtendrá una visión general de cómo escribir código JavaScript dentro del navegador</li>
+                            <li>Conocerá los operadores más comunes, así como las declaraciones condicionales y los bucles.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section" onclick="toggleContent('content5')"><b>2. Componentes fundamentales de un programa
+                </b>
+                    <div id="content5" class="hidden">
+                        <ol>
+                            <li>Aprenderá a utilizar objetos, matrices y funciones.</li>
+                            <li>Aprenderá sobre los métodos incorporados más comunes, y la diferencia entre cadenas indefinidas, nulas y vacías</li>
+                            <li>Explorará la gestión de errores y la programación defensiva.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section" onclick="toggleContent('content6')"><b>3. Paradigmas de programación</b> 
+                    <div id="content6" class="hidden">
+                        <ol>
+                            <li>Aborda la programación funcional y el paradigma de la programación orientada</li>
+                            <li>Aprenderá qué es el alcance en JavaScript</li>
+                            <li>Explorará las diferencias entre var, let y const.</li>
+                            <li>Aprenderá a utilizar las clases y la herencia en la programación orientada a objetos.</li> 
+                            <li>Explorará cómo utilizar la escritura de JavaScript usando características modernas como spread y rest.</li>
+                            <li>Construirá un código que pueda gestionar el DOM y los eventos.</li>
+                            <li>Utilizará JSON en JavaScript.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section" onclick="toggleContent('content7')"><b>4. Pruebas</b>
+                    <div id="content7" class="hidden">
+                        <ol>
+                            <li>Aprenderá sobre Node.js y Node Package Manager (npm).</li>
+                            <li>Explorará cómo instalar paquetes npm y cómo trabajar con package.json.</li>
+                            <li>Aprenderá sobre las pruebas en JavaScript y codificará una prueba unitaria sencilla en Jest.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <div class="section" onclick="toggleContent('content8')"><b>5. Evaluación calificada de final de curso</b> 
+                    <div id="content8" class="hidden">
+                        <ol>
+                            <li>Sintetizará los conocimientos adquiridos en el curso para crear un código para el “generador de recibos Little lemon”.</li>
+                            <li>Una vez que haya completado las unidades individuales de este módulo, podrá realizar la evaluación calificada. También tendrá la oportunidad de reflexionar sobre el contenido del curso y el camino de aprendizaje que tiene por delante.</li>
+                        </ol>
+                    </div>
+                </div>
+              </div>
             </section>
           </div>
         </section>

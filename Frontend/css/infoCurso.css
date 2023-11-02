@@ -139,6 +139,41 @@
     margin-top: 20px;
 }
 
+.contenedor {
+    margin-top: 30px;
+    & h1 {
+        font-size: 20px;
+        padding: 5px 2px 2px 2px;
+    }
+}
+.section {
+    background-color: var(--color-secudario);
+    padding: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 
+    &:hover {
+        background-color: rgb(57, 46, 90);
+    }
+}
 
+.hidden {
+    display: none;
 
+    & br {
+        padding: 10px;
+    }
+    & li {
+        padding: 10px;
+        color: var(--color-terciario);
+        list-style-type: none;
+    }
+
+    & ol {
+        margin: 20px 0px 10px 30px;
+    }
+}
+
+.detalles__temario {
+    margin-top:36px;
+}
