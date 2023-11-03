@@ -51,6 +51,7 @@
         margin: 1% 2%;
         width: 80%;
         & .foro__publicadas {
+            padding: 2rem;
             width: 100%;
 
             }
@@ -102,6 +103,7 @@
 /*preguntas publicadas*/
 
 .foro__publicadas{
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
