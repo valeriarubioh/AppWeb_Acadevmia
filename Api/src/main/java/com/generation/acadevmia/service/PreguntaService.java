@@ -1,8 +1,10 @@
 package com.generation.acadevmia.service;
 
 import com.generation.acadevmia.model.Pregunta;
+import com.generation.acadevmia.model.Reaccion;
 import com.generation.acadevmia.model.User;
 import com.generation.acadevmia.payload.response.PreguntaResponse;
+import com.generation.acadevmia.payload.response.ReaccionResponse;
 import com.generation.acadevmia.payload.response.UserResponse;
 import com.generation.acadevmia.repository.PreguntaRepository;
 import com.generation.acadevmia.repository.UserRepository;
@@ -35,7 +37,17 @@ public class PreguntaService {
     public List<PreguntaResponse> obtenerPreguntas() {
         List<Pregunta> preguntas = preguntaRepository.findAll();
         List<PreguntaResponse> preguntaResponses = new ArrayList<>();
+
         preguntas.forEach((pregunta -> {
+            int likes=0;
+            int dislike=0;
+            for (Reaccion reaccion:pregunta.getReacciones()){
+                if (reaccion.getIsLike()==1){
+                    likes++;
+                }else {
+                    dislike++;
+                }
+            }
             PreguntaResponse preguntaResponse = PreguntaResponse.builder()
                     .id(pregunta.getId())
                     .titulo(pregunta.getTitulo())
@@ -46,6 +58,7 @@ public class PreguntaService {
                             .username(pregunta.getUser().getUsername())
                             .name(pregunta.getUser().getName())
                             .build())
+                            .reacciones(ReaccionResponse.builder().likes(likes).dislikes(dislike).build())
                     .build();
             preguntaResponses.add(preguntaResponse);
 
