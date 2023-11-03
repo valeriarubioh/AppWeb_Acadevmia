@@ -312,14 +312,14 @@
 
 .footer__redes{
     background-color: var(--color-auxiliar);
-    height: 170px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
 }
 .footer__sociales{
-    margin: 0 10px;
+    margin: 0 15px;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -328,7 +328,7 @@
 }
 
 .footer__sociales i{
-    font-size: 20px;
+    font-size: 22px;
     margin: 5px;
 }
 
