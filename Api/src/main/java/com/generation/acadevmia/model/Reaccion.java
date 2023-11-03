@@ -17,4 +17,13 @@ public class Reaccion {
     private String id;
     private int isLike;
     private User user;
+
+    @Override
+    public String toString() {
+        return "Reaccion{" +
+                "id='" + id + '\'' +
+                ", isLike=" + isLike +
+                ", user=" + user +
+                '}';
+    }
 }

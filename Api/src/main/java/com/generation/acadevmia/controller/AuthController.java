@@ -11,12 +11,14 @@ import com.generation.acadevmia.repository.RoleRepository;
 import com.generation.acadevmia.repository.UserRepository;
 import com.generation.acadevmia.security.jwt.JwtUtils;
 import com.generation.acadevmia.security.services.UserDetailsImpl;
+import com.generation.acadevmia.service.UsuarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -45,9 +47,11 @@ public class AuthController {
     @Autowired
     JwtUtils jwtUtils;
 
-    @PostMapping("/signin")
-    public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
+    @Autowired
+    UsuarioService usuarioService;
 
+    @PostMapping("/signin")
+    public ResponseEntity<JwtResponse> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {
         Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
 
@@ -67,7 +71,7 @@ public class AuthController {
     }
 
     @PostMapping("/signup")
-    public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
+    public ResponseEntity<MessageResponse> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
         if (userRepository.existsByUsername(signUpRequest.getUsername())) {
             return ResponseEntity
                     .badRequest()
@@ -77,7 +81,7 @@ public class AuthController {
         if (userRepository.existsByEmail(signUpRequest.getEmail())) {
             return ResponseEntity
                     .badRequest()
-                    .body(new MessageResponse("Error: Email is already in use!"));
+                    .body(new MessageResponse("Error: Email is already taken!"));
         }
 
         // Create new user's account
