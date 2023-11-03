@@ -167,9 +167,13 @@
       }
     }
     & .foro__reaccion {
+      
       border: none;
       background: transparent;
-
+      & .bx-star{
+        margin-left: 1rem;
+        margin-top: 2rem;
+      }
     }
   }
   & .foro__respuesta {
