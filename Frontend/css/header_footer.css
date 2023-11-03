@@ -268,28 +268,34 @@
 
 .footer__redes{
     background-color: var(--color-auxiliar);
-    height: 170px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
     list-style: none;
 }
 .footer__sociales{
-    margin: 0 10px;
+    margin: 0 15px;
     display: flex;
     align-items: center;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .footer__sociales i{
-    font-size: 30px;
+    font-size: 22px;
     margin: 5px;
 }
 
 .footer__sociales a{
+    font-weight: 300;
+    font-size: small;
     text-decoration: none;
-    color: black;
+    color: rgb(93, 93, 93);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer__sociales i:hover,
