@@ -70,3 +70,9 @@
     background-color: var(--color-auxiliar2) ;
     color: var(--color-primario);
 }
+
+@media screen and (max-width:750px){
+    .imagen__cursocomprar{
+        display: none;
+    }
+}

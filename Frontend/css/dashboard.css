@@ -77,7 +77,7 @@ nav{
     position: relative;
 }
 
-.dashboard__menu .active::before {
+#dashboard__menu .active::before {
     content: '';
     position: absolute;
     width: 1rem;
@@ -88,7 +88,8 @@ nav{
     border-bottom-right-radius: .5rem;
     box-shadow: 0 1rem 0 #ffffff;
 }
-.dashboard__menu .active::after{
+
+#dashboard__menu .active::after{
     content: '';
     position: absolute;
     width: 1rem;
@@ -99,10 +100,11 @@ nav{
     border-top-right-radius: .5rem;
     box-shadow: 0 -1rem 0 #ffffff;
 }
+
+
+
 @media screen and (max-width:800px){
-.dashboard__menu a {
-    display: none;
-}
-
-
+    .dash{
+        display: none;
+    }
 }
