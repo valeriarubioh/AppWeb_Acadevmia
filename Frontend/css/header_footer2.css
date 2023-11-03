@@ -59,6 +59,9 @@
 }
 .principal__navbar-buscador:hover input{
     width: 350px;
+    margin-left: 2.3rem;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
 }
 .principal__navbar-buscador:hover i{
     transform: rotate(360deg);

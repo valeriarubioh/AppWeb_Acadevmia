@@ -30,12 +30,14 @@
 
 
         & .nosotros__titulo {
-            font-size: 6.5rem;
+            font-size: 4rem;
         }
 
         & .nosotros__parrafo {
-            font-size:1.8em;
+            font-size:1.3rem;
+            line-height: 1.5;
             padding-top: 3%;
+            width: 90%;
         }
 
         & .nosotros__container {
@@ -93,13 +95,13 @@
 
         & .somos__titulo {
             font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-            font-size: 4em;
+            font-size: 3rem;
             color: var(--color-primario);
             padding-top: 7% ;
         }
         
         & .somos__parrafo{
-            font-size: 1.5em;
+            font-size: 1.2em;
             line-height: 2em;
             color: var(--color-secudario);
             padding-bottom: 5%;

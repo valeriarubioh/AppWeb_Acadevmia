@@ -6,12 +6,19 @@
     padding: 3rem;
 }
 .cursos__contenedor h2{
+    font-size: xx-large;
+    margin-left: 1rem;
     color: var(--color-secudario);
-    padding-bottom: 4rem;
-    font-size: 2.5rem;
+}
+.line{
+    margin: 1rem;
+    background-color: #c5c0c0;
+    width: 100%;
+    height: 1px;
 }
 
 .contendor__cursos{
+    padding-top: 4rem;
     display: grid;
     grid-template-columns: repeat(1,1fr);
     gap: 4rem;
