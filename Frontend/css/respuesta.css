@@ -64,35 +64,46 @@
 
 .principal__responder {
   width: 100%;
-padding: 3rem;
+  padding: 3rem;
   background: #FFFFFF;
   & .body__pregunta {
     & .foro__publicadas{
+      width: 80%;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       margin: 1%;
       height: auto;
       padding: 2%;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       border: 2px solid var(--color-auxiliar);
       border-radius: 16px;
         & .foro__pregunta {
           display: flex;
+          align-items: center;
           & img {
             width: 5%;
             height: 10%;
-            margin: 0%;
+            margin-left: 1rem;
+          }
+          & .foro__reaccion {
+            border: none;
+            background: transparent;
+
           }
           & h3 {
-            margin: 14px;
+            margin: 20px;
           }
           & p {
-            margin: 16px;
+            display: none;
           }
         }
         & .foro__respuesta {
           margin: 1%;
           font-size: 20px;
+          & p {
+            margin: 1rem;
+          }
         }
     }
   }
@@ -141,22 +152,31 @@ padding: 3rem;
 .body__respuestas {
   width: 100%;
   & .foro__publicacion {
+     display: grid;
+    grid-template-columns: 1fr 4fr;
     margin: 3%;
-    padding: 1%;
-    width: 80%;
+    padding: 3%;
+    width: 70%;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 2px solid var(--color-auxiliar);
+    border-radius: 16px;
     & .foro__perfil {
       & p {
         width: 4%;
+        margin-bottom: 1rem;
       }
     }
     & .foro__reaccion {
+      border: none;
+      background: transparent;
 
     }
   }
   & .foro__respuesta {
-    margin-left: 4%;
-    & p {
-      
+    margin-left: -3rem;
+    & p:first-child {
+      font-weight: 800;
+      margin-bottom: 1rem;
     }
   }
 }

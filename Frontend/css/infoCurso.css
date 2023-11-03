@@ -114,12 +114,14 @@
 }
 .recomendaciones{
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;margin-bottom: 10rem;
 }
 .recomendacion{
     padding: 1rem;
     box-shadow: 5px 5px 15px #c4c1c1;
     width: 25%;
+    border-radius: 2rem;
     display: flex;
     justify-content: space-between;
 }
@@ -137,6 +139,7 @@
 
 .experiencia__recomendacion{
     margin-top: 20px;
+    padding: .0rem;
 }
 
 .contenedor {
