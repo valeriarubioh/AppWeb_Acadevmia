@@ -67,6 +67,34 @@
     flex-direction: column;
     position: relative;
 }
+.img__curso img{
+    width: 17.5rem;
+    border-top-right-radius: 1.5rem;
+    border-top-left-radius: 1.5rem;
+    position: relative;
+    bottom: 40px;
+    height: 120%;
+
+}
+.transparent-button-black {
+    background-color: var(--color-primario);
+    border-radius: 20px;
+    border: 1px var(--color-primario) solid;
+    padding: 10px;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: large;
+    margin-bottom: 10px;
+    color: white;
+}
+.en__c{
+    position: absolute;
+    color: #FFFFFF;
+    padding: 0.4rem 0.5rem;
+    opacity: 0.8;
+    background-color: var(--color-primario);
+    z-index: 1;
+}
 
 
 @media screen and (max-width:550px){
