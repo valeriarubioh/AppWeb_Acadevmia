@@ -465,6 +465,10 @@
         width: 200px;
         font-size: 0.8rem;
     }
+
+    .cursos__container{
+        align-items: start;
+    }
     
 }
 

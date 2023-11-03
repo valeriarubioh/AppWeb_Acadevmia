@@ -3,7 +3,7 @@
     margin: 1rem;
     margin-left: 0;
     border-radius: 2rem;
-    padding: 3rem;
+    padding: 2rem;
 }
 .cursos__contenedor h2{
     color: var(--color-secudario);
@@ -71,8 +71,12 @@
     color: var(--color-primario);
 }
 
-@media screen and (max-width:750px){
+@media screen and (max-width:650px){
     .imagen__cursocomprar{
         display: none;
+    }
+
+    .cursos__contenedor{
+        padding: 15px;
     }
 }

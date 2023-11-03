@@ -27,3 +27,10 @@
     position: relative;
 }
 
+@media screen and (max-width:550px){
+    .blackboard__container{
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+    }
+}
