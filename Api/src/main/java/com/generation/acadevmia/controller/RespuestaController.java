@@ -28,10 +28,15 @@ public class RespuestaController {
     public ResponseEntity<RespuestaResponse> crearRespuesta(@RequestBody RespuestaRequest respuesta, @PathVariable String id){
         return new ResponseEntity(respuestaService.crearRespuesta(respuesta, id), HttpStatus.CREATED);
     }
-    @PatchMapping("/{id}")
-    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
-    public Respuesta marcarFavorito(@RequestBody Respuesta respuesta, @PathVariable String id){
-        return respuestaService.marcarFavorito(respuesta,id);
+    @PatchMapping("/{idPregunta}/{idRespuesta}")
+//    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+    public ResponseEntity<String> marcarFavorito(@PathVariable String idPregunta, @PathVariable String idRespuesta){
+        try {
+            respuestaService.marcarFavorito(idPregunta, idRespuesta);
+            return ResponseEntity.ok("La respuesta ha sido marcada como favorita exitosamente");
+        } catch (RuntimeException e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Ha ocurrido un error al marcar la respuesta como favorita");
+        }
     }
 
     @GetMapping("/{idPregunta}")

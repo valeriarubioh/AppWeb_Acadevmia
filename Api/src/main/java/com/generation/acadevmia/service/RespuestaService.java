@@ -71,18 +71,32 @@ public class RespuestaService {
             .build();
         return respuestaResponse;
     }
-    public Respuesta marcarFavorito(Respuesta respuesta,String id){
+    public void marcarFavorito(String idPregunta, String idRespuesta){
+        Optional<Pregunta> preguntaOptional = preguntaRepository.findById(idPregunta);
+        if (preguntaOptional.isEmpty()) {
+            throw new RuntimeException("La pregunta no existe");
+        }
         UserDetailsImpl principal = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Optional<User> user = usuarioRepository.findByUsername(principal.getUsername());
-        Optional<Pregunta> preguntaOptional = preguntaRepository.findById(id);
-        if(user.isPresent() && preguntaOptional.isPresent()){
-            String username = user.get().getUsername();
-            String userQuestion = String.valueOf(preguntaOptional.get().getUser());
-            if(Objects.equals(username, userQuestion)){
+
+        Pregunta pregunta = preguntaOptional.get();
+        String userQuestion = pregunta.getUser().getUsername();
+        String username = user.get().getUsername();
+
+        if(Objects.equals(username, userQuestion)){
+            Optional<Respuesta> respuestaOptional = pregunta.getRespuestas().stream()
+                    .filter(respuesta -> respuesta.getId().equals(idRespuesta))
+                    .findFirst();
+            if (respuestaOptional.isPresent()) {
+                Respuesta respuesta = respuestaOptional.get();
                 respuesta.setFavorito(true);
+                respuestaRepository.save(respuesta);
+            } else {
+                throw new RuntimeException("La respuesta no existe en la pregunta proporcionada");
             }
+        } else {
+            throw new RuntimeException("No tienes permisos para marcar la respuesta como favorita");
         }
-        return respuesta;
     }
     public List<RespuestaResponse> obtenerRespuestas(String idPregunta) {
         List<Respuesta> respuestas = respuestaRepository.findAll();
