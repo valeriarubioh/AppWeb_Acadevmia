@@ -1,18 +1,17 @@
 package com.generation.acadevmia.model;
 
-import lombok.EqualsAndHashCode;
-import lombok.Getter;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @EqualsAndHashCode
 @Getter
 @Setter
-@RequiredArgsConstructor
+@Builder
 @Document("respuestas")
 public class Respuesta {
     @Id
@@ -21,5 +20,6 @@ public class Respuesta {
     private String codigo;
     private Boolean favorito;
     private User user;
-    private List<Reaccion> reacciones;
+    @DBRef
+    private ArrayList<Reaccion> reacciones;
 }

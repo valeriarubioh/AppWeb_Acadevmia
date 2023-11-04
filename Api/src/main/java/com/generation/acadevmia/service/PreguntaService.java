@@ -2,9 +2,11 @@ package com.generation.acadevmia.service;
 
 import com.generation.acadevmia.model.Pregunta;
 import com.generation.acadevmia.model.Reaccion;
+import com.generation.acadevmia.model.Respuesta;
 import com.generation.acadevmia.model.User;
 import com.generation.acadevmia.payload.response.PreguntaResponse;
 import com.generation.acadevmia.payload.response.ReaccionResponse;
+import com.generation.acadevmia.payload.response.RespuestaResponse;
 import com.generation.acadevmia.payload.response.UserResponse;
 import com.generation.acadevmia.repository.PreguntaRepository;
 import com.generation.acadevmia.repository.UserRepository;
@@ -25,13 +27,26 @@ public class PreguntaService {
     @Autowired
     UserRepository usuarioRepository;
 
-    public Pregunta crearPregunta(Pregunta pregunta) {
+    public PreguntaResponse crearPregunta(Pregunta pregunta) {
         UserDetailsImpl principal = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         Optional<User> user = usuarioRepository.findByUsername(principal.getUsername());
         pregunta.setRespuestas(new ArrayList<>());
         pregunta.setReacciones(new ArrayList<>());
         pregunta.setUser(user.get());
-        return preguntaRepository.save(pregunta);
+        Pregunta preguntaSaved = preguntaRepository.save(pregunta);
+        PreguntaResponse preguntaResponse = PreguntaResponse.builder()
+            .id(preguntaSaved.getId())
+            .titulo(preguntaSaved.getTitulo())
+            .descripcion(preguntaSaved.getDescripcion())
+            .tag(preguntaSaved.getTag())
+            .user(UserResponse
+                    .builder()
+                    .username(preguntaSaved.getUser().getUsername())
+                    .name(preguntaSaved.getUser().getName())
+                    .build())
+            .reacciones(ReaccionResponse.builder().likes(0).dislikes(0).build())
+            .build();
+        return preguntaResponse;
     }
 
     public List<PreguntaResponse> obtenerPreguntas() {
@@ -39,15 +54,43 @@ public class PreguntaService {
         List<PreguntaResponse> preguntaResponses = new ArrayList<>();
 
         preguntas.forEach((pregunta -> {
-            int likes=0;
-            int dislike=0;
+            int preguntaLikes = 0;
+            int preguntaDislikes = 0;
             for (Reaccion reaccion:pregunta.getReacciones()){
                 if (reaccion.getIsLike()==1){
-                    likes++;
+                    preguntaLikes++;
                 }else {
-                    dislike++;
+                    preguntaDislikes++;
                 }
             }
+//            ArrayList<RespuestaResponse> respuestaResponses = new ArrayList<>();
+//            for (Respuesta respuesta: pregunta.getRespuestas()) {
+//                int respuestaLikes = 0, respuestaDislikes = 0;
+//                for (Reaccion reaccion: respuesta.getReacciones()){
+//                    if (reaccion.getIsLike()==1){
+//                        respuestaLikes++;
+//                    }else {
+//                        respuestaDislikes++;
+//                    }
+//                }
+//                RespuestaResponse respuestaResponse = RespuestaResponse.builder()
+//                        .id(respuesta.getId())
+//                        .texto(respuesta.getTexto())
+//                        .codigo(respuesta.getCodigo())
+//                        .favorito(respuesta.getFavorito())
+//                        .user(UserResponse
+//                                .builder()
+//                                .username(respuesta.getUser().getUsername())
+//                                .name(respuesta.getUser().getName())
+//                                .build())
+//                        .reacciones(ReaccionResponse.builder()
+//                                .likes(respuestaLikes)
+//                                .dislikes(respuestaDislikes)
+//                                .build())
+//                        .build();
+//                respuestaResponses.add(respuestaResponse);
+//            }
+
             PreguntaResponse preguntaResponse = PreguntaResponse.builder()
                     .id(pregunta.getId())
                     .titulo(pregunta.getTitulo())
@@ -58,7 +101,7 @@ public class PreguntaService {
                             .username(pregunta.getUser().getUsername())
                             .name(pregunta.getUser().getName())
                             .build())
-                            .reacciones(ReaccionResponse.builder().likes(likes).dislikes(dislike).build())
+                            .reacciones(ReaccionResponse.builder().likes(preguntaLikes).dislikes(preguntaDislikes).build())
                     .build();
             preguntaResponses.add(preguntaResponse);
 
