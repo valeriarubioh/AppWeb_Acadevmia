@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/Frontend/css/header_footer2.css">
+    <link rel="stylesheet" href="/Frontend/css/header_footer2.css" />
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
     <link rel="stylesheet" href="/Frontend/css/infoCurso.css" />
     <link rel="stylesheet" href="/Frontend/css/header_footer.css" />
@@ -20,74 +20,99 @@
   </head>
   <body>
     <header class="principal">
-        <!-- barra de navegacion -->
-        <nav class="principal__navbar">
-            <a href="/Frontend/index.html">
-                <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
-            </a>
-            <div class="menu_hamburguer">
-                <span class="line1__menu"></span>
-                <span class="line2__menu"></span>
-                <span class="line3__menu"></span>
-            </div>
-            <ul class="principal__lista">
-                <li class="principal__elemento">
-                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
-                </li>
-            </ul>
-             <!--Se agrega buscador animado-->
-            <div class="principal__navbar-buscador">
-                <input placeholder="Buscar" type="text" class="principal__input">
-                <div class="principal__btn-input">
-                    <i class="fa-solid fa-magnifying-glass"></i>
-                </div>
-            </div>
-            <div class="panel__salir">
-                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
-            </div>      
-            <div class="principal__botones">
-                <a href="/Frontend/pages/login.html" class="principal__link">
-                    Ingresar
-                </a>
-                <a href="/Frontend/pages/signup.html" class="button__header">
-                    Registrarse
-                </a>
-            </div>
-        </nav>
-        <div class="menu__toggle">
-            <ul class="lista__toggle">
-                <li class="principal__elemento">
-                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/blackboard.html" class="principal__ref">Blackboard</a>
-                </li>
-                <li class="principal__elemento">
-                    <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
-                </li>
-                <li class="principal__elemento">
-                    <a class="principal__ref" id="btn__logout"><i class='bx bx-log-out'></i>Salir</a>
-                </li>
-            </ul>
-                <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
-                    Ingresar
-                </a>
-                <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
-                    Registrarse
-                </a>                                        
+      <!-- barra de navegacion -->
+      <nav class="principal__navbar">
+        <a href="/Frontend/index.html">
+          <img
+            class="principal__logo"
+            src="/publics/img/acadevmia.svg"
+            alt="logo" />
+        </a>
+        <div class="menu_hamburguer">
+          <span class="line1__menu"></span>
+          <span class="line2__menu"></span>
+          <span class="line3__menu"></span>
         </div>
+        <ul class="principal__lista">
+          <li class="principal__elemento">
+            <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+          </li>
+          <li class="principal__elemento">
+            <a href="/Frontend/pages/Cursos.html" class="principal__ref"
+              >Cursos</a
+            >
+          </li>
+          <li class="principal__elemento">
+            <a href="/Frontend/pages/nosotros.html" class="principal__ref"
+              >Nosotros</a
+            >
+          </li>
+        </ul>
+        <!--Se agrega buscador animado-->
+        <div class="principal__navbar-buscador">
+          <input placeholder="Buscar" type="text" class="principal__input" />
+          <div class="principal__btn-input">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+        <div class="panel__salir">
+          <button class="button__salir" id="btn__salir">
+            <i class="bx bx-log-out"></i>Salir
+          </button>
+        </div>
+        <div class="principal__botones">
+          <a href="/Frontend/pages/login.html" class="principal__link">
+            Ingresar
+          </a>
+          <a href="/Frontend/pages/signup.html" class="button__header">
+            Registrarse
+          </a>
+        </div>
+      </nav>
+      <div class="menu__toggle">
+        <ul class="lista__toggle">
+          <li class="principal__elemento">
+            <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+          </li>
+          <li class="principal__elemento">
+            <a href="/Frontend/pages/comunidad.html" class="principal__ref"
+              >Comunidad</a
+            >
+          </li>
+          <li class="principal__elemento">
+            <a href="/Frontend/pages/Cursos.html" class="principal__ref"
+              >Cursos</a
+            >
+          </li>
+          <li class="principal__elemento">
+            <a href="/Frontend/pages/blackboard.html" class="principal__ref"
+              >Blackboard</a
+            >
+          </li>
+          <li class="principal__elemento">
+            <a href="/Frontend/pages/nosotros.html" class="principal__ref"
+              >Nosotros</a
+            >
+          </li>
+          <li class="principal__elemento">
+            <a class="principal__ref" id="btn__logout"
+              ><i class="bx bx-log-out"></i>Salir</a
+            >
+          </li>
+        </ul>
+        <a
+          href="/Frontend/pages/login.html"
+          id="ingresado"
+          class="toggle__link">
+          Ingresar
+        </a>
+        <a
+          href="/Frontend/pages/signup.html"
+          id="ingreso"
+          class="button__header">
+          Registrarse
+        </a>
+      </div>
     </header>
     <div class="wrapper">
       <aside class="dashboard">
@@ -129,9 +154,10 @@
               web de principio a fin. Aprender a programar no es fácil, pero
               Acadevmia lo hace efectivo.
             </p>
-            <button id="mostrar-formulario" class="comprar">
-              Comprar ahora
-            </button>
+            <script
+              src="https://www.mercadopago.com.co/integrations/v1/web-payment-checkout.js"
+              data-preference-id="221553980-04f7e9af-8542-47d1-a597-bae7da65a542"
+              data-source="button"></script>
 
             <!-- Formulario oculto inicialmente -->
             <div
@@ -165,8 +191,7 @@
         </section>
 
         <section class="segundo__section" id="contenido-adicional">
-          <h2 class="titulo__curso">TEMARIO Y RECURSOS DEL CURSO
-          </h2>
+          <h2 class="titulo__curso">TEMARIO Y RECURSOS DEL CURSO</h2>
           <div class="contenedor__temario">
             <aside class="detalles__temario">
               <div class="aside__temario">
@@ -184,61 +209,114 @@
             </aside>
             <section class="temario__contenidos">
               <div class="contenedor">
-                <h1><i class='bx bx-book-bookmark'></i><b>Hay 5 Módulos En Este Curso</b></h1>
-                <br>
-                <div class="section" onclick="toggleContent('content4')"><b>1. Introducción a javascript
-                </b>
-                    <div id="content4" class="hidden">
-                        <ol>
-                            <li>Aprenderá por qué JavaScript es tan importante para el desarrollo de software.</li>
-                            <li>Obtendrá una visión general de cómo escribir código JavaScript dentro del navegador</li>
-                            <li>Conocerá los operadores más comunes, así como las declaraciones condicionales y los bucles.</li>
-                        </ol>
-                    </div>
+                <h1>
+                  <i class="bx bx-book-bookmark"></i
+                  ><b>Hay 5 Módulos En Este Curso</b>
+                </h1>
+                <br />
+                <div class="section" onclick="toggleContent('content4')">
+                  <b>1. Introducción a javascript </b>
+                  <div id="content4" class="hidden">
+                    <ol>
+                      <li>
+                        Aprenderá por qué JavaScript es tan importante para el
+                        desarrollo de software.
+                      </li>
+                      <li>
+                        Obtendrá una visión general de cómo escribir código
+                        JavaScript dentro del navegador
+                      </li>
+                      <li>
+                        Conocerá los operadores más comunes, así como las
+                        declaraciones condicionales y los bucles.
+                      </li>
+                    </ol>
+                  </div>
                 </div>
-                
-                <div class="section" onclick="toggleContent('content5')"><b>2. Componentes fundamentales de un programa
-                </b>
-                    <div id="content5" class="hidden">
-                        <ol>
-                            <li>Aprenderá a utilizar objetos, matrices y funciones.</li>
-                            <li>Aprenderá sobre los métodos incorporados más comunes, y la diferencia entre cadenas indefinidas, nulas y vacías</li>
-                            <li>Explorará la gestión de errores y la programación defensiva.</li>
-                        </ol>
-                    </div>
+
+                <div class="section" onclick="toggleContent('content5')">
+                  <b>2. Componentes fundamentales de un programa </b>
+                  <div id="content5" class="hidden">
+                    <ol>
+                      <li>
+                        Aprenderá a utilizar objetos, matrices y funciones.
+                      </li>
+                      <li>
+                        Aprenderá sobre los métodos incorporados más comunes, y
+                        la diferencia entre cadenas indefinidas, nulas y vacías
+                      </li>
+                      <li>
+                        Explorará la gestión de errores y la programación
+                        defensiva.
+                      </li>
+                    </ol>
+                  </div>
                 </div>
-                
-                <div class="section" onclick="toggleContent('content6')"><b>3. Paradigmas de programación</b> 
-                    <div id="content6" class="hidden">
-                        <ol>
-                            <li>Aborda la programación funcional y el paradigma de la programación orientada</li>
-                            <li>Aprenderá qué es el alcance en JavaScript</li>
-                            <li>Explorará las diferencias entre var, let y const.</li>
-                            <li>Aprenderá a utilizar las clases y la herencia en la programación orientada a objetos.</li> 
-                            <li>Explorará cómo utilizar la escritura de JavaScript usando características modernas como spread y rest.</li>
-                            <li>Construirá un código que pueda gestionar el DOM y los eventos.</li>
-                            <li>Utilizará JSON en JavaScript.</li>
-                        </ol>
-                    </div>
+
+                <div class="section" onclick="toggleContent('content6')">
+                  <b>3. Paradigmas de programación</b>
+                  <div id="content6" class="hidden">
+                    <ol>
+                      <li>
+                        Aborda la programación funcional y el paradigma de la
+                        programación orientada
+                      </li>
+                      <li>Aprenderá qué es el alcance en JavaScript</li>
+                      <li>Explorará las diferencias entre var, let y const.</li>
+                      <li>
+                        Aprenderá a utilizar las clases y la herencia en la
+                        programación orientada a objetos.
+                      </li>
+                      <li>
+                        Explorará cómo utilizar la escritura de JavaScript
+                        usando características modernas como spread y rest.
+                      </li>
+                      <li>
+                        Construirá un código que pueda gestionar el DOM y los
+                        eventos.
+                      </li>
+                      <li>Utilizará JSON en JavaScript.</li>
+                    </ol>
+                  </div>
                 </div>
-                
-                <div class="section" onclick="toggleContent('content7')"><b>4. Pruebas</b>
-                    <div id="content7" class="hidden">
-                        <ol>
-                            <li>Aprenderá sobre Node.js y Node Package Manager (npm).</li>
-                            <li>Explorará cómo instalar paquetes npm y cómo trabajar con package.json.</li>
-                            <li>Aprenderá sobre las pruebas en JavaScript y codificará una prueba unitaria sencilla en Jest.</li>
-                        </ol>
-                    </div>
+
+                <div class="section" onclick="toggleContent('content7')">
+                  <b>4. Pruebas</b>
+                  <div id="content7" class="hidden">
+                    <ol>
+                      <li>
+                        Aprenderá sobre Node.js y Node Package Manager (npm).
+                      </li>
+                      <li>
+                        Explorará cómo instalar paquetes npm y cómo trabajar con
+                        package.json.
+                      </li>
+                      <li>
+                        Aprenderá sobre las pruebas en JavaScript y codificará
+                        una prueba unitaria sencilla en Jest.
+                      </li>
+                    </ol>
+                  </div>
                 </div>
-                
-                <div class="section" onclick="toggleContent('content8')"><b>5. Evaluación calificada de final de curso</b> 
-                    <div id="content8" class="hidden">
-                        <ol>
-                            <li>Sintetizará los conocimientos adquiridos en el curso para crear un código para el “generador de recibos Little lemon”.</li>
-                            <li>Una vez que haya completado las unidades individuales de este módulo, podrá realizar la evaluación calificada. También tendrá la oportunidad de reflexionar sobre el contenido del curso y el camino de aprendizaje que tiene por delante.</li>
-                        </ol>
-                    </div>
+
+                <div class="section" onclick="toggleContent('content8')">
+                  <b>5. Evaluación calificada de final de curso</b>
+                  <div id="content8" class="hidden">
+                    <ol>
+                      <li>
+                        Sintetizará los conocimientos adquiridos en el curso
+                        para crear un código para el “generador de recibos
+                        Little lemon”.
+                      </li>
+                      <li>
+                        Una vez que haya completado las unidades individuales de
+                        este módulo, podrá realizar la evaluación calificada.
+                        También tendrá la oportunidad de reflexionar sobre el
+                        contenido del curso y el camino de aprendizaje que tiene
+                        por delante.
+                      </li>
+                    </ol>
+                  </div>
                 </div>
               </div>
             </section>
@@ -253,8 +331,10 @@
                 <h4 class="titulo__recomendacion">Alejandra Perez</h4>
                 <span class="puesto__recomendacion">Front End Developer </span>
                 <p class="experiencia__recomendacion">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-                  sit velit error corrupti voluptatum labore, impedit eos verit
+                  El apoyo y la comunidad de estudiantes en Acadevmia son
+                  fenomenales; la posibilidad de interactuar, hacer preguntas y
+                  colaborar con otros alumnos enriquece enormemente el proceso
+                  de aprendizaje
                 </p>
               </div>
             </div>
@@ -266,8 +346,10 @@
                   >Software Developer Globant</span
                 >
                 <p class="experiencia__recomendacion">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-                  sit velit error corrupti
+                  La interfaz intuitiva de Acadevmia facilita la navegación y el
+                  seguimiento del progreso, ofreciendo una experiencia de
+                  aprendizaje atractiva y personalizable para adaptarse a mi
+                  ritmo
                 </p>
               </div>
             </div>
@@ -279,9 +361,9 @@
                   >Software Developer Mercado Libre</span
                 >
                 <p class="experiencia__recomendacion">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex
-                  sit velit error corrupti voluptatum labore, impedit eos
-                  veritatis cum consectetur.
+                  La diversidad de cursos y la calidad de los instructores en
+                  Acadevmia son excepcionales, lo que me permitió explorar
+                  diferentes áreas de interés con contenido actualizado
                 </p>
               </div>
             </div>

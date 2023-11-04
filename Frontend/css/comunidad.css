@@ -51,6 +51,7 @@
         margin: 1% 2%;
         width: 80%;
         & .foro__publicadas {
+            padding: 2rem;
             width: 100%;
 
             }
@@ -102,13 +103,14 @@
 /*preguntas publicadas*/
 
 .foro__publicadas{
+    padding: 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 100%;
     margin: 5% 0;
+    border: 2px solid var(--color-auxiliar);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    height: 30%;
     padding: 15px;
     border-radius: 1rem;
 }
@@ -120,7 +122,12 @@
 .foro__pregunta{
     display: flex;
     flex-wrap: wrap;
-
+    & h3{
+        padding:.5rem;
+    }
+    &p{
+        font-weight: 800;
+    }
     & a > p {
         color: #bab9b9;
     }
@@ -139,9 +146,9 @@
     border: none;
     display: flex;
     position: relative;
-    font-size: x-large;
-    top: 80px;
+    font-size: large;
     right: 50px;
+    top: 50px;
 }
 .eliminar__post{
     background-color: transparent;

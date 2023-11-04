@@ -6,7 +6,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Roboto';
 }
 
 :root {
@@ -38,6 +37,7 @@
   animation: banner 10s ease-in-out 0s infinite alternate-reverse none;
   z-index: 2;
   background-size: 100% 100%;
+  text-align: center;
 }
 
 @keyframes banner{
@@ -67,7 +67,7 @@
 /*Formulario*/
 .titulo{
   font-size:xx-large;
-  padding: 3rem 30% 1rem 0;
+  padding: 1.5rem 30% 1rem 0;
   text-align: left;
 }
 
@@ -145,7 +145,6 @@ button{
 }
 
 .registro__pregunta p{
-  margin: 2rem 0 3rem;
   font-size: medium;
   color: var(--color-secudario);
 }
@@ -158,19 +157,18 @@ button{
 
 .registro__img-llama{
   width: 30%;
-  margin-top: 2rem;
 }
 
 /* Media queris */
 
 @media screen and (max-width:900px){
-  .registro__animacion {
+  .textoDash {
     display: none;
   }
 }
 
-@media screen and (min-width:900px){
-  .registro__animacion {
-    text-align: center;
+@media screen and (max-width:450px){
+  .registro__form {
+    width: 90%;
   }
 }
