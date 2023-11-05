@@ -1,6 +1,5 @@
 package com.generation.acadevmia.service;
 
-import com.generation.acadevmia.model.User;
 import com.generation.acadevmia.repository.RoleRepository;
 import com.generation.acadevmia.repository.UserRepository;
 import com.generation.acadevmia.security.jwt.JwtUtils;

@@ -1,4 +1,4 @@
-package com.generation.acadevmia.model;
+package com.generation.acadevmia.entity;
 
 public enum ERole {
   ROLE_USER,
