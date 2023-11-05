@@ -13,30 +13,28 @@ import com.generation.acadevmia.repository.ReaccionRepository;
 import com.generation.acadevmia.repository.RespuestaRepository;
 import com.generation.acadevmia.repository.UserRepository;
 import com.generation.acadevmia.utilities.Util;
+import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class RespuestaService {
 
     private final PreguntaRepository preguntaRepository;
 
-    private final ReaccionRepository reaccionRepository;
-
     private final RespuestaRepository respuestaRepository;
 
     private final UserRepository userRepository;
 
     public RespuestaService(PreguntaRepository preguntaRepository,
-                            ReaccionRepository reaccionRepository,
                             RespuestaRepository respuestaRepository,
                             UserRepository userRepository) {
         this.preguntaRepository = preguntaRepository;
-        this.reaccionRepository = reaccionRepository;
         this.respuestaRepository = respuestaRepository;
         this.userRepository = userRepository;
     }
@@ -77,47 +75,54 @@ public class RespuestaService {
                     .build())
             .build();
     }
-    public void marcarFavorito(String idPregunta, String idRespuesta){
-        PreguntaEntity preguntaEntity = preguntaRepository.findById(idPregunta).orElseThrow(() ->  new BusinessException("Id incorrecto"));
-        RespuestaEntity respuestaEntity = respuestaRepository.findById(idRespuesta).orElseThrow(() ->  new BusinessException("Id incorrecto"));
+    public RespuestaResponse marcarFavorito(String idRespuesta){
+        PreguntaEntity preguntaEntity = preguntaRepository.findByRespuestaEntities(idRespuesta)
+                .orElseThrow(() -> new BusinessException("No se encontro la pregunta"));
+        RespuestaEntity respuestaEntity = respuestaRepository.findById(idRespuesta)
+                .orElseThrow(() ->  new BusinessException("Id respuesta incorrecto"));
+        UserEntity userEntity = Util.getUserAuthenticated(userRepository)
+                .orElseThrow(() -> new BusinessException("User no encontrado"));
 
         if (Boolean.TRUE.equals(respuestaEntity.getFavorito())) {
-
+            respuestaEntity.setFavorito(Boolean.FALSE);
+            return respuestaEntityToRespuestaResponse(respuestaRepository.save(respuestaEntity));
         }
-        Optional<UserEntity> user = Util.getUserAuthenticated(userRepository);
-        String userQuestion = preguntaEntity.getUserEntity().getUsername();
-        String username = user.get().getUsername();
 
-        if(Objects.equals(username, userQuestion)){
-            Optional<RespuestaEntity> respuestaOptional = preguntaEntity.getRespuestaEntities().stream()
-                    .filter(respuesta -> respuesta.getId().equals(idRespuesta))
-                    .findFirst();
-            if (respuestaOptional.isPresent()) {
-                RespuestaEntity respuesta = respuestaOptional.get();
-                respuesta.setFavorito(true);
-                respuestaRepository.save(respuesta);
-            } else {
-                throw new BusinessException("La respuesta no existe en la pregunta proporcionada");
-            }
-        } else {
+        if(!Objects.equals(userEntity.getUsername(), preguntaEntity.getUserEntity().getUsername())){
             throw new BusinessException("No tienes permisos para marcar la respuesta como favorita");
         }
+
+        boolean respuestaFavorita = preguntaEntity.getRespuestaEntities()
+                .stream()
+                .anyMatch(RespuestaEntity::getFavorito);
+        if (respuestaFavorita) {
+            throw new BusinessException("Ya se ha marcado una respuesta como favorita");
+        }
+
+        respuestaEntity.setFavorito(Boolean.TRUE);
+        return respuestaEntityToRespuestaResponse(respuestaRepository.save(respuestaEntity));
     }
+
     public List<RespuestaResponse> obtenerRespuestas(String idPregunta) {
-        List<RespuestaEntity> respuestaEntities = respuestaRepository.findAll();
-        List<RespuestaResponse> respuestaResponses = new ArrayList<>();
-        respuestaEntities.forEach((respuestaEntity -> {
-            int likes= (int) respuestaEntity.getReacciones().stream().
-                    filter(reaccion -> reaccion.getIsLike()==1).count();
-            int dislikes = respuestaEntity.getReacciones().size()-likes;
-            RespuestaResponse respuestaResponse = RespuestaResponse.builder()
-                    .id(respuestaEntity.getId())
-                    .texto(respuestaEntity.getTexto())
-                    .codigo(respuestaEntity.getCodigo())
-                    .reacciones(ReaccionResponse.builder().likes(likes).dislikes(dislikes).build())
-                    .build();
-            respuestaResponses.add(respuestaResponse);
-        }));
-        return respuestaResponses;
+        PreguntaEntity preguntaEntity = preguntaRepository.findById(idPregunta)
+                .orElseThrow(() -> new BusinessException("Id pregunta no existe"));
+        return preguntaEntity.getRespuestaEntities().stream().map((this::respuestaEntityToRespuestaResponse)).toList();
+    }
+    private RespuestaResponse respuestaEntityToRespuestaResponse(RespuestaEntity respuestaEntity) {
+        int likes= (int) respuestaEntity.getReacciones().stream().
+                filter(reaccion -> reaccion.getIsLike()==1).count();
+        int dislikes = respuestaEntity.getReacciones().size()-likes;
+        return RespuestaResponse.builder()
+                .id(respuestaEntity.getId())
+                .texto(respuestaEntity.getTexto())
+                .codigo(respuestaEntity.getCodigo())
+                .reacciones(ReaccionResponse.builder().likes(likes).dislikes(dislikes).build())
+                .favorito(respuestaEntity.getFavorito())
+                .user(UserResponse
+                        .builder()
+                        .username(respuestaEntity.getUserEntity().getUsername())
+                        .name(respuestaEntity.getUserEntity().getName())
+                        .build())
+                .build();
     }
 }
