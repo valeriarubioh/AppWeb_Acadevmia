@@ -79,6 +79,7 @@
       border: 2px solid var(--color-auxiliar);
       border-radius: 16px;
         & .foro__pregunta {
+          white-space: pre-line;
           display: flex;
           align-items: center;
           & img {
@@ -177,8 +178,9 @@
     }
   }
   & .foro__respuesta {
-    margin-left: -3rem;
+    white-space: pre-line;
     & p:first-child {
+      white-space: pre-line;
       font-weight: 800;
       margin-bottom: 1rem;
     }
