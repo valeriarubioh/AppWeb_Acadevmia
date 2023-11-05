@@ -247,12 +247,19 @@
         margin-bottom: 1rem;
     }
 }
+.contenedor_reaccion{
+    display: flex;
+}
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
 }
-
+    .foro__pregunta{
+        & p{
+            font-weight: 600;
+        }
+    }
 @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)} 
     to {-webkit-transform: scale(1)}
@@ -287,5 +294,19 @@
 
     .pregunta{
         padding: 20px;
+    }
+        .foro__pregunta{
+        flex-direction: column;
+    }
+    .foro__reaccion{
+        top: 0;
+        right: 0;
+        margin: 0.3rem 0 
+    }
+    .foro__pregunta{
+        & p{
+            margin: 0.3rem;
+            font-weight: 600;
+        }
     }
 }
