@@ -1,9 +1,9 @@
 package com.generation.acadevmia.service;
 
-import com.generation.acadevmia.model.Pregunta;
-import com.generation.acadevmia.model.Reaccion;
-import com.generation.acadevmia.model.Respuesta;
-import com.generation.acadevmia.model.User;
+import com.generation.acadevmia.entity.PreguntaEntity;
+import com.generation.acadevmia.entity.ReaccionEntity;
+import com.generation.acadevmia.entity.RespuestaEntity;
+import com.generation.acadevmia.entity.UserEntity;
 import com.generation.acadevmia.repository.PreguntaRepository;
 import com.generation.acadevmia.repository.ReaccionRepository;
 import com.generation.acadevmia.repository.RespuestaRepository;
@@ -28,19 +28,19 @@ public class ReaccionService {
 
     @Autowired
     UserRepository usuarioRepository;
-    public Pregunta crearReaccion(Reaccion reaccion, String id) {
+    public PreguntaEntity crearReaccion(ReaccionEntity reaccionEntity, String id) {
         UserDetailsImpl principal = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Optional<User> user = usuarioRepository.findByUsername(principal.getUsername());
-        reaccion.setUser(user.get());
-        Optional<Pregunta> preguntaOptional = preguntaRepository.findById(id);
+        Optional<UserEntity> user = usuarioRepository.findByUsername(principal.getUsername());
+        reaccionEntity.setUserEntity(user.get());
+        Optional<PreguntaEntity> preguntaOptional = preguntaRepository.findById(id);
         if (preguntaOptional.isEmpty()) {
-            Optional<Respuesta> respuesta = respuestaRepository.findById(id);
+            Optional<RespuestaEntity> respuesta = respuestaRepository.findById(id);
         } else {
-            Reaccion savedReaccion = reaccionRepository.save(reaccion);
-            Pregunta pregunta = preguntaOptional.get();
-            pregunta.getReacciones().add(savedReaccion);
-            Pregunta preguntaSaved = preguntaRepository.save(pregunta);
-            return preguntaSaved;
+            ReaccionEntity savedReaccionEntity = reaccionRepository.save(reaccionEntity);
+            PreguntaEntity preguntaEntity = preguntaOptional.get();
+            preguntaEntity.getReacciones().add(savedReaccionEntity);
+            PreguntaEntity preguntaEntitySaved = preguntaRepository.save(preguntaEntity);
+            return preguntaEntitySaved;
         }
         return null;
     }

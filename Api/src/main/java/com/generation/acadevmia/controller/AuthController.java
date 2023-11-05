@@ -1,8 +1,8 @@
 package com.generation.acadevmia.controller;
 
-import com.generation.acadevmia.model.ERole;
-import com.generation.acadevmia.model.Role;
-import com.generation.acadevmia.model.User;
+import com.generation.acadevmia.entity.ERole;
+import com.generation.acadevmia.entity.RoleEntity;
+import com.generation.acadevmia.entity.UserEntity;
 import com.generation.acadevmia.payload.request.LoginRequest;
 import com.generation.acadevmia.payload.request.SignupRequest;
 import com.generation.acadevmia.payload.response.JwtResponse;
@@ -18,7 +18,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -85,42 +84,42 @@ public class AuthController {
         }
 
         // Create new user's account
-        User user = User.builder().username(signUpRequest.getUsername())
+        UserEntity userEntity = UserEntity.builder().username(signUpRequest.getUsername())
                 .name(signUpRequest.getName())
                 .email(signUpRequest.getEmail())
                 .password(encoder.encode(signUpRequest.getPassword())).build();
         Set<String> strRoles = signUpRequest.getRoles();
-        Set<Role> roles = new HashSet<>();
+        Set<RoleEntity> roleEntities = new HashSet<>();
 
         if (strRoles == null) {
-            Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+            RoleEntity userRoleEntity = roleRepository.findByName(ERole.ROLE_USER)
                     .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-            roles.add(userRole);
+            roleEntities.add(userRoleEntity);
         } else {
             strRoles.forEach(role -> {
                 switch (role) {
                     case "admin":
-                        Role adminRole = roleRepository.findByName(ERole.ROLE_ADMIN)
+                        RoleEntity adminRoleEntity = roleRepository.findByName(ERole.ROLE_ADMIN)
                                 .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                        roles.add(adminRole);
+                        roleEntities.add(adminRoleEntity);
 
                         break;
                     case "mod":
-                        Role modRole = roleRepository.findByName(ERole.ROLE_MODERATOR)
+                        RoleEntity modRoleEntity = roleRepository.findByName(ERole.ROLE_MODERATOR)
                                 .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                        roles.add(modRole);
+                        roleEntities.add(modRoleEntity);
 
                         break;
                     default:
-                        Role userRole = roleRepository.findByName(ERole.ROLE_USER)
+                        RoleEntity userRoleEntity = roleRepository.findByName(ERole.ROLE_USER)
                                 .orElseThrow(() -> new RuntimeException("Error: Role is not found."));
-                        roles.add(userRole);
+                        roleEntities.add(userRoleEntity);
                 }
             });
         }
 
-        user.setRoles(roles);
-        userRepository.save(user);
+        userEntity.setRoleEntities(roleEntities);
+        userRepository.save(userEntity);
 
         return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
     }

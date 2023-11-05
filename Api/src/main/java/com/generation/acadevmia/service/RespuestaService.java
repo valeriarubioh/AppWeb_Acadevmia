@@ -1,9 +1,9 @@
 package com.generation.acadevmia.service;
 
-import com.generation.acadevmia.model.Pregunta;
-import com.generation.acadevmia.model.Reaccion;
-import com.generation.acadevmia.model.Respuesta;
-import com.generation.acadevmia.model.User;
+import com.generation.acadevmia.entity.UserEntity;
+import com.generation.acadevmia.exception.BusinessException;
+import com.generation.acadevmia.entity.PreguntaEntity;
+import com.generation.acadevmia.entity.RespuestaEntity;
 import com.generation.acadevmia.payload.request.RespuestaRequest;
 import com.generation.acadevmia.payload.response.ReaccionResponse;
 import com.generation.acadevmia.payload.response.RespuestaResponse;
@@ -12,9 +12,7 @@ import com.generation.acadevmia.repository.PreguntaRepository;
 import com.generation.acadevmia.repository.ReaccionRepository;
 import com.generation.acadevmia.repository.RespuestaRepository;
 import com.generation.acadevmia.repository.UserRepository;
-import com.generation.acadevmia.security.services.UserDetailsImpl;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
+import com.generation.acadevmia.utilities.Util;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -24,91 +22,98 @@ import java.util.Optional;
 
 @Service
 public class RespuestaService {
-    @Autowired
-    private PreguntaRepository preguntaRepository;
-    @Autowired
-    private ReaccionRepository reaccionRepository;
-    @Autowired
-    private RespuestaRepository respuestaRepository; //duda
-    @Autowired
-    UserRepository usuarioRepository;
+
+    private final PreguntaRepository preguntaRepository;
+
+    private final ReaccionRepository reaccionRepository;
+
+    private final RespuestaRepository respuestaRepository;
+
+    private final UserRepository userRepository;
+
+    public RespuestaService(PreguntaRepository preguntaRepository,
+                            ReaccionRepository reaccionRepository,
+                            RespuestaRepository respuestaRepository,
+                            UserRepository userRepository) {
+        this.preguntaRepository = preguntaRepository;
+        this.reaccionRepository = reaccionRepository;
+        this.respuestaRepository = respuestaRepository;
+        this.userRepository = userRepository;
+    }
 
     public RespuestaResponse crearRespuesta(RespuestaRequest respuestaRequest, String id) {
 
-        Optional<Pregunta> preguntaOptional = preguntaRepository.findById(id);
+        Optional<PreguntaEntity> preguntaOptional = preguntaRepository.findById(id);
 
         if (preguntaOptional.isEmpty()) {
-            throw new RuntimeException("La pregunta no existe");
+            throw new BusinessException("La pregunta no existe");
         }
-        UserDetailsImpl principal = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Optional<User> user = usuarioRepository.findByUsername(principal.getUsername());
-        Respuesta respuesta = Respuesta.builder()
+        Optional<UserEntity> user = Util.getUserAuthenticated(userRepository);
+        RespuestaEntity respuestaEntity = RespuestaEntity.builder()
                 .texto(respuestaRequest.getTexto())
                 .codigo(respuestaRequest.getCodigo())
                 .favorito(false)
-                .user(user.get())
+                .userEntity(user.get())
                 .reacciones(new ArrayList<>()).build();
 
-        Respuesta savedRespuesta = respuestaRepository.save(respuesta);
-        Pregunta pregunta = preguntaOptional.get();
-        pregunta.getRespuestas().add(savedRespuesta);
-        preguntaRepository.save(pregunta);
+        RespuestaEntity savedRespuestaEntity = respuestaRepository.save(respuestaEntity);
+        PreguntaEntity preguntaEntity = preguntaOptional.get();
+        preguntaEntity.getRespuestaEntities().add(savedRespuestaEntity);
+        preguntaRepository.save(preguntaEntity);
 
-        RespuestaResponse respuestaResponse = RespuestaResponse.builder()
-            .id(respuesta.getId())
-            .texto(respuesta.getTexto())
-            .codigo(respuesta.getCodigo())
-            .favorito(respuesta.getFavorito())
+        return RespuestaResponse.builder()
+            .id(respuestaEntity.getId())
+            .texto(respuestaEntity.getTexto())
+            .codigo(respuestaEntity.getCodigo())
+            .favorito(respuestaEntity.getFavorito())
             .user(UserResponse
                     .builder()
-                    .username(respuesta.getUser().getUsername())
-                    .name(respuesta.getUser().getName())
+                    .username(respuestaEntity.getUserEntity().getUsername())
+                    .name(respuestaEntity.getUserEntity().getName())
                     .build())
             .reacciones(ReaccionResponse.builder()
                     .likes(0)
                     .dislikes(0)
                     .build())
             .build();
-        return respuestaResponse;
     }
     public void marcarFavorito(String idPregunta, String idRespuesta){
-        Optional<Pregunta> preguntaOptional = preguntaRepository.findById(idPregunta);
-        if (preguntaOptional.isEmpty()) {
-            throw new RuntimeException("La pregunta no existe");
-        }
-        UserDetailsImpl principal = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Optional<User> user = usuarioRepository.findByUsername(principal.getUsername());
+        PreguntaEntity preguntaEntity = preguntaRepository.findById(idPregunta).orElseThrow(() ->  new BusinessException("Id incorrecto"));
+        RespuestaEntity respuestaEntity = respuestaRepository.findById(idRespuesta).orElseThrow(() ->  new BusinessException("Id incorrecto"));
 
-        Pregunta pregunta = preguntaOptional.get();
-        String userQuestion = pregunta.getUser().getUsername();
+        if (Boolean.TRUE.equals(respuestaEntity.getFavorito())) {
+
+        }
+        Optional<UserEntity> user = Util.getUserAuthenticated(userRepository);
+        String userQuestion = preguntaEntity.getUserEntity().getUsername();
         String username = user.get().getUsername();
 
         if(Objects.equals(username, userQuestion)){
-            Optional<Respuesta> respuestaOptional = pregunta.getRespuestas().stream()
+            Optional<RespuestaEntity> respuestaOptional = preguntaEntity.getRespuestaEntities().stream()
                     .filter(respuesta -> respuesta.getId().equals(idRespuesta))
                     .findFirst();
             if (respuestaOptional.isPresent()) {
-                Respuesta respuesta = respuestaOptional.get();
+                RespuestaEntity respuesta = respuestaOptional.get();
                 respuesta.setFavorito(true);
                 respuestaRepository.save(respuesta);
             } else {
-                throw new RuntimeException("La respuesta no existe en la pregunta proporcionada");
+                throw new BusinessException("La respuesta no existe en la pregunta proporcionada");
             }
         } else {
-            throw new RuntimeException("No tienes permisos para marcar la respuesta como favorita");
+            throw new BusinessException("No tienes permisos para marcar la respuesta como favorita");
         }
     }
     public List<RespuestaResponse> obtenerRespuestas(String idPregunta) {
-        List<Respuesta> respuestas = respuestaRepository.findAll();
+        List<RespuestaEntity> respuestaEntities = respuestaRepository.findAll();
         List<RespuestaResponse> respuestaResponses = new ArrayList<>();
-        respuestas.forEach((respuesta -> {
-            int likes= (int) respuesta.getReacciones().stream().
+        respuestaEntities.forEach((respuestaEntity -> {
+            int likes= (int) respuestaEntity.getReacciones().stream().
                     filter(reaccion -> reaccion.getIsLike()==1).count();
-            int dislikes = respuesta.getReacciones().size()-likes;
+            int dislikes = respuestaEntity.getReacciones().size()-likes;
             RespuestaResponse respuestaResponse = RespuestaResponse.builder()
-                    .id(respuesta.getId())
-                    .texto(respuesta.getTexto())
-                    .codigo(respuesta.getCodigo())
+                    .id(respuestaEntity.getId())
+                    .texto(respuestaEntity.getTexto())
+                    .codigo(respuestaEntity.getCodigo())
                     .reacciones(ReaccionResponse.builder().likes(likes).dislikes(dislikes).build())
                     .build();
             respuestaResponses.add(respuestaResponse);
