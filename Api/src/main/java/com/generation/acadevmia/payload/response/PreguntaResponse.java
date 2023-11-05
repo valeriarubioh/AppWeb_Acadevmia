@@ -12,6 +12,5 @@ public class PreguntaResponse {
     private String descripcion;
     private String tag;
     private UserResponse user;
-//    private ArrayList<RespuestaResponse> respuestas;
     private ReaccionResponse reacciones;
 }

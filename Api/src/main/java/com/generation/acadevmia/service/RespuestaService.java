@@ -46,12 +46,12 @@ public class RespuestaService {
         if (preguntaOptional.isEmpty()) {
             throw new BusinessException("La pregunta no existe");
         }
-        Optional<UserEntity> user = Util.getUserAuthenticated(userRepository);
+        UserEntity userEntity = Util.getUserAuthenticated(userRepository);
         RespuestaEntity respuestaEntity = RespuestaEntity.builder()
                 .texto(respuestaRequest.getTexto())
                 .codigo(respuestaRequest.getCodigo())
                 .favorito(false)
-                .userEntity(user.get())
+                .userEntity(userEntity)
                 .reacciones(new ArrayList<>()).build();
 
         RespuestaEntity savedRespuestaEntity = respuestaRepository.save(respuestaEntity);
@@ -80,8 +80,7 @@ public class RespuestaService {
                 .orElseThrow(() -> new BusinessException("No se encontro la pregunta"));
         RespuestaEntity respuestaEntity = respuestaRepository.findById(idRespuesta)
                 .orElseThrow(() ->  new BusinessException("Id respuesta incorrecto"));
-        UserEntity userEntity = Util.getUserAuthenticated(userRepository)
-                .orElseThrow(() -> new BusinessException("User no encontrado"));
+        UserEntity userEntity = Util.getUserAuthenticated(userRepository);
 
         if (Boolean.TRUE.equals(respuestaEntity.getFavorito())) {
             respuestaEntity.setFavorito(Boolean.FALSE);
