@@ -21,14 +21,14 @@
 .principal__navbar-buscador {
     display: flex;
     align-items: center;
-    border-radius: 5px; /* Ajusta el radio de los bordes para hacerlo más atractivo */
+    border-radius: 5px;
     padding: 5px;
 }
 
-.principal__input {
+.principal__input{
     outline: none;
     height: 50px;
-    width: 0;
+    width: 30px;
     padding: 0 20px;
     color: #000;
     border-radius: 50px;
@@ -42,7 +42,8 @@
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
 }
-::placeholder{
+
+.principal__input::placeholder{
     padding-left: 3rem;
     color: var(--color-auxiliar);
 }
