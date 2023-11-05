@@ -5,6 +5,8 @@ import com.generation.acadevmia.entity.ReaccionEntity;
 import com.generation.acadevmia.entity.RespuestaEntity;
 import com.generation.acadevmia.entity.UserEntity;
 import com.generation.acadevmia.exception.BusinessException;
+import com.generation.acadevmia.payload.request.EReaccionType;
+import com.generation.acadevmia.payload.request.ReaccionRequest;
 import com.generation.acadevmia.repository.PreguntaRepository;
 import com.generation.acadevmia.repository.ReaccionRepository;
 import com.generation.acadevmia.repository.RespuestaRepository;
@@ -35,19 +37,26 @@ public class ReaccionService {
         this.userRepository = userRepository;
     }
 
-    public void crearReaccion(ReaccionEntity reaccionEntity, String id) {
-        UserEntity user =  Util.getUserAuthenticated(userRepository).orElseThrow(() -> new BusinessException("User no autenticado"));
-        reaccionEntity.setUserEntity(user);
-        Optional<PreguntaEntity> preguntaOptional = preguntaRepository.findById(id);
-        if (preguntaOptional.isPresent()) {
+    public void crearReaccion(ReaccionRequest reaccionRequest) {
+
+        //TODO Verificar que el usuario no tenga reaccciones y en caso que tenga cambiar de estado (like o dislike)
+        ReaccionEntity reaccionEntity = ReaccionEntity.builder()
+                .isLike(reaccionRequest.getIsLike())
+                .userEntity(Util.getUserAuthenticated(userRepository))
+                .build();
+
+        if (reaccionRequest.getTipo().compareTo(EReaccionType.PREGUNTA) == 0){
+            PreguntaEntity preguntaEntity = preguntaRepository.findById(reaccionRequest.getId())
+                    .orElseThrow(() -> new BusinessException("Pregunta no encontrada"));
             ReaccionEntity savedReaccionEntity = reaccionRepository.save(reaccionEntity);
-            PreguntaEntity preguntaEntity = preguntaOptional.get();
             preguntaEntity.getReacciones().add(savedReaccionEntity);
             preguntaRepository.save(preguntaEntity);
+        } else {
+            RespuestaEntity respuestaEntity = respuestaRepository.findById(reaccionRequest.getId())
+                    .orElseThrow(() -> new BusinessException("Respuesta no encontrada"));
+            ReaccionEntity savedReaccionEntity = reaccionRepository.save(reaccionEntity);
+            respuestaEntity.getReacciones().add(savedReaccionEntity);
+            respuestaRepository.save(respuestaEntity);
         }
-        RespuestaEntity respuestaEntity = respuestaRepository.findById(id).orElseThrow(() -> new BusinessException("Id incorrecto"));
-        ReaccionEntity savedReaccionEntity = reaccionRepository.save(reaccionEntity);
-        respuestaEntity.getReacciones().add(savedReaccionEntity);
-        respuestaRepository.save(respuestaEntity);
     }
 }

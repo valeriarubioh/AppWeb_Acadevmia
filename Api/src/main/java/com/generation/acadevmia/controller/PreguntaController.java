@@ -1,6 +1,7 @@
 package com.generation.acadevmia.controller;
 
 import com.generation.acadevmia.entity.PreguntaEntity;
+import com.generation.acadevmia.payload.request.PreguntaRequest;
 import com.generation.acadevmia.payload.response.PreguntaResponse;
 import com.generation.acadevmia.service.PreguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,8 @@ public class PreguntaController {
 
     @PostMapping
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
-    public ResponseEntity<PreguntaResponse> crearPregunta(@RequestBody PreguntaEntity preguntaEntity) {
-        return new ResponseEntity(preguntaService.crearPregunta(preguntaEntity), HttpStatus.CREATED);
+    public ResponseEntity<PreguntaResponse> crearPregunta(@RequestBody PreguntaRequest preguntaRequest) {
+        return new ResponseEntity<>(preguntaService.crearPregunta(preguntaRequest), HttpStatus.CREATED);
     }
 
     @GetMapping
