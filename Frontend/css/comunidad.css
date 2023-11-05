@@ -121,7 +121,6 @@
 }
 .foro__pregunta{
     display: flex;
-    flex-wrap: wrap;
     & h3{
         padding:.5rem;
     }
