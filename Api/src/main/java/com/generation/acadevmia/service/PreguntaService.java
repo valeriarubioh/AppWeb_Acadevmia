@@ -1,16 +1,16 @@
 package com.generation.acadevmia.service;
 
-import com.generation.acadevmia.model.Pregunta;
-import com.generation.acadevmia.model.Reaccion;
-import com.generation.acadevmia.model.User;
+import com.generation.acadevmia.entity.PreguntaEntity;
+import com.generation.acadevmia.entity.ReaccionEntity;
+import com.generation.acadevmia.entity.UserEntity;
+import com.generation.acadevmia.payload.request.PreguntaRequest;
 import com.generation.acadevmia.payload.response.PreguntaResponse;
 import com.generation.acadevmia.payload.response.ReaccionResponse;
 import com.generation.acadevmia.payload.response.UserResponse;
 import com.generation.acadevmia.repository.PreguntaRepository;
 import com.generation.acadevmia.repository.UserRepository;
-import com.generation.acadevmia.security.services.UserDetailsImpl;
+import com.generation.acadevmia.utilities.Util;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -23,47 +23,45 @@ public class PreguntaService {
     @Autowired
     PreguntaRepository preguntaRepository;
     @Autowired
-    UserRepository usuarioRepository;
+    UserRepository userRepository;
 
-    public Pregunta crearPregunta(Pregunta pregunta) {
-        UserDetailsImpl principal = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Optional<User> user = usuarioRepository.findByUsername(principal.getUsername());
-        pregunta.setRespuestas(new ArrayList<>());
-        pregunta.setReacciones(new ArrayList<>());
-        pregunta.setUser(user.get());
-        return preguntaRepository.save(pregunta);
+    public PreguntaResponse crearPregunta(PreguntaRequest preguntaRequest) {
+        PreguntaEntity preguntaEntitySaved = preguntaRepository.save(preguntaRequestToPreguntaEntity(preguntaRequest));
+        return preguntaEntityToPreguntaResponse(preguntaEntitySaved);
     }
 
     public List<PreguntaResponse> obtenerPreguntas() {
-        List<Pregunta> preguntas = preguntaRepository.findAll();
-        List<PreguntaResponse> preguntaResponses = new ArrayList<>();
+        List<PreguntaEntity> preguntaEntities = preguntaRepository.findAll();
+        return preguntaEntities.stream().map((this::preguntaEntityToPreguntaResponse)).toList();
+    }
 
-        preguntas.forEach((pregunta -> {
-            int likes=0;
-            int dislike=0;
-            for (Reaccion reaccion:pregunta.getReacciones()){
-                if (reaccion.getIsLike()==1){
-                    likes++;
-                }else {
-                    dislike++;
-                }
-            }
-            PreguntaResponse preguntaResponse = PreguntaResponse.builder()
-                    .id(pregunta.getId())
-                    .titulo(pregunta.getTitulo())
-                    .descripcion(pregunta.getDescripcion())
-                    .tag(pregunta.getTag())
-                    .user(UserResponse
-                            .builder()
-                            .username(pregunta.getUser().getUsername())
-                            .name(pregunta.getUser().getName())
-                            .build())
-                            .reacciones(ReaccionResponse.builder().likes(likes).dislikes(dislike).build())
-                    .build();
-            preguntaResponses.add(preguntaResponse);
+    private PreguntaEntity preguntaRequestToPreguntaEntity(PreguntaRequest preguntaRequest) {
+        return PreguntaEntity
+                .builder()
+                .titulo(preguntaRequest.getTitulo())
+                .tag(preguntaRequest.getTag())
+                .descripcion(preguntaRequest.getDescripcion())
+                .respuestaEntities(new ArrayList<>())
+                .reacciones(new ArrayList<>())
+                .userEntity(Util.getUserAuthenticated(userRepository))
+                .build();
+    }
 
-        }));
-
-        return preguntaResponses;
+    private PreguntaResponse preguntaEntityToPreguntaResponse(PreguntaEntity preguntaEntity) {
+        int likes = (int) preguntaEntity.getReacciones().stream().
+                filter(reaccion -> reaccion.getIsLike()==1).count();
+        int dislikes = preguntaEntity.getReacciones().size()-likes;
+        return PreguntaResponse.builder()
+                .id(preguntaEntity.getId())
+                .titulo(preguntaEntity.getTitulo())
+                .descripcion(preguntaEntity.getDescripcion())
+                .tag(preguntaEntity.getTag())
+                .user(UserResponse
+                        .builder()
+                        .username(preguntaEntity.getUserEntity().getUsername())
+                        .name(preguntaEntity.getUserEntity().getName())
+                        .build())
+                .reacciones(ReaccionResponse.builder().likes(likes).dislikes(dislikes).build())
+                .build();
     }
 }

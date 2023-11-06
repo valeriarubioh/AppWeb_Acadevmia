@@ -37,6 +37,7 @@
   animation: banner 10s ease-in-out 0s infinite alternate-reverse none;
   z-index: 2;
   background-size: 100% 100%;
+  text-align: center;
 }
 
 @keyframes banner{
@@ -146,6 +147,7 @@ button{
 .registro__pregunta p{
   font-size: medium;
   color: var(--color-secudario);
+  margin-bottom: 2rem;
 }
 
 .link{
@@ -161,13 +163,13 @@ button{
 /* Media queris */
 
 @media screen and (max-width:900px){
-  .registro__animacion {
+  .textoDash {
     display: none;
   }
 }
 
-@media screen and (min-width:900px){
-  .registro__animacion {
-    text-align: center;
+@media screen and (max-width:450px){
+  .registro__form {
+    width: 90%;
   }
 }

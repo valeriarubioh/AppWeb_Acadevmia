@@ -1,6 +1,6 @@
 package com.generation.acadevmia.security.services;
 
-import com.generation.acadevmia.model.User;
+import com.generation.acadevmia.entity.UserEntity;
 import com.generation.acadevmia.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -17,10 +17,10 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 	@Override
 	@Transactional
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		User user = userRepository.findByUsername(username)
+		UserEntity userEntity = userRepository.findByUsername(username)
 				.orElseThrow(() -> new UsernameNotFoundException("User Not Found with username: " + username));
 
-		return UserDetailsImpl.build(user);
+		return UserDetailsImpl.build(userEntity);
 	}
 
 }

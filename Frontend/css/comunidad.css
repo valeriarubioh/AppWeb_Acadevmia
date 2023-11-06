@@ -99,11 +99,16 @@
     text-decoration: none;
     font-size: 1.2rem;
     color:var(--color-secudario);
+    overflow: visible; 
+    word-break: break-all;
+    width: 100%;
+  
 }
 
 /*preguntas publicadas*/
 
 .foro__publicadas{
+    white-space: pre-line;
     padding: 2rem;
     display: flex;
     flex-direction: column;
@@ -122,9 +127,9 @@
 }
 .foro__pregunta{
     display: flex;
-    flex-wrap: wrap;
     & h3{
         padding:.5rem;
+        max-width: 90%;
     }
     &p{
         font-weight: 800;
@@ -243,12 +248,19 @@
         margin-bottom: 1rem;
     }
 }
+.contenedor_reaccion{
+    display: flex;
+}
 /* Add Zoom Animation */
 .animate {
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
 }
-
+    .foro__pregunta{
+        & p{
+            font-weight: 600;
+        }
+    }
 @-webkit-keyframes animatezoom {
     from {-webkit-transform: scale(0)} 
     to {-webkit-transform: scale(1)}
@@ -283,5 +295,19 @@
 
     .pregunta{
         padding: 20px;
+    }
+        .foro__pregunta{
+        flex-direction: column;
+    }
+    .foro__reaccion{
+        top: 0;
+        right: 0;
+        margin: 0.3rem 0 
+    }
+    .foro__pregunta{
+        & p{
+            margin: 0.3rem;
+            font-weight: 600;
+        }
     }
 }
