@@ -1,13 +1,13 @@
 package com.generation.acadevmia.repository;
 
-import com.generation.acadevmia.entity.UserEntity;
+import com.generation.acadevmia.model.User;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;
 
-public interface UserRepository extends MongoRepository<UserEntity, String> {
+public interface UserRepository extends MongoRepository<User, String> {
 
-    Optional<UserEntity> findByUsername(String username);
+    Optional<User> findByUsername(String username);
 
     Boolean existsByUsername(String username);
 

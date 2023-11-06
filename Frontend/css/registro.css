@@ -147,7 +147,6 @@ button{
 .registro__pregunta p{
   font-size: medium;
   color: var(--color-secudario);
-  margin-bottom: 2rem;
 }
 
 .link{
