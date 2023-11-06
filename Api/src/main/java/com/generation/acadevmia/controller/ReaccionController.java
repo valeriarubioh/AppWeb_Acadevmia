@@ -1,10 +1,11 @@
 package com.generation.acadevmia.controller;
 
-import com.generation.acadevmia.model.Pregunta;
-import com.generation.acadevmia.model.Reaccion;
-import com.generation.acadevmia.service.PreguntaService;
+import com.generation.acadevmia.entity.PreguntaEntity;
+import com.generation.acadevmia.entity.ReaccionEntity;
+import com.generation.acadevmia.payload.request.ReaccionRequest;
 import com.generation.acadevmia.service.ReaccionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,9 +17,10 @@ public class ReaccionController {
     @Autowired
     ReaccionService reaccionService;
 
-    @PostMapping("/{id}")
+    @PostMapping()
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
-    public Pregunta crearReaccion(@RequestBody Reaccion reaccion, @PathVariable String id) {
-        return reaccionService.crearReaccion(reaccion, id);
+    public ResponseEntity<Void> crearReaccion(@RequestBody ReaccionRequest reaccionRequest) {
+        reaccionService.crearReaccion(reaccionRequest);
+        return ResponseEntity.noContent().build();
     }
 }

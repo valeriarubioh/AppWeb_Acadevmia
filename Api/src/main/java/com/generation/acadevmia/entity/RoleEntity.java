@@ -1,4 +1,4 @@
-package com.generation.acadevmia.model;
+package com.generation.acadevmia.entity;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
@@ -9,7 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Setter
 @Builder
 @Document(collection = "roles")
-public class Role {
+public class RoleEntity {
   @Id
   private String id;
   private ERole name;

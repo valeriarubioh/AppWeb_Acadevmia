@@ -12,13 +12,11 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link rel="stylesheet" href="/Frontend/css/respuesta.css">
     <script src="https://kit.fontawesome.com/c0f9324e8d.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="/utils/toastr.min.js"></script>
     <script src="/Frontend/Js/menu.js" defer></script>
     <script src = "/Frontend/Js/utils.js" defer></script>
     <script src = "/Frontend/Js/respuesta.js" defer></script>
-    <script src="/Frontend/Js/perfil.js" defer></script>
     <script src="/Frontend/Js/logout.js" defer></script>
+    <script src="/Frontend/Js/perfil.js" defer></script>
     <script src="/Frontend/Js/buscador.js"></script>
     <script src="/Frontend/Js/blackboard.js"></script>
     <title>Acadevmia - Perfil</title>
@@ -28,7 +26,7 @@
     <header class="principal">
         <!-- barra de navegacion -->
         <nav class="principal__navbar">
-            <a href="/Frontend/index.html">
+            <a href="../../index.html">
                 <img class="principal__logo" src="/publics/img/acadevmia.svg" alt="logo">
             </a>
             <div class="menu_hamburguer">
@@ -38,7 +36,7 @@
             </div>
             <ul class="principal__lista">
                 <li class="principal__elemento">
-                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+                    <a href="../../index.html" class="principal__ref">Inicio</a>
                 </li>
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/Cursos.html" class="principal__ref">Cursos</a>
@@ -69,7 +67,7 @@
         <div class="menu__toggle">
             <ul class="lista__toggle">
                 <li class="principal__elemento">
-                    <a href="/Frontend/index.html" class="principal__ref">Inicio</a>
+                    <a href="../../index.html" class="principal__ref">Inicio</a>
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
                 </li>
@@ -82,16 +80,13 @@
                 <li class="principal__elemento">
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
-                <li class="principal__elemento">
-                    <a class="principal__ref" id="btn__logout"><i class='bx bx-log-out'></i>Salir</a>
-                </li>
             </ul>
-                <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
-                    Ingresar
-                </a>
-                <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
-                    Registrarse
-                </a>
+            <a href="/Frontend/pages/login.html" class="toggle__link">
+                Ingresar
+            </a>
+            <a href="/Frontend/pages/signup.html" class="button__header">
+                Registrarse
+            </a>
         </div>
     </header>
     <div class="wrapper">
@@ -192,12 +187,12 @@
                         <div class="usuarioInteracciones">
                             <div class="likeInteracciones">
                                 <i class="fa-solid fa-heart"></i>
-                                <span id="likesRecibidos">-</span>
+                                <span>20</span>
                                 <p>Likes recibidos</p>
                             </div>
                             <div class="preguntaInteracciones">
                                 <i class="fa-solid fa-comment"></i>
-                                <span id="preguntasRealizadas">-</span>
+                                <span>4</span>
                                 <p>Preguntas realizadas</p>
                             </div>
                         </div>
