@@ -1,7 +1,7 @@
 package com.generation.acadevmia.security.services;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.generation.acadevmia.entity.UserEntity;
+import com.generation.acadevmia.model.User;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -34,16 +34,16 @@ public class UserDetailsImpl implements UserDetails {
 		this.authorities = authorities;
 	}
 
-	public static UserDetailsImpl build(UserEntity userEntity) {
-		List<GrantedAuthority> authorities = userEntity.getRoleEntities().stream()
+	public static UserDetailsImpl build(User user) {
+		List<GrantedAuthority> authorities = user.getRoles().stream()
 				.map(role -> new SimpleGrantedAuthority(role.getName().name()))
 				.collect(Collectors.toList());
 
 		return new UserDetailsImpl(
-				userEntity.getId(),
-				userEntity.getUsername(),
-				userEntity.getEmail(),
-				userEntity.getPassword(),
+				user.getId(), 
+				user.getUsername(), 
+				user.getEmail(),
+				user.getPassword(), 
 				authorities);
 	}
 

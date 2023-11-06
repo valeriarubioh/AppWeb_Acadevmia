@@ -1,28 +1,29 @@
-package com.generation.acadevmia.entity;
+package com.generation.acadevmia.model;
 
-import lombok.*;
+import lombok.EqualsAndHashCode;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 @EqualsAndHashCode
 @Getter
 @Setter
-@Builder
+@RequiredArgsConstructor
 @Document("reacciones")
-public class ReaccionEntity {
+public class Reaccion {
     @Id
     private String id;
     private int isLike;
-    @Field(name = "user")
-    private UserEntity userEntity;
+    private User user;
 
     @Override
     public String toString() {
         return "Reaccion{" +
                 "id='" + id + '\'' +
                 ", isLike=" + isLike +
-                ", user=" + userEntity +
+                ", user=" + user +
                 '}';
     }
 }

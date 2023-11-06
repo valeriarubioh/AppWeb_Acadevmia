@@ -1,11 +1,11 @@
 package com.generation.acadevmia.repository;
 
-import com.generation.acadevmia.entity.ERole;
-import com.generation.acadevmia.entity.RoleEntity;
+import com.generation.acadevmia.model.ERole;
+import com.generation.acadevmia.model.Role;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.Optional;
 
-public interface RoleRepository extends MongoRepository<RoleEntity, String> {
-  Optional<RoleEntity> findByName(ERole name);
+public interface RoleRepository extends MongoRepository<Role, String> {
+  Optional<Role> findByName(ERole name);
 }

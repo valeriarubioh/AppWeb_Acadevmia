@@ -1,27 +1,25 @@
-package com.generation.acadevmia.entity;
+package com.generation.acadevmia.model;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @EqualsAndHashCode
 @Getter
 @Setter
 @Builder
 @Document("respuestas")
-public class RespuestaEntity {
+public class Respuesta {
     @Id
     private String id;
     private String texto;
     private String codigo;
     private Boolean favorito;
-    @Field(name = "user")
-    private UserEntity userEntity;
+    private User user;
     @DBRef
-    @Field(name = "reacciones")
-    private ArrayList<ReaccionEntity> reacciones;
+    private ArrayList<Reaccion> reacciones;
 }
