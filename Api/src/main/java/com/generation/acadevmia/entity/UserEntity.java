@@ -1,9 +1,10 @@
-package com.generation.acadevmia.model;
+package com.generation.acadevmia.entity;
 
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.Set;
 
@@ -12,7 +13,7 @@ import java.util.Set;
 @Setter
 @Builder
 @Document("usuarios")
-public class User {
+public class UserEntity {
 
     @Id
     private String id;
@@ -21,5 +22,6 @@ public class User {
     private String name;
     private String password;
     @DBRef
-    private Set<Role> roles;
+    @Field(name = "roles")
+    private Set<RoleEntity> roleEntities;
 }

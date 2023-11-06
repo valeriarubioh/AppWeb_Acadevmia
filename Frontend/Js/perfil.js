@@ -1,24 +1,7 @@
 const editProfileButton = document.getElementById("edit-profile-button");
 const saveProfileButton = document.getElementById("save-profile-button");
 const profilePictureInput = document.getElementById("profile-picture-input");
-const usernameInput = document.getElementById("name");
 const addSocialWebsiteButton = document.getElementById("add-social-website-button");
-
-const username = localStorage.getItem("user");
-if (username) {
-    fetch("http://127.0.0.1:8080/api/v1/user/getName", {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + localStorage.getItem("token")
-        }
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            usernameInput.value = data.name;
-        })
-        .catch((error) => console.error(error));
-}
 
 // Agrega una variable para rastrear si estás en modo de edición
 let inEditMode = false;
@@ -69,21 +52,6 @@ saveProfileButton.addEventListener("click", function() {
     });
 
     // Resto del código de "Guardar Cambios"
-    fetch("http://127.0.0.1:8080/api/v1/user/updateName", {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json",
-            Authorization: "Bearer " + localStorage.getItem("token")
-        },
-        body: JSON.stringify({
-            newName: usernameInput.value
-        })
-    })
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-        })
-        .catch((error) => console.error(error));
 });
 
 function enableEditFields(enabled) {
@@ -116,29 +84,6 @@ function loadProfilePicture() {
         reader.readAsDataURL(input.files[0]);
     }
 }
-
-// Likes y preguntas realizadas
-const likesRecibidos = document.getElementById("likesRecibidos");
-const preguntasRealizadas = document.getElementById("preguntasRealizadas");
-fetch("http://127.0.0.1:8080/api/v1/preguntas/user", {
-    method: "GET",
-    headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + localStorage.getItem("token")
-    }
-})
-    .then((response) => response.json())
-    .then((data) => {
-        let likes = 0;
-        let preguntas = 0;
-        data.forEach((pregunta) => {
-            likes += pregunta.reacciones.likes;
-            preguntas++;
-        });
-        likesRecibidos.textContent = likes;
-        preguntasRealizadas.textContent = preguntas;
-    })
-    .catch((error) => console.error(error));
 
 // Habilidades
 const selectValue = document.querySelector(".select-value");
