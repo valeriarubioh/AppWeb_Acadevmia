@@ -1,8 +1,6 @@
 package com.generation.acadevmia.service;
 
 import com.generation.acadevmia.entity.PreguntaEntity;
-import com.generation.acadevmia.entity.ReaccionEntity;
-import com.generation.acadevmia.entity.UserEntity;
 import com.generation.acadevmia.payload.request.PreguntaRequest;
 import com.generation.acadevmia.payload.response.PreguntaResponse;
 import com.generation.acadevmia.payload.response.ReaccionResponse;
@@ -15,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class PreguntaService {
@@ -49,8 +46,8 @@ public class PreguntaService {
 
     private PreguntaResponse preguntaEntityToPreguntaResponse(PreguntaEntity preguntaEntity) {
         int likes = (int) preguntaEntity.getReacciones().stream().
-                filter(reaccion -> reaccion.getIsLike()==1).count();
-        int dislikes = preguntaEntity.getReacciones().size()-likes;
+                filter(reaccion -> reaccion.getIsLike() == 1).count();
+        int dislikes = preguntaEntity.getReacciones().size() - likes;
         return PreguntaResponse.builder()
                 .id(preguntaEntity.getId())
                 .titulo(preguntaEntity.getTitulo())

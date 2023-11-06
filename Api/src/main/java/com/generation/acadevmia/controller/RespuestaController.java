@@ -1,7 +1,6 @@
 package com.generation.acadevmia.controller;
 
 import com.generation.acadevmia.payload.request.RespuestaRequest;
-import com.generation.acadevmia.payload.response.MessageResponse;
 import com.generation.acadevmia.payload.response.RespuestaResponse;
 import com.generation.acadevmia.service.RespuestaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +20,13 @@ public class RespuestaController {
 
     @PostMapping("/{id}")
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
-    public ResponseEntity<RespuestaResponse> crearRespuesta(@RequestBody RespuestaRequest respuesta, @PathVariable String id){
+    public ResponseEntity<RespuestaResponse> crearRespuesta(@RequestBody RespuestaRequest respuesta, @PathVariable String id) {
         return new ResponseEntity(respuestaService.crearRespuesta(respuesta, id), HttpStatus.CREATED);
     }
+
     @PatchMapping("/{idRespuesta}")
     @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
-    public ResponseEntity<RespuestaResponse> marcarFavorito(@PathVariable String idRespuesta){
+    public ResponseEntity<RespuestaResponse> marcarFavorito(@PathVariable String idRespuesta) {
         return ResponseEntity.ok(respuestaService.marcarFavorito(idRespuesta));
     }
 

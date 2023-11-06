@@ -1,26 +1,23 @@
 package com.generation.acadevmia.service;
 
-import com.generation.acadevmia.entity.UserEntity;
-import com.generation.acadevmia.exception.BusinessException;
 import com.generation.acadevmia.entity.PreguntaEntity;
 import com.generation.acadevmia.entity.RespuestaEntity;
+import com.generation.acadevmia.entity.UserEntity;
+import com.generation.acadevmia.exception.BusinessException;
 import com.generation.acadevmia.payload.request.RespuestaRequest;
 import com.generation.acadevmia.payload.response.ReaccionResponse;
 import com.generation.acadevmia.payload.response.RespuestaResponse;
 import com.generation.acadevmia.payload.response.UserResponse;
 import com.generation.acadevmia.repository.PreguntaRepository;
-import com.generation.acadevmia.repository.ReaccionRepository;
 import com.generation.acadevmia.repository.RespuestaRepository;
 import com.generation.acadevmia.repository.UserRepository;
 import com.generation.acadevmia.utilities.Util;
-import org.apache.catalina.User;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 public class RespuestaService {
@@ -60,26 +57,27 @@ public class RespuestaService {
         preguntaRepository.save(preguntaEntity);
 
         return RespuestaResponse.builder()
-            .id(respuestaEntity.getId())
-            .texto(respuestaEntity.getTexto())
-            .codigo(respuestaEntity.getCodigo())
-            .favorito(respuestaEntity.getFavorito())
-            .user(UserResponse
-                    .builder()
-                    .username(respuestaEntity.getUserEntity().getUsername())
-                    .name(respuestaEntity.getUserEntity().getName())
-                    .build())
-            .reacciones(ReaccionResponse.builder()
-                    .likes(0)
-                    .dislikes(0)
-                    .build())
-            .build();
+                .id(respuestaEntity.getId())
+                .texto(respuestaEntity.getTexto())
+                .codigo(respuestaEntity.getCodigo())
+                .favorito(respuestaEntity.getFavorito())
+                .user(UserResponse
+                        .builder()
+                        .username(respuestaEntity.getUserEntity().getUsername())
+                        .name(respuestaEntity.getUserEntity().getName())
+                        .build())
+                .reacciones(ReaccionResponse.builder()
+                        .likes(0)
+                        .dislikes(0)
+                        .build())
+                .build();
     }
-    public RespuestaResponse marcarFavorito(String idRespuesta){
+
+    public RespuestaResponse marcarFavorito(String idRespuesta) {
         PreguntaEntity preguntaEntity = preguntaRepository.findByRespuestaEntities(idRespuesta)
                 .orElseThrow(() -> new BusinessException("No se encontro la pregunta"));
         RespuestaEntity respuestaEntity = respuestaRepository.findById(idRespuesta)
-                .orElseThrow(() ->  new BusinessException("Id respuesta incorrecto"));
+                .orElseThrow(() -> new BusinessException("Id respuesta incorrecto"));
         UserEntity userEntity = Util.getUserAuthenticated(userRepository);
 
         if (Boolean.TRUE.equals(respuestaEntity.getFavorito())) {
@@ -87,7 +85,7 @@ public class RespuestaService {
             return respuestaEntityToRespuestaResponse(respuestaRepository.save(respuestaEntity));
         }
 
-        if(!Objects.equals(userEntity.getUsername(), preguntaEntity.getUserEntity().getUsername())){
+        if (!Objects.equals(userEntity.getUsername(), preguntaEntity.getUserEntity().getUsername())) {
             throw new BusinessException("No tienes permisos para marcar la respuesta como favorita");
         }
 
@@ -107,10 +105,11 @@ public class RespuestaService {
                 .orElseThrow(() -> new BusinessException("Id pregunta no existe"));
         return preguntaEntity.getRespuestaEntities().stream().map((this::respuestaEntityToRespuestaResponse)).toList();
     }
+
     private RespuestaResponse respuestaEntityToRespuestaResponse(RespuestaEntity respuestaEntity) {
-        int likes= (int) respuestaEntity.getReacciones().stream().
-                filter(reaccion -> reaccion.getIsLike()==1).count();
-        int dislikes = respuestaEntity.getReacciones().size()-likes;
+        int likes = (int) respuestaEntity.getReacciones().stream().
+                filter(reaccion -> reaccion.getIsLike() == 1).count();
+        int dislikes = respuestaEntity.getReacciones().size() - likes;
         return RespuestaResponse.builder()
                 .id(respuestaEntity.getId())
                 .texto(respuestaEntity.getTexto())

@@ -1,6 +1,5 @@
 package com.generation.acadevmia.controller;
 
-import com.generation.acadevmia.entity.PreguntaEntity;
 import com.generation.acadevmia.payload.request.PreguntaRequest;
 import com.generation.acadevmia.payload.response.PreguntaResponse;
 import com.generation.acadevmia.service.PreguntaService;
