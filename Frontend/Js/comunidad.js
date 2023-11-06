@@ -1,24 +1,60 @@
 const preguntas = JSON.parse(localStorage.getItem("preguntas")) || [];
-const user = JSON.parse(localStorage.getItem("login_success")) || false;
+const user = localStorage.getItem("user") || false;
+
+// const preguntas = [
+//   {
+//     pregunta: "Prueba 1",
+//     descripcion: "asgfjhkk",
+//     tags: "#Java",
+//     respuestas: [
+//       {
+//         texto: "hola",
+//         codigo: "codigo",
+//         username: "alex",
+//       },
+//     ],
+//     username: "valeriarubio",
+//     reaccion: [
+//       {
+//         username: "alexaaa",
+//         isLike: 1,
+//       },
+//       {
+//         username: "lina",
+//         isLike: 0,
+//       },
+//     ],
+//   },
+// ];
+//   localStorage.setItem("preguntas", JSON.stringify(preguntas));
 
 function agregarReaccion(index, accion) {
   if (!user) {
     window.location.href = "login.html";
   }
   const pregunta = preguntas[index];
-  if (pregunta.username === user.username) {
+  if (pregunta.username === user) {
     alert("El mismo usuario no puede reaccionar a su propia publicación");
     return;
   }
   const reaccion = pregunta.reaccion;
   let isLike = accion === "like" ? 1 : 0;
 
+  /*const isNotFound =
+    reaccion.findIndex((reaccion) => reaccion.username === user.username) === -1
+      ? true
+      : false;
+  if (isNotFound) {
+    reaccion.push({
+      username: user.username,
+      isLike: isLike,
+    });*/
   const foundIndex = reaccion.findIndex(
-    (reaccion) => reaccion.username === user.username
+    (reaccion) => reaccion.username === user
   );
   if (foundIndex === -1) {
     reaccion.push({
-      username: user.username,
+      username: user,
       isLike: isLike,
     });
     localStorage.setItem("preguntas", JSON.stringify(preguntas));
@@ -59,7 +95,7 @@ function renderPreguntas(filterPregunta) {
           <p>${obj.tags}</p>
           </a>
           ${
-            user && obj.username === user.username
+            user && obj.username === user
               ? `<button class="eliminar__post" onclick="eliminarPregunta(${index})"><i class="fa-solid fa-trash"></i></button>`
               : ""
           }

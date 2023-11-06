@@ -1,18 +1,14 @@
 package com.generation.acadevmia.service;
 
-import com.generation.acadevmia.entity.PreguntaEntity;
-import com.generation.acadevmia.entity.ReaccionEntity;
-import com.generation.acadevmia.entity.RespuestaEntity;
-import com.generation.acadevmia.entity.UserEntity;
-import com.generation.acadevmia.exception.BusinessException;
-import com.generation.acadevmia.payload.request.EReaccionType;
-import com.generation.acadevmia.payload.request.ReaccionRequest;
+import com.generation.acadevmia.model.Pregunta;
+import com.generation.acadevmia.model.Reaccion;
+import com.generation.acadevmia.model.Respuesta;
+import com.generation.acadevmia.model.User;
 import com.generation.acadevmia.repository.PreguntaRepository;
 import com.generation.acadevmia.repository.ReaccionRepository;
 import com.generation.acadevmia.repository.RespuestaRepository;
 import com.generation.acadevmia.repository.UserRepository;
 import com.generation.acadevmia.security.services.UserDetailsImpl;
-import com.generation.acadevmia.utilities.Util;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
@@ -22,41 +18,30 @@ import java.util.Optional;
 @Service
 public class ReaccionService {
 
-    private final PreguntaRepository preguntaRepository;
-    private final RespuestaRepository respuestaRepository;
-    private final ReaccionRepository reaccionRepository;
-    private final UserRepository userRepository;
+    @Autowired
+    private PreguntaRepository preguntaRepository;
+    @Autowired
+    private RespuestaRepository respuestaRepository;
 
-    public ReaccionService(PreguntaRepository preguntaRepository,
-                           RespuestaRepository respuestaRepository,
-                           ReaccionRepository reaccionRepository,
-                           UserRepository userRepository) {
-        this.preguntaRepository = preguntaRepository;
-        this.respuestaRepository = respuestaRepository;
-        this.reaccionRepository = reaccionRepository;
-        this.userRepository = userRepository;
-    }
+    @Autowired
+    private ReaccionRepository reaccionRepository;
 
-    public void crearReaccion(ReaccionRequest reaccionRequest) {
-
-        //TODO Verificar que el usuario no tenga reaccciones y en caso que tenga cambiar de estado (like o dislike)
-        ReaccionEntity reaccionEntity = ReaccionEntity.builder()
-                .isLike(reaccionRequest.getIsLike())
-                .userEntity(Util.getUserAuthenticated(userRepository))
-                .build();
-
-        if (reaccionRequest.getTipo().compareTo(EReaccionType.PREGUNTA) == 0){
-            PreguntaEntity preguntaEntity = preguntaRepository.findById(reaccionRequest.getId())
-                    .orElseThrow(() -> new BusinessException("Pregunta no encontrada"));
-            ReaccionEntity savedReaccionEntity = reaccionRepository.save(reaccionEntity);
-            preguntaEntity.getReacciones().add(savedReaccionEntity);
-            preguntaRepository.save(preguntaEntity);
+    @Autowired
+    UserRepository usuarioRepository;
+    public Pregunta crearReaccion(Reaccion reaccion, String id) {
+        UserDetailsImpl principal = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        Optional<User> user = usuarioRepository.findByUsername(principal.getUsername());
+        reaccion.setUser(user.get());
+        Optional<Pregunta> preguntaOptional = preguntaRepository.findById(id);
+        if (preguntaOptional.isEmpty()) {
+            Optional<Respuesta> respuesta = respuestaRepository.findById(id);
         } else {
-            RespuestaEntity respuestaEntity = respuestaRepository.findById(reaccionRequest.getId())
-                    .orElseThrow(() -> new BusinessException("Respuesta no encontrada"));
-            ReaccionEntity savedReaccionEntity = reaccionRepository.save(reaccionEntity);
-            respuestaEntity.getReacciones().add(savedReaccionEntity);
-            respuestaRepository.save(respuestaEntity);
+            Reaccion savedReaccion = reaccionRepository.save(reaccion);
+            Pregunta pregunta = preguntaOptional.get();
+            pregunta.getReacciones().add(savedReaccion);
+            Pregunta preguntaSaved = preguntaRepository.save(pregunta);
+            return preguntaSaved;
         }
+        return null;
     }
 }
