@@ -74,6 +74,8 @@
 }
 .contenedor__temario{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 
 }
 
@@ -111,6 +113,15 @@
 .tercer__section > .titulo__curso{
     text-align: center;
     margin: 7rem
+}
+.recomendacion {
+    padding: 1rem;
+    box-shadow: 5px 5px 15px #c4c1c1;
+    width: 25%;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .recomendaciones{
     display: flex;
@@ -179,4 +190,9 @@
 
 .detalles__temario {
     margin-top:36px;
+}
+@media screen and (max-width:500px){
+.recomendacion.respo {
+    display: none;
+  }
 }
