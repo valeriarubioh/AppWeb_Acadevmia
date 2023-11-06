@@ -394,6 +394,12 @@
 
 
 @media screen and (max-width:950px){
+    .principal__navbar-buscador:hover input {
+    width: 200px;
+    margin-left: 2.3rem;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
     /*nav*/
     .principal__navbar{
         justify-content: space-between;
