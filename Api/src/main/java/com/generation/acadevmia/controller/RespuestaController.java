@@ -1,6 +1,7 @@
 package com.generation.acadevmia.controller;
 
 import com.generation.acadevmia.payload.request.RespuestaRequest;
+import com.generation.acadevmia.payload.response.GetRespuestaResponse;
 import com.generation.acadevmia.payload.response.RespuestaResponse;
 import com.generation.acadevmia.service.RespuestaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,7 @@ public class RespuestaController {
     }
 
     @GetMapping("/{idPregunta}")
-    public ResponseEntity<List<RespuestaResponse>> obtenerRespuestas(@PathVariable String idPregunta) {
+    public ResponseEntity<GetRespuestaResponse> obtenerRespuestas(@PathVariable String idPregunta) {
         return ResponseEntity.ok(respuestaService.obtenerRespuestas(idPregunta));
     }
 }

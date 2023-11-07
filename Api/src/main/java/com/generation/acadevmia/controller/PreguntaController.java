@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.Path;
 import java.util.List;
 
 @RestController
@@ -28,5 +29,12 @@ public class PreguntaController {
     public ResponseEntity<List<PreguntaResponse>> obtenerPreguntas() {
         List<PreguntaResponse> preguntaResponses = preguntaService.obtenerPreguntas();
         return ResponseEntity.ok(preguntaResponses);
+    }
+
+    @DeleteMapping("/{idPregunta}")
+    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+    public ResponseEntity<Void> eliminarPregunta(@PathVariable String idPregunta) {
+        preguntaService.eliminarPregunta(idPregunta);
+        return ResponseEntity.noContent().build();
     }
 }
