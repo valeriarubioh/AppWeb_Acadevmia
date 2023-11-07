@@ -15,6 +15,7 @@ import com.generation.acadevmia.utilities.Util;
 import org.springframework.stereotype.Service;
 
 import java.util.Objects;
+import java.util.Optional;
 
 @Service
 public class ReaccionService {
@@ -47,16 +48,24 @@ public class ReaccionService {
             if (Objects.equals(preguntaEntity.getUserEntity().getUsername(), userEntity.getUsername())) {
                 throw new BusinessException("No se puede reaccionar a su misma publicación");
             }
+            Optional<ReaccionEntity> savedReaccionAux = Optional.empty();
             for (ReaccionEntity existingReaccion : preguntaEntity.getReacciones()) {
                 if (existingReaccion.getUserEntity().getUsername().equals(userEntity.getUsername())) {
                     if (existingReaccion.getIsLike() == reaccionRequest.getIsLike()) {
-                        throw new BusinessException("La reacción ya ha sido marcada");
+                        savedReaccionAux = Optional.of(existingReaccion);
+                        break;
                     } else {
                         existingReaccion.setIsLike(reaccionRequest.getIsLike());
                         reaccionRepository.save(existingReaccion);
                         return;
                     }
                 }
+            }
+            if (savedReaccionAux.isPresent()) {
+                preguntaEntity.getReacciones().remove(savedReaccionAux.get());
+                preguntaRepository.save(preguntaEntity);
+                reaccionRepository.delete(savedReaccionAux.get());
+                return;
             }
             ReaccionEntity savedReaccionEntity = reaccionRepository.save(reaccionEntity);
             preguntaEntity.getReacciones().add(savedReaccionEntity);
@@ -67,16 +76,24 @@ public class ReaccionService {
             if (Objects.equals(respuestaEntity.getUserEntity().getUsername(), userEntity.getUsername())) {
                 throw new BusinessException("No se puede reaccionar a su misma publicación");
             }
+            Optional<ReaccionEntity> savedReaccionAux = Optional.empty();
             for (ReaccionEntity existingReaccion : respuestaEntity.getReacciones()) {
                 if (existingReaccion.getUserEntity().getUsername().equals(userEntity.getUsername())) {
                     if (existingReaccion.getIsLike() == reaccionRequest.getIsLike()) {
-                        throw new BusinessException("La reacción ya ha sido marcada");
+                        savedReaccionAux = Optional.of(existingReaccion);
+                        break;
                     } else {
                         existingReaccion.setIsLike(reaccionRequest.getIsLike());
                         reaccionRepository.save(existingReaccion);
                         return;
                     }
                 }
+            }
+            if (savedReaccionAux.isPresent()) {
+                respuestaEntity.getReacciones().remove(savedReaccionAux.get());
+                respuestaRepository.save(respuestaEntity);
+                reaccionRepository.delete(savedReaccionAux.get());
+                return;
             }
             ReaccionEntity savedReaccionEntity = reaccionRepository.save(reaccionEntity);
             respuestaEntity.getReacciones().add(savedReaccionEntity);

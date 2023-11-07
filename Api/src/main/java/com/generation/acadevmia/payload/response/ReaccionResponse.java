@@ -9,4 +9,5 @@ public class ReaccionResponse {
 
     private int likes;
     private int dislikes;
+    private EUserReaction userHasReacted;
 }
