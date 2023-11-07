@@ -1,6 +1,7 @@
 package com.generation.acadevmia.service;
 
 import com.generation.acadevmia.entity.PreguntaEntity;
+import com.generation.acadevmia.entity.ReaccionEntity;
 import com.generation.acadevmia.entity.RespuestaEntity;
 import com.generation.acadevmia.entity.UserEntity;
 import com.generation.acadevmia.exception.BusinessException;
@@ -110,11 +111,19 @@ public class RespuestaService {
         int likes = (int) respuestaEntity.getReacciones().stream().
                 filter(reaccion -> reaccion.getIsLike() == 1).count();
         int dislikes = respuestaEntity.getReacciones().size() - likes;
+        Optional<ReaccionEntity> userReaction = respuestaEntity.getReacciones()
+                .stream()
+                .filter((reaccionUser) -> Objects.equals(reaccionUser.getUserEntity().getUsername(), Util.getUserAuthenticated(userRepository).getUsername()))
+                .findFirst();
+        EUserReaction reacted = EUserReaction.NONE;
+        if (userReaction.isPresent()) {
+            reacted = userReaction.get().getIsLike() == 1 ? EUserReaction.LIKE : EUserReaction.DISLIKE;
+        }
         return RespuestaResponse.builder()
                 .id(respuestaEntity.getId())
                 .texto(respuestaEntity.getTexto())
                 .codigo(respuestaEntity.getCodigo())
-                .reacciones(ReaccionResponse.builder().likes(likes).dislikes(dislikes).build())
+                .reacciones(ReaccionResponse.builder().likes(likes).dislikes(dislikes).userHasReacted(reacted).build())
                 .favorito(respuestaEntity.getFavorito())
                 .user(UserResponse
                         .builder()
