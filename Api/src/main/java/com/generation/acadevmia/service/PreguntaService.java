@@ -1,10 +1,10 @@
 package com.generation.acadevmia.service;
 
 import com.generation.acadevmia.entity.PreguntaEntity;
+import com.generation.acadevmia.entity.UserEntity;
+import com.generation.acadevmia.exception.BusinessException;
 import com.generation.acadevmia.payload.request.PreguntaRequest;
 import com.generation.acadevmia.payload.response.PreguntaResponse;
-import com.generation.acadevmia.payload.response.ReaccionResponse;
-import com.generation.acadevmia.payload.response.UserResponse;
 import com.generation.acadevmia.repository.PreguntaRepository;
 import com.generation.acadevmia.repository.UserRepository;
 import com.generation.acadevmia.utilities.Util;
@@ -13,6 +13,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
+
+import static com.generation.acadevmia.utilities.Util.preguntaEntityToPreguntaResponse;
 
 @Service
 public class PreguntaService {
@@ -29,7 +32,7 @@ public class PreguntaService {
 
     public List<PreguntaResponse> obtenerPreguntas() {
         List<PreguntaEntity> preguntaEntities = preguntaRepository.findAll();
-        return preguntaEntities.stream().map((this::preguntaEntityToPreguntaResponse)).toList();
+        return preguntaEntities.stream().map((Util::preguntaEntityToPreguntaResponse)).toList();
     }
 
     private PreguntaEntity preguntaRequestToPreguntaEntity(PreguntaRequest preguntaRequest) {
@@ -44,21 +47,14 @@ public class PreguntaService {
                 .build();
     }
 
-    private PreguntaResponse preguntaEntityToPreguntaResponse(PreguntaEntity preguntaEntity) {
-        int likes = (int) preguntaEntity.getReacciones().stream().
-                filter(reaccion -> reaccion.getIsLike() == 1).count();
-        int dislikes = preguntaEntity.getReacciones().size() - likes;
-        return PreguntaResponse.builder()
-                .id(preguntaEntity.getId())
-                .titulo(preguntaEntity.getTitulo())
-                .descripcion(preguntaEntity.getDescripcion())
-                .tag(preguntaEntity.getTag())
-                .user(UserResponse
-                        .builder()
-                        .username(preguntaEntity.getUserEntity().getUsername())
-                        .name(preguntaEntity.getUserEntity().getName())
-                        .build())
-                .reacciones(ReaccionResponse.builder().likes(likes).dislikes(dislikes).build())
-                .build();
+    public void eliminarPregunta(String idPregunta) {
+        PreguntaEntity preguntaEntity = preguntaRepository.findById(idPregunta)
+                .orElseThrow(() -> new BusinessException("idPregunta incorrecto"));
+        UserEntity userAuthenticated = Util.getUserAuthenticated(userRepository);
+
+        if (!Objects.equals(preguntaEntity.getUserEntity().getUsername(), userAuthenticated.getUsername())) {
+            throw new BusinessException("Accion no permitida");
+        }
+        preguntaRepository.delete(preguntaEntity);
     }
 }

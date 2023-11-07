@@ -5,9 +5,7 @@ import com.generation.acadevmia.entity.RespuestaEntity;
 import com.generation.acadevmia.entity.UserEntity;
 import com.generation.acadevmia.exception.BusinessException;
 import com.generation.acadevmia.payload.request.RespuestaRequest;
-import com.generation.acadevmia.payload.response.ReaccionResponse;
-import com.generation.acadevmia.payload.response.RespuestaResponse;
-import com.generation.acadevmia.payload.response.UserResponse;
+import com.generation.acadevmia.payload.response.*;
 import com.generation.acadevmia.repository.PreguntaRepository;
 import com.generation.acadevmia.repository.RespuestaRepository;
 import com.generation.acadevmia.repository.UserRepository;
@@ -100,10 +98,12 @@ public class RespuestaService {
         return respuestaEntityToRespuestaResponse(respuestaRepository.save(respuestaEntity));
     }
 
-    public List<RespuestaResponse> obtenerRespuestas(String idPregunta) {
+    public GetRespuestaResponse obtenerRespuestas(String idPregunta) {
         PreguntaEntity preguntaEntity = preguntaRepository.findById(idPregunta)
                 .orElseThrow(() -> new BusinessException("Id pregunta no existe"));
-        return preguntaEntity.getRespuestaEntities().stream().map((this::respuestaEntityToRespuestaResponse)).toList();
+        PreguntaResponse preguntaResponse = Util.preguntaEntityToPreguntaResponse(preguntaEntity);
+        List<RespuestaResponse> respuestaResponses = preguntaEntity.getRespuestaEntities().stream().map((this::respuestaEntityToRespuestaResponse)).toList();
+        return GetRespuestaResponse.builder().pregunta(preguntaResponse).respuestas(respuestaResponses).build();
     }
 
     private RespuestaResponse respuestaEntityToRespuestaResponse(RespuestaEntity respuestaEntity) {
