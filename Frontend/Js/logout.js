@@ -24,7 +24,8 @@ logout.addEventListener('click', ()=>{
 
     toastr.info("hasta pronto")
     // remueve la info almacenada en almacenamiento local
-    localStorage.removeItem('login_success')
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');    
     // cuando finalicemos sesión, nos redirigirá al login
     // Agrega un retraso de 1 segundo (1000 milisegundos) antes de redirigir
     setTimeout(() => {
@@ -62,7 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
         toastr.info("hasta pronto")
         
         // Remueve la información almacenada en el almacenamiento local
-        localStorage.removeItem('login_success');
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
         
         // Agrega un retraso de 1 segundo (1000 milisegundos) antes de redirigir
         setTimeout(() => {
