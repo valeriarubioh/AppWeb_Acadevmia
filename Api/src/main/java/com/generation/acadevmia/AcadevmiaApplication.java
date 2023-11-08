@@ -10,13 +10,5 @@ public class AcadevmiaApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(AcadevmiaApplication.class, args);
 	}
-	public WebMvcConfigurer corsConfigurer() {
-		return new WebMvcConfigurer() {
-			@Override
-			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/greeting-javaconfig").allowedOrigins("http://localhost:8080");
-			}
-		};
-	}
 }
 
