@@ -17,12 +17,9 @@ const postForm = document.querySelector(".principal__formulario");
       } else {
         // Crear un objeto para almacenar la pregunta
         const preguntaData = {
-          pregunta: titulo,
+          titulo: titulo,
           descripcion: contenido,
-          tag: tags,
-          username: user.username,
-          respuestas: [],
-          reaccion: [],
+          tag: tags
         };
 
         try {
@@ -31,10 +28,11 @@ const postForm = document.querySelector(".principal__formulario");
             {
               method: "POST",
               headers: {
+                'Allow-Origin': '*',
                 "Content-Type": "application/json",
-                Authorization: "Bearer " + localStorage.getItem("token")
+                "Authorization": `Bearer ${localStorage.getItem("token")}`
               },
-              body: JSON.stringify(preguntaData),
+              body: JSON.stringify(preguntaData)
             }
           );
 
