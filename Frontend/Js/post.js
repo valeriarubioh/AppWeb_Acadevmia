@@ -1,5 +1,6 @@
+
 document.addEventListener("DOMContentLoaded", function () {
-  const postForm = document.querySelector(".principalformulario");
+const postForm = document.querySelector(".principalformulario");
 
   if (postForm) {
     postForm.addEventListener("submit", async (e) => {
