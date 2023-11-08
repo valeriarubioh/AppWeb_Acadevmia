@@ -1,11 +1,16 @@
 package com.generation.acadevmia.service;
 
+<<<<<<< HEAD
 import com.generation.acadevmia.model.Pregunta;
 import com.generation.acadevmia.model.Reaccion;
 import com.generation.acadevmia.model.User;
+=======
+import com.generation.acadevmia.entity.PreguntaEntity;
+import com.generation.acadevmia.entity.UserEntity;
+import com.generation.acadevmia.exception.BusinessException;
+import com.generation.acadevmia.payload.request.PreguntaRequest;
+>>>>>>> 60b10761f6cb34082b331ead0860f011713b4e69
 import com.generation.acadevmia.payload.response.PreguntaResponse;
-import com.generation.acadevmia.payload.response.ReaccionResponse;
-import com.generation.acadevmia.payload.response.UserResponse;
 import com.generation.acadevmia.repository.PreguntaRepository;
 import com.generation.acadevmia.repository.UserRepository;
 import com.generation.acadevmia.security.services.UserDetailsImpl;
@@ -16,7 +21,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
+import java.util.Objects;
+
+import static com.generation.acadevmia.utilities.Util.preguntaEntityToPreguntaResponse;
 
 @Service
 public class PreguntaService {
@@ -49,6 +56,7 @@ public class PreguntaService {
     }
 
     public List<PreguntaResponse> obtenerPreguntas() {
+<<<<<<< HEAD
         List<Pregunta> preguntas = preguntaRepository.findAll();
         List<PreguntaResponse> preguntaResponses = new ArrayList<>();
 
@@ -107,6 +115,10 @@ public class PreguntaService {
         }));
 
         return preguntaResponses;
+=======
+        List<PreguntaEntity> preguntaEntities = preguntaRepository.findAll();
+        return preguntaEntities.stream().map((Util::preguntaEntityToPreguntaResponse)).toList();
+>>>>>>> 60b10761f6cb34082b331ead0860f011713b4e69
     }
 
     public List<PreguntaResponse> obtenerPreguntasPorUsuario() {
@@ -116,6 +128,7 @@ public class PreguntaService {
         if (user.isEmpty())
 			throw new UsernameNotFoundException(String.format("El usuario %s no existe", username));
 
+<<<<<<< HEAD
         List<Pregunta> preguntas = preguntaRepository.findAll();
         List<PreguntaResponse> preguntaResponses = new ArrayList<>();
 
@@ -149,5 +162,16 @@ public class PreguntaService {
         }));
 
         return preguntaResponses;
+=======
+    public void eliminarPregunta(String idPregunta) {
+        PreguntaEntity preguntaEntity = preguntaRepository.findById(idPregunta)
+                .orElseThrow(() -> new BusinessException("idPregunta incorrecto"));
+        UserEntity userAuthenticated = Util.getUserAuthenticated(userRepository);
+
+        if (!Objects.equals(preguntaEntity.getUserEntity().getUsername(), userAuthenticated.getUsername())) {
+            throw new BusinessException("Accion no permitida");
+        }
+        preguntaRepository.delete(preguntaEntity);
+>>>>>>> 60b10761f6cb34082b331ead0860f011713b4e69
     }
 }

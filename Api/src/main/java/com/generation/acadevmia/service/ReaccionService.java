@@ -8,11 +8,10 @@ import com.generation.acadevmia.repository.PreguntaRepository;
 import com.generation.acadevmia.repository.ReaccionRepository;
 import com.generation.acadevmia.repository.RespuestaRepository;
 import com.generation.acadevmia.repository.UserRepository;
-import com.generation.acadevmia.security.services.UserDetailsImpl;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.context.SecurityContextHolder;
+import com.generation.acadevmia.utilities.Util;
 import org.springframework.stereotype.Service;
 
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -26,22 +25,71 @@ public class ReaccionService {
     @Autowired
     private ReaccionRepository reaccionRepository;
 
-    @Autowired
-    UserRepository usuarioRepository;
-    public Pregunta crearReaccion(Reaccion reaccion, String id) {
-        UserDetailsImpl principal = (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        Optional<User> user = usuarioRepository.findByUsername(principal.getUsername());
-        reaccion.setUser(user.get());
-        Optional<Pregunta> preguntaOptional = preguntaRepository.findById(id);
-        if (preguntaOptional.isEmpty()) {
-            Optional<Respuesta> respuesta = respuestaRepository.findById(id);
+    public void crearReaccion(ReaccionRequest reaccionRequest) {
+        ReaccionEntity reaccionEntity = ReaccionEntity.builder()
+                .isLike(reaccionRequest.getIsLike())
+                .userEntity(Util.getUserAuthenticated(userRepository))
+                .build();
+        UserEntity userEntity = Util.getUserAuthenticated(userRepository);
+
+        if (reaccionRequest.getTipo().compareTo(EReaccionType.PREGUNTA) == 0) {
+            PreguntaEntity preguntaEntity = preguntaRepository.findById(reaccionRequest.getId())
+                    .orElseThrow(() -> new BusinessException("Pregunta no encontrada"));
+            if (Objects.equals(preguntaEntity.getUserEntity().getUsername(), userEntity.getUsername())) {
+                throw new BusinessException("No se puede reaccionar a su misma publicación");
+            }
+            Optional<ReaccionEntity> savedReaccionAux = Optional.empty();
+            for (ReaccionEntity existingReaccion : preguntaEntity.getReacciones()) {
+                if (existingReaccion.getUserEntity().getUsername().equals(userEntity.getUsername())) {
+                    if (existingReaccion.getIsLike() == reaccionRequest.getIsLike()) {
+                        savedReaccionAux = Optional.of(existingReaccion);
+                        break;
+                    } else {
+                        existingReaccion.setIsLike(reaccionRequest.getIsLike());
+                        reaccionRepository.save(existingReaccion);
+                        return;
+                    }
+                }
+            }
+            if (savedReaccionAux.isPresent()) {
+                preguntaEntity.getReacciones().remove(savedReaccionAux.get());
+                preguntaRepository.save(preguntaEntity);
+                reaccionRepository.delete(savedReaccionAux.get());
+                return;
+            }
+            ReaccionEntity savedReaccionEntity = reaccionRepository.save(reaccionEntity);
+            preguntaEntity.getReacciones().add(savedReaccionEntity);
+            preguntaRepository.save(preguntaEntity);
         } else {
-            Reaccion savedReaccion = reaccionRepository.save(reaccion);
-            Pregunta pregunta = preguntaOptional.get();
-            pregunta.getReacciones().add(savedReaccion);
-            Pregunta preguntaSaved = preguntaRepository.save(pregunta);
-            return preguntaSaved;
+            RespuestaEntity respuestaEntity = respuestaRepository.findById(reaccionRequest.getId())
+                    .orElseThrow(() -> new BusinessException("Respuesta no encontrada"));
+            if (Objects.equals(respuestaEntity.getUserEntity().getUsername(), userEntity.getUsername())) {
+                throw new BusinessException("No se puede reaccionar a su misma publicación");
+            }
+            Optional<ReaccionEntity> savedReaccionAux = Optional.empty();
+            for (ReaccionEntity existingReaccion : respuestaEntity.getReacciones()) {
+                if (existingReaccion.getUserEntity().getUsername().equals(userEntity.getUsername())) {
+                    if (existingReaccion.getIsLike() == reaccionRequest.getIsLike()) {
+                        savedReaccionAux = Optional.of(existingReaccion);
+                        break;
+                    } else {
+                        existingReaccion.setIsLike(reaccionRequest.getIsLike());
+                        reaccionRepository.save(existingReaccion);
+                        return;
+                    }
+                }
+            }
+            if (savedReaccionAux.isPresent()) {
+                respuestaEntity.getReacciones().remove(savedReaccionAux.get());
+                respuestaRepository.save(respuestaEntity);
+                reaccionRepository.delete(savedReaccionAux.get());
+                return;
+            }
+            ReaccionEntity savedReaccionEntity = reaccionRepository.save(reaccionEntity);
+            respuestaEntity.getReacciones().add(savedReaccionEntity);
+            respuestaRepository.save(respuestaEntity);
         }
         return null;
     }
+
 }

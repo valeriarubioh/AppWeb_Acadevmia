@@ -1,6 +1,6 @@
 package com.generation.acadevmia.controller;
 
-import com.generation.acadevmia.model.Pregunta;
+import com.generation.acadevmia.payload.request.PreguntaRequest;
 import com.generation.acadevmia.payload.response.PreguntaResponse;
 import com.generation.acadevmia.service.PreguntaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.nio.file.Path;
 import java.util.List;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -31,10 +32,10 @@ public class PreguntaController {
         return ResponseEntity.ok(preguntaResponses);
     }
 
-    @GetMapping("/user")
-    @PreAuthorize("hasRole('USER')")
-    public ResponseEntity<List<PreguntaResponse>> obtenerPreguntasPorUsuario() {
-        List<PreguntaResponse> preguntaResponses = preguntaService.obtenerPreguntasPorUsuario();
-        return ResponseEntity.ok(preguntaResponses);
+    @DeleteMapping("/{idPregunta}")
+    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+    public ResponseEntity<Void> eliminarPregunta(@PathVariable String idPregunta) {
+        preguntaService.eliminarPregunta(idPregunta);
+        return ResponseEntity.noContent().build();
     }
 }
