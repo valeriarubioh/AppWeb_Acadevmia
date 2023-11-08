@@ -34,10 +34,6 @@ public class UserDetailsImpl implements UserDetails {
 		this.password = password;
 		this.authorities = authorities;
 	}
-	public UserDetailsImpl(String anonymous, String username, ArrayList<Object> objects) {
-		this.username = username;
-		this.authorities = new ArrayList<>();
-	}
 
 	public static UserDetailsImpl build(UserEntity userEntity) {
 		List<GrantedAuthority> authorities = userEntity.getRoleEntities().stream()

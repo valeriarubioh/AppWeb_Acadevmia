@@ -111,13 +111,16 @@ public class RespuestaService {
         int likes = (int) respuestaEntity.getReacciones().stream().
                 filter(reaccion -> reaccion.getIsLike() == 1).count();
         int dislikes = respuestaEntity.getReacciones().size() - likes;
-        Optional<ReaccionEntity> userReaction = respuestaEntity.getReacciones()
-                .stream()
-                .filter((reaccionUser) -> Objects.equals(reaccionUser.getUserEntity().getUsername(), Util.getUserAuthenticated(userRepository).getUsername()))
-                .findFirst();
+        Optional<String> optionalUsername = Util.getUsername();
         EUserReaction reacted = EUserReaction.NONE;
-        if (userReaction.isPresent()) {
-            reacted = userReaction.get().getIsLike() == 1 ? EUserReaction.LIKE : EUserReaction.DISLIKE;
+        if(optionalUsername.isPresent()) {
+            Optional<ReaccionEntity> userReaction = respuestaEntity.getReacciones()
+                    .stream()
+                    .filter(reaccionUser -> Objects.equals(reaccionUser.getUserEntity().getUsername(), optionalUsername.get()))
+                    .findFirst();
+            if (userReaction.isPresent()) {
+                reacted = userReaction.get().getIsLike() == 1 ? EUserReaction.LIKE : EUserReaction.DISLIKE;
+            }
         }
         return RespuestaResponse.builder()
                 .id(respuestaEntity.getId())

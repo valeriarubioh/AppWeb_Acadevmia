@@ -13,6 +13,7 @@ import com.generation.acadevmia.security.services.UserDetailsImpl;
 import com.generation.acadevmia.security.services.UserDetailsServiceImpl;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.parameters.P;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -30,30 +31,25 @@ public class Util {
             .orElseThrow(() -> new BusinessException("User authenticated not found"));
     }
 
-//    public static UserDetailsImpl getUserAuthenticated() {
-//        return (UserDetailsImpl) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//    }
-public static UserDetailsImpl getUserAuthenticated() {
-    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-    if (authentication != null && authentication.isAuthenticated()) {
-        return (UserDetailsImpl) authentication.getPrincipal();
-    } else {
-        // User is not logged in
-        return new UserDetailsImpl("anonymous", "", new ArrayList<>());
+    public static Optional<String> getUsername() {
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (Objects.equals(principal, "anonymousUser") ) {
+            return Optional.empty();
+        }
+        UserDetailsImpl userDetails = (UserDetailsImpl) principal;
+        return Optional.ofNullable(userDetails.getUsername());
     }
-}
 
     public static PreguntaResponse preguntaEntityToPreguntaResponse(PreguntaEntity preguntaEntity) {
         int likes = (int) preguntaEntity.getReacciones().stream().
                 filter(reaccion -> reaccion.getIsLike() == 1).count();
         int dislikes = preguntaEntity.getReacciones().size() - likes;
-        UserDetailsImpl userDetails = Util.getUserAuthenticated();
-        boolean isLoggedIn = userDetails != null;
+        Optional<String> optionalUsername = Util.getUsername();
         EUserReaction reacted = EUserReaction.NONE;
-        if(isLoggedIn){
+        if(optionalUsername.isPresent()){
             Optional<ReaccionEntity> userReaction = preguntaEntity.getReacciones()
                     .stream()
-                    .filter((reaccionUser) -> Objects.equals(reaccionUser.getUserEntity().getUsername(), Util.getUserAuthenticated().getUsername()))
+                    .filter(reaccionUser -> Objects.equals(reaccionUser.getUserEntity().getUsername(), optionalUsername.get()))
                     .findFirst();
             if (userReaction.isPresent()) {
                 reacted = userReaction.get().getIsLike() == 1 ? EUserReaction.LIKE : EUserReaction.DISLIKE;
