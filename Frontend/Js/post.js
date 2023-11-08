@@ -1,14 +1,14 @@
 
 document.addEventListener("DOMContentLoaded", function () {
-const postForm = document.querySelector(".principalformulario");
+const postForm = document.querySelector(".principal__formulario");
 
   if (postForm) {
     postForm.addEventListener("submit", async (e) => {
       e.preventDefault();
 
-      const titulo = document.getElementById("inputtitulo").value;
-      const contenido = document.getElementById("inputtexto").value;
-      const tags = document.getElementById("inputtags").value;
+      const titulo = document.getElementById("input__titulo").value;
+      const contenido = document.getElementById("input__texto").value;
+      const tags = document.getElementById("input__tags").value;
       const user = JSON.parse(localStorage.getItem("login_success"));
 
       if (!user) {
@@ -19,7 +19,7 @@ const postForm = document.querySelector(".principalformulario");
         const preguntaData = {
           pregunta: titulo,
           descripcion: contenido,
-          tag: tag,
+          tag: tags,
           username: user.username,
           respuestas: [],
           reaccion: [],
@@ -32,6 +32,7 @@ const postForm = document.querySelector(".principalformulario");
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
+                Authorization: "Bearer " + localStorage.getItem("token")
               },
               body: JSON.stringify(preguntaData),
             }
