@@ -1,23 +1,31 @@
 // Define un array de preguntas con objetos de ejemplo
 const user = JSON.parse(localStorage.getItem("login_success")) || false;
-
+const username = localStorage.getItem("user");
+const accessToken = localStorage.getItem("token") || false;
 
 //obtener la el listado de preguntas
 function obtenerPreguntasDesdeBackend() {
-  let preguntas = [];
-  fetch("http://localhost:8080/api/v1/preguntas", {
-    method: "GET",
-  })
+  let request = {
+    method: "GET"
+  };
+  if (accessToken) {
+    request = {
+      method: "GET",
+      headers: {
+        "Authorization": `Bearer ${localStorage.getItem("token")}`
+      }
+    }
+  }
+  fetch("http://localhost:8080/api/v1/preguntas", request)
     .then((response) => response.json())
     .then((data) => {
-      preguntas = data;
       // Actualiza las preguntas con los datos del backend
-      renderPreguntas();
+      renderPreguntas(data);
       // Vuelve a renderizar las preguntas en la interfaz
     })
     .catch((error) => console.error("Error al obtener preguntas:", error));
 }
-
+obtenerPreguntasDesdeBackend();
 function agregarReaccion(index, accion) {
   if (!user) {
     window.location.href = "login.html";
@@ -77,45 +85,40 @@ function eliminarPregunta(index) {
     .catch((error) => console.error("Error al eliminar la pregunta:", error));
 }
 
-function renderPreguntas(filterPregunta, preguntas) {
-  let preguntas = [];
+function renderPreguntas(filterPregunta) {
   let preguntasHtml = "";
   let preguntasRendered =
     filterPregunta !== undefined ? filterPregunta : preguntas;
 
   preguntasRendered.forEach(function (obj, index) {
-    let reacciones = contarReaccion(obj.reaccion);
+    // let reacciones = contarReaccion(obj.reaccion);
     preguntasHtml += `
    <div class="foro__publicadas">
       <div class="foro__pregunta">
         <img src="../../publics/img/user.png">
-        <p>${obj.username}</p>
+        <p>${obj.user.username}</p>
         <button class="foro__reaccion" id="btn__like" onclick="agregarReaccion('${index}', 'like')">
-          ${reacciones.likes}
+          ${obj.reacciones.likes}
           ${
-            obj.reaccion.some(
-              (r) => r.username === user.username && r.isLike === 1
-            )
+            obj.reacciones.userHasReacted == "LIKE" && obj.reacciones.userHasReacted !== "NONE"
               ? "<box-icon type='solid' name='like'></box-icon>"
               : "<i class='bx bx-like'></i>"
           }
         </button>
         <button class="foro__reaccion" id="btn__dislike" onclick="agregarReaccion(${index}, 'dislike')">
-          ${reacciones.dislikes}
+          ${obj.reacciones.dislikes}
           ${
-            obj.reaccion.some(
-              (r) => r.username === user.username && r.isLike === 0
-            )
+            obj.reacciones.userHasReacted == "DISLIKE" && obj.reacciones.userHasReacted !== "NONE"
               ? "<box-icon type='solid' name='dislike'></box-icon>"
               : "<i class='bx bx-dislike'></i>"
           }
         </button>
-        <a href="/Frontend/pages/comunidadRespuesta.html?id=${index}" class="foro__ref">
-          <h3>${obj.pregunta}</h3>
-          <p>${obj.tags}</p>
+        <a href="/Frontend/pages/comunidadRespuesta.html?id=${obj.id}" class="foro__ref">
+          <h3>${obj.titulo}</h3>
+          <p>${obj.tag}</p>
         </a>
         ${
-          user && obj.username === user.username
+          user && username === obj.user.username
             ? `<button class="eliminar__post" onclick="eliminarPregunta(${index})"><i class="fa-solid fa-trash"></i></button>`
             : ""
         }
@@ -124,7 +127,7 @@ function renderPreguntas(filterPregunta, preguntas) {
   });
   document.querySelector(".body__preguntas").innerHTML = preguntasHtml;
 }
-renderPreguntas(preguntas);
+// renderPreguntas(preguntas);
 
 function contarReaccion(reaccion) {
   if (reaccion.length === 0) {
