@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +14,8 @@
     <link rel="stylesheet" href="/Frontend/css/respuesta.css">
     <script src="https://kit.fontawesome.com/c0f9324e8d.js" crossorigin="anonymous"></script>
     <script src="/Frontend/Js/menu.js" defer></script>
-    <script src = "/Frontend/Js/utils.js" defer></script>
-    <script src = "/Frontend/Js/respuesta.js" defer></script>
+    <script src="/Frontend/Js/utils.js" defer></script>
+    <script src="/Frontend/Js/respuesta.js" defer></script>
     <script src="/utils/toastr.min.js"></script>
     <script src="/Frontend/Js/logout.js" defer></script>
     <script src="/Frontend/Js/buscador.js"></script>
@@ -22,7 +23,7 @@
 </head>
 
 <body>
-   <header class="principal">
+    <header class="principal">
         <!-- barra de navegacion -->
         <nav class="principal__navbar">
             <a href="/Frontend/index.html">
@@ -44,7 +45,7 @@
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
             </ul>
-             <!--Se agrega buscador animado-->
+            <!--Se agrega buscador animado-->
             <div class="principal__navbar-buscador">
                 <input placeholder="Buscar" type="text" class="principal__input">
                 <div class="principal__btn-input">
@@ -52,8 +53,8 @@
                 </div>
             </div>
             <div class="panel__salir">
-                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
-            </div>      
+                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>
+            </div>
             <div class="principal__botones">
                 <a href="/Frontend/pages/login.html" class="principal__link">
                     Ingresar
@@ -84,37 +85,37 @@
                     <a class="principal__ref" id="btn__logout"><i class='bx bx-log-out'></i>Salir</a>
                 </li>
             </ul>
-                <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
-                    Ingresar
-                </a>
-                <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
-                    Registrarse
-                </a>                                        
+            <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
+                Ingresar
+            </a>
+            <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
+                Registrarse
+            </a>
         </div>
     </header>
     <div class="wrapper">
         <aside class="dashboard">
-                    <img src="/publics/img/llama__logo.svg" alt="" class="logo__dashboard">
-                    <nav>
-                        <ul class="dashboard__menu active" >
-                            <li class="dashboard__link active">
-                                <box-icon name='home-alt-2' ></box-icon>
-                                <a href="/Frontend/pages/comunidad.html">Principal</a>
-                            </li>
-                            <li class="dashboard__link">
-                                <box-icon name='user' ></box-icon>
-                                <a href="#">Mi perfil</a>
-                            </li>
-                            <li class="dashboard__link ">
-                                <box-icon name='book-open'></box-icon>
-                                <a href="/Frontend/pages/compraCurso.html">Comprar cursos</a>
-                            </li>
-                            <li class="dashboard__link">
-                                <box-icon name='edit-alt'></box-icon>
-                                <a href="/Frontend/pages/blackboard.html">Blackboard</a>
-                            </li>
-                        </ul>
-                    </nav>
+            <img src="/publics/img/llama__logo.svg" alt="" class="logo__dashboard">
+            <nav>
+                <ul class="dashboard__menu active">
+                    <li class="dashboard__link active">
+                        <box-icon name='home-alt-2'></box-icon>
+                        <a href="/Frontend/pages/comunidad.html">Principal</a>
+                    </li>
+                    <li class="dashboard__link">
+                        <box-icon name='user'></box-icon>
+                        <a href="#">Mi perfil</a>
+                    </li>
+                    <li class="dashboard__link ">
+                        <box-icon name='book-open'></box-icon>
+                        <a href="/Frontend/pages/compraCurso.html">Comprar cursos</a>
+                    </li>
+                    <li class="dashboard__link">
+                        <box-icon name='edit-alt'></box-icon>
+                        <a href="/Frontend/pages/blackboard.html">Blackboard</a>
+                    </li>
+                </ul>
+            </nav>
         </aside>
         <main class="foro__container">
             <section class="foro">
@@ -129,10 +130,13 @@
                     <div class="hacer__respuesta">
                         <form class="principal__formulario" method="post">
                             <div class="formulario__titulo">
-                                <textarea name="formulario__texto" id="input__texto" cols="100" rows="3" placeholder ="Brinda una respuesta clara, breve y precisa a esta pregunta" required></textarea>
+                                <textarea name="formulario__texto" id="input__texto" cols="100" rows="3"
+                                    placeholder="Brinda una respuesta clara, breve y precisa a esta pregunta"
+                                    required></textarea>
                             </div>
                             <div class="formulario__codigo">
-                                <textarea name="codigo" id="input__codigo" cols="100" rows="12" placeholder ="Usa este espacio si necesitas insertar código"></textarea>
+                                <textarea name="codigo" id="input__codigo" cols="100" rows="12"
+                                    placeholder="Usa este espacio si necesitas insertar código"></textarea>
                             </div>
                             <div class="formulario__boton">
                                 <button type="submit" name="boton" id="btn__respuesta">

@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
+    <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
     <link rel="stylesheet" href="/Frontend/css/cursos.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="/Frontend/css/header_footer.css">
     <script src="/Frontend/Js/menu.js" defer></script>
-    <script
-    src="https://kit.fontawesome.com/6dc7cbf907.js"
-    crossorigin="anonymous"></script>
-    <title>Acadevmia  - Cursos</title>
+    <script src="https://kit.fontawesome.com/6dc7cbf907.js" crossorigin="anonymous"></script>
+    <script src="/Frontend/Js/Cursos.js" defer></script>
+    <title>Acadevmia - Cursos</title>
 </head>
+
 <body>
     <header class="principal">
         <!-- barra de navegacion -->
@@ -36,12 +37,12 @@
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
                 <li class="principal__elemento">
-                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+                    <a id="comunidadLink" href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
                 </li>
             </ul>
             <div class="panel__salir">
-                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
-            </div>      
+                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>
+            </div>
             <div class="principal__botones">
                 <a href="/Frontend/pages/login.html" class="principal__link">
                     Ingresar
@@ -72,31 +73,32 @@
                     <a class="principal__ref" id="btn__logout"><i class='bx bx-log-out'></i>Salir</a>
                 </li>
             </ul>
-                <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
-                    Ingresar
-                </a>
-                <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
-                    Registrarse
-                </a>                                        
+            <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
+                Ingresar
+            </a>
+            <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
+                Registrarse
+            </a>
         </div>
     </header>
     <main>
         <section class="eligenos">
             <!-- seccion eligenos -->
-                <!--donde hablamos sobre nuestras ventajas frente a nuestros competidores -->
+            <!--donde hablamos sobre nuestras ventajas frente a nuestros competidores -->
             <div class="eligenos__banner">
                 <img src="/publics/img/llama__logo.svg" alt="logo" class="eligenos__img">
                 <div class="eligenos__presentacion">
                     <h1 class="eligenos__titulo">¿Por qué elegir nuestros cursos?</h1>
-                    <p class="eligenos__parrafo">En acadevmia, creemos en la fuerza de la comunidad y en el aprendizaje colaborativo</p>
+                    <p class="eligenos__parrafo">En acadevmia, creemos en la fuerza de la comunidad y en el aprendizaje
+                        colaborativo</p>
                     <a href="#" class="button">Comenzar ahora</a>
                 </div>
             </div>
             <!-- seccion cursos -->
-                <!-- donde hablamos sobre lo cursos, damos la descripcion y los invitamos a inscribise -->
+            <!-- donde hablamos sobre lo cursos, damos la descripcion y los invitamos a inscribise -->
             <div class="cursos">
                 <h2 class="cursos__titulo">
-                    <span class="cursos__subtitulo" >Empieza hoy</span><br>
+                    <span class="cursos__subtitulo">Empieza hoy</span><br>
                     Cursos Populares
                 </h2>
             </div>
@@ -108,7 +110,7 @@
                             HTML5
                         </h4>
                         <p class="curso_descripcion">
-                        En este curso de 80 horas aprenderas todos los criterios basicos sobre HTML5
+                            En este curso de 80 horas aprenderas todos los criterios basicos sobre HTML5
                         </p>
                         <a href="#" class="transparent-button color1">Comprar</a>
                     </div>
@@ -117,10 +119,10 @@
                     <img class="img__curso" src="/publics/img/cadrss.svg" alt="">
                     <div class="curso-txt">
                         <h4 class="curso__nombre">
-                        Javascript
+                            Javascript
                         </h4>
                         <p class="curso_descripcion">
-                        En este curso de 80 horas aprenderas todos los criterios basicos sobre javascript
+                            En este curso de 80 horas aprenderas todos los criterios basicos sobre javascript
                         </p>
                         <a href="#" class="transparent-button color3">Comprar</a>
                     </div>
@@ -151,10 +153,10 @@
                 </div>
             </div>
         </section>
-                <div class="banner">
-                    <h2 class="banner__titulo"> El conocimiento crece cuando se comparte </h2>
-                    <img src="/publics/img/cursos/titulo.PNG" alt="imagen-titulo">
-                </div>
+        <div class="banner">
+            <h2 class="banner__titulo"> El conocimiento crece cuando se comparte </h2>
+            <img src="/publics/img/cursos/titulo.PNG" alt="imagen-titulo">
+        </div>
         <!-- Seccion beneficios -->
         <section class="beneficios">
             <h2 class="beneficios__titulo">Beneficios de nuestros cursos</h2>
@@ -167,7 +169,8 @@
                         Variedad de temas
                     </h4>
                     <p class="beneficio__texto">
-                        Ofrecemos una amplia gama de cursos que cubren diferentes aspectos ,lo que permite elegir cursos que se adapten a sus necesidades y objetivos específicos.
+                        Ofrecemos una amplia gama de cursos que cubren diferentes aspectos ,lo que permite elegir cursos
+                        que se adapten a sus necesidades y objetivos específicos.
                     </p>
                 </div>
                 <div class="beneficios__x--color">
@@ -178,7 +181,8 @@
                         Actualización constante
                     </h4>
                     <p class="beneficio__texto">
-                        Los cursos se mantienen actualizados con las últimas tendencias y herramientas, para que se puedan enfrentar a los desafíos actuales de la industria.
+                        Los cursos se mantienen actualizados con las últimas tendencias y herramientas, para que se
+                        puedan enfrentar a los desafíos actuales de la industria.
                     </p>
                 </div>
                 <div class="beneficios__x">
@@ -189,7 +193,8 @@
                         Certificaciones y credenciales
                     </h4>
                     <p class="beneficio__texto">
-                        Las certificaciones pueden ayudar a los estudiantes a destacarse en el mercado laboral y demostrar su competencia en áreas específicas del desarrollo de software.
+                        Las certificaciones pueden ayudar a los estudiantes a destacarse en el mercado laboral y
+                        demostrar su competencia en áreas específicas del desarrollo de software.
                     </p>
                 </div>
                 <div class="beneficios__x--color">
@@ -200,7 +205,9 @@
                         Flexibilidad de horario y modalidades de aprendizaje
                     </h4>
                     <p class="beneficio__texto">
-                        Ofrecemos opciones de horarios flexibles y modalidades de aprendizaje en línea para hacer los cursos accesibles para los estudiantes, incluyendo aquellos que trabajan a tiempo completo o tienen horarios ocupados.
+                        Ofrecemos opciones de horarios flexibles y modalidades de aprendizaje en línea para hacer los
+                        cursos accesibles para los estudiantes, incluyendo aquellos que trabajan a tiempo completo o
+                        tienen horarios ocupados.
                     </p>
                 </div>
                 <div class="beneficios__x">
@@ -211,7 +218,8 @@
                         Comunidad y networking
                     </h4>
                     <p class="beneficio__texto">
-                        Fomentamos la interacción entre estudiantes a través de grupos en línea o eventos presenciales puede ayudar a crear una comunidad de aprendices.
+                        Fomentamos la interacción entre estudiantes a través de grupos en línea o eventos presenciales
+                        puede ayudar a crear una comunidad de aprendices.
                     </p>
                 </div>
                 <div class="beneficios__x--color">
@@ -222,7 +230,8 @@
                         Retroalimentación y evaluación
                     </h4>
                     <p class="beneficio__texto">
-                        Proporcionamos retroalimentación constructiva y evaluaciones periódicas puede ayudar a los estudiantes a medir su progreso y realizar ajustes en su aprendizaje.
+                        Proporcionamos retroalimentación constructiva y evaluaciones periódicas puede ayudar a los
+                        estudiantes a medir su progreso y realizar ajustes en su aprendizaje.
                     </p>
                 </div>
             </div>
@@ -233,37 +242,37 @@
         <ul class="footer__redes">
             <li class="footer__sociales">
                 <a id="facebook" href="https://www.facebook.com/?locale=es_LA">
-                <i class="fa-brands fa-facebook">
-                </i>
-                facebook
+                    <i class="fa-brands fa-facebook">
+                    </i>
+                    facebook
                 </a>
             </li>
             <li class="footer__sociales">
                 <a id="github" href="https://github.com/">
-                <i class="fa-brands fa-square-github">
-                </i>
-                Github
+                    <i class="fa-brands fa-square-github">
+                    </i>
+                    Github
                 </a>
             </li>
             <li class="footer__sociales">
                 <a id="linkedin" href="https://www.linkedin.com/">
-                <i class="fa-brands fa-linkedin">
-                </i>
-                Linkedin
+                    <i class="fa-brands fa-linkedin">
+                    </i>
+                    Linkedin
                 </a>
             </li>
             <li class="footer__sociales">
                 <a id="email" href="">
-                <i class="fa-solid fa-envelope">
-                </i>
-                Email
+                    <i class="fa-solid fa-envelope">
+                    </i>
+                    Email
                 </a>
             </li>
             <li class="footer__sociales">
                 <a id="discord" href="https://discord.com/">
-                <i class="fa-brands fa-discord">
-                </i>
-                Discord
+                    <i class="fa-brands fa-discord">
+                    </i>
+                    Discord
                 </a>
             </li>
         </ul>
@@ -271,7 +280,8 @@
             <img class="footer__logo" src="/publics/img/logo.svg" alt="logo">
             <p class="footer__terminos">Informacion legal | Politica de privacidad</p>
             <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
-        </div>        
+        </div>
     </footer>
 </body>
+
 </html>

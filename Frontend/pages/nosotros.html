@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
-    <title>Acadevmia  - Nosotros</title>
+    <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
+    <title>Acadevmia - Nosotros</title>
     <link rel="stylesheet" href="/Frontend/css/nosotros.css">
     <link rel="stylesheet" href="/Frontend/css/Header_Footer.css">
     <link rel="stylesheet" href="/utils/toastr.min.css">
@@ -16,6 +17,7 @@
     <script src="/utils/toastr.min.js"></script>
     <script src="/Frontend/Js/logout.js" defer></script>
 </head>
+
 <body>
     <header class="principal">
         <!-- barra de navegacion -->
@@ -40,12 +42,12 @@
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
                 <li class="principal__elemento">
-                    <a href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
+                    <a id="comunidadLink" href="/Frontend/pages/comunidad.html" class="principal__ref">Comunidad</a>
                 </li>
             </ul>
             <div class="panel__salir">
-                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
-            </div>      
+                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>
+            </div>
             <div class="principal__botones">
                 <a href="/Frontend/pages/login.html" class="principal__link">
                     Ingresar
@@ -76,12 +78,12 @@
                     <a class="principal__ref" id="btn__logout"><i class='bx bx-log-out'></i>Salir</a>
                 </li>
             </ul>
-                <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
-                    Ingresar
-                </a>
-                <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
-                    Registrarse
-                </a>                                        
+            <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
+                Ingresar
+            </a>
+            <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
+                Registrarse
+            </a>
         </div>
     </header>
     <main>
@@ -90,7 +92,11 @@
         <section class="nosotros">
             <div class="nosotros__texto">
                 <h1 class="nosotros__titulo">Quiénes somos</h1>
-                <p class="nosotros__parrafo">Nos estamos convirtiendo en la plataforma líder en Latinoamérica en la que personas entusiastas por la tecnología y programación comparten conocimiento técnico y se educan en línea. En Acadevmia,estamos comprometidos con la idea de que el conocimiento debe ser compartido y valorado. Fundada para abordar las limitaciones en las comunidades en línea, Acadevmia se ha convertido en un faro deaprendizaje colaborativo y desarrollo profesional.</p>
+                <p class="nosotros__parrafo">Nos estamos convirtiendo en la plataforma líder en Latinoamérica en la que
+                    personas entusiastas por la tecnología y programación comparten conocimiento técnico y se educan en
+                    línea. En Acadevmia,estamos comprometidos con la idea de que el conocimiento debe ser compartido y
+                    valorado. Fundada para abordar las limitaciones en las comunidades en línea, Acadevmia se ha
+                    convertido en un faro deaprendizaje colaborativo y desarrollo profesional.</p>
                 <div class="nosotros__container">
                     <div class="nosotros__cards">
                         <i class='bx bx-user-check'></i>
@@ -114,8 +120,8 @@
             </div>
         </section>
         <section class="somos">
-                <!-- section vision-mision -->
-                <!-- decripcion de nuestras metas y nuestros sueños -->
+            <!-- section vision-mision -->
+            <!-- decripcion de nuestras metas y nuestros sueños -->
             <div class="somos__img">
                 <img src="https://www.mesdeoccidente.com/wp-content/uploads/2022/10/slide1_home.png" alt="pregunta">
             </div>
@@ -123,24 +129,24 @@
                 <div class="somos__texto">
                     <h2 class="somos__titulo">Misión</h2>
                     <p class="somos__parrafo">Proporcionar conocimiento y educación de
-                    calidad a mentes curiosas, incluyendo
-                    espacios de discusión y análisis donde sea
-                    premiada la participación y la enseñanza.</p>
+                        calidad a mentes curiosas, incluyendo
+                        espacios de discusión y análisis donde sea
+                        premiada la participación y la enseñanza.</p>
                 </div>
                 <div class="somos__texto">
                     <h2 class="somos__titulo">Visión</h2>
                     <p class="somos__parrafo">
-                    Aspiramos a convertirnos en eI punto de
-                    encuentro donde la comunidad hispanohablante
-                    de apasionados por la tecnología,
-                    independientemente de su nivel de experiencia
-                    con código, puedan conectar, colaborar y
-                    aprender juntos. Visualizamos una plataforma
-                    donde se fomenta la resolución de problemas y
-                    el aprendizaje continuo y empoderamos
-                    personas a desarrollar sus habilidades técnicas
-                    para crecer profesionalmente en el mundo de la
-                    tecnología.</p>
+                        Aspiramos a convertirnos en eI punto de
+                        encuentro donde la comunidad hispanohablante
+                        de apasionados por la tecnología,
+                        independientemente de su nivel de experiencia
+                        con código, puedan conectar, colaborar y
+                        aprender juntos. Visualizamos una plataforma
+                        donde se fomenta la resolución de problemas y
+                        el aprendizaje continuo y empoderamos
+                        personas a desarrollar sus habilidades técnicas
+                        para crecer profesionalmente en el mundo de la
+                        tecnología.</p>
                 </div>
             </div>
         </section>
@@ -151,46 +157,46 @@
             <div class="valores__container">
                 <div class="valores__lista">
                     <h3 class="valores__sub">
-                    Colaboracion y respeto
+                        Colaboracion y respeto
                     </h3>
                     <p class="valores__texto">
-                    Creemos en trabajar juntos
-                    para alcanzar metas comunes
-                    y enriquecer nuestro
-                    conocimiento colectivo.
+                        Creemos en trabajar juntos
+                        para alcanzar metas comunes
+                        y enriquecer nuestro
+                        conocimiento colectivo.
                     </p>
                 </div>
                 <div class="valores__lista">
                     <h3 class="valores__sub">
-                    Calidad y precision
+                        Calidad y precision
                     </h3>
                     <p class="valores__texto">
-                    Nos esforzamos por ofrecer
-                    educación y contenido de la
-                    más alta calidad para nuestros
-                    usuarios.
+                        Nos esforzamos por ofrecer
+                        educación y contenido de la
+                        más alta calidad para nuestros
+                        usuarios.
                     </p>
                 </div>
                 <div class="valores__lista">
                     <h3 class="valores__sub">
-                    Aprendizaje continuo
+                        Aprendizaje continuo
                     </h3>
                     <p class="valores__texto">
-                    Promovemos un ambiente de
-                    aprendizaje constante y el
-                    desarrollo profesional.
+                        Promovemos un ambiente de
+                        aprendizaje constante y el
+                        desarrollo profesional.
                     </p>
                 </div>
                 <div class="valores__lista">
                     <h3 class="valores__sub">
-                    Comunidad
+                        Comunidad
                     </h3>
                     <p class="valores__texto">
-                    Celebramos la diversidad de
-                    perspectivas y habilidades en
-                    nuestra comunidad, y
-                    recompensamos su
-                    participación activa.
+                        Celebramos la diversidad de
+                        perspectivas y habilidades en
+                        nuestra comunidad, y
+                        recompensamos su
+                        participación activa.
                     </p>
                 </div>
             </div>
@@ -203,37 +209,37 @@
                 <div class="equipo__cards">
                     <img class="equipo__foto" src="/publics/img/foto_vale_rubio.jpg" alt="">
                     <h3 class="equipo__nombre">
-                    Valeria Rubio
+                        Valeria Rubio
                     </h3>
                     <p class="equipo__experiencia">
-                    Líder de Proyecto
+                        Líder de Proyecto
                     </p>
                 </div>
                 <div class="equipo__cards">
                     <img class="equipo__foto" src="/publics/img/foto_Emily.jpeg" alt="">
                     <h3 class="equipo__nombre">
-                    Emily Piña
+                        Emily Piña
                     </h3>
                     <p class="equipo__experiencia">
-                    Desarrolladora Front End
+                        Desarrolladora Front End
                     </p>
                 </div>
                 <div class="equipo__cards">
                     <img class="equipo__foto" src="/publics/img/foto estefania.jpeg" alt="">
                     <h3 class="equipo__nombre">
-                    Estefania Huertas Grajales
+                        Estefania Huertas Grajales
                     </h3>
                     <p class="equipo__experiencia">
-                    Desarrolladora Front End
+                        Desarrolladora Front End
                     </p>
                 </div>
                 <div class="equipo__cards">
                     <img class="equipo__foto" src="/publics/img/foto jhon.jpeg" alt="">
                     <h3 class="equipo__nombre">
-                    Jhon Larry Narvaez Cruz
+                        Jhon Larry Narvaez Cruz
                     </h3>
                     <p class="equipo__experiencia">
-                    Desarrollador Back End
+                        Desarrollador Back End
                     </p>
                 </div>
             </div>
@@ -244,19 +250,22 @@
             <form action="#" method="post">
                 <div class="contactanos__informacion">
                     <label for="nombre">Nombre</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required class="contactanos__input">
+                    <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre" required
+                        class="contactanos__input">
                 </div>
-    
+
                 <div class="contactanos__informacion">
                     <label for="apellido">Apellido</label>
-                    <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required class="contactanos__input">
+                    <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido" required
+                        class="contactanos__input">
                 </div>
-    
+
                 <div class="contactanos__informacion">
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="Ingrese su email" required class="contactanos__input">
+                    <input type="email" id="email" name="email" placeholder="Ingrese su email" required
+                        class="contactanos__input">
                 </div>
-    
+
                 <div class="contactanos__informacion">
                     <label for="categoria">Categoría</label>
                     <select id="categoria" name="categoria" class="contactanos__input">
@@ -266,65 +275,69 @@
                         <option value="Otro">Otro</option>
                     </select>
                 </div>
-    
+
                 <div class="contactanos__informacion">
                     <label for="mensaje">Mensaje</label>
-                    <textarea id="mensaje" class="contactanos__mensaje" name="mensaje" placeholder="Escriba su mensaje" required></textarea>
+                    <textarea id="mensaje" class="contactanos__mensaje" name="mensaje" placeholder="Escriba su mensaje"
+                        required></textarea>
                 </div>
-    
+
                 <button type="submit">Enviar</button>
             </form>
-        </section>    
+        </section>
     </main>
-        <footer class="footer">
-            <!-- pie de pagina -->
-            <ul class="footer__redes">
-                <li class="footer__sociales">
-                    <a id="facebook" href="https://www.facebook.com/?locale=es_LA">
+    <footer class="footer">
+        <!-- pie de pagina -->
+        <ul class="footer__redes">
+            <li class="footer__sociales">
+                <a id="facebook" href="https://www.facebook.com/?locale=es_LA">
                     <i class="fa-brands fa-facebook">
                     </i>
                     facebook
-                    </a>
-                </li>
-                <li class="footer__sociales">
-                    <a id="github" href="https://github.com/">
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="github" href="https://github.com/">
                     <i class="fa-brands fa-square-github">
                     </i>
                     Github
-                    </a>
-                </li>
-                <li class="footer__sociales">
-                    <a id="linkedin" href="https://www.linkedin.com/">
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="linkedin" href="https://www.linkedin.com/">
                     <i class="fa-brands fa-linkedin">
                     </i>
                     Linkedin
-                    </a>
-                </li>
-                <li class="footer__sociales">
-                    <a id="email" href="">
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="email" href="">
                     <i class="fa-solid fa-envelope">
                     </i>
                     Email
-                    </a>
-                </li>
-                <li class="footer__sociales">
-                    <a id="discord" href="https://discord.com/">
+                </a>
+            </li>
+            <li class="footer__sociales">
+                <a id="discord" href="https://discord.com/">
                     <i class="fa-brands fa-discord">
                     </i>
                     Discord
-                    </a>
-                </li>
-            </ul>
-            <div class="footer__final">
-                <img class="footer__logo" src="/publics/img/logo.svg" alt="logo">
-                <p class="footer__terminos">Informacion legal | Politica de privacidad</p>
-                <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
-            </div>
-        </footer>
-    <script
-    src="https://kit.fontawesome.com/6dc7cbf907.js"
-    crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+                </a>
+            </li>
+        </ul>
+        <div class="footer__final">
+            <img class="footer__logo" src="/publics/img/logo.svg" alt="logo">
+            <p class="footer__terminos">Informacion legal | Politica de privacidad</p>
+            <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
+        </div>
+    </footer>
+    <script src="https://kit.fontawesome.com/6dc7cbf907.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous">
+    </script>
 </body>
+
 </html>

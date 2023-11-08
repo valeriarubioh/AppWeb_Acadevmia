@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
-    <link rel="icon" type="image/jpg" href="/publics/img/logo.svg"/>
+    <link rel="icon" type="image/jpg" href="/publics/img/logo.svg" />
     <link rel="stylesheet" href="/Frontend/css/perfil.css">
     <link rel="stylesheet" href="/Frontend/css/header_footer2.css">
     <link rel="stylesheet" href="/Frontend/css/dashboard.css">
@@ -15,8 +15,8 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="/utils/toastr.min.js"></script>
     <script src="/Frontend/Js/menu.js" defer></script>
-    <script src = "/Frontend/Js/utils.js" defer></script>
-    <script src = "/Frontend/Js/respuesta.js" defer></script>
+    <script src="/Frontend/Js/utils.js" defer></script>
+    <script src="/Frontend/Js/respuesta.js" defer></script>
     <script src="/Frontend/Js/perfil.js" defer></script>
     <script src="/Frontend/Js/logout.js" defer></script>
     <title>Acadevmia - Perfil</title>
@@ -53,8 +53,8 @@
                 </div>
             </div>
             <div class="panel__salir">
-                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
-            </div>      
+                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>
+            </div>
             <div class="principal__botones">
                 <a href="/Frontend/pages/login.html" class="principal__link">
                     Ingresar
@@ -84,28 +84,28 @@
                     <a class="principal__ref" id="btn__logout"><i class='bx bx-log-out'></i>Salir</a>
                 </li>
             </ul>
-                <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
-                    Ingresar
-                </a>
-                <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
-                    Registrarse
-                </a>
+            <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
+                Ingresar
+            </a>
+            <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
+                Registrarse
+            </a>
         </div>
     </header>
     <div class="wrapper">
         <aside class="dashboard">
             <img src="/publics/img/llama__logo.svg" alt="" class="logo__dashboard">
             <nav>
-                <ul class="dashboard__menu active" >
+                <ul class="dashboard__menu active">
                     <li class="dashboard__link">
                         <a href="/Frontend/pages/comunidad.html">
-                            <box-icon name='home-alt-2' ></box-icon>
+                            <box-icon name='home-alt-2'></box-icon>
                         </a>
                         <a class="dash" href="/Frontend/pages/comunidad.html">Principal</a>
                     </li>
                     <li class="dashboard__link active">
                         <a href="/Frontend/pages/perfil.html">
-                            <box-icon name='user' ></box-icon>
+                            <box-icon name='user'></box-icon>
                         </a>
                         <a class="dash" href="/Frontend/pages/perfil.html">Mi perfil</a>
                     </li>
@@ -138,7 +138,7 @@
                         <button id="edit-profile-button"><i class="fa-solid fa-pen"></i></button>
                         <button id="save-profile-button" style="display: none;">Guardar Cambios</button>
                     </div>
-                </div> 
+                </div>
 
                 <!--contenedor usuario -->
                 <section class="container__skill-interracion">
@@ -201,29 +201,31 @@
                         </div>
                     </div>
                 </section>
-                
-                
+
+
                 <div class="about-me">
                     <h2>Acerca de Mí</h2>
                     <div class="form-field">
-                        <textarea id="about-me" class="info--sobremi" placeholder="Háblanos sobre ti, cuéntanos qué haces, cuáles son tus intereses." disabled></textarea>
+                        <textarea id="about-me" class="info--sobremi"
+                            placeholder="Háblanos sobre ti, cuéntanos qué haces, cuáles son tus intereses."
+                            disabled></textarea>
                     </div>
                     <div class="form-field">
                         <label for="email">Correo electrónico</label>
-                        <input type="email" id ="email" class="info" placeholder="Correo electrónico" disabled>
+                        <input type="email" id="email" class="info" placeholder="Correo electrónico" disabled>
                     </div>
                     <div class="form-field">
                         <label for="phone">Número de teléfono</label>
-                        <input type="tel" id="phone"class="info" placeholder="Número de teléfono" disabled>
+                        <input type="tel" id="phone" class="info" placeholder="Número de teléfono" disabled>
                     </div>
                     <div class="form-field">
                         <label for="birthdate">Fecha de nacimiento</label>
-                        <input type="date" id="birthdate"class="info" placeholder="Fecha de nacimiento" disabled>
+                        <input type="date" id="birthdate" class="info" placeholder="Fecha de nacimiento" disabled>
                     </div>
                     <div class="form-field">
                         <label for="pais">País</label>
                         <select id="pais" class="info">
-                            <option  value="selecciona">Selecciona un país</option>
+                            <option value="selecciona">Selecciona un país</option>
                             <option class="info" value="usa">Estados Unidos</option>
                             <option class="info" value="canada">Canadá</option>
                             <option class="info" value="mexico">México</option>
@@ -235,7 +237,7 @@
                     </div>
                     <div class="form-field">
                         <label for="gender">Género</label>
-                        <select id="gender"class="info" disabled>
+                        <select id="gender" class="info" disabled>
                             <option value="masculino">Masculino</option>
                             <option value="femenino">Femenino</option>
                             <option value="otro">Otro</option>
@@ -243,12 +245,12 @@
                     </div>
                     <div class="form-field">
                         <label for="skills">Habilidades </label>
-                        <div class="selected-skills" >
+                        <div class="selected-skills">
                             <!-- Las habilidades seleccionadas aparecerán aquí -->
                         </div>
                         <div class="custom-select" id="custom-select">
                             <div class="select-value">Selecciona tus habilidades</div>
-                            <ul class="skills-dropdown" id="skills-dropdown" >
+                            <ul class="skills-dropdown" id="skills-dropdown">
                                 <!-- Lista de opciones de habilidades -->
                                 <li data-skill="Programación">Programación</li>
                                 <li data-skill="Diseño gráfico">Diseño gráfico</li>
@@ -259,7 +261,7 @@
                                 <li data-skill="Otras">Otras</li>
                             </ul>
                         </div>
-                    </div>                                    
+                    </div>
                     <div class="form-field" id="social-container">
                         <label for="original-social-network">Redes sociales</label>
                         <select id="social-network">
@@ -275,7 +277,7 @@
                         </select>
                         <input type="text" id="social-link" placeholder="Enlace de la red social">
                     </div>
-                    <button id="add-social-website-button">Agregar sitio web</button>                                               
+                    <button id="add-social-website-button">Agregar sitio web</button>
                     <div class="form-field">
                         <label for="privacy">Perfil público</label>
                         <input type="checkbox" id="privacy" disabled>

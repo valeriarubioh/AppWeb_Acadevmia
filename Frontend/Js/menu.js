@@ -51,10 +51,18 @@ document.addEventListener("DOMContentLoaded", function () {
   const ingresado = document.getElementById("ingresado")
   const logout = document.getElementById("btn__logout")
   if (user) {
-    salida.style.display = "block"
-    pendienteIngreso.style.display = "none"
-    ingresoListo.style.display = "none"
-    ingresado.style.display = "none"
+    if (salida) {
+      salida.style.display = "block";
+    }
+    if (pendienteIngreso) {
+      pendienteIngreso.style.display = "none";
+    }
+    if (ingresoListo) {
+      ingresoListo.style.display = "none";
+    }
+    if (ingresado) {
+      ingresado.style.display = "none";
+    }
   } else {
     logout.style.display = "none"
   }

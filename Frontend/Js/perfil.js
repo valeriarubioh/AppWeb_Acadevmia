@@ -3,7 +3,10 @@ const saveProfileButton = document.getElementById("save-profile-button");
 const profilePictureInput = document.getElementById("profile-picture-input");
 const usernameInput = document.getElementById("name");
 const addSocialWebsiteButton = document.getElementById("add-social-website-button");
+const comunidadLink = document.getElementById('comunidadLink');
 
+comunidadLink.style.display = 'none';
+ 
 const username = localStorage.getItem("user");
 if (username) {
     fetch("http://127.0.0.1:8080/api/v1/user/getName", {

@@ -26,6 +26,7 @@ logout.addEventListener('click', ()=>{
     // remueve la info almacenada en almacenamiento local
     localStorage.removeItem('token');
     localStorage.removeItem('user');
+    localStorage.removeItem('login_success');
     // cuando finalicemos sesión, nos redirigirá al login
     // Agrega un retraso de 1 segundo (1000 milisegundos) antes de redirigir
     setTimeout(() => {
@@ -39,40 +40,41 @@ logout.addEventListener('click', ()=>{
 
 document.addEventListener('DOMContentLoaded', function() {
     const logoutRef = document.getElementById('btn__logout');
-    
-    logoutRef.addEventListener('click', () => {
-        // Aparece un mensaje diciendo que se ha finalizado la sesión
-        toastr.options = {
-            "closeButton": false,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": false,
-            "positionClass": "toast-top-left",
-            "preventDuplicates": false,
-            "onclick": null,
-            "showDuration": "100",
-            "hideDuration": "300",
-            "timeOut": "3000",
-            "extendedTimeOut": "100",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "slideDown",
-            "hideMethod": "slideUp"
-        };
+    if (logoutRef) {
+        logoutRef.addEventListener('click', () => {
+            // Aparece un mensaje diciendo que se ha finalizado la sesión
+            toastr.options = {
+                "closeButton": false,
+                "debug": false,
+                "newestOnTop": false,
+                "progressBar": false,
+                "positionClass": "toast-top-left",
+                "preventDuplicates": false,
+                "onclick": null,
+                "showDuration": "100",
+                "hideDuration": "300",
+                "timeOut": "3000",
+                "extendedTimeOut": "100",
+                "showEasing": "swing",
+                "hideEasing": "linear",
+                "showMethod": "slideDown",
+                "hideMethod": "slideUp"
+            };
         
-        toastr.info("hasta pronto")
+            toastr.info("hasta pronto")
         
-        // Remueve la información almacenada en el almacenamiento local
-        localStorage.removeItem('token');
-        localStorage.removeItem('user');
+            // Remueve la información almacenada en el almacenamiento local
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
         
-        // Agrega un retraso de 1 segundo (1000 milisegundos) antes de redirigir
-        setTimeout(() => {
-            // Redirige al usuario a la página de inicio de sesión ("login.html")
-            window.location.href = '/Frontend/pages/login.html';
+            // Agrega un retraso de 1 segundo (1000 milisegundos) antes de redirigir
+            setTimeout(() => {
+                // Redirige al usuario a la página de inicio de sesión ("login.html")
+                window.location.href = '/Frontend/pages/login.html';
 
-            // Oculta el botón de salida ("btn__salir")
-            document.querySelector('#btn__salir').style.display = 'none';
-        }, 1000);
-    });
+                // Oculta el botón de salida ("btn__salir")
+                document.querySelector('#btn__salir').style.display = 'none';
+            }, 1000);
+        });
+    }
 });

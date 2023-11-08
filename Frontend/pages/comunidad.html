@@ -11,9 +11,7 @@
     <link rel="stylesheet" href="/utils/toastr.min.css">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script
-    src="https://kit.fontawesome.com/6dc7cbf907.js"
-    crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6dc7cbf907.js" crossorigin="anonymous"></script>
     <script src="/utils/toastr.min.js"></script>
     <script src="/Frontend/Js/menu.js" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -47,7 +45,7 @@
                     <a href="/Frontend/pages/nosotros.html" class="principal__ref">Nosotros</a>
                 </li>
             </ul>
-             <!--Se agrega buscador animado-->
+            <!--Se agrega buscador animado-->
             <div class="principal__navbar-buscador">
                 <input placeholder="Buscar" type="text" class="principal__input" id="buscador">
                 <div class="principal__btn-input">
@@ -55,8 +53,8 @@
                 </div>
             </div>
             <div class="panel__salir">
-                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>                                          
-            </div>      
+                <button class="button__salir" id="btn__salir"><i class='bx bx-log-out'></i>Salir</button>
+            </div>
             <div class="principal__botones">
                 <a href="/Frontend/pages/login.html" class="principal__link">
                     Ingresar
@@ -87,49 +85,50 @@
                     <a class="principal__ref" id="btn__logout"><i class='bx bx-log-out'></i>Salir</a>
                 </li>
             </ul>
-                <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
-                    Ingresar
-                </a>
-                <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
-                    Registrarse
-                </a>                                        
+            <a href="/Frontend/pages/login.html" id="ingresado" class="toggle__link">
+                Ingresar
+            </a>
+            <a href="/Frontend/pages/signup.html" id="ingreso" class="button__header">
+                Registrarse
+            </a>
         </div>
     </header>
     <div class="wrapper">
         <aside class="dashboard">
-                <img src="/publics/img/llama__logo.svg" alt="" class="logo__dashboard">
-                <nav>
-                    <ul class="dashboard__menu active" >
-                        <li class="dashboard__link active">
-                            <a href="/Frontend/pages/comunidad.html">
-                                <box-icon name='home-alt-2' ></box-icon>
-                            </a>
-                            <a class="dash" href="/Frontend/pages/comunidad.html">Principal</a>
-                        </li>
-                        <li class="dashboard__link">
-                            <a href="/Frontend/pages/perfil.html">
-                                <box-icon name='user' ></box-icon>
-                            </a>
-                            <a class="dash" href="/Frontend/pages/perfil.html">Mi perfil</a>
-                        </li>
-                        <li class="dashboard__link ">
-                            <a href="/Frontend/pages/compraCurso.html">
-                                <box-icon name='book-open'></box-icon>
-                            </a>
-                            <a class="dash" href="/Frontend/pages/compraCurso.html">Comprar cursos</a>
-                        </li>
-                        <li class="dashboard__link">
-                            <a href="/Frontend/pages/blackboard.html">
-                                <box-icon name='edit-alt'></box-icon>
-                            </a>
-                            <a class="dash" href="/Frontend/pages/blackboard.html">Blackboard</a>
-                        </li>
-                    </ul>
-                </nav>
+            <img src="/publics/img/llama__logo.svg" alt="" class="logo__dashboard">
+            <nav>
+                <ul class="dashboard__menu active">
+                    <li class="dashboard__link active">
+                        <a href="/Frontend/pages/comunidad.html">
+                            <box-icon name='home-alt-2'></box-icon>
+                        </a>
+                        <a class="dash" href="/Frontend/pages/comunidad.html">Principal</a>
+                    </li>
+                    <li class="dashboard__link">
+                        <a href="/Frontend/pages/perfil.html">
+                            <box-icon name='user'></box-icon>
+                        </a>
+                        <a class="dash" href="/Frontend/pages/perfil.html">Mi perfil</a>
+                    </li>
+                    <li class="dashboard__link ">
+                        <a href="/Frontend/pages/compraCurso.html">
+                            <box-icon name='book-open'></box-icon>
+                        </a>
+                        <a class="dash" href="/Frontend/pages/compraCurso.html">Comprar cursos</a>
+                    </li>
+                    <li class="dashboard__link">
+                        <a href="/Frontend/pages/blackboard.html">
+                            <box-icon name='edit-alt'></box-icon>
+                        </a>
+                        <a class="dash" href="/Frontend/pages/blackboard.html">Blackboard</a>
+                    </li>
+                </ul>
+            </nav>
         </aside>
         <main class="foro__container">
             <div class="hacer__pregunta">
-                <button class="button--modificado" id="btn__pregunta" onclick="document.getElementById('pregunta__seccion').style.display='block'">Pregunta</button>
+                <button class="button--modificado" id="btn__pregunta"
+                    onclick="document.getElementById('pregunta__seccion').style.display='block'">Pregunta</button>
             </div>
             <section class="foro">
                 <!-- seeccion de preguntar y responder preguntas  -->
@@ -137,15 +136,19 @@
                     <section class="pregunta" id="pregunta__seccion">
                         <div class="modal-content animate">
                             <div class="instrucciones__contenido">
-                                <span onclick="document.getElementById('pregunta__seccion').style.display='none'" class="close" title="Close Modal">&times;</span>
+                                <span onclick="document.getElementById('pregunta__seccion').style.display='none'"
+                                    class="close" title="Close Modal">&times;</span>
                                 <br>
                                 <h2>Estas a punto de escribir una pregunta</h2>
                                 <p>Escribe un título que resuma tu problema</p>
                             </div>
                             <form class="principal__formulario" method="post">
                                 <input type="text" id="input__titulo" name="titulo" placeholder="Titulo" required>
-                                <textarea name="descripcion" id="input__texto" cols="100" rows="20" placeholder="Describe tu problema o duda con mayor detalle, incluye lo que haz intentado y lo que esperas de resultado" required></textarea>
-                                <input type="text" id="input__tags" name="tags" placeholder="Añade hasta 3 tags que describan tu pregunta" required>
+                                <textarea name="descripcion" id="input__texto" cols="100" rows="20"
+                                    placeholder="Describe tu problema o duda con mayor detalle, incluye lo que haz intentado y lo que esperas de resultado"
+                                    required></textarea>
+                                <input type="text" id="input__tags" name="tags"
+                                    placeholder="Añade hasta 3 tags que describan tu pregunta" required>
                                 <div class="formulario__envio">
                                     <button type="submit" name="boton" id="submit__button">
                                         Publicar
@@ -154,7 +157,7 @@
                             </form>
                         </div>
                     </section>
-                    
+
                     <!-- Fin del cambio -->
                     <!-- función js para añadir evento de preguntas  -->
                     <section class="body__preguntas">
@@ -163,7 +166,7 @@
                 </section>
             </section>
         </main>
-        </div>
+    </div>
 
     </div>
     <footer class="footer">
@@ -171,37 +174,37 @@
         <ul class="footer__redes">
             <li class="footer__sociales">
                 <a id="facebook" href="https://www.facebook.com/?locale=es_LA">
-                <i class="fa-brands fa-facebook">
-                </i>
-                Facebook
+                    <i class="fa-brands fa-facebook">
+                    </i>
+                    Facebook
                 </a>
             </li>
             <li class="footer__sociales">
                 <a id="github" href="https://github.com/">
-                <i class="fa-brands fa-square-github">
-                </i>
-                Github
+                    <i class="fa-brands fa-square-github">
+                    </i>
+                    Github
                 </a>
             </li>
             <li class="footer__sociales">
                 <a id="linkedin" href="https://www.linkedin.com/">
-                <i class="fa-brands fa-linkedin">
-                </i>
-                Linkedin
+                    <i class="fa-brands fa-linkedin">
+                    </i>
+                    Linkedin
                 </a>
             </li>
             <li class="footer__sociales">
                 <a id="email" href="">
-                <i class="fa-solid fa-envelope">
-                </i>
-                Email
+                    <i class="fa-solid fa-envelope">
+                    </i>
+                    Email
                 </a>
             </li>
             <li class="footer__sociales">
                 <a id="discord" href="https://discord.com/">
-                <i class="fa-brands fa-discord">
-                </i>
-                Discord
+                    <i class="fa-brands fa-discord">
+                    </i>
+                    Discord
                 </a>
             </li>
         </ul>
@@ -209,7 +212,7 @@
             <img class="footer__logo" src="/publics/img/logo.svg" alt="logo">
             <p class="footer__terminos">Informacion legal | Politica de privacidad</p>
             <h6 class="footer__copyright">Acadevmia &COPY; Copyright</h6>
-        </div>        
+        </div>
     </footer>
 </body>
 
