@@ -42,12 +42,12 @@ public class RespuestaService {
         if (preguntaOptional.isEmpty()) {
             throw new BusinessException("La pregunta no existe");
         }
-        UserEntity userEntity = Util.getUserAuthenticated(userRepository);
+
         RespuestaEntity respuestaEntity = RespuestaEntity.builder()
                 .texto(respuestaRequest.getTexto())
                 .codigo(respuestaRequest.getCodigo())
                 .favorito(false)
-                .userEntity(userEntity)
+                .userEntity(Util.getUserAuthenticated(userRepository))
                 .reacciones(new ArrayList<>()).build();
 
         RespuestaEntity savedRespuestaEntity = respuestaRepository.save(respuestaEntity);
@@ -55,6 +55,7 @@ public class RespuestaService {
         preguntaEntity.getRespuestaEntities().add(savedRespuestaEntity);
         preguntaRepository.save(preguntaEntity);
 
+        EUserReaction reacted = EUserReaction.NONE;
         return RespuestaResponse.builder()
                 .id(respuestaEntity.getId())
                 .texto(respuestaEntity.getTexto())
@@ -68,6 +69,7 @@ public class RespuestaService {
                 .reacciones(ReaccionResponse.builder()
                         .likes(0)
                         .dislikes(0)
+                        .userHasReacted(reacted)
                         .build())
                 .build();
     }
