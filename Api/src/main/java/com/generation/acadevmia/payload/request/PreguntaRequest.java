@@ -13,11 +13,11 @@ import java.util.Set;
 @Setter
 public class PreguntaRequest {
    @NotBlank
-   @Size(min = 50, max = 100)
+   @Size(min = 1, max = 100)
    private String titulo;
 
    @NotBlank
-   @Size(min = 100, max = 1000)
+   @Size(min = 1, max = 1000)
    private String descripcion;
 
    @Size(max = 80)
