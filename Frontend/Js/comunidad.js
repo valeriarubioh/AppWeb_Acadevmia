@@ -127,9 +127,9 @@ function contarReaccion(reaccion) {
   if (reaccion.length === 0) {
     return { likes: 0, dislikes: 0 };
   }
-  const likes = reaccion.filter((reaccion) => reaccion.isLike === 1).length;
-  const dislikes = reaccion.filter((reaccion) => reaccion.isLike === 0).length;
-  return { likes: likes, dislikes: dislikes };
+    const likes = obj.reacciones.filter((reaccion) => reaccion.isLike === 1).length;
+    const dislikes = obj.reacciones.filter((reaccion) => reaccion.isLike === 0).length;
+    return { likes: likes, dislikes: dislikes };
 }
 
 const btnPregunta = document.getElementById("btn__pregunta");
