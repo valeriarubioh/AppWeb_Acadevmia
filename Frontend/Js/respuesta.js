@@ -17,23 +17,6 @@ if (queryParams.id) {
   renderRespuestas();
 }
 
-// const respuestas = [
-//   {
-//     texto: "otra respuesta",
-//     codigo: "otro codigo",
-//     username: "emilypina",
-//     reaccion: [
-//       {
-//         username: "marce",
-//         isLike: 1,
-//       },
-//       {
-//         username: "juan",
-//         isLike: 0,
-//       },
-//     ],
-//   },
-// ];
 
 function agregarReaccionRespuesta(index, accion) {
   if (!user) {
@@ -111,6 +94,9 @@ function hacerFavorito(index) {
   }
 }
 
+
+
+
 function renderRespuestas() {
   let respuestasHtml = "";
   selectedPregunta.respuestas.forEach(function (obj, index) {
@@ -174,6 +160,26 @@ function renderSelectedPregunta() {
       </div>`;
 }
 
+function renderSelectedPregunta() {
+  reacciones = contarReaccion(selectedPregunta.reaccion);
+  document.querySelector(".body__pregunta").innerHTML = `
+      <div class="foro__publicadas">
+        <div class="foro__pregunta">
+            <img src="../../publics/img/user.png">
+            <p>${selectedPregunta.username}</p>
+            <h3>${selectedPregunta.pregunta}</h3>
+            <p>${selectedPregunta.tags}</p>
+            <button class="foro__reaccion" id="btn__like" onclick="agregarReaccionSelectedPregunta('like')">${reacciones.likes}<i class='bx bx-like'></i></button>
+            <button class="foro__reaccion" id="btn__dislike" onclick="agregarReaccionSelectedPregunta('dislike')">${reacciones.dislikes}<i class='bx bx-dislike' ></i></button>
+        </div>
+        <div class="foro__respuesta">
+            <p>${selectedPregunta.descripcion}</p>
+            <div class=" foro__reaccion">
+            </div>
+        </div>
+      </div>`;
+}
+
 const postForm = document.querySelector(".principal__formulario");
 
 postForm.addEventListener("submit", (e) => {
@@ -197,3 +203,54 @@ postForm.addEventListener("submit", (e) => {
     window.location.href = `login.html?id=${queryParams.id}&&redirect=comunidadRespuesta`;
   }
 });
+
+/*
+
+const postForm = document.querySelector(".principal__formulario");
+
+const postForm = document.querySelector(".principal__formulario");
+
+postForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const texto = document.getElementById("input__texto").value;
+  const codigo = document.getElementById("input__codigo").value;
+  const respuesta = {
+    texto: texto,
+    codigo: codigo,
+    username: user.username,
+    reaccion: [],
+    favorito: false,
+  };
+
+  const queryParams = window.location.search;
+  const urlParams = new URLSearchParams(queryParams);
+  const preguntaId = urlParams.get("id"); // Obtener el ID de la pregunta de los parámetros de la URL
+
+  if (preguntaId && user) {
+    fetch(`http://localhost:8080/api/v1/respuestas/${preguntaId}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${user.token}`,
+      },
+      body: JSON.stringify(respuesta),
+    })
+      .then((response) => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Error al enviar la respuesta");
+      })
+      .then((data) => {
+        console.log("Respuesta enviada correctamente:", data);
+  
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
+  } else if (preguntaId && !user) {
+   
+    window.location.href = `login.html?id=${preguntaId}&&redirect=comunidadRespuesta`;
+  }
+});*/

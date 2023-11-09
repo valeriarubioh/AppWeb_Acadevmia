@@ -26,31 +26,31 @@ function obtenerPreguntasDesdeBackend() {
     .catch((error) => console.error("Error al obtener preguntas:", error));
 }
 obtenerPreguntasDesdeBackend();
+
 function agregarReaccion(index, accion) {
   if (!user) {
     window.location.href = "login.html";
-  } else {
-    window.location.href = "../../index.html";
+    return;
   }
 
   const pregunta = preguntas[index];
-  if (pregunta.username === user.username) {
+  if (pregunta.user.username === user.username) {
     alert("El mismo usuario no puede reaccionar a su propia publicación");
     return;
   }
 
   const isLike = accion === "like" ? 1 : 0;
 
-  // Hacer la solicitud para agregar la reacción
   fetch("http://localhost:8080/api/v1/reacciones", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
+      Authorization: `Bearer ${user.token}`,
     },
     body: JSON.stringify({
-      preguntaId: pregunta.id,
-      username: user.username,
       isLike: isLike,
+      tipo: "Reaccion{text='LIKE'}",
+      id: pregunta.id,
     }),
   })
     .then((response) => {
@@ -62,12 +62,11 @@ function agregarReaccion(index, accion) {
     })
     .then((updatedPregunta) => {
       preguntas[index] = updatedPregunta;
-      // Actualiza la pregunta con las reacciones actualizadas del backend
-      renderPreguntas();
-      // Vuelve a renderizar las preguntas en la interfaz
+      renderPreguntas(preguntas); 
     })
     .catch((error) => console.error("Error al agregar reacción:", error));
 }
+
 
 //funcion para eliminar pregunta con el back
 function eliminarPregunta(index) {
