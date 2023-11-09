@@ -46,7 +46,7 @@ function agregarReaccion(index, accion) {
     headers: {
       'Allow-Origin': '*',
       "Content-Type": "application/json",
-      Authorization: `Bearer ${user.token}`,
+      "Authorization": `Bearer ${user.token}`,
     },
     body: JSON.stringify({
       isLike: isLike,
@@ -56,14 +56,8 @@ function agregarReaccion(index, accion) {
   })
     .then((response) => {
       if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Error al agregar la reacción");
+        obtenerPreguntasDesdeBackend();
       }
-    })
-    .then((updatedPregunta) => {
-      preguntas[index] = updatedPregunta;
-      renderPreguntas(preguntas); 
     })
     .catch((error) => console.error("Error al agregar reacción:", error));
 }
