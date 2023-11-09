@@ -120,7 +120,7 @@ body {
 #button {
     background-color: #333;
     color: #fff;
-    width: 20%;
+    width: auto;
     padding: 10px 20px;
     margin: auto;
     margin-bottom: 23px;
@@ -142,6 +142,14 @@ body {
     padding: 20px;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
+    & h4 {
+        margin-top: 10px;
+    }
+
+    & p {
+        padding: 1px;
+    }
 }
 .image-container {
     width: 100px;
