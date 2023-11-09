@@ -69,6 +69,9 @@ function eliminarPregunta(index) {
   //preguntar sobre la ruta
   fetch(`http://localhost:8080/api/v1/preguntas/${idPregunta}`, {
     method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${user.token}`,
+    },
   })
     .then(() => {
       preguntas.splice(index, 1);
