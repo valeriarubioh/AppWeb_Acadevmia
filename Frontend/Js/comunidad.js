@@ -41,12 +41,12 @@ function agregarReaccion(index, accion) {
 
   const isLike = accion === "like" ? 1 : 0;
 
-  fetch("http://localhost:8080/api/v1/reacciones", {
+  fetch("https://4d05-186-113-77-136.ngrok-free.app/api/v1/reacciones", {
     method: "POST",
     headers: {
-      'Allow-Origin': '*',
+      "Allow-Origin": "*",
       "Content-Type": "application/json",
-      "Authorization": `Bearer ${user.token}`,
+      Authorization: `Bearer ${user.token}`,
     },
     body: JSON.stringify({
       isLike: isLike,

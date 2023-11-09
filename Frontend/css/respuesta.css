@@ -88,6 +88,8 @@
             margin-left: 1rem;
           }
           & .foro__reaccion {
+            display: flex;
+            flex-direction: column-reverse;
             border: none;
             background: transparent;
 

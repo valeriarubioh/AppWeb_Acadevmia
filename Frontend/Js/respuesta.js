@@ -127,7 +127,6 @@ function hacerFavorito(index) {
           Authorization: `Bearer ${user.token}`,
         },
         body: JSON.stringify({
-          isLike: isLike,
           tipo: "Reaccion:{}",
           id: respuesta.id,
         }),
@@ -171,7 +170,7 @@ function renderRespuestas() {
           ${
             obj.favorito === true
               ? `<p><i class='bx bx-star'></i>Respuesta Favorita</p>`
-              : ""
+              : "<i class='bx bx-star'></i>"
           }
       </div>  
       <div class="foro__respuesta">
