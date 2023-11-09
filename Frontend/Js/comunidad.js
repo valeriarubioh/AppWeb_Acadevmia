@@ -44,12 +44,13 @@ function agregarReaccion(index, accion) {
   fetch("http://localhost:8080/api/v1/reacciones", {
     method: "POST",
     headers: {
+      'Allow-Origin': '*',
       "Content-Type": "application/json",
       Authorization: `Bearer ${user.token}`,
     },
     body: JSON.stringify({
       isLike: isLike,
-      tipo: "Reaccion{text='LIKE'}",
+      tipo: "PREGUNTA",
       id: pregunta.id,
     }),
   })
