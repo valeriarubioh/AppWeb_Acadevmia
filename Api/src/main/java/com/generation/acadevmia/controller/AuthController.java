@@ -3,6 +3,7 @@ package com.generation.acadevmia.controller;
 import com.generation.acadevmia.entity.ERole;
 import com.generation.acadevmia.entity.RoleEntity;
 import com.generation.acadevmia.entity.UserEntity;
+import com.generation.acadevmia.exception.BusinessException;
 import com.generation.acadevmia.payload.request.LoginRequest;
 import com.generation.acadevmia.payload.request.SignupRequest;
 import com.generation.acadevmia.payload.response.JwtResponse;
@@ -18,6 +19,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -59,14 +61,20 @@ public class AuthController {
 
         UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
         List<String> roles = userDetails.getAuthorities().stream()
-                .map(item -> item.getAuthority())
+                .map(GrantedAuthority::getAuthority)
                 .collect(Collectors.toList());
 
-        return ResponseEntity.ok(new JwtResponse(jwt,
-                userDetails.getId(),
-                userDetails.getUsername(),
-                userDetails.getEmail(),
-                roles));
+        UserEntity userEntity = userRepository.findByUsername(userDetails.getUsername())
+                .orElseThrow(() -> new BusinessException("User authenticated not found"));
+        return ResponseEntity.ok(JwtResponse.builder()
+                .token(jwt)
+                .id(userDetails.getId())
+                .type("Bearer")
+                .username(userDetails.getUsername())
+                .email(userDetails.getEmail())
+                .roles(roles)
+                .name(userEntity.getName())
+                .build());
     }
 
     @PostMapping("/signup")
