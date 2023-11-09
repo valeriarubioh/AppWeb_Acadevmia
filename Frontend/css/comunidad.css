@@ -148,12 +148,13 @@
 }
 .foro__reaccion{
     background-color: transparent;
+    flex-direction: column-reverse;
     border: none;
     display: flex;
     position: relative;
     font-size: large;
     right: 50px;
-    top: 50px;
+
 }
 .eliminar__post{
     background-color: transparent;

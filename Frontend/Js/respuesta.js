@@ -1,8 +1,8 @@
-const Preguntas = JSON.parse(localStorage.getItem("preguntas"));
+let selectedPregunta;
+let respuestas;
 const user = JSON.parse(localStorage.getItem("login_success")) || false;
 const queryString = window.location.search;
 const queryParams = parseQueryString(queryString);
-const selectedPregunta = Preguntas[queryParams.id];
 const respuestaTemporal =
   JSON.parse(localStorage.getItem("respuestaTemporal")) || false;
 
@@ -13,27 +13,31 @@ if (respuestaTemporal) {
 }
 
 if (queryParams.id) {
-  renderSelectedPregunta();
-  renderRespuestas();
+  obtenerRespuestasDesdeBackend();
 }
 
-// const respuestas = [
-//   {
-//     texto: "otra respuesta",
-//     codigo: "otro codigo",
-//     username: "emilypina",
-//     reaccion: [
-//       {
-//         username: "marce",
-//         isLike: 1,
-//       },
-//       {
-//         username: "juan",
-//         isLike: 0,
-//       },
-//     ],
-//   },
-// ];
+function obtenerRespuestasDesdeBackend() {
+  let request = {
+    method: "GET"
+  };
+  if (user) {
+    request = {
+      method: "GET",
+      headers: {
+        "Authorization": `Bearer ${user.token}`
+      }
+    }
+  }
+  fetch(`http://localhost:8080/api/v1/respuestas/${queryParams.id}`, request)
+    .then((response) => response.json())
+    .then((data) => {
+      selectedPregunta = data.pregunta;
+      respuestas = data.respuestas;
+      renderSelectedPregunta();
+      renderRespuestas();
+    })
+    .catch((error) => console.error("Error al obtener respuetas:", error));
+}
 
 function agregarReaccionRespuesta(index, accion) {
   if (!user) {
@@ -75,25 +79,34 @@ function agregarReaccionSelectedPregunta(accion) {
     alert("El mismo usuario no puede reaccionar a su propia publicación");
     return;
   }
-  const reaccion = selectedPregunta.reaccion;
-  let isLike = accion === "like" ? 1 : 0;
-  const foundIndex = reaccion.findIndex(
-    (reaccion) => reaccion.username === user.username
-  );
-  if (foundIndex === -1) {
-    reaccion.push({
-      username: user.username,
+  const isLike = accion === "like" ? 1 : 0;
+
+  fetch("http://localhost:8080/api/v1/reacciones", {
+    method: "POST",
+    headers: {
+      "Allow-Origin": "*",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${user.token}`,
+    },
+    body: JSON.stringify({
       isLike: isLike,
-    });
-    localStorage.setItem("preguntas", JSON.stringify(Preguntas));
-    renderSelectedPregunta();
-  } else if (reaccion[foundIndex].isLike === isLike) {
-    reaccion.splice(foundIndex, 1);
-    localStorage.setItem("preguntas", JSON.stringify(Preguntas));
-    renderSelectedPregunta();
-  } else {
-    alert("Usuario ya ha dado su reacción");
-  }
+      tipo: "PREGUNTA",
+      id: data.respuestas.id
+    }),
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Error al agregar la reacción");
+      }
+    })
+    .then((updatedPregunta) => {
+      preguntas[index] = updatedPregunta;
+      renderPreguntas(preguntas);
+    })
+    .catch((error) => console.error("Error al agregar reacción:", error));
+
 }
 
 function hacerFavorito(index) {
@@ -105,35 +118,59 @@ function hacerFavorito(index) {
     selectedPregunta.respuestas[foundIndex].favorito = false;
   }
   if (respuesta) {
-    (respuesta.favorito = true),
-    localStorage.setItem("preguntas", JSON.stringify(Preguntas));
-    renderRespuestas();
-  }
+    (respuesta.favorito = true)
+    fetch("http://localhost:8080/api/v1/reacciones", {
+        method: "POST",
+        headers: {
+          'Allow-Origin': '*',
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+        body: JSON.stringify({
+          tipo: "Reaccion:{}",
+          id: respuesta.id,
+        }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Error al agregar la reacción");
+          }
+        })
+        .then((updatedRespuesta) => {
+          respuesta[index] = updatedRespuesta;
+          renderSelectedPreguntas(respuesta); 
+        })
+        .catch((error) => console.error("Error al agregar reacción:", error));
+    }
 }
+
+
+
 
 function renderRespuestas() {
   let respuestasHtml = "";
-  selectedPregunta.respuestas.forEach(function (obj, index) {
-    let reacciones = contarReaccion(obj.reaccion);
+  respuestas.forEach(function (obj, index) {
     respuestasHtml += `<div class="foro__publicacion">
       <div class="foro__perfil">
           <img src="../../publics/img/user.png">
-          <p>${obj.username}</p>
+          <p>${obj.user.username}</p>
           <button class="foro__reaccion" id="btn__like" onclick="agregarReaccionRespuesta('${index}', 'like')">${
-      reacciones.likes
+      obj.reacciones.likes
     }<i class='bx bx-like'></i></button>
           <button class="foro__reaccion" id="btn__like" onclick="agregarReaccionRespuesta('${index}', 'dislike')">${
-      reacciones.dislikes
+      obj.reacciones.dislikes
     }<i class='bx bx-dislike' ></i></button>
           ${
-            user && selectedPregunta.username === user.username
+            user && selectedPregunta.user.username === user.username
               ? `<button class="foro__reaccion" onclick="hacerFavorito(${index})"><i class='bx bx-star'></i>Favorito</button>`
               : ""
           }
           ${
             obj.favorito === true
               ? `<p><i class='bx bx-star'></i>Respuesta Favorita</p>`
-              : ""
+              : "<i class='bx bx-star'></i>"
           }
       </div>  
       <div class="foro__respuesta">
@@ -155,16 +192,15 @@ function contarReaccion(reaccion) {
 }
 
 function renderSelectedPregunta() {
-  reacciones = contarReaccion(selectedPregunta.reaccion);
   document.querySelector(".body__pregunta").innerHTML = `
       <div class="foro__publicadas">
         <div class="foro__pregunta">
             <img src="../../publics/img/user.png">
-            <p>${selectedPregunta.username}</p>
-            <h3>${selectedPregunta.pregunta}</h3>
-            <p>${selectedPregunta.tags}</p>
-            <button class="foro__reaccion" id="btn__like" onclick="agregarReaccionSelectedPregunta('like')">${reacciones.likes}<i class='bx bx-like'></i></button>
-            <button class="foro__reaccion" id="btn__dislike" onclick="agregarReaccionSelectedPregunta('dislike')">${reacciones.dislikes}<i class='bx bx-dislike' ></i></button>
+            <p>${selectedPregunta.user.username}</p>
+            <h3>${selectedPregunta.titulo}</h3>
+            <p>${selectedPregunta.tag}</p>
+            <button class="foro__reaccion" id="btn__like" onclick="agregarReaccionSelectedPregunta('like')">${selectedPregunta.reacciones.likes}<i class='bx bx-like'></i></button>
+            <button class="foro__reaccion" id="btn__dislike" onclick="agregarReaccionSelectedPregunta('dislike')">${selectedPregunta.reacciones.dislikes}<i class='bx bx-dislike' ></i></button>
         </div>
         <div class="foro__respuesta">
             <p>${selectedPregunta.descripcion}</p>
@@ -197,3 +233,5 @@ postForm.addEventListener("submit", (e) => {
     window.location.href = `login.html?id=${queryParams.id}&&redirect=comunidadRespuesta`;
   }
 });
+
+

@@ -26,48 +26,42 @@ function obtenerPreguntasDesdeBackend() {
     .catch((error) => console.error("Error al obtener preguntas:", error));
 }
 obtenerPreguntasDesdeBackend();
+
 function agregarReaccion(index, accion) {
   if (!user) {
     window.location.href = "login.html";
-  } else {
-    window.location.href = "../../index.html";
+    return;
   }
 
   const pregunta = preguntas[index];
-  if (pregunta.username === user.username) {
+  if (pregunta.user.username === user.username) {
     alert("El mismo usuario no puede reaccionar a su propia publicación");
     return;
   }
 
   const isLike = accion === "like" ? 1 : 0;
 
-  // Hacer la solicitud para agregar la reacción
-  fetch("http://localhost:8080/api/v1/reacciones", {
+  fetch("https://4d05-186-113-77-136.ngrok-free.app/api/v1/reacciones", {
     method: "POST",
     headers: {
+      "Allow-Origin": "*",
       "Content-Type": "application/json",
+      Authorization: `Bearer ${user.token}`,
     },
     body: JSON.stringify({
-      preguntaId: pregunta.id,
-      username: user.username,
       isLike: isLike,
+      tipo: "PREGUNTA",
+      id: pregunta.id,
     }),
   })
     .then((response) => {
       if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Error al agregar la reacción");
+        obtenerPreguntasDesdeBackend();
       }
-    })
-    .then((updatedPregunta) => {
-      preguntas[index] = updatedPregunta;
-      // Actualiza la pregunta con las reacciones actualizadas del backend
-      renderPreguntas();
-      // Vuelve a renderizar las preguntas en la interfaz
     })
     .catch((error) => console.error("Error al agregar reacción:", error));
 }
+
 
 //funcion para eliminar pregunta con el back
 function eliminarPregunta(index) {
@@ -75,6 +69,9 @@ function eliminarPregunta(index) {
   //preguntar sobre la ruta
   fetch(`http://localhost:8080/api/v1/preguntas/${idPregunta}`, {
     method: "DELETE",
+    headers: {
+      Authorization: `Bearer ${user.token}`,
+    },
   })
     .then(() => {
       preguntas.splice(index, 1);
@@ -133,9 +130,9 @@ function contarReaccion(reaccion) {
   if (reaccion.length === 0) {
     return { likes: 0, dislikes: 0 };
   }
-  const likes = reaccion.filter((reaccion) => reaccion.isLike === 1).length;
-  const dislikes = reaccion.filter((reaccion) => reaccion.isLike === 0).length;
-  return { likes: likes, dislikes: dislikes };
+    const likes = obj.reacciones.filter((reaccion) => reaccion.isLike === 1).length;
+    const dislikes = obj.reacciones.filter((reaccion) => reaccion.isLike === 0).length;
+    return { likes: likes, dislikes: dislikes };
 }
 
 const btnPregunta = document.getElementById("btn__pregunta");
