@@ -79,25 +79,34 @@ function agregarReaccionSelectedPregunta(accion) {
     alert("El mismo usuario no puede reaccionar a su propia publicación");
     return;
   }
-  const reaccion = selectedPregunta.reaccion;
-  let isLike = accion === "like" ? 1 : 0;
-  const foundIndex = reaccion.findIndex(
-    (reaccion) => reaccion.username === user.username
-  );
-  if (foundIndex === -1) {
-    reaccion.push({
-      username: user.username,
+  const isLike = accion === "like" ? 1 : 0;
+
+  fetch("http://localhost:8080/api/v1/reacciones", {
+    method: "POST",
+    headers: {
+      "Allow-Origin": "*",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${user.token}`,
+    },
+    body: JSON.stringify({
       isLike: isLike,
-    });
-    localStorage.setItem("preguntas", JSON.stringify(Preguntas));
-    renderSelectedPregunta();
-  } else if (reaccion[foundIndex].isLike === isLike) {
-    reaccion.splice(foundIndex, 1);
-    localStorage.setItem("preguntas", JSON.stringify(Preguntas));
-    renderSelectedPregunta();
-  } else {
-    alert("Usuario ya ha dado su reacción");
-  }
+      tipo: "PREGUNTA",
+      id: data.respuestas.id
+    }),
+  })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error("Error al agregar la reacción");
+      }
+    })
+    .then((updatedPregunta) => {
+      preguntas[index] = updatedPregunta;
+      renderPreguntas(preguntas);
+    })
+    .catch((error) => console.error("Error al agregar reacción:", error));
+
 }
 
 function hacerFavorito(index) {
@@ -109,10 +118,33 @@ function hacerFavorito(index) {
     selectedPregunta.respuestas[foundIndex].favorito = false;
   }
   if (respuesta) {
-    (respuesta.favorito = true),
-    localStorage.setItem("preguntas", JSON.stringify(Preguntas));
-    renderRespuestas();
-  }
+    (respuesta.favorito = true)
+    fetch("http://localhost:8080/api/v1/reacciones", {
+        method: "POST",
+        headers: {
+          'Allow-Origin': '*',
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${user.token}`,
+        },
+        body: JSON.stringify({
+          isLike: isLike,
+          tipo: "Reaccion:{}",
+          id: respuesta.id,
+        }),
+      })
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          } else {
+            throw new Error("Error al agregar la reacción");
+          }
+        })
+        .then((updatedRespuesta) => {
+          respuesta[index] = updatedRespuesta;
+          renderSelectedPreguntas(respuesta); 
+        })
+        .catch((error) => console.error("Error al agregar reacción:", error));
+    }
 }
 
 
@@ -203,53 +235,4 @@ postForm.addEventListener("submit", (e) => {
   }
 });
 
-/*
 
-const postForm = document.querySelector(".principal__formulario");
-
-const postForm = document.querySelector(".principal__formulario");
-
-postForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-
-  const texto = document.getElementById("input__texto").value;
-  const codigo = document.getElementById("input__codigo").value;
-  const respuesta = {
-    texto: texto,
-    codigo: codigo,
-    username: user.username,
-    reaccion: [],
-    favorito: false,
-  };
-
-  const queryParams = window.location.search;
-  const urlParams = new URLSearchParams(queryParams);
-  const preguntaId = urlParams.get("id"); // Obtener el ID de la pregunta de los parámetros de la URL
-
-  if (preguntaId && user) {
-    fetch(`http://localhost:8080/api/v1/respuestas/${preguntaId}`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${user.token}`,
-      },
-      body: JSON.stringify(respuesta),
-    })
-      .then((response) => {
-        if (response.ok) {
-          return response.json();
-        }
-        throw new Error("Error al enviar la respuesta");
-      })
-      .then((data) => {
-        console.log("Respuesta enviada correctamente:", data);
-  
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  } else if (preguntaId && !user) {
-   
-    window.location.href = `login.html?id=${preguntaId}&&redirect=comunidadRespuesta`;
-  }
-});*/
