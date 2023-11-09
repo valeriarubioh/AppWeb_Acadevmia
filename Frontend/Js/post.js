@@ -30,7 +30,7 @@ const postForm = document.querySelector(".principal__formulario");
               headers: {
                 'Allow-Origin': '*',
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${localStorage.getItem("token")}`
+                "Authorization": `Bearer ${user.token}`
               },
               body: JSON.stringify(preguntaData)
             }

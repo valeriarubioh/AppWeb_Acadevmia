@@ -1,18 +1,17 @@
 // Define un array de preguntas con objetos de ejemplo
 const user = JSON.parse(localStorage.getItem("login_success")) || false;
-const username = localStorage.getItem("user");
-const accessToken = localStorage.getItem("token") || false;
+let preguntas;
 
 //obtener la el listado de preguntas
 function obtenerPreguntasDesdeBackend() {
   let request = {
     method: "GET"
   };
-  if (accessToken) {
+  if (user) {
     request = {
       method: "GET",
       headers: {
-        "Authorization": `Bearer ${localStorage.getItem("token")}`
+        "Authorization": `Bearer ${user.token}`
       }
     }
   }
@@ -20,6 +19,7 @@ function obtenerPreguntasDesdeBackend() {
     .then((response) => response.json())
     .then((data) => {
       // Actualiza las preguntas con los datos del backend
+      preguntas = data;
       renderPreguntas(data);
       // Vuelve a renderizar las preguntas en la interfaz
     })
@@ -118,7 +118,7 @@ function renderPreguntas(filterPregunta) {
           <p>${obj.tag}</p>
         </a>
         ${
-          user && username === obj.user.username
+          user && user.username === obj.user.username
             ? `<button class="eliminar__post" onclick="eliminarPregunta(${index})"><i class="fa-solid fa-trash"></i></button>`
             : ""
         }
@@ -147,7 +147,7 @@ btnPregunta.addEventListener("click", function () {
 });
 function filtro(consulta) {
   return preguntas.filter((pregunta) =>
-    pregunta.pregunta.toLowerCase().includes(consulta.toLowerCase())
+    pregunta.titulo.toLowerCase().includes(consulta.toLowerCase())
   );
 }
 const consulta = document.getElementById("buscador");

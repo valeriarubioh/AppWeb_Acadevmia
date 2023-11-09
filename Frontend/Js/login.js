@@ -68,8 +68,7 @@ loginForm.addEventListener('submit',(e) =>{
 
             toastr.success(`Bienvenido ${data.username}`)
             // aquí almacenamos los datos String a JSON para que se guarden en la lista de objetos
-            localStorage.setItem('token', data.token)
-            localStorage.setItem('user', data.username)
+            localStorage.setItem('login_success', JSON.stringify(data));
             // TOCA REDIRIGIR A LA PREGUNTA Y SOBREESCRIBIR EL FORMULARIO 
             if(queryParams.redirect === "comunidadRespuesta"){
                 setTimeout(function () {
