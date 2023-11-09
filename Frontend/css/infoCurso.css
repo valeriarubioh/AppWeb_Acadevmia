@@ -11,7 +11,10 @@
     margin: 1rem;
     margin-left: 0;
     border-radius: 2rem;
-    
+    max-width: 1200px;
+    width: 100%;
+    flex-wrap: wrap;
+
 }
 .primer__section{
     display: flex;
@@ -126,7 +129,8 @@
 .recomendaciones{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;margin-bottom: 10rem;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
 }
 .recomendacion{
     padding: 1rem;
@@ -191,8 +195,45 @@
 .detalles__temario {
     margin-top:36px;
 }
-@media screen and (max-width:500px){
-.recomendacion.respo {
+@media screen and (max-width:1000px){
+.principal__img {
     display: none;
   }
+.segundo__section {
+    margin-top: 160px;
+    padding: 50px;
+    align-items: center;
+}
+}
+
+@media screen and (max-width:550px){
+.infoCurso__contenedor {
+    margin: 0 auto;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+.primer__section {
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 210px;
+    padding-top: 4px;
+    align-items: center;
+}
+.segundo__section {
+    width: 80%;
+    margin-top: 40px;
+    padding: 50px;
+    align-items: center;
+}
+
+.tercer__section {
+    display: none;
+}
+.temario__contenidos{
+    max-width: 600%;
+
+    & .contenedor {
+        width: 100%;
+    }
+}
 }
