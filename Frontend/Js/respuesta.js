@@ -28,7 +28,7 @@ function obtenerRespuestasDesdeBackend() {
       }
     }
   }
-  fetch(`http://localhost:8080/api/v1/respuestas/${queryParams.id}`, request)
+  fetch(`${baseUrl}/api/v1/respuestas/${queryParams.id}`, request)
     .then((response) => response.json())
     .then((data) => {
       selectedPregunta = data.pregunta;
@@ -81,7 +81,7 @@ function agregarReaccionSelectedPregunta(accion) {
   }
   const isLike = accion === "like" ? 1 : 0;
 
-  fetch("http://localhost:8080/api/v1/reacciones", {
+  fetch(`${baseUrl}/api/v1/reacciones`, {
     method: "POST",
     headers: {
       "Allow-Origin": "*",
@@ -119,7 +119,7 @@ function hacerFavorito(index) {
   }
   if (respuesta) {
     (respuesta.favorito = true)
-    fetch("http://localhost:8080/api/v1/reacciones", {
+    fetch(`${baseUrl}/api/v1/reacciones`, {
         method: "POST",
         headers: {
           'Allow-Origin': '*',

@@ -19,7 +19,7 @@ signupForm.addEventListener('submit', (e) =>
         password: password
     }
 
-    fetch("http://localhost:8080/api/auth/signup", {
+    fetch(`${baseUrl}/api/auth/signup`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

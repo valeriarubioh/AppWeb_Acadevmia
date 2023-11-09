@@ -24,7 +24,7 @@ const postForm = document.querySelector(".principal__formulario");
 
         try {
           const response = await fetch(
-            "http://localhost:8080/api/v1/preguntas",
+            `${baseUrl}/api/v1/preguntas`,
             {
               method: "POST",
               headers: {

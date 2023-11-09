@@ -15,7 +15,7 @@ function obtenerPreguntasDesdeBackend() {
       }
     }
   }
-  fetch("http://localhost:8080/api/v1/preguntas", request)
+  fetch(`${baseUrl}/api/v1/preguntas`, request)
     .then((response) => response.json())
     .then((data) => {
       // Actualiza las preguntas con los datos del backend
@@ -41,7 +41,7 @@ function agregarReaccion(index, accion) {
 
   const isLike = accion === "like" ? 1 : 0;
 
-  fetch("http://localhost:8080/api/v1/reacciones", {
+  fetch(`${baseUrl}/api/v1/reacciones`, {
     method: "POST",
     headers: {
       "Allow-Origin": "*",
@@ -67,7 +67,7 @@ function agregarReaccion(index, accion) {
 function eliminarPregunta(index) {
   const idPregunta = preguntas[index].id;
   //preguntar sobre la ruta
-  fetch(`http://localhost:8080/api/v1/preguntas/${idPregunta}`, {
+  fetch(`${baseUrl}/api/v1/preguntas/${idPregunta}`, {
     method: "DELETE",
     headers: {
       Authorization: `Bearer ${user.token}`,
